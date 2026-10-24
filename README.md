@@ -1,36 +1,32 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# VeraAI – hemsida
 
-## Getting Started
+Marketing site for VeraAI (Vera Labs AB), built with Next.js (App Router), TypeScript and Tailwind CSS v4.
+Implemented from the "VeraAI – hemsida" V3 design canvas ("light steel" with light and dark mode).
 
-First, run the development server:
+## Develop
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open http://localhost:3000. The npm scripts call `node node_modules/...` directly because the project
+folder name contains a `:`, which breaks npm's `PATH` handling for `node_modules/.bin`.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Structure
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- `src/app/**/page.tsx` – one route per page (`/`, `/foretag`, `/agenter/*`, `/privat/*`, `/priser`, …).
+- `src/app/layout.tsx` – fonts (Montserrat, League Spartan, Archivo Black), header, footer, theme bootstrap.
+- `src/app/globals.css` – design tokens (`--page`, `--surface`, `--ink`, `--accent`, …) for light and
+  `.dark` mode, exposed to Tailwind as colors (`bg-surface`, `text-ink`, `border-line`, …), plus the
+  few component styles that need hover, `:checked` or animation rules.
+  Tailwind's preflight is intentionally left out: the design relies on browser defaults.
+- `src/components/site-header/` – navigation data, header with dropdowns and mobile menu, theme toggle.
+- `src/components/SiteFooter.tsx`, `src/components/SavingsCalculator.tsx` (pricing page calculator).
 
-## Learn More
+The start page uses the "levande" variant: a steel-blue accent scoped with `:root:has(.lv-page)`.
 
-To learn more about Next.js, take a look at the following resources:
+## Placeholders still in the copy
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+`[ADRESS]`, `Org.nr [XXXXXX-XXXX]`, prices shown as `XXX kr`, image placeholders and the demo video slot.
+The contact form posts via `mailto:` as in the design; connect it to a real endpoint before launch.

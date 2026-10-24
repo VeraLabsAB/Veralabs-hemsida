@@ -1,26 +1,702 @@
-@import "tailwindcss";
+/* Tailwind without preflight: the design is built on browser defaults. */
+@layer theme, base, components, utilities;
+@import "tailwindcss/theme.css" layer(theme);
+@import "tailwindcss/utilities.css" layer(utilities);
 
+/* ── Design tokens: "light steel" with a light and a dark mode ─────────── */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --page: #f8f9fa;
+  --surface: #ffffff;
+  --surface-muted: #e9ecef;
+  --chip: #e9ecef;
+  --line: #dee2e6;
+  --line-faint: #e9ecef;
+  --line-soft: #adb5bd;
+  --line-strong: #212529;
+  --contrast: #212529;
+  --contrast-soft: #495057;
+  --accent: #343a40;
+  --ink: #212529;
+  --ink-soft: #495057;
+  --ink-muted: #6c757d;
+  --ink-faint: #adb5bd;
+  --ink-inverse: #f8f9fa;
+  --ink-inverse-soft: #dee2e6;
+  --logo-sq: #000000;
+  --logo-ink: #000000;
+  color-scheme: light;
+}
+
+:root.dark {
+  --page: #000000;
+  --surface: #212529;
+  --surface-muted: #212529;
+  --chip: #343a40;
+  --line: #343a40;
+  --line-faint: #343a40;
+  --line-soft: #495057;
+  --line-strong: #ced4da;
+  --contrast: #e9ecef;
+  --contrast-soft: #dee2e6;
+  --accent: #f8f9fa;
+  --ink: #f8f9fa;
+  --ink-soft: #ced4da;
+  --ink-muted: #adb5bd;
+  --ink-faint: #6c757d;
+  --ink-inverse: #212529;
+  --ink-inverse-soft: #495057;
+  --logo-sq: #212529;
+  --logo-ink: #f8f9fa;
+  color-scheme: dark;
+}
+
+/* Start page ("levande"): one steel-blue accent, cards with depth, small motion. */
+:root:has(.lv-page) {
+  --accent: #4a6a8a;
+  --lv-hero-bg: #212529;
+  --lv-card: #f8f9fa;
+  --lv-ink: #212529;
+  --lv-muted: #6c757d;
+  --lv-line: #dee2e6;
+  --lv-acc: #4a6a8a;
+  --lv-acc-ink: #f8f9fa;
+  --lv-soft: #e9ecef;
+  --lv-ph: #e9ecef;
+  --lv-ph-line: #adb5bd;
+}
+
+:root.dark:has(.lv-page) {
+  --accent: #b0c4de;
+  --lv-hero-bg: #212529;
+  --lv-card: #343a40;
+  --lv-ink: #f8f9fa;
+  --lv-muted: #adb5bd;
+  --lv-line: #495057;
+  --lv-acc: #b0c4de;
+  --lv-acc-ink: #212529;
+  --lv-soft: #495057;
+  --lv-ph: #212529;
+  --lv-ph-line: #495057;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-page: var(--page);
+  --color-surface: var(--surface);
+  --color-surface-muted: var(--surface-muted);
+  --color-chip: var(--chip);
+  --color-line: var(--line);
+  --color-line-faint: var(--line-faint);
+  --color-line-soft: var(--line-soft);
+  --color-line-strong: var(--line-strong);
+  --color-contrast: var(--contrast);
+  --color-contrast-soft: var(--contrast-soft);
+  --color-accent: var(--accent);
+  --color-ink: var(--ink);
+  --color-ink-soft: var(--ink-soft);
+  --color-ink-muted: var(--ink-muted);
+  --color-ink-faint: var(--ink-faint);
+  --color-ink-inverse: var(--ink-inverse);
+  --color-ink-inverse-soft: var(--ink-inverse-soft);
+  --color-logo-sq: var(--logo-sq);
+  --color-logo-ink: var(--logo-ink);
+  --color-lv-hero-bg: var(--lv-hero-bg);
+  --color-lv-card: var(--lv-card);
+  --color-lv-ink: var(--lv-ink);
+  --color-lv-muted: var(--lv-muted);
+  --color-lv-line: var(--lv-line);
+  --color-lv-acc: var(--lv-acc);
+  --color-lv-acc-ink: var(--lv-acc-ink);
+  --color-lv-soft: var(--lv-soft);
+  --color-lv-ph: var(--lv-ph);
+  --color-lv-ph-line: var(--lv-ph-line);
+
+  --font-sans: var(--font-montserrat), system-ui, sans-serif;
+  --font-display: var(--font-league-spartan), sans-serif;
+  --font-brand: var(--font-archivo-black), sans-serif;
+  --font-serif: "Times New Roman", Times, serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, monospace;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@layer base {
+  body {
+    margin: 0;
+    background: var(--page);
+    color: var(--ink);
+    font-family: var(--font-sans);
+  }
+
+  a {
+    color: var(--accent);
+  }
+
+  a:hover {
+    color: var(--contrast);
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@layer components {
+  /* ── Header navigation ─────────────────────────────────────────────── */
+  .site-nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 28px;
+    align-items: center;
+    font-size: 16px;
+  }
+  .nav-item {
+    position: relative;
+  }
+  .nav-item.mega {
+    position: static;
+  }
+  .nav-trigger {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: transparent;
+    border: 0;
+    border-bottom: 2px solid transparent;
+    padding: 6px 0;
+    margin: 0;
+    font: inherit;
+    font-size: 16px;
+    color: var(--ink);
+    text-transform: uppercase;
+    cursor: pointer;
+  }
+  .nav-trigger.active {
+    border-bottom-color: var(--accent);
+  }
+  .nav-dropdown {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: -18px;
+    z-index: 70;
+    padding-top: 12px;
+    min-width: 340px;
+    max-width: 92vw;
+  }
+  .nav-item:hover > .nav-dropdown,
+  .nav-item:focus-within > .nav-dropdown {
+    display: block;
+  }
+  .nav-item.mega > .nav-dropdown {
+    left: 40px;
+    right: 40px;
+    min-width: 0;
+  }
+  .nav-panel {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 20px;
+    box-shadow: 0 24px 60px rgba(33, 37, 41, 0.14);
+    padding: 28px;
+    text-align: left;
+  }
+  .nav-mega-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 1px minmax(0, 1fr);
+    gap: 32px;
+  }
+  .nav-divider {
+    background: var(--line);
+  }
+  .nav-heading {
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--contrast);
+    margin: 0 0 12px 12px;
+    text-align: left;
+  }
+  .nav-link {
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+    padding: 12px;
+    border-radius: 12px;
+    text-decoration: none;
+    color: var(--ink);
+    text-align: left;
+  }
+  .nav-link:hover {
+    background: var(--page);
+  }
+  .nav-link-title {
+    display: block;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    line-height: 1.4;
+  }
+  .nav-link-desc {
+    display: block;
+    margin-top: 3px;
+    font-family: var(--font-serif);
+    font-size: 14px;
+    line-height: 1.4;
+    color: var(--ink-soft);
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+  }
+  :root:has(.lv-page) .nav-link-desc {
+    font-family: var(--font-sans);
+    font-size: 13px;
+    line-height: 1.45;
+    text-transform: none;
+    letter-spacing: normal;
+  }
+  .nav-burger {
+    display: none;
+  }
+
+  /* ── Theme switch ──────────────────────────────────────────────────── */
+  .theme-switch {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: transparent;
+    border: 0;
+    padding: 4px 0;
+    margin: 0 8px 0 0;
+    cursor: pointer;
+    font: inherit;
+    color: var(--ink);
+  }
+  .theme-track {
+    position: relative;
+    width: 52px;
+    height: 30px;
+    border-radius: 999px;
+    background: var(--line);
+    border: 1.5px solid var(--line-soft);
+    box-sizing: border-box;
+    flex: none;
+    transition: background 0.2s;
+  }
+  .theme-knob {
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: 23px;
+    height: 23px;
+    border-radius: 999px;
+    background: var(--accent);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.2s;
+  }
+  .dark .theme-knob {
+    transform: translateX(22px);
+  }
+  .theme-switch:focus-visible {
+    outline: 3px solid var(--accent);
+    outline-offset: 3px;
+    border-radius: 999px;
+  }
+  .theme-sun {
+    display: block;
+  }
+  .theme-moon {
+    display: none;
+  }
+  .dark .theme-sun {
+    display: none;
+  }
+  .dark .theme-moon {
+    display: block;
+  }
+
+  @media (max-width: 900px) {
+    .nav-mega-grid {
+      grid-template-columns: minmax(0, 1fr);
+    }
+    .nav-divider {
+      height: 1px;
+      width: auto;
+    }
+    .nav-item.mega > .nav-dropdown {
+      left: 16px;
+      right: 16px;
+    }
+    .nav-burger {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
+      border: 1.5px solid var(--line-strong);
+      background: transparent;
+      cursor: pointer;
+      box-sizing: border-box;
+    }
+    .nav-burger:focus-visible {
+      outline: 3px solid var(--accent);
+      outline-offset: 2px;
+    }
+    .site-nav {
+      display: none;
+      flex-basis: 100%;
+      flex-direction: column;
+      align-items: stretch;
+      gap: 0;
+      padding-top: 8px;
+    }
+    .site-nav[data-open] {
+      display: flex;
+    }
+    .nav-item {
+      border-bottom: 1px solid var(--line);
+    }
+    .nav-trigger {
+      width: 100%;
+      justify-content: space-between;
+      padding: 16px 0;
+      border-bottom: 0;
+    }
+    .nav-trigger.active {
+      border-bottom: 0;
+      color: var(--accent);
+    }
+    .nav-dropdown,
+    .nav-item.mega > .nav-dropdown {
+      display: block !important;
+      position: static;
+      padding: 0 0 12px;
+      min-width: 0;
+      max-width: none;
+    }
+    .nav-panel {
+      box-shadow: none;
+      border: 0;
+      padding: 0;
+      background: transparent;
+      border-radius: 0;
+    }
+    .site-nav > a {
+      margin-top: 16px;
+      justify-content: center;
+    }
+    .theme-switch {
+      margin: 12px 0 4px;
+      align-self: flex-start;
+    }
+  }
+
+  /* ── FAQ accordions and form fields ────────────────────────────────── */
+  .faq summary {
+    list-style: none;
+    cursor: pointer;
+  }
+  .faq summary::-webkit-details-marker {
+    display: none;
+  }
+  .faq[open] .faq-plus {
+    transform: rotate(45deg);
+  }
+  .field:focus {
+    outline: none;
+    border-color: var(--accent) !important;
+  }
+  .chip-link {
+    display: inline-flex;
+    align-items: center;
+    min-height: 40px;
+    padding: 0 16px;
+    border-radius: 999px;
+    border: 1px solid var(--line);
+    background: var(--surface);
+    color: var(--contrast);
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+  .chip-link:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+  }
+  .data-table {
+    width: 100%;
+    min-width: 760px;
+    border-collapse: collapse;
+  }
+
+  /* ── Scroll reveal: boxes slide in as they reach the screen.
+     Without browser support everything is shown directly. ─────────────── */
+  @keyframes vera-in-left {
+    from {
+      opacity: 0;
+      transform: translateX(-90px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  @keyframes vera-in-right {
+    from {
+      opacity: 0;
+      transform: translateX(90px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  @keyframes vera-in-up {
+    from {
+      opacity: 0;
+      transform: translateY(60px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  @keyframes vera-in-soft {
+    from {
+      opacity: 0;
+      transform: translateY(48px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  @supports (animation-timeline: view()) {
+    .reveal-left {
+      animation: vera-in-left linear both;
+      animation-timeline: view();
+      animation-range: entry 0% cover 30%;
+    }
+    .reveal-right {
+      animation: vera-in-right linear both;
+      animation-timeline: view();
+      animation-range: entry 0% cover 30%;
+    }
+    .reveal-up {
+      animation: vera-in-up linear both;
+      animation-timeline: view();
+      animation-range: entry 0% cover 30%;
+    }
+    .reveal-soft {
+      animation: vera-in-soft linear both;
+      animation-timeline: view();
+      animation-range: entry 0% cover 25%;
+    }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .reveal-left,
+    .reveal-right,
+    .reveal-up,
+    .reveal-soft {
+      animation: none !important;
+    }
+  }
+
+  /* ── Pricing: company / private toggle, plan cards, savings calculator ── */
+  .pf-in {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+  }
+  #pf-f:checked ~ .pf-main .only-p {
+    display: none !important;
+  }
+  #pf-p:checked ~ .pf-main .only-f {
+    display: none !important;
+  }
+  .pf-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 52px;
+    min-width: 180px;
+    padding: 0 28px;
+    border-radius: 999px;
+    border: 1.5px solid var(--line-strong);
+    background: var(--surface);
+    color: var(--ink);
+    font-weight: 700;
+    font-size: 14px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition:
+      background 0.15s,
+      color 0.15s;
+  }
+  #pf-f:checked ~ .pf-main label[for="pf-f"],
+  #pf-p:checked ~ .pf-main label[for="pf-p"] {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: var(--ink-inverse);
+  }
+  #pf-f:focus-visible ~ .pf-main label[for="pf-f"],
+  #pf-p:focus-visible ~ .pf-main label[for="pf-p"] {
+    outline: 3px solid var(--contrast);
+    outline-offset: 3px;
+  }
+  .pcards-f {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
+    max-width: 960px;
+    margin: 0 auto;
+  }
+  .pcards-f .wide {
+    grid-column: 1/-1;
+  }
+  .pcards-p {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+  @media (max-width: 900px) {
+    .pcards-p {
+      grid-template-columns: minmax(0, 1fr);
+    }
+  }
+  @media (max-width: 700px) {
+    .pcards-f {
+      grid-template-columns: minmax(0, 1fr);
+    }
+  }
+  .calc-box {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--surface);
+    border: 2px solid var(--line);
+    border-radius: 14px;
+    padding: 0 18px;
+    min-height: 64px;
+    box-sizing: border-box;
+  }
+  .calc-box:focus-within {
+    border-color: var(--accent);
+  }
+  .calc-in {
+    flex: 1;
+    min-width: 0;
+    border: 0;
+    outline: 0;
+    background: transparent;
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 30px;
+    color: var(--ink);
+    padding: 10px 0;
+  }
+  .calc-in::placeholder {
+    color: var(--ink-faint);
+  }
+  .calc-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 24px;
+  }
+
+  /* ── Start page: hero grid, lifting cards, live app mock ───────────── */
+  .lv-hero {
+    background-color: var(--lv-hero-bg);
+    background-image:
+      linear-gradient(rgba(248, 249, 250, 0.05) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(248, 249, 250, 0.05) 1px, transparent 1px);
+    background-size: 48px 48px;
+  }
+  .lv-lift {
+    box-shadow:
+      0 1px 2px rgba(33, 37, 41, 0.06),
+      0 10px 28px rgba(33, 37, 41, 0.07);
+    transition:
+      transform 0.25s ease,
+      box-shadow 0.25s ease;
+  }
+  .lv-lift:hover {
+    transform: translateY(-4px);
+    box-shadow:
+      0 2px 4px rgba(33, 37, 41, 0.06),
+      0 20px 44px rgba(33, 37, 41, 0.14);
+  }
+  .lv-mock {
+    box-shadow: 0 30px 70px rgba(0, 0, 0, 0.35);
+  }
+  @keyframes lv-dot {
+    0%,
+    80%,
+    100% {
+      opacity: 0.25;
+    }
+    40% {
+      opacity: 1;
+    }
+  }
+  .lv-dots span {
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    border-radius: 999px;
+    background: var(--lv-acc);
+    margin-left: 3px;
+    animation: lv-dot 1.4s infinite;
+  }
+  .lv-dots span:nth-child(2) {
+    animation-delay: 0.2s;
+  }
+  .lv-dots span:nth-child(3) {
+    animation-delay: 0.4s;
+  }
+  @keyframes lv-fill {
+    from {
+      width: 0;
+    }
+    to {
+      width: 92%;
+    }
+  }
+  .lv-bar {
+    width: 92%;
+    animation: lv-fill 1.8s ease-out 0.3s both;
+  }
+  @keyframes lv-in {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: none;
+    }
+  }
+  .lv-row {
+    animation: lv-in 0.5s ease-out both;
+  }
+  .lv-row:nth-child(2) {
+    animation-delay: 0.15s;
+  }
+  .lv-row:nth-child(3) {
+    animation-delay: 0.3s;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .lv-lift,
+    .lv-dots span,
+    .lv-bar,
+    .lv-row {
+      animation: none;
+      transition: none;
+    }
+    .lv-lift:hover {
+      transform: none;
+    }
+  }
 }

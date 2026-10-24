@@ -30,6 +30,7 @@ export const metadata: Metadata = {
   },
   description:
     "Vera är ett team av AI-agenter som förbereder bokföringen, bevakar marknaden och tar fram underlag för era beslut. Ni granskar och godkänner.",
+  robots: { index: false, follow: false },
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {

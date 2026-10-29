@@ -79,7 +79,7 @@ export const NAV_SECTIONS: NavSection[] = [
           {
             href: "/priser#paket",
             title: "Eget paket",
-            description: "Flera agenter till paketpris.",
+            description: "Flera agenter med rabatt.",
             icon: ICONS.layers,
           },
         ],
@@ -185,7 +185,7 @@ export const NAV_SECTIONS: NavSection[] = [
           {
             href: "/priser#sa-gar-det-till",
             title: "Så går det till",
-            description: "Demo, testmånad, engångspris.",
+            description: "Demo, testmånad, månadspris.",
             icon: ICONS.page,
           },
           {

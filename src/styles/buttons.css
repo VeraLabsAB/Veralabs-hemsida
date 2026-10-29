@@ -1,0 +1,64 @@
+/* ── Knappar (DESIGN-GLASS.md §2, §7, §8, §9.4) ───────────────────────────
+   Markup:  <a class="btn btn--primary">   tonad glasknapp – EN per vy
+            <a class="btn btn--secondary"> otonad glasknapp
+   Tillägg: .theme-dark / .theme-inverse (tokens.css) när knappen ligger på
+            ett mörkt band; .btn--sm (40 px, headern); .btn--flat när knappen
+            ligger INUTI en annan glasyta (headern, mobilpanelen) – då är den
+            solid, Apple: gruppera i stället för glas-på-glas.
+   Glaset (fyllning, kant, oskärpa, hover-fyllning) ligger i glass.css, som
+   tar med .btn--primary/.btn--secondary i sina väljare. Här finns bara
+   form, typografi, rörelse och fokus. ──────────────────────────────────── */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  box-sizing: border-box;
+  min-height: 52px;
+  padding: 0 28px;
+  margin: 0;
+  border-radius: var(--r-pill);
+  font-family: var(--font-sans);
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-align: center;
+  text-decoration: none;
+  white-space: nowrap;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  transition:
+    background-color var(--t-hover) var(--ease-glass),
+    border-color var(--t-hover) var(--ease-glass),
+    box-shadow var(--t-hover) var(--ease-glass),
+    transform var(--t-hover) var(--ease-glass);
+}
+.btn:hover {
+  transform: translateY(-1px);
+}
+.btn:active {
+  transform: scale(0.98);
+  transition-duration: var(--t-press);
+}
+.btn:focus-visible {
+  outline: 2px solid var(--text-head);
+  outline-offset: 3px;
+}
+.btn--sm {
+  min-height: 40px;
+  padding: 0 20px;
+  font-size: 13px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .btn {
+    transition: none;
+  }
+  .btn:hover,
+  .btn:active {
+    transform: none;
+  }
+}

@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import type { Metadata } from "next";
 
@@ -9,30 +10,27 @@ export const metadata: Metadata = {
 export default function HomePage() {
   return (
     <div className="lv-page">
-      <div className="lv-hero text-[#F8F9FA]">
-        <div className="mx-auto my-0 px-10 pt-20 pb-24 gap-14 max-w-[1200px] box-border flex flex-wrap items-center">
+      {/* Drar upp bandet bakom header-pillen (12 + 56 px, 12 + 48 på mobil) så att rutnätet går ända upp,
+          och fyller minst hela första skärmen med innehållet lodrätt centrerat. */}
+      <div className="lv-hero text-snow -mt-[68px] pt-[68px] max-[900px]:-mt-[60px] max-[900px]:pt-[60px] min-h-dvh box-border flex items-center">
+        <div className="mx-auto my-0 px-10 pt-20 pb-24 gap-14 w-full max-w-[1200px] box-border flex flex-wrap items-center">
           <div className="flex-[1_1_440px] min-w-0">
-            <div className="mb-6 px-3.5 py-1.5 rounded-full inline-block bg-[rgba(248,249,250,0.08)] border border-[rgba(248,249,250,0.18)] text-[#E9ECEF] text-[13px] font-semibold tracking-[0.14em] uppercase">
+            <div className="mb-6 px-3.5 py-1.5 rounded-full inline-block bg-snow/8 border border-snow/18 text-platinum text-[13px] font-semibold tracking-[0.14em] uppercase">
               AI-agenter för företag
             </div>
-            <h1 className="mx-0 mt-0 mb-6 font-display font-bold uppercase tracking-[0.01em] text-[clamp(30px,4.4vw,46px)] leading-[1.05] wrap-break-word text-[#F8F9FA]">
+            <h1 className="mx-0 mt-0 mb-6 font-display font-bold uppercase tracking-[0.01em] text-[clamp(30px,4.4vw,46px)] leading-[1.05] wrap-break-word text-snow">
               Mindre administration. Mer företag.
             </h1>
-            <p className="mx-0 mt-0 mb-8 text-[18px] leading-[1.65] text-[#CED4DA] font-sans max-w-[520px]">
+            <p className="mx-0 mt-0 mb-8 text-[18px] leading-[1.65] text-pale-1 font-sans max-w-[520px]">
               Vera är ett team av AI-agenter som förbereder bokföringen, bevakar marknaden och tar fram underlag för era
               beslut. Ni granskar och godkänner.
             </p>
             <div className="gap-3 flex flex-wrap">
-              <a
-                className="px-7 py-0 rounded-full inline-flex items-center justify-center min-h-13 bg-[#B0C4DE] text-[#212529] no-underline font-bold text-[14px] tracking-[0.1em] uppercase"
-                href="#kontakt"
-              >
+              {/* The hero band is Shadow Grey in both modes, so the buttons always use the dark token set. */}
+              <a className="btn btn--primary theme-dark" href="#kontakt">
                 Boka en demo
               </a>
-              <a
-                className="px-7 py-0 gap-2.5 rounded-full inline-flex items-center justify-center min-h-13 border-[1.5px] border-[#ADB5BD] text-[#F8F9FA] no-underline font-bold text-[14px] tracking-[0.1em] uppercase"
-                href="#sa"
-              >
+              <a className="btn btn--secondary theme-dark" href="#sa">
                 <svg width="14" height="14" viewBox="0 0 14 14" aria-hidden="true">
                   <path d="M3 1.5l9 5.5-9 5.5z" fill="currentColor" />
                 </svg>
@@ -103,8 +101,11 @@ export default function HomePage() {
           </div>
         </div>
       </div>
-      <div className="bg-surface border-t border-t-line border-b border-b-line" id="sa">
-        <div className="mx-auto my-0 px-10 py-22 max-w-[1200px] box-border">
+      {/* Varje del av startsidan är en egen skärm på desktop (min-[900px]:min-h-dvh, innehållet lodrätt
+          centrerat) och sektionerna växlar mellan sidbakgrund och kortyta i stället för streck.
+          Hugos beslut 2026-10-30. py-20 håller innehållet fritt från den klistrade headern. */}
+      <div className="min-[900px]:min-h-dvh box-border flex items-center scroll-mt-20" id="sa">
+        <div className="mx-auto my-0 px-10 py-20 w-full max-w-[1200px] box-border">
           <div className="gap-12 flex flex-wrap items-center">
             <div className="flex-[1_1_380px] min-w-0">
               <div className="mb-5 px-3.5 py-1.5 rounded-full inline-block bg-chip text-contrast text-[13px] font-semibold tracking-[0.14em] uppercase">
@@ -127,12 +128,25 @@ export default function HomePage() {
                 </div>
                 <div className="text-[13px] font-bold tracking-[0.14em] uppercase">Demo · 2 min</div>
                 <div className="text-[14px] leading-[1.5] text-ink-inverse-soft max-w-[340px]">
-                  Plats för demovideon.
+                  Demofilmen kommer snart. Boka en demo så visar vi live.
                 </div>
               </div>
             </div>
           </div>
-          <div className="mt-14 gap-6 grid grid-cols-[repeat(auto-fit,minmax(260px,1fr))]">
+        </div>
+      </div>
+      {/* De tre stegen fick en egen skärm när demo-sektionen delades. */}
+      <div className="bg-surface min-[900px]:min-h-dvh box-border flex items-center scroll-mt-20" id="hur">
+        <div className="mx-auto my-0 px-10 py-20 w-full max-w-[1200px] box-border">
+          <div className="mb-10 max-w-[720px]">
+            <div className="mb-5 px-3.5 py-1.5 rounded-full inline-block bg-chip text-contrast text-[13px] font-semibold tracking-[0.14em] uppercase">
+              Så fungerar det
+            </div>
+            <h2 className="m-0 font-display font-bold uppercase tracking-[0.01em] text-[clamp(28px,6.5vw,42px)] leading-[1.05] wrap-break-word">
+              Tre steg. Ni bestämmer.
+            </h2>
+          </div>
+          <div className="gap-6 grid grid-cols-[repeat(auto-fit,minmax(260px,1fr))]">
             <div className="lv-lift p-7 gap-3.5 rounded-[20px] border-0 min-w-0 box-border wrap-break-word bg-page flex flex-col">
               <div className="rounded-xl w-12 h-12 bg-chip flex items-center justify-center flex-none">
                 <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true">
@@ -233,7 +247,7 @@ export default function HomePage() {
           </div>
         </div>
       </div>
-      <div className="mx-auto my-0 px-10 py-22 max-w-[1200px] box-border">
+      <div className="mx-auto my-0 px-10 py-20 max-w-[1200px] box-border min-[900px]:min-h-dvh flex flex-col justify-center">
         <div className="mb-10 max-w-[720px]">
           <div className="mb-5 px-3.5 py-1.5 rounded-full inline-block bg-chip text-contrast text-[13px] font-semibold tracking-[0.14em] uppercase">
             Agenter
@@ -344,22 +358,16 @@ export default function HomePage() {
           </Link>
         </div>
       </div>
-      <div className="mx-auto my-0 px-10 pt-0 pb-22 gap-6 max-w-[1200px] box-border flex flex-wrap">
-        <div className="p-6 gap-2 rounded-[20px] flex-[1_1_320px] min-w-0 aspect-[4/3] border-2 border-dashed border-lv-ph-line bg-lv-ph flex flex-col items-center justify-center box-border text-center font-sans">
-          <svg width="28" height="28" viewBox="0 0 24 24" aria-hidden="true">
-            <path
-              d="M4 5h16v14H4z M4 15l5-5 4 4 3-3 4 4 M15 9h.01"
-              fill="none"
-              stroke="var(--lv-muted)"
-              strokeWidth="1.8"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            />
-          </svg>
-          <div className="text-[12px] font-bold tracking-[0.14em] uppercase text-lv-ink">Plats för bild</div>
-          <div className="text-[14px] leading-[1.5] text-lv-muted max-w-[320px]">
-            En butik, ett kontor eller en kassa i vardagen. Visar vilka Vera är till för.
-          </div>
+      <div className="bg-surface min-[900px]:min-h-dvh box-border flex items-center">
+      <div className="mx-auto my-0 px-10 py-20 gap-6 w-full max-w-[1200px] box-border flex flex-wrap">
+        <div className="relative flex-[1_1_320px] min-w-0 aspect-[4/3] overflow-hidden rounded-[20px]">
+          <Image
+            src="/images/butik-kassa.jpg"
+            alt="Butiksägare tar emot en kortbetalning vid kassan"
+            fill
+            sizes="(min-width: 1280px) 580px, (min-width: 768px) 45vw, 100vw"
+            className="object-cover"
+          />
         </div>
         <div className="p-6 gap-2 rounded-[20px] flex-[1_1_320px] min-w-0 aspect-[4/3] border-2 border-dashed border-lv-ph-line bg-lv-ph flex flex-col items-center justify-center box-border text-center font-sans">
           <svg width="28" height="28" viewBox="0 0 24 24" aria-hidden="true">
@@ -378,8 +386,9 @@ export default function HomePage() {
           </div>
         </div>
       </div>
-      <div className="bg-surface-muted" id="trygghet">
-        <div className="mx-auto my-0 px-10 py-22 gap-14 max-w-[1200px] box-border flex flex-wrap items-center">
+      </div>
+      <div className="min-[900px]:min-h-dvh box-border flex items-center scroll-mt-20" id="trygghet">
+        <div className="mx-auto my-0 px-10 py-20 gap-14 w-full max-w-[1200px] box-border flex flex-wrap items-center">
           <div className="flex-[1_1_420px] min-w-0">
             <h2 className="mx-0 mt-0 mb-4 font-display font-bold uppercase tracking-[0.01em] text-[clamp(28px,6.5vw,42px)] leading-[1.05] wrap-break-word">
               Kontroll som standard.
@@ -472,7 +481,8 @@ export default function HomePage() {
           </div>
         </div>
       </div>
-      <div className="mx-auto my-0 px-10 py-18 max-w-[1200px] box-border text-center">
+      <div className="bg-surface min-[900px]:min-h-dvh box-border flex items-center">
+      <div className="mx-auto my-0 px-10 py-20 w-full max-w-[1200px] box-border text-center">
         <div className="mb-5 px-3.5 py-1.5 rounded-full inline-block bg-chip text-contrast text-[13px] font-semibold tracking-[0.14em] uppercase">
           Integrationer
         </div>
@@ -482,40 +492,41 @@ export default function HomePage() {
         <div className="mt-8 gap-4 flex flex-col">
           <div className="gap-3 flex flex-wrap items-center justify-center">
             <span className="mr-1 text-[13px] font-bold tracking-[0.12em] uppercase text-contrast">Bokföring:</span>
-            <span className="px-4.5 py-2.5 rounded-full bg-surface border border-line font-display font-bold text-[16px] tracking-[0.02em]">
+            <span className="px-4.5 py-2.5 rounded-full bg-page border border-line font-display font-bold text-[16px] tracking-[0.02em]">
               Fortnox
             </span>
-            <span className="px-4.5 py-2.5 rounded-full bg-surface border border-line font-display font-bold text-[16px] tracking-[0.02em]">
+            <span className="px-4.5 py-2.5 rounded-full bg-page border border-line font-display font-bold text-[16px] tracking-[0.02em]">
               Bokio
             </span>
-            <span className="px-4.5 py-2.5 rounded-full bg-surface border border-line font-display font-bold text-[16px] tracking-[0.02em]">
+            <span className="px-4.5 py-2.5 rounded-full bg-page border border-line font-display font-bold text-[16px] tracking-[0.02em]">
               Spiris
             </span>
-            <span className="px-4.5 py-2.5 rounded-full bg-surface border border-line font-display font-bold text-[16px] tracking-[0.02em]">
+            <span className="px-4.5 py-2.5 rounded-full bg-page border border-line font-display font-bold text-[16px] tracking-[0.02em]">
               Visma eEkonomi
             </span>
           </div>
           <div className="gap-3 flex flex-wrap items-center justify-center">
             <span className="mr-1 text-[13px] font-bold tracking-[0.12em] uppercase text-contrast">Kassa:</span>
-            <span className="px-4.5 py-2.5 rounded-full bg-surface border border-line font-display font-bold text-[16px] tracking-[0.02em]">
+            <span className="px-4.5 py-2.5 rounded-full bg-page border border-line font-display font-bold text-[16px] tracking-[0.02em]">
               Zettle
             </span>
-            <span className="px-4.5 py-2.5 rounded-full bg-surface border border-line font-display font-bold text-[16px] tracking-[0.02em]">
+            <span className="px-4.5 py-2.5 rounded-full bg-page border border-line font-display font-bold text-[16px] tracking-[0.02em]">
               SumUp
             </span>
-            <span className="px-4.5 py-2.5 rounded-full bg-surface border border-line font-display font-bold text-[16px] tracking-[0.02em]">
+            <span className="px-4.5 py-2.5 rounded-full bg-page border border-line font-display font-bold text-[16px] tracking-[0.02em]">
               Trivec
             </span>
           </div>
         </div>
       </div>
-      <div className="bg-surface border-t border-t-line border-b border-b-line">
-        <div className="mx-auto my-0 px-10 py-22 max-w-[1200px] box-border">
+      </div>
+      <div className="min-[900px]:min-h-dvh box-border flex items-center">
+        <div className="mx-auto my-0 px-10 py-20 w-full max-w-[1200px] box-border">
           <h2 className="mx-0 mt-0 mb-8 font-display font-bold uppercase tracking-[0.01em] text-[clamp(28px,6.5vw,42px)] leading-[1.05] wrap-break-word">
             Jämför alternativen.
           </h2>
           <div className="overflow-x-auto">
-            <table className="w-full min-w-[640px] border-collapse">
+            <table className="cmp-table w-full min-w-[640px] border-collapse">
               <thead>
                 <tr>
                   <th className="p-4 text-left text-[12px] font-bold tracking-[0.12em] uppercase text-ink-soft border-b-2 border-b-line" />
@@ -535,13 +546,13 @@ export default function HomePage() {
                   <td className="p-4 border-b border-b-line align-top leading-[1.45] font-sans text-[13px] font-bold tracking-[0.08em]">
                     Vem utför arbetet?
                   </td>
-                  <td className="p-4 border-b border-b-line align-top font-sans text-[16px] leading-[1.45]">
+                  <td data-label="Göra själv" className="p-4 border-b border-b-line align-top font-sans text-[16px] leading-[1.45]">
                     Ni, på kvällar och helger
                   </td>
-                  <td className="p-4 border-b border-b-line align-top font-sans text-[16px] leading-[1.45]">
+                  <td data-label="Konsulter" className="p-4 border-b border-b-line align-top font-sans text-[16px] leading-[1.45]">
                     En konsult per område
                   </td>
-                  <td className="p-4 border-b border-b-line align-top font-sans text-[16px] leading-[1.45] bg-chip text-contrast font-bold">
+                  <td data-label="Vera" className="p-4 border-b border-b-line align-top font-sans text-[16px] leading-[1.45] bg-chip text-contrast font-bold">
                     Specialiserade agenter som samarbetar
                   </td>
                 </tr>
@@ -549,13 +560,13 @@ export default function HomePage() {
                   <td className="p-4 border-b border-b-line align-top leading-[1.45] font-sans text-[13px] font-bold tracking-[0.08em]">
                     Tillgänglighet
                   </td>
-                  <td className="p-4 border-b border-b-line align-top font-sans text-[16px] leading-[1.45]">
+                  <td data-label="Göra själv" className="p-4 border-b border-b-line align-top font-sans text-[16px] leading-[1.45]">
                     När tiden finns
                   </td>
-                  <td className="p-4 border-b border-b-line align-top font-sans text-[16px] leading-[1.45]">
+                  <td data-label="Konsulter" className="p-4 border-b border-b-line align-top font-sans text-[16px] leading-[1.45]">
                     Kontorstid
                   </td>
-                  <td className="p-4 border-b border-b-line align-top font-sans text-[16px] leading-[1.45] bg-chip text-contrast font-bold">
+                  <td data-label="Vera" className="p-4 border-b border-b-line align-top font-sans text-[16px] leading-[1.45] bg-chip text-contrast font-bold">
                     Alltid
                   </td>
                 </tr>
@@ -563,13 +574,13 @@ export default function HomePage() {
                   <td className="p-4 border-b border-b-line align-top leading-[1.45] font-sans text-[13px] font-bold tracking-[0.08em]">
                     Kännedom om ert företag
                   </td>
-                  <td className="p-4 border-b border-b-line align-top font-sans text-[16px] leading-[1.45]">
+                  <td data-label="Göra själv" className="p-4 border-b border-b-line align-top font-sans text-[16px] leading-[1.45]">
                     Hög, men tiden räcker inte
                   </td>
-                  <td className="p-4 border-b border-b-line align-top font-sans text-[16px] leading-[1.45]">
+                  <td data-label="Konsulter" className="p-4 border-b border-b-line align-top font-sans text-[16px] leading-[1.45]">
                     Växer med uppdraget
                   </td>
-                  <td className="p-4 border-b border-b-line align-top font-sans text-[16px] leading-[1.45] bg-chip text-contrast font-bold">
+                  <td data-label="Vera" className="p-4 border-b border-b-line align-top font-sans text-[16px] leading-[1.45] bg-chip text-contrast font-bold">
                     Bygger på er regelbok och historik
                   </td>
                 </tr>
@@ -577,14 +588,14 @@ export default function HomePage() {
                   <td className="p-4 border-b border-b-line align-top leading-[1.45] font-sans text-[13px] font-bold tracking-[0.08em]">
                     Prismodell
                   </td>
-                  <td className="p-4 border-b border-b-line align-top font-sans text-[16px] leading-[1.45]">
+                  <td data-label="Göra själv" className="p-4 border-b border-b-line align-top font-sans text-[16px] leading-[1.45]">
                     Er arbetstid
                   </td>
-                  <td className="p-4 border-b border-b-line align-top font-sans text-[16px] leading-[1.45]">
+                  <td data-label="Konsulter" className="p-4 border-b border-b-line align-top font-sans text-[16px] leading-[1.45]">
                     Timpris eller månadsavgift
                   </td>
-                  <td className="p-4 border-b border-b-line align-top font-sans text-[16px] leading-[1.45] bg-chip text-contrast font-bold">
-                    Engångspris per agent
+                  <td data-label="Vera" className="p-4 border-b border-b-line align-top font-sans text-[16px] leading-[1.45] bg-chip text-contrast font-bold">
+                    Fast månadspris per agent
                   </td>
                 </tr>
               </tbody>
@@ -600,12 +611,13 @@ export default function HomePage() {
           </div>
         </div>
       </div>
-      <div className="mx-auto my-0 px-10 py-22 max-w-[1200px] box-border">
+      <div className="bg-surface min-[900px]:min-h-dvh box-border flex items-center">
+      <div className="mx-auto my-0 px-10 py-20 w-full max-w-[1200px] box-border">
         <h2 className="mx-0 mt-0 mb-8 font-display font-bold uppercase tracking-[0.01em] text-[clamp(28px,6.5vw,42px)] leading-[1.05] wrap-break-word">
           Kundröster
         </h2>
         <div className="gap-6 grid grid-cols-[repeat(auto-fit,minmax(300px,1fr))]">
-          <figure className="m-0 p-7 gap-4.5 rounded-[20px] bg-surface border border-line min-w-0 box-border wrap-break-word flex flex-col">
+          <figure className="m-0 p-7 gap-4.5 rounded-[20px] bg-page border border-line min-w-0 box-border wrap-break-word flex flex-col">
             <span className="px-2.5 py-[3px] rounded-full self-start border border-line-soft text-[11px] font-bold tracking-[0.12em] uppercase text-ink-soft">
               Exempelcitat
             </span>
@@ -616,7 +628,7 @@ export default function HomePage() {
               Anna Berg · Ägare, Exempelbutiken AB
             </figcaption>
           </figure>
-          <figure className="m-0 p-7 gap-4.5 rounded-[20px] bg-surface border border-line min-w-0 box-border wrap-break-word flex flex-col">
+          <figure className="m-0 p-7 gap-4.5 rounded-[20px] bg-page border border-line min-w-0 box-border wrap-break-word flex flex-col">
             <span className="px-2.5 py-[3px] rounded-full self-start border border-line-soft text-[11px] font-bold tracking-[0.12em] uppercase text-ink-soft">
               Exempelcitat
             </span>
@@ -629,7 +641,8 @@ export default function HomePage() {
           </figure>
         </div>
       </div>
-      <div className="mx-auto my-0 px-10 py-22 gap-12 max-w-[1200px] box-border flex flex-wrap items-center">
+      </div>
+      <div className="mx-auto my-0 px-10 py-20 gap-12 max-w-[1200px] box-border flex flex-wrap items-center min-[900px]:min-h-dvh content-center">
         <div className="p-5 gap-2.5 rounded-[20px] flex-[0_1_280px] min-w-0 aspect-[4/5] border-2 border-dashed border-line-soft bg-surface-muted flex flex-col items-center justify-center text-center box-border">
           <svg width="36" height="36" viewBox="0 0 24 24" aria-hidden="true">
             <path
@@ -666,10 +679,8 @@ export default function HomePage() {
           </div>
         </div>
       </div>
-      <div
-        className="mx-auto my-0 px-10 py-22 gap-14 max-w-[1200px] box-border flex flex-wrap items-start"
-        id="kontakt"
-      >
+      <div className="bg-surface min-[900px]:min-h-dvh box-border flex items-center scroll-mt-20" id="kontakt">
+      <div className="mx-auto my-0 px-10 py-20 gap-14 w-full max-w-[1200px] box-border flex flex-wrap items-start">
         <div className="flex-[1_1_360px] min-w-0">
           <div className="mb-5 px-3.5 py-1.5 rounded-full inline-block bg-chip text-contrast text-[13px] font-semibold tracking-[0.14em] uppercase">
             Kontakt
@@ -722,7 +733,7 @@ export default function HomePage() {
           </div>
         </div>
         <form
-          className="p-8 gap-4.5 rounded-[20px] flex-[1_1_440px] bg-surface border border-line min-w-0 box-border wrap-break-word flex flex-col shadow-[0_30px_70px_rgba(33,37,41,0.08)]"
+          className="p-8 gap-4.5 rounded-[20px] flex-[1_1_440px] bg-page border border-line min-w-0 box-border wrap-break-word flex flex-col shadow-[0_30px_70px_rgba(33,37,41,0.08)]"
           action="mailto:hej@veralabs.se?subject=Boka%20ett%20samtal"
           method="post"
           encType="text/plain"
@@ -804,7 +815,7 @@ export default function HomePage() {
             />
           </label>
           <button
-            className="px-7 py-0 rounded-full inline-flex items-center justify-center min-h-13 bg-accent text-ink-inverse border-[1.5px] border-accent no-underline font-bold text-[14px] tracking-[0.1em] uppercase cursor-pointer font-sans w-full"
+            className="btn btn--primary w-full"
             type="submit"
           >
             Skicka förfrågan
@@ -813,6 +824,7 @@ export default function HomePage() {
             Uppgifterna används bara för att kontakta er om demon.
           </div>
         </form>
+      </div>
       </div>
     </div>
   );

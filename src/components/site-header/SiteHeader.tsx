@@ -2,9 +2,29 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useEffect, useState } from "react";
+import {
+  useEffect,
+  useRef,
+  useState,
+  useSyncExternalStore,
+  type FocusEvent,
+  type KeyboardEvent,
+} from "react";
 import { NAV_SECTIONS, type NavLink, type NavSection } from "./navigation";
 import { ThemeToggle } from "./ThemeToggle";
+
+/* Same breakpoint as the @media rules for .site-header/.site-nav in globals.css.
+   On mobile the whole menu is ONE glass panel, so the dropdown panels inside
+   it must not be glass themselves (Apple: group related controls). */
+const MOBILE_QUERY = "(max-width: 900px)";
+
+function subscribeMobile(onChange: () => void) {
+  const mq = matchMedia(MOBILE_QUERY);
+  mq.addEventListener("change", onChange);
+  return () => mq.removeEventListener("change", onChange);
+}
+const isMobileNow = () => matchMedia(MOBILE_QUERY).matches;
+const useIsMobile = () => useSyncExternalStore(subscribeMobile, isMobileNow, () => false);
 
 function isActive(section: NavSection, pathname: string) {
   return section.match.some((prefix) => pathname === prefix || pathname.startsWith(prefix + "/"));
@@ -32,7 +52,7 @@ function DropdownLink({ link }: { link: NavLink }) {
         <path
           d={link.icon}
           fill="none"
-          stroke="var(--accent)"
+          stroke="var(--text-head)"
           strokeWidth="1.8"
           strokeLinecap="round"
           strokeLinejoin="round"
@@ -51,30 +71,140 @@ export function Logo() {
     <Link href="/" className="flex items-center gap-2.5 text-ink no-underline" aria-label="Vera Labs, till startsidan">
       <svg className="flex-none" width="34" height="34" viewBox="0 0 452 452" aria-hidden="true">
         <rect width="452" height="452" rx="100" fill="var(--logo-sq)" />
-        <path d="M78 105H155L226 266L190 345Z" fill="#F8F9FA" />
-        <path d="M297 105H373L261 345H190Z" fill="#6C757D" />
+        <path d="M78 105H155L226 266L190 345Z" fill="var(--c-snow)" />
+        <path d="M297 105H373L261 345H190Z" fill="var(--c-slate)" />
       </svg>
       <span className="inline-flex items-baseline gap-[0.45em] whitespace-nowrap leading-none">
         <span className="font-display text-[25px] font-bold tracking-[0.03em] text-logo-ink">VERA</span>
-        <span className="font-sans text-[23px] font-normal tracking-[0.2em] text-[#6C757D]">LABS</span>
+        <span className="font-sans text-[23px] font-normal tracking-[0.2em] text-slate">LABS</span>
       </span>
     </Link>
   );
 }
 
+type DropdownProps = {
+  section: NavSection;
+  index: number;
+  active: boolean;
+  open: boolean;
+  mobile: boolean;
+  onOpenChange: (open: boolean) => void;
+};
+
+/** One menu section: trigger button + glass panel. Hover opens for the mouse (CSS);
+ *  Enter/Space toggles, Esc closes and keeps focus on the button, arrows move between rows. */
+function NavDropdown({ section, index, active, open, mobile, onOpenChange }: DropdownProps) {
+  const itemRef = useRef<HTMLDivElement>(null);
+  const triggerRef = useRef<HTMLButtonElement>(null);
+  const pendingFocus = useRef<"first" | "last" | null>(null);
+  const panelId = `nav-panel-${index}`;
+  const mega = section.groups.length > 1;
+
+  const links = () => Array.from(itemRef.current?.querySelectorAll<HTMLAnchorElement>("a.nav-link") ?? []);
+
+  // After the panel has opened (and become visible), move focus into it if an arrow key asked for it.
+  useEffect(() => {
+    if (!open || !pendingFocus.current) return;
+    const items = Array.from(itemRef.current?.querySelectorAll<HTMLAnchorElement>("a.nav-link") ?? []);
+    const target = pendingFocus.current === "first" ? items[0] : items[items.length - 1];
+    pendingFocus.current = null;
+    target?.focus();
+  }, [open]);
+
+  const onKeyDown = (e: KeyboardEvent<HTMLDivElement>) => {
+    if (mobile) return;
+    if (e.key === "Escape") {
+      if (!open) return;
+      e.preventDefault();
+      onOpenChange(false);
+      triggerRef.current?.focus();
+      return;
+    }
+    if (e.key !== "ArrowDown" && e.key !== "ArrowUp") return;
+    e.preventDefault();
+    if (!open) {
+      pendingFocus.current = e.key === "ArrowDown" ? "first" : "last";
+      onOpenChange(true);
+      return;
+    }
+    const items = links();
+    if (items.length === 0) return;
+    const i = items.indexOf(document.activeElement as HTMLAnchorElement);
+    const next = e.key === "ArrowDown" ? (i + 1) % items.length : (i - 1 + items.length) % items.length;
+    items[next].focus();
+  };
+
+  // Close when focus leaves the whole section (Tab past the last row, or a click elsewhere).
+  const onBlur = (e: FocusEvent<HTMLDivElement>) => {
+    if (mobile || !open) return;
+    if (!itemRef.current?.contains(e.relatedTarget as Node | null)) onOpenChange(false);
+  };
+
+  return (
+    <div
+      ref={itemRef}
+      className={mega ? "nav-item mega" : "nav-item"}
+      data-open={open || undefined}
+      onKeyDown={onKeyDown}
+      onBlur={onBlur}
+    >
+      <button
+        ref={triggerRef}
+        className={active ? "nav-trigger active" : "nav-trigger"}
+        type="button"
+        aria-expanded={mobile || open}
+        aria-controls={panelId}
+        onClick={() => onOpenChange(!open)}
+      >
+        {section.label}
+        <Chevron />
+      </button>
+      <div className="nav-dropdown">
+        <div id={panelId} className={mobile ? "nav-panel" : "nav-panel glass glass--strong"}>
+          {mega ? (
+            <div className="nav-mega-grid">
+              {section.groups.map((group, i) => (
+                <div key={group.heading} className="contents">
+                  {i > 0 && <div className="nav-divider" />}
+                  <div>
+                    <div className="nav-heading">{group.heading}</div>
+                    {group.links.map((link) => (
+                      <DropdownLink key={link.href} link={link} />
+                    ))}
+                  </div>
+                </div>
+              ))}
+            </div>
+          ) : (
+            section.groups[0].links.map((link) => <DropdownLink key={link.href + link.title} link={link} />)
+          )}
+        </div>
+      </div>
+    </div>
+  );
+}
+
 export function SiteHeader() {
   const pathname = usePathname();
+  const mobile = useIsMobile();
   // The mobile menu remembers the page it was opened on, so it closes after navigating.
   const [openOn, setOpenOn] = useState<string | null>(null);
   const menuOpen = openOn === pathname;
+  // Which desktop dropdown is pinned open by keyboard or click (hover is pure CSS).
+  const [openSection, setOpenSection] = useState<string | null>(null);
 
-  // Drop focus after navigating so a dropdown opened by keyboard or click closes too.
+  // After navigating: close any pinned dropdown and drop focus so nothing stays highlighted.
   useEffect(() => {
+    setOpenSection(null);
     if (document.activeElement instanceof HTMLElement) document.activeElement.blur();
   }, [pathname]);
 
   return (
-    <header className="relative z-60 mx-auto box-border flex max-w-[1200px] flex-wrap items-center justify-between gap-4 px-10 py-6">
+    <header className="site-header">
+      {/* The glass sits on its own layer behind the content; see the comment at .site-header in globals.css.
+          --strong: the header scrolls over the worst backgrounds (a Snow card in dark mode, the Shadow hero
+          in light mode), and only the stronger fill keeps the menu text at 4.5:1 there (§9.1). */}
+      <div className="site-header-glass glass glass--large glass--strong" aria-hidden="true" />
       <Logo />
       <button
         className="nav-burger"
@@ -85,50 +215,36 @@ export function SiteHeader() {
         onClick={() => setOpenOn(menuOpen ? null : pathname)}
       >
         <svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true">
-          <path d="M4 7h16 M4 12h16 M4 17h16" fill="none" stroke="var(--ink)" strokeWidth="2" strokeLinecap="round" />
+          <path d="M4 7h16 M4 12h16 M4 17h16" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
         </svg>
       </button>
-      <nav id="site-nav" className="site-nav" data-open={menuOpen || undefined} aria-label="Huvudmeny">
+      <nav
+        id="site-nav"
+        className={mobile ? "site-nav glass glass--strong" : "site-nav"}
+        data-open={menuOpen || undefined}
+        aria-label="Huvudmeny"
+      >
         <ThemeToggle />
-        {NAV_SECTIONS.map((section) => {
-          const mega = section.groups.length > 1;
-          return (
-            <div key={section.label} className={mega ? "nav-item mega" : "nav-item"}>
-              <button className={isActive(section, pathname) ? "nav-trigger active" : "nav-trigger"} type="button">
-                {section.label}
-                <Chevron />
-              </button>
-              <div className="nav-dropdown">
-                <div className="nav-panel">
-                  {mega ? (
-                    <div className="nav-mega-grid">
-                      {section.groups.map((group, i) => (
-                        <div key={group.heading} className="contents">
-                          {i > 0 && <div className="nav-divider" />}
-                          <div>
-                            <div className="nav-heading">{group.heading}</div>
-                            {group.links.map((link) => (
-                              <DropdownLink key={link.href} link={link} />
-                            ))}
-                          </div>
-                        </div>
-                      ))}
-                    </div>
-                  ) : (
-                    section.groups[0].links.map((link) => <DropdownLink key={link.href + link.title} link={link} />)
-                  )}
-                </div>
-              </div>
-            </div>
-          );
-        })}
-        <Link
-          href="/#kontakt"
-          className="inline-flex min-h-12 items-center rounded-xl bg-accent px-6 text-[14px] font-bold tracking-[0.1em] text-ink-inverse uppercase no-underline"
-        >
+        {NAV_SECTIONS.map((section, index) => (
+          <NavDropdown
+            key={section.label}
+            section={section}
+            index={index}
+            active={isActive(section, pathname)}
+            open={openSection === section.label}
+            mobile={mobile}
+            onOpenChange={(next) =>
+              setOpenSection((prev) => (next ? section.label : prev === section.label ? null : prev))
+            }
+          />
+        ))}
+        {/* Flat: it sits inside the header's glass, so it must not be glass itself (Apple: group controls). */}
+        <Link href="/#kontakt" className="btn btn--primary btn--sm btn--flat">
           Boka en demo
         </Link>
       </nav>
+      {/* Scroll-edge effect (§8): a 24 px blurred band under the pill, keeps the controls readable. */}
+      <span className="scroll-edge" aria-hidden="true" />
     </header>
   );
 }

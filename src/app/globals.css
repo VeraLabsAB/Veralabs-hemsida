@@ -2,84 +2,89 @@
 @layer theme, base, components, utilities;
 @import "tailwindcss/theme.css" layer(theme);
 @import "tailwindcss/utilities.css" layer(utilities);
+/* All colours live in the tokens file (the only file allowed to hold hex). */
+@import "../styles/tokens.css";
+/* The glass class and its fallback ladder (the only file allowed to hold the blur filter). */
+@import "../styles/glass.css" layer(components);
+/* Button shape, motion and focus; the glass part of buttons lives in glass.css. */
+@import "../styles/buttons.css" layer(components);
 
-/* ── Design tokens: "light steel" with a light and a dark mode ─────────── */
+/* ── Alias: the old variable names, now pointing at the tokens ─────────────
+   The ~2 000 Tailwind classes in the pages (bg-surface, text-ink …) keep
+   working untouched. Light mode here, dark mode below. Start page tokens
+   (--lv-*) share the same scale; the steel-blue accent is gone. ────────── */
 :root {
-  --page: #f8f9fa;
-  --surface: #ffffff;
-  --surface-muted: #e9ecef;
-  --chip: #e9ecef;
-  --line: #dee2e6;
-  --line-faint: #e9ecef;
-  --line-soft: #adb5bd;
-  --line-strong: #212529;
-  --contrast: #212529;
-  --contrast-soft: #495057;
-  --accent: #343a40;
-  --ink: #212529;
-  --ink-soft: #495057;
-  --ink-muted: #6c757d;
-  --ink-faint: #adb5bd;
-  --ink-inverse: #f8f9fa;
-  --ink-inverse-soft: #dee2e6;
-  --logo-sq: #000000;
-  --logo-ink: #000000;
+  --page: var(--bg-page);
+  --surface: var(--bg-surface);
+  --surface-muted: var(--c-alabaster);
+  --chip: var(--c-alabaster);
+  --line: var(--border);
+  --line-faint: var(--c-platinum);
+  --line-soft: var(--c-pale-2);
+  --line-strong: var(--c-shadow);
+  --contrast: var(--c-shadow);
+  --contrast-soft: var(--c-iron);
+  --accent: var(--btn-bg);
+  --ink: var(--text-head);
+  --ink-soft: var(--text-body);
+  --ink-muted: var(--text-muted);
+  --ink-faint: var(--c-pale-2);
+  --ink-inverse: var(--btn-text);
+  --ink-inverse-soft: var(--c-alabaster);
+  --logo-sq: var(--c-gunmetal);
+  --logo-ink: var(--text-head);
+  --lv-hero-bg: var(--c-shadow);
+  --lv-card: var(--bg-surface);
+  --lv-ink: var(--text-head);
+  --lv-muted: var(--text-muted);
+  --lv-line: var(--border);
+  --lv-acc: var(--btn-bg);
+  --lv-acc-ink: var(--btn-text);
+  --lv-soft: var(--c-platinum);
+  --lv-ph: var(--c-platinum);
+  --lv-ph-line: var(--c-pale-2);
   color-scheme: light;
 }
 
-:root.dark {
-  --page: #000000;
-  --surface: #212529;
-  --surface-muted: #212529;
-  --chip: #343a40;
-  --line: #343a40;
-  --line-faint: #343a40;
-  --line-soft: #495057;
-  --line-strong: #ced4da;
-  --contrast: #e9ecef;
-  --contrast-soft: #dee2e6;
-  --accent: #f8f9fa;
-  --ink: #f8f9fa;
-  --ink-soft: #ced4da;
-  --ink-muted: #adb5bd;
-  --ink-faint: #6c757d;
-  --ink-inverse: #212529;
-  --ink-inverse-soft: #495057;
-  --logo-sq: #212529;
-  --logo-ink: #f8f9fa;
+:root[data-theme="dark"] {
+  --surface-muted: var(--c-gunmetal);
+  --chip: var(--c-iron);
+  --line-faint: var(--c-gunmetal);
+  --line-soft: var(--c-slate);
+  --line-strong: var(--c-pale-1);
+  --contrast: var(--c-platinum);
+  --contrast-soft: var(--c-alabaster);
+  --ink-faint: var(--c-slate);
+  --ink-inverse-soft: var(--c-iron);
+  --logo-sq: var(--c-gunmetal);
+  --lv-soft: var(--c-iron);
+  --lv-ph: var(--c-shadow);
+  --lv-ph-line: var(--c-iron);
   color-scheme: dark;
 }
 
-/* Start page ("levande"): one steel-blue accent, cards with depth, small motion. */
-:root:has(.lv-page) {
-  --accent: #4a6a8a;
-  --lv-hero-bg: #212529;
-  --lv-card: #f8f9fa;
-  --lv-ink: #212529;
-  --lv-muted: #6c757d;
-  --lv-line: #dee2e6;
-  --lv-acc: #4a6a8a;
-  --lv-acc-ink: #f8f9fa;
-  --lv-soft: #e9ecef;
-  --lv-ph: #e9ecef;
-  --lv-ph-line: #adb5bd;
-}
-
-:root.dark:has(.lv-page) {
-  --accent: #b0c4de;
-  --lv-hero-bg: #212529;
-  --lv-card: #343a40;
-  --lv-ink: #f8f9fa;
-  --lv-muted: #adb5bd;
-  --lv-line: #495057;
-  --lv-acc: #b0c4de;
-  --lv-acc-ink: #212529;
-  --lv-soft: #495057;
-  --lv-ph: #212529;
-  --lv-ph-line: #495057;
-}
-
 @theme inline {
+  /* Light Steel directly: bg-snow, text-slate, border-alabaster …
+     Obs: skriv text-(color:--c-shadow), inte text-shadow, eftersom Tailwind
+     har egna text-shadow-*-verktyg och namnet blir tvetydigt. */
+  --color-snow: var(--c-snow);
+  --color-platinum: var(--c-platinum);
+  --color-alabaster: var(--c-alabaster);
+  --color-pale-1: var(--c-pale-1);
+  --color-pale-2: var(--c-pale-2);
+  --color-slate: var(--c-slate);
+  --color-iron: var(--c-iron);
+  --color-gunmetal: var(--c-gunmetal);
+  --color-shadow: var(--c-shadow);
+
+  /* Radii from the tokens. Named by role so they do not override
+     Tailwind's own rounded-xl/lg/md/sm, which the pages already use. */
+  --radius-pill: var(--r-pill);
+  --radius-panel: var(--r-xl);
+  --radius-card: var(--r-lg);
+  --radius-field: var(--r-md);
+  --radius-chip: var(--r-sm);
+
   --color-page: var(--page);
   --color-surface: var(--surface);
   --color-surface-muted: var(--surface-muted);
@@ -132,19 +137,81 @@
   a:hover {
     color: var(--contrast);
   }
+
+  /* ── The light field (DESIGN-GLASS.md §5): two–three large, very soft
+     Light Steel spots behind every page, so glass has something to blur.
+     Fixed, behind the content, never animated. ──────────────────────── */
+  .light-field {
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    background:
+      radial-gradient(60vw 40vh at 15% 10%, var(--c-snow) 0%, transparent 70%),
+      radial-gradient(50vw 50vh at 85% 30%, var(--c-alabaster) 0%, transparent 70%),
+      radial-gradient(70vw 40vh at 50% 95%, var(--c-snow) 0%, transparent 70%),
+      var(--bg-page);
+  }
+  :root[data-theme="dark"] .light-field {
+    background:
+      radial-gradient(60vw 40vh at 15% 10%, var(--c-gunmetal) 0%, transparent 70%),
+      radial-gradient(50vw 50vh at 85% 30%, var(--c-iron) 0%, transparent 70%),
+      radial-gradient(70vw 40vh at 50% 95%, var(--c-gunmetal) 0%, transparent 70%),
+      var(--bg-page);
+  }
 }
 
 @layer components {
-  /* ── Header navigation ─────────────────────────────────────────────── */
+  /* ── Header: flytande glas-pill (DESIGN-GLASS.md §2, §7) ──────────────
+     Själva <header> är klistrad och bär geometrin (12 px från toppen, 16 px
+     in från kanterna, höjd 56/48 px, pill-radie). Glaset ligger på ett eget
+     lager BAKOM innehållet (.site-header-glass), inte på headern själv:
+     en förälder med oskärpefilter blir "backdrop root" för sina barn, och
+     då skulle rullgardinerna bara kunna sudda headerns eget innehåll, inte
+     sidan bakom. Rullgardinerna och mobilpanelen är därför syskon till
+     glaslagret. ─────────────────────────────────────────────────────── */
+  /* Headern tar 12 + 56 px i flödet (12 + 48 på mobil). Band som ska gå
+     ända upp bakom pillen (startsidans .lv-hero) drar sig upp med samma
+     mått, se page.tsx. */
+  .site-header {
+    position: sticky;
+    top: 12px;
+    z-index: 60;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    height: 56px;
+    /* Linjerar med textkolumnen: sidinnehållet är max 1200 px med 40 px
+       luft på var sida (px-10), så pillen är max 1120 px och 40 px in.
+       Hugos beslut 2026-10-30; spec §7 säger 16 px, som gäller på mobil. */
+    width: calc(100% - 80px);
+    max-width: 1120px;
+    margin: 12px auto 0;
+    padding: 0 12px 0 24px;
+    border-radius: var(--r-pill);
+    color: var(--text-head);
+  }
+  .site-header-glass {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    border-radius: inherit;
+    pointer-events: none;
+  }
   .site-nav {
     display: flex;
-    flex-wrap: wrap;
-    gap: 28px;
     align-items: center;
+    align-self: stretch;
+    gap: 28px;
     font-size: 16px;
   }
   .nav-item {
     position: relative;
+    display: flex;
+    align-items: center;
+    height: 100%;
   }
   .nav-item.mega {
     position: static;
@@ -160,38 +227,53 @@
     margin: 0;
     font: inherit;
     font-size: 16px;
-    color: var(--ink);
+    color: var(--text-head);
     text-transform: uppercase;
     cursor: pointer;
   }
   .nav-trigger.active {
     border-bottom-color: var(--accent);
   }
+  .nav-trigger:focus-visible {
+    outline: 2px solid var(--text-head);
+    outline-offset: 3px;
+    border-radius: 6px;
+  }
+  /* Rullgardin: 8 px under headern, tonas in med opacitet + liten
+     förflyttning (§8, 200 ms). Oskärpan animeras aldrig – den sitter på
+     .nav-panel (.glass) och berörs inte av övergången här. */
   .nav-dropdown {
-    display: none;
     position: absolute;
     top: 100%;
     left: -18px;
     z-index: 70;
-    padding-top: 12px;
+    padding-top: 8px;
     min-width: 340px;
     max-width: 92vw;
+    visibility: hidden;
+    opacity: 0;
+    transform: translateY(-6px) scale(0.98);
+    transition:
+      opacity var(--t-menu) var(--ease-glass),
+      transform var(--t-menu) var(--ease-glass),
+      visibility 0s linear var(--t-menu);
   }
   .nav-item:hover > .nav-dropdown,
-  .nav-item:focus-within > .nav-dropdown {
-    display: block;
+  .nav-item[data-open] > .nav-dropdown {
+    visibility: visible;
+    opacity: 1;
+    transform: none;
+    transition-delay: 0s;
   }
+  /* Megamenyn: samma bredd som menyraden (header-pillen), §7 / fråga 9. */
   .nav-item.mega > .nav-dropdown {
-    left: 40px;
-    right: 40px;
+    left: 0;
+    right: 0;
     min-width: 0;
   }
   .nav-panel {
-    background: var(--surface);
-    border: 1px solid var(--line);
-    border-radius: 20px;
-    box-shadow: 0 24px 60px rgba(33, 37, 41, 0.14);
     padding: 28px;
+    border-radius: var(--r-xl);
     text-align: left;
   }
   .nav-mega-grid {
@@ -200,17 +282,18 @@
     gap: 32px;
   }
   .nav-divider {
-    background: var(--line);
+    background: var(--border);
   }
   .nav-heading {
     font-size: 13px;
     font-weight: 700;
     letter-spacing: 0.14em;
     text-transform: uppercase;
-    color: var(--contrast);
+    color: var(--text-head);
     margin: 0 0 12px 12px;
     text-align: left;
   }
+  /* Menyrader: vanliga rader inuti glaspanelen, ikon och text i --text-head (§9.3). */
   .nav-link {
     display: flex;
     gap: 14px;
@@ -218,11 +301,15 @@
     padding: 12px;
     border-radius: 12px;
     text-decoration: none;
-    color: var(--ink);
+    color: var(--text-head);
     text-align: left;
   }
   .nav-link:hover {
-    background: var(--page);
+    background: var(--chip);
+  }
+  .nav-link:focus-visible {
+    outline: 2px solid var(--text-head);
+    outline-offset: 2px;
   }
   .nav-link-title {
     display: block;
@@ -277,6 +364,9 @@
     flex: none;
     transition: background 0.2s;
   }
+  /* Knoppen: skalas upp 10 % medan switchen trycks (§8, 150 ms) och blir
+     glas under tiden (regeln i glass.css). `scale` är en egen egenskap så
+     att den inte krockar med translateX för mörkt läge. */
   .theme-knob {
     position: absolute;
     top: 2px;
@@ -288,13 +378,18 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: transform 0.2s;
+    transition:
+      transform 0.2s,
+      scale var(--t-switch) var(--ease-glass);
   }
-  .dark .theme-knob {
+  :root[data-theme="dark"] .theme-knob {
     transform: translateX(22px);
   }
+  .theme-switch:active .theme-knob {
+    scale: 1.1;
+  }
   .theme-switch:focus-visible {
-    outline: 3px solid var(--accent);
+    outline: 2px solid var(--text-head);
     outline-offset: 3px;
     border-radius: 999px;
   }
@@ -304,54 +399,65 @@
   .theme-moon {
     display: none;
   }
-  .dark .theme-sun {
+  :root[data-theme="dark"] .theme-sun {
     display: none;
   }
-  .dark .theme-moon {
+  :root[data-theme="dark"] .theme-moon {
     display: block;
   }
 
+  /* ── Mobil (≤ 900 px, samma gräns som MOBILE_QUERY i SiteHeader.tsx):
+     pillen blir 48 px hög och menyn öppnas som en egen glass--strong-panel
+     8 px under den (fråga 10). Undermenyerna visas utfällda som vanliga
+     rader; glasklasserna på .nav-panel tas bort i JSX på mobil. ──────── */
   @media (max-width: 900px) {
-    .nav-mega-grid {
-      grid-template-columns: minmax(0, 1fr);
-    }
-    .nav-divider {
-      height: 1px;
-      width: auto;
-    }
-    .nav-item.mega > .nav-dropdown {
-      left: 16px;
-      right: 16px;
+    .site-header {
+      height: 48px;
+      width: calc(100% - 32px);
+      padding: 0 4px 0 16px;
     }
     .nav-burger {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      width: 48px;
-      height: 48px;
-      border-radius: 12px;
-      border: 1.5px solid var(--line-strong);
+      width: 40px;
+      height: 40px;
+      border-radius: var(--r-pill);
+      border: 0;
       background: transparent;
+      color: var(--text-head);
       cursor: pointer;
       box-sizing: border-box;
     }
     .nav-burger:focus-visible {
-      outline: 3px solid var(--accent);
-      outline-offset: 2px;
+      outline: 2px solid var(--text-head);
+      outline-offset: 3px;
     }
     .site-nav {
       display: none;
-      flex-basis: 100%;
+      position: absolute;
+      top: calc(100% + 8px);
+      left: 0;
+      right: 0;
+      align-self: auto;
       flex-direction: column;
       align-items: stretch;
       gap: 0;
-      padding-top: 8px;
+      box-sizing: border-box;
+      padding: 8px 16px 16px;
+      border-radius: var(--r-xl);
+      max-height: calc(100dvh - 48px - 12px - 8px - 12px);
+      overflow-y: auto;
     }
     .site-nav[data-open] {
       display: flex;
     }
-    .nav-item {
-      border-bottom: 1px solid var(--line);
+    .nav-item,
+    .nav-item.mega {
+      position: relative;
+      display: block;
+      height: auto;
+      border-bottom: 1px solid var(--border);
     }
     .nav-trigger {
       width: 100%;
@@ -365,18 +471,25 @@
     }
     .nav-dropdown,
     .nav-item.mega > .nav-dropdown {
-      display: block !important;
       position: static;
+      visibility: visible;
+      opacity: 1;
+      transform: none;
+      transition: none;
       padding: 0 0 12px;
       min-width: 0;
       max-width: none;
     }
     .nav-panel {
-      box-shadow: none;
-      border: 0;
       padding: 0;
-      background: transparent;
       border-radius: 0;
+    }
+    .nav-mega-grid {
+      grid-template-columns: minmax(0, 1fr);
+    }
+    .nav-divider {
+      height: 1px;
+      width: auto;
     }
     .site-nav > a {
       margin-top: 16px;
@@ -426,6 +539,53 @@
     width: 100%;
     min-width: 760px;
     border-collapse: collapse;
+  }
+
+  /* Jämförelsetabeller blir kort på små skärmar: Vera först, sedan övriga */
+  @media (max-width: 720px) {
+    .cmp-table {
+      min-width: 0 !important;
+    }
+    .cmp-table thead {
+      display: none;
+    }
+    .cmp-table tbody {
+      display: block;
+    }
+    .cmp-table tr {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      padding: 18px 0;
+      border-bottom: 1px solid var(--line);
+    }
+    .cmp-table td {
+      display: block;
+      padding: 0 !important;
+      border: 0 !important;
+    }
+    .cmp-table td:first-child {
+      order: -2;
+      font-size: 12px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--ink-soft);
+    }
+    .cmp-table td:last-child {
+      order: -1;
+      padding: 12px 14px !important;
+      border-radius: 12px;
+    }
+    .cmp-table td[data-label]::before {
+      content: attr(data-label);
+      display: block;
+      margin-bottom: 2px;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      opacity: 0.65;
+    }
   }
 
   /* ── Scroll reveal: boxes slide in as they reach the screen.
@@ -607,6 +767,9 @@
   }
 
   /* ── Start page: hero grid, lifting cards, live app mock ───────────── */
+  /* Bandet dras upp bakom header-pillen med Tailwind-klasser i page.tsx
+     (-mt-[68px] pt-[68px], 60 på mobil): skrivna här i samma regel som
+     bakgrunden tappade optimeraren dem. */
   .lv-hero {
     background-color: var(--lv-hero-bg);
     background-image:

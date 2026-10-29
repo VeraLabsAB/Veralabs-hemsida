@@ -47,7 +47,7 @@ export default function PrivatpersonerPage() {
               Samlar dina kalendrar, löser krockar och skyddar tiden som betyder mest.
             </p>
             <div className="mt-auto pt-4 gap-3 flex justify-between items-center border-t border-t-line-faint">
-              <span className="text-[13px] font-semibold text-ink-soft">Engångspris, inkl. moms</span>
+              <span className="text-[13px] font-semibold text-ink-soft">Per månad, inkl. moms</span>
               <span className="text-[12px] font-bold tracking-[0.12em] uppercase text-accent">Läs mer →</span>
             </div>
           </Link>
@@ -74,7 +74,7 @@ export default function PrivatpersonerPage() {
               Träningspass och måltider anpassade efter ditt mål och ditt schema.
             </p>
             <div className="mt-auto pt-4 gap-3 flex justify-between items-center border-t border-t-line-faint">
-              <span className="text-[13px] font-semibold text-ink-soft">Engångspris, inkl. moms</span>
+              <span className="text-[13px] font-semibold text-ink-soft">Per månad, inkl. moms</span>
               <span className="text-[12px] font-bold tracking-[0.12em] uppercase text-accent">Läs mer →</span>
             </div>
           </Link>
@@ -101,7 +101,7 @@ export default function PrivatpersonerPage() {
               Överblick över utgifterna och en realistisk plan för ditt sparande.
             </p>
             <div className="mt-auto pt-4 gap-3 flex justify-between items-center border-t border-t-line-faint">
-              <span className="text-[13px] font-semibold text-ink-soft">Engångspris, inkl. moms</span>
+              <span className="text-[13px] font-semibold text-ink-soft">Per månad, inkl. moms</span>
               <span className="text-[12px] font-bold tracking-[0.12em] uppercase text-accent">Läs mer →</span>
             </div>
           </Link>

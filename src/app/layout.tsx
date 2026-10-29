@@ -44,6 +44,8 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         <script dangerouslySetInnerHTML={{ __html: themeInitScript }} />
       </head>
       <body>
+        {/* Soft Light Steel spots behind every page, so glass surfaces have something to blur (DESIGN-GLASS.md §5). */}
+        <div className="light-field" aria-hidden="true" />
         {/* Slide-in boxes start 90px off to the side; clip so phones can't scroll sideways. */}
         <div className="min-h-screen overflow-x-clip">
           <SiteHeader />

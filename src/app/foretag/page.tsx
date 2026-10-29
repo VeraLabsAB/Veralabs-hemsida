@@ -23,13 +23,13 @@ export default function ForetagPage() {
           </p>
           <div className="gap-3 flex flex-wrap justify-center">
             <Link
-              className="px-7 py-0 rounded-full inline-flex items-center min-h-13 bg-accent text-ink-inverse no-underline font-bold text-[14px] tracking-[0.1em] uppercase"
+              className="btn btn--primary"
               href="/priser"
             >
               Se priser
             </Link>
             <Link
-              className="px-7 py-0 rounded-full inline-flex items-center min-h-13 border-[1.5px] border-line-strong bg-surface text-ink no-underline font-semibold text-[14px] tracking-[0.1em] uppercase"
+              className="btn btn--secondary"
               href="/#kontakt"
             >
               Boka en demo
@@ -375,10 +375,10 @@ export default function ForetagPage() {
             Prissättning
           </h2>
           <p className="mx-auto mt-0 mb-7 text-[17px] leading-[1.6] text-ink-inverse-soft font-serif max-w-[520px] uppercase tracking-[0.03em]">
-            Engångspris per agent, med paketpris när ni väljer flera.
+            Månadspris per agent, med rabatt när ni väljer flera.
           </p>
           <Link
-            className="px-8 py-0 rounded-full inline-flex items-center min-h-13 bg-page text-contrast no-underline font-bold text-[14px] tracking-[0.1em] uppercase"
+            className="btn btn--primary theme-inverse"
             href="/priser"
           >
             Se priser

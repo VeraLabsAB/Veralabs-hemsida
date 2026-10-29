@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { Logo } from "@/components/site-header/SiteHeader";
 
 const COLUMNS = [
   {
@@ -39,20 +40,7 @@ export function SiteFooter() {
       <div className="mx-auto box-border max-w-[1200px] px-10 pt-14 pb-7">
         <div className="flex flex-wrap gap-x-8 gap-y-10">
           <div className="min-w-0 flex-[2_1_260px]">
-            <Link href="/" className="inline-flex items-center gap-2.5 text-ink no-underline">
-              <svg width="28" height="28" viewBox="0 0 32 32" aria-hidden="true">
-                <rect width="32" height="32" rx="9" fill="var(--accent)" />
-                <path
-                  d="M9 16.5l4.5 4.5L23 11.5"
-                  fill="none"
-                  stroke="var(--ink-inverse)"
-                  strokeWidth="3"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-              </svg>
-              <span className="font-brand text-[22px] tracking-[0.01em] whitespace-nowrap">VeraAI</span>
-            </Link>
+            <Logo />
             <p className="mx-0 mt-4 mb-0 max-w-[320px] text-[14px] leading-[1.6] text-ink-soft">
               AI-agenter som tar hand om administrationen, så att ni kan fokusera på verksamheten.
             </p>

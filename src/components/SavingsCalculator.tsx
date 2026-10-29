@@ -130,7 +130,7 @@ export function SavingsCalculator() {
             </div>
           </div>
           <p className="mx-0 mt-6 mb-0 text-[17px] leading-[1.6] font-serif text-ink uppercase tracking-[0.03em] text-center">
-            Arbete som Vera kan ta över, värt ungefär <strong>{valueText}</strong> per år. Jämför med engångspriset på
+            Arbete som Vera kan ta över, värt ungefär <strong>{valueText}</strong> per år. Jämför med månadspriset på
             XXX kr.
           </p>
           <p className="mx-0 mt-4 mb-0 text-[13px] leading-[1.5] text-ink-muted">
@@ -139,7 +139,7 @@ export function SavingsCalculator() {
           </p>
           <div className="mt-6 text-center">
             <Link
-              className="px-8 py-0 rounded-full inline-flex items-center min-h-13 bg-accent text-ink-inverse no-underline font-bold text-[14px] tracking-[0.1em] uppercase"
+              className="btn btn--primary"
               href="/#kontakt"
             >
               Få en prisuppskattning

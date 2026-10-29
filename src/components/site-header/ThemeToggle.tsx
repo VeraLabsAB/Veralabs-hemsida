@@ -3,22 +3,25 @@
 import { useSyncExternalStore } from "react";
 
 const STORAGE_KEY = "vera-theme";
+/** Dark mode is data-theme="dark" on <html>; light mode has no attribute. The tokens key on it. */
+const THEME_ATTR = "data-theme";
 
 function subscribe(onChange: () => void) {
   const observer = new MutationObserver(onChange);
-  observer.observe(document.documentElement, { attributes: true, attributeFilter: ["class"] });
+  observer.observe(document.documentElement, { attributes: true, attributeFilter: [THEME_ATTR] });
   return () => observer.disconnect();
 }
 
-const isDark = () => document.documentElement.classList.contains("dark");
+const isDark = () => document.documentElement.getAttribute(THEME_ATTR) === "dark";
 
-/** Light/dark switch. The initial class is set before paint by the script in the root layout. */
+/** Light/dark switch. The initial attribute is set before paint by the script in the root layout. */
 export function ThemeToggle() {
   const dark = useSyncExternalStore(subscribe, isDark, () => false);
 
   const toggle = () => {
     const next = !dark;
-    document.documentElement.classList.toggle("dark", next);
+    if (next) document.documentElement.setAttribute(THEME_ATTR, "dark");
+    else document.documentElement.removeAttribute(THEME_ATTR);
     try {
       localStorage.setItem(STORAGE_KEY, next ? "dark" : "light");
     } catch {}
@@ -61,4 +64,4 @@ export function ThemeToggle() {
 }
 
 /** Inline script for <head>: applies the saved or system theme before first paint. */
-export const themeInitScript = `try{var t=localStorage.getItem("${STORAGE_KEY}");if(t?t==="dark":matchMedia("(prefers-color-scheme: dark)").matches)document.documentElement.classList.add("dark")}catch(e){}`;
+export const themeInitScript = `try{var t=localStorage.getItem("${STORAGE_KEY}");if(t?t==="dark":matchMedia("(prefers-color-scheme: dark)").matches)document.documentElement.setAttribute("${THEME_ATTR}","dark")}catch(e){}`;

@@ -242,13 +242,13 @@ export default function OmOssPage() {
           </p>
           <div className="gap-3 flex flex-wrap justify-center">
             <Link
-              className="px-7 py-0 rounded-full inline-flex items-center min-h-13 no-underline font-bold text-[14px] tracking-[0.1em] uppercase bg-page text-contrast"
+              className="btn btn--primary theme-inverse"
               href="/#kontakt"
             >
               Boka en demo
             </Link>
             <Link
-              className="px-7 py-0 rounded-full inline-flex items-center min-h-13 no-underline font-bold text-[14px] tracking-[0.1em] uppercase border-[1.5px] border-ink-inverse text-ink-inverse"
+              className="btn btn--secondary theme-inverse"
               href="/agenter/bokforing"
             >
               Läs om bokföringsagenten

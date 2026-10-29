@@ -97,11 +97,11 @@ export default function PriserPage() {
                 <div className="font-display font-bold text-[26px] tracking-[0.02em] uppercase leading-[1.1]">
                   XXX kr
                   <span className="mt-1 block font-sans text-[12px] font-semibold tracking-[0.1em] text-ink-muted">
-                    Engångspris per agent, exkl. moms
+                    Per månad och agent, exkl. moms
                   </span>
                 </div>
                 <Link
-                  className="mt-auto px-6 py-0 rounded-full self-start inline-flex items-center min-h-11.5 bg-accent text-ink-inverse no-underline font-bold text-[13px] tracking-[0.1em] uppercase"
+                  className="btn btn--primary mt-auto self-start"
                   href="/#kontakt"
                 >
                   Få en prisuppskattning
@@ -170,11 +170,11 @@ export default function PriserPage() {
                 <div className="font-display font-bold text-[26px] tracking-[0.02em] uppercase leading-[1.1]">
                   XXX kr
                   <span className="mt-1 block font-sans text-[12px] font-semibold tracking-[0.1em] text-ink-muted">
-                    Engångspris per agent, exkl. moms
+                    Per månad och agent, exkl. moms
                   </span>
                 </div>
                 <Link
-                  className="mt-auto px-6 py-0 rounded-full self-start inline-flex items-center min-h-11.5 bg-accent text-ink-inverse no-underline font-bold text-[13px] tracking-[0.1em] uppercase"
+                  className="btn btn--primary mt-auto self-start"
                   href="/#kontakt"
                 >
                   Få en prisuppskattning
@@ -243,11 +243,11 @@ export default function PriserPage() {
                 <div className="font-display font-bold text-[26px] tracking-[0.02em] uppercase leading-[1.1]">
                   XXX kr
                   <span className="mt-1 block font-sans text-[12px] font-semibold tracking-[0.1em] text-ink-muted">
-                    Engångspris per agent, exkl. moms
+                    Per månad och agent, exkl. moms
                   </span>
                 </div>
                 <Link
-                  className="mt-auto px-6 py-0 rounded-full self-start inline-flex items-center min-h-11.5 bg-accent text-ink-inverse no-underline font-bold text-[13px] tracking-[0.1em] uppercase"
+                  className="btn btn--primary mt-auto self-start"
                   href="/#kontakt"
                 >
                   Få en prisuppskattning
@@ -316,11 +316,11 @@ export default function PriserPage() {
                 <div className="font-display font-bold text-[26px] tracking-[0.02em] uppercase leading-[1.1]">
                   XXX kr
                   <span className="mt-1 block font-sans text-[12px] font-semibold tracking-[0.1em] text-ink-muted">
-                    Engångspris per agent, exkl. moms
+                    Per månad och agent, exkl. moms
                   </span>
                 </div>
                 <Link
-                  className="mt-auto px-6 py-0 rounded-full self-start inline-flex items-center min-h-11.5 bg-accent text-ink-inverse no-underline font-bold text-[13px] tracking-[0.1em] uppercase"
+                  className="btn btn--primary mt-auto self-start"
                   href="/#kontakt"
                 >
                   Få en prisuppskattning
@@ -337,7 +337,7 @@ export default function PriserPage() {
                   Eget paket
                 </h3>
                 <p className="m-0 text-[16px] leading-[1.55] font-serif text-ink uppercase tracking-[0.03em]">
-                  Två eller fler agenter med samlat pris.
+                  Två eller fler agenter med rabatt.
                 </p>
                 <div className="px-0 pt-4 pb-2 gap-2.5 flex flex-col border-t border-t-line">
                   <div className="gap-2.5 flex items-start">
@@ -388,18 +388,18 @@ export default function PriserPage() {
                       </svg>
                     </span>
                     <span className="text-[14px] font-medium leading-[1.45] tracking-[0.04em] uppercase min-w-0">
-                      Samlat paketpris
+                      Rabatt på månadspriset
                     </span>
                   </div>
                 </div>
                 <div className="font-display font-bold text-[26px] tracking-[0.02em] uppercase leading-[1.1]">
-                  XXX kr
+                  XXX %
                   <span className="mt-1 block font-sans text-[12px] font-semibold tracking-[0.1em] text-ink-muted">
-                    Paketpris, exkl. moms
+                    Rabatt på samlat månadspris
                   </span>
                 </div>
                 <Link
-                  className="mt-auto px-6 py-0 rounded-full self-start inline-flex items-center min-h-11.5 bg-accent text-ink-inverse no-underline font-bold text-[13px] tracking-[0.1em] uppercase"
+                  className="btn btn--primary mt-auto self-start"
                   href="/#kontakt"
                 >
                   Få en prisuppskattning
@@ -470,11 +470,11 @@ export default function PriserPage() {
                 <div className="font-display font-bold text-[26px] tracking-[0.02em] uppercase leading-[1.1]">
                   XXX kr
                   <span className="mt-1 block font-sans text-[12px] font-semibold tracking-[0.1em] text-ink-muted">
-                    Engångspris, inkl. moms
+                    Per månad, inkl. moms
                   </span>
                 </div>
                 <Link
-                  className="mt-auto px-6 py-0 rounded-full self-start inline-flex items-center min-h-11.5 bg-accent text-ink-inverse no-underline font-bold text-[13px] tracking-[0.1em] uppercase"
+                  className="btn btn--primary mt-auto self-start"
                   href="/privat/kalender"
                 >
                   Läs mer
@@ -543,11 +543,11 @@ export default function PriserPage() {
                 <div className="font-display font-bold text-[26px] tracking-[0.02em] uppercase leading-[1.1]">
                   XXX kr
                   <span className="mt-1 block font-sans text-[12px] font-semibold tracking-[0.1em] text-ink-muted">
-                    Engångspris, inkl. moms
+                    Per månad, inkl. moms
                   </span>
                 </div>
                 <Link
-                  className="mt-auto px-6 py-0 rounded-full self-start inline-flex items-center min-h-11.5 bg-accent text-ink-inverse no-underline font-bold text-[13px] tracking-[0.1em] uppercase"
+                  className="btn btn--primary mt-auto self-start"
                   href="/privat/traning"
                 >
                   Läs mer
@@ -616,11 +616,11 @@ export default function PriserPage() {
                 <div className="font-display font-bold text-[26px] tracking-[0.02em] uppercase leading-[1.1]">
                   XXX kr
                   <span className="mt-1 block font-sans text-[12px] font-semibold tracking-[0.1em] text-ink-muted">
-                    Engångspris, inkl. moms
+                    Per månad, inkl. moms
                   </span>
                 </div>
                 <Link
-                  className="mt-auto px-6 py-0 rounded-full self-start inline-flex items-center min-h-11.5 bg-accent text-ink-inverse no-underline font-bold text-[13px] tracking-[0.1em] uppercase"
+                  className="btn btn--primary mt-auto self-start"
                   href="/privat/ekonomi"
                 >
                   Läs mer
@@ -660,10 +660,9 @@ export default function PriserPage() {
             </div>
             <div className="p-7 rounded-2xl bg-page">
               <div className="font-display font-bold text-[44px] text-accent leading-none">3</div>
-              <h3 className="mx-0 mt-3 mb-2.5 text-[16px] font-semibold tracking-[0.1em] uppercase">Engångspris</h3>
+              <h3 className="mx-0 mt-3 mb-2.5 text-[16px] font-semibold tracking-[0.1em] uppercase">Månadspris</h3>
               <p className="mx-0 mt-0 mb-2.5 text-[16px] leading-[1.55] font-serif text-ink uppercase tracking-[0.03em]">
-                XXX kr per agent, eller ett paketpris. Ingen månadsavgift. Support och uppdateringar efter första året:
-                XXX.
+                XXX kr per agent och månad. Väljer ni flera agenter får ni rabatt. Support och uppdateringar ingår.
               </p>
               <p className="mx-0 mt-0 mb-2.5 text-[16px] leading-[1.55] font-serif text-ink uppercase tracking-[0.03em]">
                 Räkna nedan på vad arbetet kostar i dag.
@@ -678,7 +677,7 @@ export default function PriserPage() {
               XXX kr per tjänst
             </div>
             <p className="mx-auto my-0 text-[17px] leading-[1.6] text-ink-inverse-soft font-serif max-w-[520px] uppercase tracking-[0.03em]">
-              Engångspris inklusive moms. Ingen månadsavgift och 30 dagars öppet köp.
+              Månadspris inklusive moms. Support och uppdateringar ingår.
             </p>
           </div>
         </div>
@@ -692,18 +691,18 @@ export default function PriserPage() {
           <div className="gap-5 grid grid-cols-[repeat(auto-fit,minmax(min(320px,100%),1fr))]">
             <div className="p-6 rounded-2xl bg-page">
               <h3 className="mx-0 mt-0 mb-2 text-[15px] font-semibold tracking-[0.08em] uppercase">
-                Vad ingår i engångspriset?
+                Vad ingår i månadspriset?
               </h3>
               <p className="m-0 text-[16px] leading-[1.55] font-serif text-ink uppercase tracking-[0.03em]">
-                Uppstart, regelbok, integrationer, testmånad och agenten.
+                Uppstart, regelbok, integrationer, agenten, support och uppdateringar.
               </p>
             </div>
             <div className="p-6 rounded-2xl bg-page">
               <h3 className="mx-0 mt-0 mb-2 text-[15px] font-semibold tracking-[0.08em] uppercase">
-                Hur fungerar paketpriset?
+                Hur fungerar rabatten?
               </h3>
               <p className="m-0 text-[16px] leading-[1.55] font-serif text-ink uppercase tracking-[0.03em]">
-                Väljer ni flera agenter tas ett samlat pris fram för hela paketet.
+                Väljer ni flera agenter får ni XXX % rabatt på det samlade månadspriset.
               </p>
             </div>
             <div className="p-6 rounded-2xl bg-page">
@@ -716,10 +715,10 @@ export default function PriserPage() {
             </div>
             <div className="p-6 rounded-2xl bg-page">
               <h3 className="mx-0 mt-0 mb-2 text-[15px] font-semibold tracking-[0.08em] uppercase">
-                Vad gäller efter första året?
+                Hur säger vi upp?
               </h3>
               <p className="m-0 text-[16px] leading-[1.55] font-serif text-ink uppercase tracking-[0.03em]">
-                Ingen månadsavgift. Support och uppdateringar efter första året: XXX.
+                Ni betalar per månad och kan säga upp med XXX uppsägningstid.
               </p>
             </div>
             <div className="p-6 rounded-2xl bg-page">
@@ -739,7 +738,7 @@ export default function PriserPage() {
             <div className="p-6 rounded-2xl bg-page">
               <h3 className="mx-0 mt-0 mb-2 text-[15px] font-semibold tracking-[0.08em] uppercase">Är priset fast?</h3>
               <p className="m-0 text-[16px] leading-[1.55] font-serif text-ink uppercase tracking-[0.03em]">
-                Ja. Priset tas fram efter demon och gäller sedan som ett fast engångspris.
+                Ja. Priset tas fram efter demon och gäller sedan som ett fast månadspris.
               </p>
             </div>
           </div>
@@ -761,7 +760,7 @@ export default function PriserPage() {
               Vi tar fram ett pris utifrån ert företag och de agenter ni behöver.
             </p>
             <Link
-              className="px-8 py-0 rounded-full inline-flex items-center min-h-13 bg-page text-contrast no-underline font-bold text-[14px] tracking-[0.1em] uppercase"
+              className="btn btn--primary theme-inverse"
               href="/#kontakt"
             >
               Boka en demo

@@ -23,13 +23,13 @@ export default function TraningPage() {
             </p>
             <div className="gap-3 flex flex-wrap">
               <Link
-                className="px-7 py-0 rounded-full inline-flex items-center justify-center min-h-13 bg-accent text-ink-inverse border-[1.5px] border-accent no-underline font-bold text-[14px] tracking-[0.1em] uppercase"
+                className="btn btn--primary"
                 href="/#kontakt"
               >
                 Kom igång
               </Link>
               <a
-                className="px-7 py-0 rounded-full inline-flex items-center justify-center min-h-13 bg-surface text-ink border-[1.5px] border-line-strong no-underline font-bold text-[14px] tracking-[0.1em] uppercase"
+                className="btn btn--secondary"
                 href="#hur"
               >
                 Så fungerar det
@@ -279,13 +279,13 @@ export default function TraningPage() {
           </div>
           <div className="mt-12 gap-3 flex justify-center flex-wrap">
             <Link
-              className="px-7 py-0 rounded-full inline-flex items-center justify-center min-h-13 bg-accent text-ink-inverse border-[1.5px] border-accent no-underline font-bold text-[14px] tracking-[0.1em] uppercase"
+              className="btn btn--primary"
               href="/#kontakt"
             >
               Kom igång
             </Link>
             <Link
-              className="px-7 py-0 rounded-full inline-flex items-center justify-center min-h-13 bg-surface text-ink border-[1.5px] border-line-strong no-underline font-bold text-[14px] tracking-[0.1em] uppercase"
+              className="btn btn--secondary"
               href="/sa-fungerar-vera"
             >
               Så fungerar Vera
@@ -456,7 +456,7 @@ export default function TraningPage() {
             </p>
           </div>
           <Link
-            className="px-7 py-0 rounded-full inline-flex items-center justify-center min-h-13 bg-accent text-ink-inverse border-[1.5px] border-accent no-underline font-bold text-[14px] tracking-[0.1em] uppercase"
+            className="btn btn--primary"
             href="/#kontakt"
           >
             Kom igång
@@ -819,7 +819,7 @@ export default function TraningPage() {
         </div>
         <div className="mt-12">
           <Link
-            className="px-7 py-0 rounded-full inline-flex items-center justify-center min-h-13 bg-accent text-ink-inverse border-[1.5px] border-accent no-underline font-bold text-[14px] tracking-[0.1em] uppercase"
+            className="btn btn--primary"
             href="/#kontakt"
           >
             Kom igång
@@ -931,7 +931,7 @@ export default function TraningPage() {
                     Per pass eller månad
                   </td>
                   <td className="px-4 py-4.5 border-b border-b-line text-[14px] leading-[1.45] align-top bg-chip font-serif uppercase tracking-[0.03em] font-bold text-contrast">
-                    Engångspris, inkl. moms
+                    Månadspris, inkl. moms
                   </td>
                 </tr>
               </tbody>
@@ -939,13 +939,13 @@ export default function TraningPage() {
           </div>
           <div className="mt-10 gap-3 flex flex-wrap">
             <Link
-              className="px-7 py-0 rounded-full inline-flex items-center justify-center min-h-13 bg-accent text-ink-inverse border-[1.5px] border-accent no-underline font-bold text-[14px] tracking-[0.1em] uppercase"
+              className="btn btn--primary"
               href="/#kontakt"
             >
               Kom igång
             </Link>
             <Link
-              className="px-7 py-0 rounded-full inline-flex items-center justify-center min-h-13 bg-surface text-ink border-[1.5px] border-line-strong no-underline font-bold text-[14px] tracking-[0.1em] uppercase"
+              className="btn btn--secondary"
               href="/priser"
             >
               Se priser
@@ -1238,13 +1238,13 @@ export default function TraningPage() {
           </p>
           <div className="gap-3 flex justify-center flex-wrap">
             <Link
-              className="px-7 py-0 rounded-full inline-flex items-center justify-center min-h-13 bg-page text-contrast border-[1.5px] border-ink-inverse no-underline font-bold text-[14px] tracking-[0.1em] uppercase"
+              className="btn btn--primary theme-inverse"
               href="/#kontakt"
             >
               Kom igång
             </Link>
             <Link
-              className="px-7 py-0 rounded-full inline-flex items-center min-h-13 border-[1.5px] border-surface text-ink-inverse no-underline font-bold text-[14px] tracking-[0.1em] uppercase"
+              className="btn btn--secondary theme-inverse"
               href="/priser"
             >
               Se priser

@@ -325,7 +325,7 @@ export default function SakerhetPage() {
             Vi går igenom hur era uppgifter hanteras.
           </p>
           <Link
-            className="px-8 py-0 rounded-full inline-flex items-center min-h-13 bg-page text-contrast no-underline font-bold text-[14px] tracking-[0.1em] uppercase"
+            className="btn btn--primary theme-inverse"
             href="/#kontakt"
           >
             Boka en demo

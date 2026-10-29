@@ -269,7 +269,7 @@ export default function VanligaFragorPage() {
                 </span>
               </summary>
               <p className="mx-0 mt-0 mb-5.5 text-[18px] leading-[1.6] text-ink font-serif max-w-[760px]">
-                Demon är kostnadsfri. Testmånaden kostar en handläggningsavgift, därefter betalas ett engångspris per
+                Demon är kostnadsfri. Testmånaden kostar en handläggningsavgift, därefter betalas ett månadspris per
                 agent.
               </p>
             </details>
@@ -284,7 +284,7 @@ export default function VanligaFragorPage() {
                 </span>
               </summary>
               <p className="mx-0 mt-0 mb-5.5 text-[18px] leading-[1.6] text-ink font-serif max-w-[760px]">
-                Nej. Vill ni sluta använda Vera avslutas kontot och uppgifterna raderas.
+                Ja. Vera betalas per månad och kan sägas upp med XXX uppsägningstid. När kontot avslutas raderas uppgifterna.
               </p>
             </details>
             <details className="faq border-b border-b-line">
@@ -312,7 +312,7 @@ export default function VanligaFragorPage() {
                 </span>
               </summary>
               <p className="mx-0 mt-0 mb-5.5 text-[18px] leading-[1.6] text-ink font-serif max-w-[760px]">
-                Nej. Vill ni inte fortsätta köper ni inte agenten.
+                Nej. Vill ni inte fortsätta börjar inget månadspris.
               </p>
             </details>
           </div>
@@ -361,7 +361,7 @@ export default function VanligaFragorPage() {
                 </span>
               </summary>
               <p className="mx-0 mt-0 mb-5.5 text-[18px] leading-[1.6] text-ink font-serif max-w-[760px]">
-                Ett engångspris per tjänst, inklusive moms.
+                Ett månadspris per tjänst, inklusive moms.
               </p>
             </details>
             <details className="faq border-b border-b-line">
@@ -391,13 +391,13 @@ export default function VanligaFragorPage() {
           </p>
           <div className="gap-3 flex flex-wrap justify-center">
             <Link
-              className="px-8 py-0 rounded-full inline-flex items-center min-h-13 bg-page text-contrast no-underline font-bold text-[14px] tracking-[0.1em] uppercase"
+              className="btn btn--primary theme-inverse"
               href="/priser"
             >
               Se priser
             </Link>
             <Link
-              className="px-8 py-0 rounded-full inline-flex items-center min-h-13 border-[1.5px] border-ink-inverse text-ink-inverse no-underline font-bold text-[14px] tracking-[0.1em] uppercase"
+              className="btn btn--secondary theme-inverse"
               href="/#kontakt"
             >
               Boka en demo

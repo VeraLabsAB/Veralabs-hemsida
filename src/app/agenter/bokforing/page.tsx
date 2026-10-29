@@ -25,13 +25,13 @@ export default function BokforingPage() {
             </p>
             <div className="gap-3 flex flex-wrap">
               <Link
-                className="px-7 py-0 rounded-full inline-flex items-center justify-center min-h-13 bg-accent text-ink-inverse border-[1.5px] border-accent no-underline font-bold text-[14px] tracking-[0.1em] uppercase"
+                className="btn btn--primary"
                 href="/#kontakt"
               >
                 Boka en demo
               </Link>
               <a
-                className="px-7 py-0 rounded-full inline-flex items-center justify-center min-h-13 bg-surface text-ink border-[1.5px] border-line-strong no-underline font-bold text-[14px] tracking-[0.1em] uppercase"
+                className="btn btn--secondary"
                 href="#hur"
               >
                 Så fungerar det
@@ -413,13 +413,13 @@ export default function BokforingPage() {
           </div>
           <div className="mt-12 gap-3 flex justify-center flex-wrap">
             <Link
-              className="px-7 py-0 rounded-full inline-flex items-center justify-center min-h-13 bg-accent text-ink-inverse border-[1.5px] border-accent no-underline font-bold text-[14px] tracking-[0.1em] uppercase"
+              className="btn btn--primary"
               href="/#kontakt"
             >
               Boka en demo
             </Link>
             <Link
-              className="px-7 py-0 rounded-full inline-flex items-center justify-center min-h-13 bg-surface text-ink border-[1.5px] border-line-strong no-underline font-bold text-[14px] tracking-[0.1em] uppercase"
+              className="btn btn--secondary"
               href="/kom-igang"
             >
               Så kommer ni igång
@@ -934,7 +934,7 @@ export default function BokforingPage() {
             </p>
           </div>
           <Link
-            className="px-7 py-0 rounded-full inline-flex items-center justify-center min-h-13 bg-accent text-ink-inverse border-[1.5px] border-accent no-underline font-bold text-[14px] tracking-[0.1em] uppercase"
+            className="btn btn--primary"
             href="/#kontakt"
           >
             Boka en demo
@@ -1368,7 +1368,7 @@ export default function BokforingPage() {
         </div>
         <div className="mt-12">
           <Link
-            className="px-7 py-0 rounded-full inline-flex items-center justify-center min-h-13 bg-accent text-ink-inverse border-[1.5px] border-accent no-underline font-bold text-[14px] tracking-[0.1em] uppercase"
+            className="btn btn--primary"
             href="/#kontakt"
           >
             Boka en demo
@@ -1383,7 +1383,7 @@ export default function BokforingPage() {
             </h2>
           </div>
           <div className="overflow-x-auto">
-            <table className="data-table">
+            <table className="cmp-table data-table">
               <thead>
                 <tr>
                   <th className="p-4 text-left text-[12px] font-bold tracking-[0.12em] uppercase text-ink-soft border-b-2 border-b-line" />
@@ -1403,13 +1403,13 @@ export default function BokforingPage() {
                   <td className="px-4 py-4.5 border-b border-b-line text-[14px] leading-[1.45] align-top font-semibold tracking-[0.06em] uppercase">
                     Insamling av underlag
                   </td>
-                  <td className="px-4 py-4.5 border-b border-b-line text-[14px] leading-[1.45] align-top font-serif text-ink uppercase tracking-[0.03em]">
+                  <td data-label="Internt" className="px-4 py-4.5 border-b border-b-line text-[14px] leading-[1.45] align-top font-serif text-ink uppercase tracking-[0.03em]">
                     Görs för hand, ofta i efterhand.
                   </td>
-                  <td className="px-4 py-4.5 border-b border-b-line text-[14px] leading-[1.45] align-top font-serif text-ink uppercase tracking-[0.03em]">
+                  <td data-label="Redovisningsbyrå" className="px-4 py-4.5 border-b border-b-line text-[14px] leading-[1.45] align-top font-serif text-ink uppercase tracking-[0.03em]">
                     Ni samlar in och skickar, byrån sorterar.
                   </td>
-                  <td className="px-4 py-4.5 border-b border-b-line text-[14px] leading-[1.45] align-top bg-chip font-serif uppercase tracking-[0.03em] font-bold text-contrast">
+                  <td data-label="Vera" className="px-4 py-4.5 border-b border-b-line text-[14px] leading-[1.45] align-top bg-chip font-serif uppercase tracking-[0.03em] font-bold text-contrast">
                     Hämtas automatiskt när transaktionen sker.
                   </td>
                 </tr>
@@ -1417,13 +1417,13 @@ export default function BokforingPage() {
                   <td className="px-4 py-4.5 border-b border-b-line text-[14px] leading-[1.45] align-top font-semibold tracking-[0.06em] uppercase">
                     Deadlines
                   </td>
-                  <td className="px-4 py-4.5 border-b border-b-line text-[14px] leading-[1.45] align-top font-serif text-ink uppercase tracking-[0.03em]">
+                  <td data-label="Internt" className="px-4 py-4.5 border-b border-b-line text-[14px] leading-[1.45] align-top font-serif text-ink uppercase tracking-[0.03em]">
                     Beror på tid och tillgänglighet.
                   </td>
-                  <td className="px-4 py-4.5 border-b border-b-line text-[14px] leading-[1.45] align-top font-serif text-ink uppercase tracking-[0.03em]">
+                  <td data-label="Redovisningsbyrå" className="px-4 py-4.5 border-b border-b-line text-[14px] leading-[1.45] align-top font-serif text-ink uppercase tracking-[0.03em]">
                     Hålls, om underlaget har kommit in i tid.
                   </td>
-                  <td className="px-4 py-4.5 border-b border-b-line text-[14px] leading-[1.45] align-top bg-chip font-serif uppercase tracking-[0.03em] font-bold text-contrast">
+                  <td data-label="Vera" className="px-4 py-4.5 border-b border-b-line text-[14px] leading-[1.45] align-top bg-chip font-serif uppercase tracking-[0.03em] font-bold text-contrast">
                     Bevakas, med underlag klart i god tid.
                   </td>
                 </tr>
@@ -1431,13 +1431,13 @@ export default function BokforingPage() {
                   <td className="px-4 py-4.5 border-b border-b-line text-[14px] leading-[1.45] align-top font-semibold tracking-[0.06em] uppercase">
                     Kvalitet
                   </td>
-                  <td className="px-4 py-4.5 border-b border-b-line text-[14px] leading-[1.45] align-top font-serif text-ink uppercase tracking-[0.03em]">
+                  <td data-label="Internt" className="px-4 py-4.5 border-b border-b-line text-[14px] leading-[1.45] align-top font-serif text-ink uppercase tracking-[0.03em]">
                     Beror på kunskap och tidspress.
                   </td>
-                  <td className="px-4 py-4.5 border-b border-b-line text-[14px] leading-[1.45] align-top font-serif text-ink uppercase tracking-[0.03em]">
+                  <td data-label="Redovisningsbyrå" className="px-4 py-4.5 border-b border-b-line text-[14px] leading-[1.45] align-top font-serif text-ink uppercase tracking-[0.03em]">
                     Hög kompetens, men kontrollen sker ofta i efterhand.
                   </td>
-                  <td className="px-4 py-4.5 border-b border-b-line text-[14px] leading-[1.45] align-top bg-chip font-serif uppercase tracking-[0.03em] font-bold text-contrast">
+                  <td data-label="Vera" className="px-4 py-4.5 border-b border-b-line text-[14px] leading-[1.45] align-top bg-chip font-serif uppercase tracking-[0.03em] font-bold text-contrast">
                     Fast arbetsmall och kontroll av varje post. Oklarheter stoppas och lyfts till er.
                   </td>
                 </tr>
@@ -1445,13 +1445,13 @@ export default function BokforingPage() {
                   <td className="px-4 py-4.5 border-b border-b-line text-[14px] leading-[1.45] align-top font-semibold tracking-[0.06em] uppercase">
                     Förståelse för bokföringen
                   </td>
-                  <td className="px-4 py-4.5 border-b border-b-line text-[14px] leading-[1.45] align-top font-serif text-ink uppercase tracking-[0.03em]">
+                  <td data-label="Internt" className="px-4 py-4.5 border-b border-b-line text-[14px] leading-[1.45] align-top font-serif text-ink uppercase tracking-[0.03em]">
                     Kunskapen sitter hos en person.
                   </td>
-                  <td className="px-4 py-4.5 border-b border-b-line text-[14px] leading-[1.45] align-top font-serif text-ink uppercase tracking-[0.03em]">
+                  <td data-label="Redovisningsbyrå" className="px-4 py-4.5 border-b border-b-line text-[14px] leading-[1.45] align-top font-serif text-ink uppercase tracking-[0.03em]">
                     Förklaringar på begäran, ibland mot avgift.
                   </td>
-                  <td className="px-4 py-4.5 border-b border-b-line text-[14px] leading-[1.45] align-top bg-chip font-serif uppercase tracking-[0.03em] font-bold text-contrast">
+                  <td data-label="Vera" className="px-4 py-4.5 border-b border-b-line text-[14px] leading-[1.45] align-top bg-chip font-serif uppercase tracking-[0.03em] font-bold text-contrast">
                     Motivering till varje post.
                   </td>
                 </tr>
@@ -1459,13 +1459,13 @@ export default function BokforingPage() {
                   <td className="px-4 py-4.5 border-b border-b-line text-[14px] leading-[1.45] align-top font-semibold tracking-[0.06em] uppercase">
                     Granskning före bokföring
                   </td>
-                  <td className="px-4 py-4.5 border-b border-b-line text-[14px] leading-[1.45] align-top font-serif text-ink uppercase tracking-[0.03em]">
+                  <td data-label="Internt" className="px-4 py-4.5 border-b border-b-line text-[14px] leading-[1.45] align-top font-serif text-ink uppercase tracking-[0.03em]">
                     Ofta granskar samma person sitt eget arbete.
                   </td>
-                  <td className="px-4 py-4.5 border-b border-b-line text-[14px] leading-[1.45] align-top font-serif text-ink uppercase tracking-[0.03em]">
+                  <td data-label="Redovisningsbyrå" className="px-4 py-4.5 border-b border-b-line text-[14px] leading-[1.45] align-top font-serif text-ink uppercase tracking-[0.03em]">
                     Resultatet syns ofta först i månadsrapporten.
                   </td>
-                  <td className="px-4 py-4.5 border-b border-b-line text-[14px] leading-[1.45] align-top bg-chip font-serif uppercase tracking-[0.03em] font-bold text-contrast">
+                  <td data-label="Vera" className="px-4 py-4.5 border-b border-b-line text-[14px] leading-[1.45] align-top bg-chip font-serif uppercase tracking-[0.03em] font-bold text-contrast">
                     Alltid, per post eller per vecka.
                   </td>
                 </tr>
@@ -1473,14 +1473,14 @@ export default function BokforingPage() {
                   <td className="px-4 py-4.5 border-b border-b-line text-[14px] leading-[1.45] align-top font-semibold tracking-[0.06em] uppercase">
                     Kostnad
                   </td>
-                  <td className="px-4 py-4.5 border-b border-b-line text-[14px] leading-[1.45] align-top font-serif text-ink uppercase tracking-[0.03em]">
+                  <td data-label="Internt" className="px-4 py-4.5 border-b border-b-line text-[14px] leading-[1.45] align-top font-serif text-ink uppercase tracking-[0.03em]">
                     Arbetstid eller lön.
                   </td>
-                  <td className="px-4 py-4.5 border-b border-b-line text-[14px] leading-[1.45] align-top font-serif text-ink uppercase tracking-[0.03em]">
+                  <td data-label="Redovisningsbyrå" className="px-4 py-4.5 border-b border-b-line text-[14px] leading-[1.45] align-top font-serif text-ink uppercase tracking-[0.03em]">
                     Månadsavgift plus timmar utöver avtal.
                   </td>
-                  <td className="px-4 py-4.5 border-b border-b-line text-[14px] leading-[1.45] align-top bg-chip font-serif uppercase tracking-[0.03em] font-bold text-contrast">
-                    Engångspris per agent.
+                  <td data-label="Vera" className="px-4 py-4.5 border-b border-b-line text-[14px] leading-[1.45] align-top bg-chip font-serif uppercase tracking-[0.03em] font-bold text-contrast">
+                    Fast månadspris per agent, inga extra timmar.
                   </td>
                 </tr>
               </tbody>
@@ -1488,13 +1488,13 @@ export default function BokforingPage() {
           </div>
           <div className="mt-10 gap-3 flex flex-wrap">
             <Link
-              className="px-7 py-0 rounded-full inline-flex items-center justify-center min-h-13 bg-accent text-ink-inverse border-[1.5px] border-accent no-underline font-bold text-[14px] tracking-[0.1em] uppercase"
+              className="btn btn--primary"
               href="/#kontakt"
             >
               Boka en demo
             </Link>
             <Link
-              className="px-7 py-0 rounded-full inline-flex items-center justify-center min-h-13 bg-surface text-ink border-[1.5px] border-line-strong no-underline font-bold text-[14px] tracking-[0.1em] uppercase"
+              className="btn btn--secondary"
               href="/priser#kalkylator"
             >
               Räkna på er besparing
@@ -1829,13 +1829,13 @@ export default function BokforingPage() {
           </p>
           <div className="gap-3 flex justify-center flex-wrap">
             <Link
-              className="px-7 py-0 rounded-full inline-flex items-center justify-center min-h-13 bg-page text-contrast border-[1.5px] border-ink-inverse no-underline font-bold text-[14px] tracking-[0.1em] uppercase"
+              className="btn btn--primary theme-inverse"
               href="/#kontakt"
             >
               Boka en demo
             </Link>
             <Link
-              className="px-7 py-0 rounded-full inline-flex items-center min-h-13 border-[1.5px] border-surface text-ink-inverse no-underline font-bold text-[14px] tracking-[0.1em] uppercase"
+              className="btn btn--secondary theme-inverse"
               href="/#kontakt"
             >
               Få en prisuppskattning

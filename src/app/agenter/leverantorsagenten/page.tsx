@@ -25,13 +25,13 @@ export default function LeverantorsagentenPage() {
             </p>
             <div className="gap-3 flex flex-wrap">
               <Link
-                className="px-7 py-0 rounded-full inline-flex items-center justify-center min-h-13 bg-accent text-ink-inverse border-[1.5px] border-accent no-underline font-bold text-[14px] tracking-[0.1em] uppercase"
+                className="btn btn--primary"
                 href="/#kontakt"
               >
                 Boka en demo
               </Link>
               <a
-                className="px-7 py-0 rounded-full inline-flex items-center justify-center min-h-13 bg-surface text-ink border-[1.5px] border-line-strong no-underline font-bold text-[14px] tracking-[0.1em] uppercase"
+                className="btn btn--secondary"
                 href="#hur"
               >
                 Så fungerar det
@@ -287,13 +287,13 @@ export default function LeverantorsagentenPage() {
           </div>
           <div className="mt-12 gap-3 flex justify-center flex-wrap">
             <Link
-              className="px-7 py-0 rounded-full inline-flex items-center justify-center min-h-13 bg-accent text-ink-inverse border-[1.5px] border-accent no-underline font-bold text-[14px] tracking-[0.1em] uppercase"
+              className="btn btn--primary"
               href="/#kontakt"
             >
               Boka en demo
             </Link>
             <Link
-              className="px-7 py-0 rounded-full inline-flex items-center justify-center min-h-13 bg-surface text-ink border-[1.5px] border-line-strong no-underline font-bold text-[14px] tracking-[0.1em] uppercase"
+              className="btn btn--secondary"
               href="/sa-fungerar-vera"
             >
               Så fungerar Vera
@@ -468,7 +468,7 @@ export default function LeverantorsagentenPage() {
             </p>
           </div>
           <Link
-            className="px-7 py-0 rounded-full inline-flex items-center justify-center min-h-13 bg-accent text-ink-inverse border-[1.5px] border-accent no-underline font-bold text-[14px] tracking-[0.1em] uppercase"
+            className="btn btn--primary"
             href="/#kontakt"
           >
             Boka en demo
@@ -836,7 +836,7 @@ export default function LeverantorsagentenPage() {
         </div>
         <div className="mt-12">
           <Link
-            className="px-7 py-0 rounded-full inline-flex items-center justify-center min-h-13 bg-accent text-ink-inverse border-[1.5px] border-accent no-underline font-bold text-[14px] tracking-[0.1em] uppercase"
+            className="btn btn--primary"
             href="/#kontakt"
           >
             Boka en demo
@@ -948,7 +948,7 @@ export default function LeverantorsagentenPage() {
                     Arvode
                   </td>
                   <td className="px-4 py-4.5 border-b border-b-line text-[14px] leading-[1.45] align-top bg-chip font-serif uppercase tracking-[0.03em] font-bold text-contrast">
-                    Engångspris
+                    Fast månadspris
                   </td>
                 </tr>
               </tbody>
@@ -956,13 +956,13 @@ export default function LeverantorsagentenPage() {
           </div>
           <div className="mt-10 gap-3 flex flex-wrap">
             <Link
-              className="px-7 py-0 rounded-full inline-flex items-center justify-center min-h-13 bg-accent text-ink-inverse border-[1.5px] border-accent no-underline font-bold text-[14px] tracking-[0.1em] uppercase"
+              className="btn btn--primary"
               href="/#kontakt"
             >
               Boka en demo
             </Link>
             <Link
-              className="px-7 py-0 rounded-full inline-flex items-center justify-center min-h-13 bg-surface text-ink border-[1.5px] border-line-strong no-underline font-bold text-[14px] tracking-[0.1em] uppercase"
+              className="btn btn--secondary"
               href="/#kontakt"
             >
               Få en prisuppskattning
@@ -1256,13 +1256,13 @@ export default function LeverantorsagentenPage() {
           </p>
           <div className="gap-3 flex justify-center flex-wrap">
             <Link
-              className="px-7 py-0 rounded-full inline-flex items-center justify-center min-h-13 bg-page text-contrast border-[1.5px] border-ink-inverse no-underline font-bold text-[14px] tracking-[0.1em] uppercase"
+              className="btn btn--primary theme-inverse"
               href="/#kontakt"
             >
               Boka en demo
             </Link>
             <Link
-              className="px-7 py-0 rounded-full inline-flex items-center min-h-13 border-[1.5px] border-surface text-ink-inverse no-underline font-bold text-[14px] tracking-[0.1em] uppercase"
+              className="btn btn--secondary theme-inverse"
               href="/#kontakt"
             >
               Få en prisuppskattning

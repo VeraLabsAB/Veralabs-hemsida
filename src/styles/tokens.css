@@ -1,0 +1,127 @@
+/* ── Design tokens för VeraAI: Light Steel + Liquid Glass ────────────────
+   Facit: DESIGN-GLASS.md §3 (färger), §4 (glas, radier), §8 (rörelse).
+   Det här är den enda filen i projektet som får innehålla hex-färger.
+   Komponenter och sidor använder bara variablerna (eller Tailwind-klasserna
+   som @theme i globals.css gör av dem).
+
+   Teman:
+     <html data-theme="dark">   mörkt läge för hela sidan (switchen)
+     .theme-dark                 alltid mörka tokens, t.ex. en knapp på ett
+                                 band som är Shadow Grey i båda lägena
+     .theme-inverse              motsatt tema mot sidan, t.ex. en knapp på
+                                 ett band som är mörkt i ljust läge och
+                                 ljust i mörkt läge (bg-accent, bg-contrast)
+   Scoperna sätter om de semantiska namnen och glas-tokens på elementet;
+   aliasen i globals.css (--chip, --contrast …) följer bara <html>. ───── */
+
+:root {
+  /* Light Steel – de nio färgerna, oförändrade */
+  --c-snow: #F8F9FA;
+  --c-platinum: #E9ECEF;
+  --c-alabaster: #DEE2E6;
+  --c-pale-1: #CED4DA;
+  --c-pale-2: #ADB5BD;
+  --c-slate: #6C757D;
+  --c-iron: #495057;
+  --c-gunmetal: #343A40;
+  --c-shadow: #212529;
+
+  /* Glas: oskärpa och mättnad. Dokumentation: siffrorna skrivs ut direkt i
+     src/styles/glass.css eftersom Safari inte läser var() i den prefixade
+     filterraden (§6). Ändras de här ska glass.css ändras på samma sätt. */
+  --glass-blur: 16px;
+  --glass-blur-large: 12px;
+  --glass-saturate: 140%;
+
+  /* Radier (§7) */
+  --r-pill: 999px;
+  --r-xl: 28px; /* paneler, modaler, rullgardiner */
+  --r-lg: 20px; /* kort */
+  --r-md: 14px; /* knappar som inte är pills, fält */
+  --r-sm: 10px; /* små chips */
+
+  /* Rörelse (§8) */
+  --ease-glass: cubic-bezier(0.2, 0.8, 0.2, 1);
+  --t-hover: 180ms;
+  --t-press: 90ms;
+  --t-menu: 200ms;
+  --t-modal: 220ms;
+  --t-switch: 150ms;
+}
+
+/* ── Ljusa tokens: sidan i ljust läge, och .theme-inverse i mörkt läge ── */
+:root,
+:root[data-theme="dark"] .theme-inverse {
+  --bg-page: var(--c-platinum);
+  --bg-surface: var(--c-snow);
+  --border: var(--c-alabaster);
+  --text-body: var(--c-iron);
+  --text-head: var(--c-shadow);
+  --text-muted: var(--c-slate);
+  --btn-bg: var(--c-gunmetal);
+  --btn-text: var(--c-snow);
+
+  /* Glas: fyllning */
+  --glass-fill: rgba(255, 255, 255, 0.55);
+  --glass-fill-hover: rgba(255, 255, 255, 0.63); /* +8 % vid hover (§8) */
+  /* Spec §4 säger 0.72; höjt till 0.8 (2026-10-29, uppgift c) efter test:
+     vid 0.72 avtecknade sig kanten på ett mörkt band under rullgardinen. */
+  --glass-fill-strong: rgba(255, 255, 255, 0.8);
+  /* Glas: kant */
+  --glass-border: rgba(255, 255, 255, 0.6);
+  --glass-border-top: rgba(255, 255, 255, 0.9);
+  --glass-border-dark: rgba(33, 37, 41, 0.08);
+  /* Glas: tint för primära handlingar (Gunmetal-ton, §2) */
+  --glass-tint: rgba(52, 58, 64, 0.85);
+  --glass-tint-hover: rgba(52, 58, 64, 0.93);
+  --glass-tint-text: var(--c-snow);
+  --glass-tint-border: rgba(255, 255, 255, 0.18);
+  --glass-tint-border-top: rgba(255, 255, 255, 0.32);
+  /* Glas: skugga */
+  --glass-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.6) inset,
+    0 8px 24px rgba(33, 37, 41, 0.1),
+    0 1px 2px rgba(33, 37, 41, 0.06);
+  --glass-shadow-float:
+    0 1px 0 rgba(255, 255, 255, 0.6) inset,
+    0 16px 48px rgba(33, 37, 41, 0.16);
+}
+
+/* ── Mörka tokens: sidan i mörkt läge, .theme-dark alltid, .theme-inverse
+   i ljust läge. (I mörkt läge vinner regeln ovan för .theme-inverse på
+   specificitet.) ─────────────────────────────────────────────────────── */
+:root[data-theme="dark"],
+.theme-dark,
+.theme-inverse {
+  --bg-page: var(--c-shadow);
+  --bg-surface: var(--c-gunmetal);
+  --border: var(--c-iron);
+  --text-body: var(--c-pale-1);
+  --text-head: var(--c-snow);
+  --text-muted: var(--c-pale-2);
+  --btn-bg: var(--c-snow);
+  --btn-text: var(--c-shadow);
+
+  /* Glas, mörkt läge: Gunmetal-grund */
+  --glass-fill: rgba(52, 58, 64, 0.55);
+  --glass-fill-hover: rgba(52, 58, 64, 0.63);
+  /* Spec §4 säger 0.78; höjt till 0.85 efter test, se ljust läge ovan. */
+  --glass-fill-strong: rgba(52, 58, 64, 0.85);
+  --glass-border: rgba(255, 255, 255, 0.14);
+  --glass-border-top: rgba(255, 255, 255, 0.28);
+  --glass-border-dark: rgba(0, 0, 0, 0.35);
+  --glass-saturate: 120%;
+  /* Tint i mörkt läge: ljus knapp (Bright Snow) med mörk text */
+  --glass-tint: rgba(248, 249, 250, 0.85);
+  --glass-tint-hover: rgba(248, 249, 250, 0.93);
+  --glass-tint-text: var(--c-shadow);
+  --glass-tint-border: rgba(255, 255, 255, 0.5);
+  --glass-tint-border-top: rgba(255, 255, 255, 0.85);
+  --glass-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.1) inset,
+    0 8px 24px rgba(0, 0, 0, 0.45),
+    0 1px 2px rgba(0, 0, 0, 0.3);
+  --glass-shadow-float:
+    0 1px 0 rgba(255, 255, 255, 0.1) inset,
+    0 16px 48px rgba(0, 0, 0, 0.55);
+}

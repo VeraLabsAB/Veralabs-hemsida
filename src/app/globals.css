@@ -46,7 +46,12 @@
   color-scheme: light;
 }
 
-:root[data-theme="dark"] {
+/* Dark aliases: the page in dark mode, .theme-dark always, .theme-inverse in
+   light mode (same scopes as tokens.css, so e.g. the footer can be dark in
+   both modes with the ordinary bg-page/text-ink classes). */
+:root[data-theme="dark"],
+.theme-dark,
+.theme-inverse {
   --surface-muted: var(--c-gunmetal);
   --chip: var(--c-iron);
   --line-faint: var(--c-gunmetal);
@@ -60,7 +65,24 @@
   --lv-soft: var(--c-iron);
   --lv-ph: var(--c-shadow);
   --lv-ph-line: var(--c-iron);
+}
+:root[data-theme="dark"] {
   color-scheme: dark;
+}
+/* .theme-inverse in dark mode gets the light aliases back. */
+:root[data-theme="dark"] .theme-inverse {
+  --surface-muted: var(--c-alabaster);
+  --chip: var(--c-alabaster);
+  --line-faint: var(--c-platinum);
+  --line-soft: var(--c-pale-2);
+  --line-strong: var(--c-shadow);
+  --contrast: var(--c-shadow);
+  --contrast-soft: var(--c-iron);
+  --ink-faint: var(--c-pale-2);
+  --ink-inverse-soft: var(--c-alabaster);
+  --lv-soft: var(--c-platinum);
+  --lv-ph: var(--c-platinum);
+  --lv-ph-line: var(--c-pale-2);
 }
 
 @theme inline {
@@ -661,6 +683,50 @@
     }
   }
 
+  /* ── Intoning i glasstil (Hugos beslut 2026-10-30): innehållet tonas in
+     och lyfts 20 px medan det scrollas in, styrt av scrollen själv
+     (animation-timeline: view()). .reveal på ett element, .reveal-stagger på
+     en förälder vars barn ska komma ett i taget. Utan stöd visas allt
+     direkt; vid "minska rörelse" stängs det av. ────────────────────────── */
+  @keyframes glas-reveal {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: none;
+    }
+  }
+  @supports (animation-timeline: view()) {
+    /* "cover" räknas över hela passagen genom fönstret, så intoningen pågår
+       ungefär en fjärdedel av skärmhöjden oavsett elementets storlek. */
+    .reveal,
+    .reveal-stagger > * {
+      animation: glas-reveal linear both;
+      animation-timeline: view();
+      animation-range: entry 0% cover 28%;
+    }
+    .reveal-stagger > :nth-child(2) {
+      animation-range: entry 10% cover 34%;
+    }
+    .reveal-stagger > :nth-child(3) {
+      animation-range: entry 20% cover 40%;
+    }
+    .reveal-stagger > :nth-child(4) {
+      animation-range: entry 30% cover 46%;
+    }
+    .reveal-stagger > :nth-child(n + 5) {
+      animation-range: entry 40% cover 52%;
+    }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .reveal,
+    .reveal-stagger > * {
+      animation: none !important;
+    }
+  }
+
   /* ── Pricing: company / private toggle, plan cards, savings calculator ── */
   .pf-in {
     position: absolute;
@@ -673,35 +739,43 @@
   #pf-p:checked ~ .pf-main .only-f {
     display: none !important;
   }
+  /* Segmenterad kontroll (fråga 11): en glasyta, två segment, det valda
+     tonat som primärknappen. Hörnen är koncentriska: pill utanpå, pill inuti. */
+  .pf-switch {
+    display: inline-flex;
+    gap: 4px;
+    padding: 4px;
+    border-radius: var(--r-pill);
+  }
   .pf-btn {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    min-height: 52px;
-    min-width: 180px;
-    padding: 0 28px;
-    border-radius: 999px;
-    border: 1.5px solid var(--line-strong);
-    background: var(--surface);
-    color: var(--ink);
+    min-height: 44px;
+    min-width: 160px;
+    padding: 0 24px;
+    border-radius: var(--r-pill);
+    color: var(--text-head);
     font-weight: 700;
     font-size: 14px;
     letter-spacing: 0.1em;
     text-transform: uppercase;
     cursor: pointer;
     transition:
-      background 0.15s,
-      color 0.15s;
+      background-color var(--t-switch) var(--ease-glass),
+      color var(--t-switch) var(--ease-glass);
+  }
+  .pf-btn:hover {
+    background-color: var(--chip);
   }
   #pf-f:checked ~ .pf-main label[for="pf-f"],
   #pf-p:checked ~ .pf-main label[for="pf-p"] {
-    background: var(--accent);
-    border-color: var(--accent);
-    color: var(--ink-inverse);
+    background-color: var(--btn-bg);
+    color: var(--btn-text);
   }
   #pf-f:focus-visible ~ .pf-main label[for="pf-f"],
   #pf-p:focus-visible ~ .pf-main label[for="pf-p"] {
-    outline: 3px solid var(--contrast);
+    outline: 2px solid var(--text-head);
     outline-offset: 3px;
   }
   .pcards-f {
@@ -786,7 +860,8 @@
       box-shadow 0.25s ease;
   }
   .lv-lift:hover {
-    transform: translateY(-4px);
+    /* §8: hover får flytta innehåll högst 2 px */
+    transform: translateY(-2px);
     box-shadow:
       0 2px 4px rgba(33, 37, 41, 0.06),
       0 20px 44px rgba(33, 37, 41, 0.14);

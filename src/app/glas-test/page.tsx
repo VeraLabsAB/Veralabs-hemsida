@@ -10,6 +10,69 @@ export const metadata: Metadata = {
   robots: { index: false, follow: false },
 };
 
+/* Samma fyra agenter som på startsidan, för jämförelsen i avsnitt 6. */
+const AGENTS = [
+  {
+    title: "Bokförings­agenten",
+    text: "Löpande bokföring, fakturering, moms, lön och bokslut.",
+    icon: "M6 3h8l4 4v14H6z M14 3v4h4 M9 12h6 M9 16h6",
+  },
+  {
+    title: "Trend­övervakaren",
+    text: "Hittar efterfrågan som växer i er bransch, innan den toppar.",
+    icon: "M3 17l6-6 4 4 8-8 M15 7h6v6",
+  },
+  {
+    title: "Strategi­konsulten",
+    text: "Underlag för prissättning, sortiment och investeringar, byggt på era egna siffror.",
+    icon: "M12 3a9 9 0 100 18 9 9 0 000-18z M12 8a4 4 0 100 8 4 4 0 000-8z M12 12h.01",
+  },
+  {
+    title: "Leverantörs­agenten",
+    text: "Söker, jämför och sammanställer leverantörer utifrån era krav.",
+    icon: "M3 8l9-5 9 5v8l-9 5-9-5z M3 8l9 5 9-5 M12 13v8",
+  },
+];
+
+/* Avsnitt 6a: samma panel, tre sätt att avgränsa fälten. */
+function AgentPanel({ separator }: { separator: "lines" | "tiles" | "none" }) {
+  const cell =
+    separator === "tiles"
+      ? "bg-page/45 hover:bg-chip"
+      : separator === "lines"
+        ? "hover:bg-chip"
+        : "hover:bg-chip";
+  const panelGap = separator === "tiles" ? "gap-2" : separator === "none" ? "gap-1" : "";
+  return (
+    <div className={`glass glass--strong box-border rounded-panel p-2 grid grid-cols-[repeat(auto-fit,minmax(220px,1fr))] ${panelGap}`}>
+      {AGENTS.map((a, i) => (
+        <a
+          key={a.title}
+          href="#"
+          className={`box-border flex flex-col gap-3.5 rounded-[20px] p-6 text-ink no-underline ${cell}${
+            separator === "lines" && i > 0 ? " min-[940px]:border-l min-[940px]:border-l-line" : ""
+          }`}
+        >
+          <AgentIcon d={a.icon} />
+          <h3 className="m-0 text-[15px] font-bold tracking-[0.1em] uppercase">{a.title}</h3>
+          <p className="m-0 text-[16px] leading-[1.55] text-ink-soft">{a.text}</p>
+          <span className="mt-auto text-[12px] font-bold tracking-[0.12em] uppercase">Läs mer →</span>
+        </a>
+      ))}
+    </div>
+  );
+}
+
+function AgentIcon({ d }: { d: string }) {
+  return (
+    <div className="rounded-xl w-12 h-12 bg-chip flex items-center justify-center flex-none">
+      <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true">
+        <path d={d} fill="none" stroke="var(--text-head)" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+      </svg>
+    </div>
+  );
+}
+
 const SAMPLES = [
   { className: "glass", label: "glass", note: "Grundytan: fyllning 0.55, oskärpa 16 px." },
   { className: "glass glass--strong", label: "glass--strong", note: "Mer fyllning (0.72) för ytor med mycket text." },
@@ -127,6 +190,52 @@ export default function GlasTestPage() {
           Rullgardiner och modaler använder den här varianten: fyllning 0.72, radie 28 px. Menyraderna inuti
           är vanliga element, inte egna glas.
         </p>
+      </div>
+
+      <h2 className="mx-0 mt-16 mb-2 text-[13px] font-bold tracking-[0.14em] uppercase text-ink-muted">
+        6a-1. Gemensam glaspanel, fält avdelade med tunna linjer
+      </h2>
+      <p className="mx-0 mt-0 mb-5 max-w-[640px] text-[15px] leading-[1.55] text-ink-soft">
+        En panel med radie 28 px, två glasytor med headern. Fälten är vanliga länkar som tonas vid hover.
+      </p>
+      <AgentPanel separator="lines" />
+
+      <h2 className="mx-0 mt-12 mb-2 text-[13px] font-bold tracking-[0.14em] uppercase text-ink-muted">
+        6a-2. Samma panel, fälten som tonade plattor med luft emellan
+      </h2>
+      <p className="mx-0 mt-0 mb-5 max-w-[640px] text-[15px] leading-[1.55] text-ink-soft">
+        Varje fält får en svag ton av sidbakgrunden och koncentriska hörn (28 − 8 = 20 px), som Apples
+        grupperade listor. Inga linjer.
+      </p>
+      <AgentPanel separator="tiles" />
+
+      <h2 className="mx-0 mt-12 mb-2 text-[13px] font-bold tracking-[0.14em] uppercase text-ink-muted">
+        6a-3. Samma panel, bara luft, fältet tonas vid hover
+      </h2>
+      <p className="mx-0 mt-0 mb-5 max-w-[640px] text-[15px] leading-[1.55] text-ink-soft">
+        Inga avgränsare i vila. Ikonen och rubriken bär strukturen, och fältet lyser upp när man pekar på det.
+      </p>
+      <AgentPanel separator="none" />
+
+      <h2 className="mx-0 mt-16 mb-2 text-[13px] font-bold tracking-[0.14em] uppercase text-ink-muted">
+        6b. Agentkorten som fyra fristående glaskort (5 glasytor med headern)
+      </h2>
+      <p className="mx-0 mt-0 mb-5 max-w-[640px] text-[15px] leading-[1.55] text-ink-soft">
+        Varje kort är eget glas med stark fyllning, radie 20 px. Bryter spec:ens tak på fyra ytor med ett.
+      </p>
+      <div className="gap-5 grid grid-cols-[repeat(auto-fit,minmax(220px,1fr))]">
+        {AGENTS.map((a) => (
+          <a
+            key={a.title}
+            href="#"
+            className="glass glass--strong box-border flex flex-col gap-3.5 p-7 no-underline"
+          >
+            <AgentIcon d={a.icon} />
+            <h3 className="m-0 text-[15px] font-bold tracking-[0.1em] uppercase">{a.title}</h3>
+            <p className="m-0 text-[16px] leading-[1.55] text-ink-soft">{a.text}</p>
+            <span className="mt-auto text-[12px] font-bold tracking-[0.12em] uppercase">Läs mer →</span>
+          </a>
+        ))}
       </div>
     </div>
   );

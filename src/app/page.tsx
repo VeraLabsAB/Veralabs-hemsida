@@ -104,9 +104,9 @@ export default function HomePage() {
       {/* Varje del av startsidan är en egen skärm på desktop (min-[900px]:min-h-dvh, innehållet lodrätt
           centrerat) och sektionerna växlar mellan sidbakgrund och kortyta i stället för streck.
           Hugos beslut 2026-10-30. py-20 håller innehållet fritt från den klistrade headern. */}
-      <div className="min-[900px]:min-h-dvh box-border flex items-center scroll-mt-20" id="sa">
+      <div className="bg-surface min-[900px]:min-h-dvh box-border flex items-center scroll-mt-20" id="sa">
         <div className="mx-auto my-0 px-10 py-20 w-full max-w-[1200px] box-border">
-          <div className="gap-12 flex flex-wrap items-center">
+          <div className="gap-12 flex flex-wrap items-center reveal-stagger">
             <div className="flex-[1_1_380px] min-w-0">
               <div className="mb-5 px-3.5 py-1.5 rounded-full inline-block bg-chip text-contrast text-[13px] font-semibold tracking-[0.14em] uppercase">
                 Demo
@@ -135,10 +135,11 @@ export default function HomePage() {
           </div>
         </div>
       </div>
-      {/* De tre stegen fick en egen skärm när demo-sektionen delades. */}
-      <div className="bg-surface min-[900px]:min-h-dvh box-border flex items-center scroll-mt-20" id="hur">
+      {/* De tre stegen fick en egen skärm när demo-sektionen delades. Tre solida rutor i samma färg
+          och radie som agentpanelen; stegen är innehåll, inte kontroller, och får inte glas (§2). */}
+      <div className="min-[900px]:min-h-dvh box-border flex items-center scroll-mt-20" id="hur">
         <div className="mx-auto my-0 px-10 py-20 w-full max-w-[1200px] box-border">
-          <div className="mb-10 max-w-[720px]">
+          <div className="mb-10 max-w-[720px] reveal">
             <div className="mb-5 px-3.5 py-1.5 rounded-full inline-block bg-chip text-contrast text-[13px] font-semibold tracking-[0.14em] uppercase">
               Så fungerar det
             </div>
@@ -146,8 +147,8 @@ export default function HomePage() {
               Tre steg. Ni bestämmer.
             </h2>
           </div>
-          <div className="gap-6 grid grid-cols-[repeat(auto-fit,minmax(260px,1fr))]">
-            <div className="lv-lift p-7 gap-3.5 rounded-[20px] border-0 min-w-0 box-border wrap-break-word bg-page flex flex-col">
+          <div className="gap-5 grid grid-cols-[repeat(auto-fit,minmax(260px,1fr))] reveal-stagger">
+            <div className="bg-surface rounded-panel p-7 gap-3.5 min-w-0 box-border wrap-break-word flex flex-col">
               <div className="rounded-xl w-12 h-12 bg-chip flex items-center justify-center flex-none">
                 <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true">
                   <path
@@ -166,7 +167,7 @@ export default function HomePage() {
                 beloppsgränser.
               </p>
               <div
-                className="mt-1.5 px-4 py-3.5 rounded-[14px] bg-lv-card border border-lv-line font-sans text-[13px] leading-[1.45] text-lv-ink"
+                className="mt-1.5 px-4 py-3.5 rounded-[14px] bg-page border border-lv-line font-sans text-[13px] leading-[1.45] text-lv-ink"
                 role="img"
                 aria-label="Exempel på en regel i regelboken"
               >
@@ -175,7 +176,7 @@ export default function HomePage() {
                 <div className="text-lv-muted">Alltid 25 % moms</div>
               </div>
             </div>
-            <div className="lv-lift p-7 gap-3.5 rounded-[20px] border-0 min-w-0 box-border wrap-break-word bg-page flex flex-col">
+            <div className="bg-surface rounded-panel p-7 gap-3.5 min-w-0 box-border wrap-break-word flex flex-col">
               <div className="rounded-xl w-12 h-12 bg-chip flex items-center justify-center flex-none">
                 <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true">
                   <path
@@ -194,7 +195,7 @@ export default function HomePage() {
                 fråga, aldrig en gissning.
               </p>
               <div
-                className="mt-1.5 px-4 py-3.5 rounded-[14px] bg-lv-card border border-lv-line font-sans text-[13px] leading-[1.45] text-lv-ink"
+                className="mt-1.5 px-4 py-3.5 rounded-[14px] bg-page border border-lv-line font-sans text-[13px] leading-[1.45] text-lv-ink"
                 role="img"
                 aria-label="Exempel på en fråga från Vera"
               >
@@ -206,7 +207,7 @@ export default function HomePage() {
                 </div>
               </div>
             </div>
-            <div className="lv-lift p-7 gap-3.5 rounded-[20px] border-0 min-w-0 box-border wrap-break-word bg-page flex flex-col">
+            <div className="bg-surface rounded-panel p-7 gap-3.5 min-w-0 box-border wrap-break-word flex flex-col">
               <div className="rounded-xl w-12 h-12 bg-chip flex items-center justify-center flex-none">
                 <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true">
                   <path
@@ -224,7 +225,7 @@ export default function HomePage() {
                 En genomgång i slutet av veckan. Godkänn allt på en gång eller post för post.
               </p>
               <div
-                className="mt-1.5 px-4 py-3.5 rounded-[14px] bg-lv-card border border-lv-line font-sans text-[13px] leading-[1.45] text-lv-ink"
+                className="mt-1.5 px-4 py-3.5 rounded-[14px] bg-page border border-lv-line font-sans text-[13px] leading-[1.45] text-lv-ink"
                 role="img"
                 aria-label="Exempel på knappen Godkänn"
               >
@@ -248,7 +249,7 @@ export default function HomePage() {
         </div>
       </div>
       <div className="mx-auto my-0 px-10 py-20 max-w-[1200px] box-border min-[900px]:min-h-dvh flex flex-col justify-center">
-        <div className="mb-10 max-w-[720px]">
+        <div className="mb-10 max-w-[720px] reveal">
           <div className="mb-5 px-3.5 py-1.5 rounded-full inline-block bg-chip text-contrast text-[13px] font-semibold tracking-[0.14em] uppercase">
             Agenter
           </div>
@@ -259,9 +260,11 @@ export default function HomePage() {
             Börja där det tar mest tid och lägg till fler när ni är redo.
           </p>
         </div>
-        <div className="gap-5 grid grid-cols-[repeat(auto-fit,minmax(240px,1fr))]">
+        {/* Uppgift e), fråga 5: agentkorten är EN gemensam glaspanel (Apple: gruppera) med bara luft
+            mellan fälten; fältet tonas vid hover. Två glasytor på skärmen med headern. */}
+        <div className="glass glass--strong box-border rounded-panel p-2 gap-1 grid grid-cols-[repeat(auto-fit,minmax(220px,1fr))] reveal-stagger">
           <Link
-            className="p-7 gap-3.5 rounded-[20px] bg-surface border border-line min-w-0 box-border wrap-break-word flex flex-col no-underline text-ink"
+            className="p-6 gap-3.5 rounded-[20px] min-w-0 box-border wrap-break-word flex flex-col no-underline text-ink hover:bg-chip"
             href="/agenter/bokforing"
           >
             <div className="rounded-xl w-12 h-12 bg-chip flex items-center justify-center flex-none">
@@ -283,7 +286,7 @@ export default function HomePage() {
             <span className="mt-auto text-[12px] font-bold tracking-[0.12em] uppercase text-accent">Läs mer →</span>
           </Link>
           <Link
-            className="p-7 gap-3.5 rounded-[20px] bg-surface border border-line min-w-0 box-border wrap-break-word flex flex-col no-underline text-ink"
+            className="p-6 gap-3.5 rounded-[20px] min-w-0 box-border wrap-break-word flex flex-col no-underline text-ink hover:bg-chip"
             href="/agenter/trendovervakaren"
           >
             <div className="rounded-xl w-12 h-12 bg-chip flex items-center justify-center flex-none">
@@ -305,7 +308,7 @@ export default function HomePage() {
             <span className="mt-auto text-[12px] font-bold tracking-[0.12em] uppercase text-accent">Läs mer →</span>
           </Link>
           <Link
-            className="p-7 gap-3.5 rounded-[20px] bg-surface border border-line min-w-0 box-border wrap-break-word flex flex-col no-underline text-ink"
+            className="p-6 gap-3.5 rounded-[20px] min-w-0 box-border wrap-break-word flex flex-col no-underline text-ink hover:bg-chip"
             href="/agenter/strategikonsulten"
           >
             <div className="rounded-xl w-12 h-12 bg-chip flex items-center justify-center flex-none">
@@ -327,7 +330,7 @@ export default function HomePage() {
             <span className="mt-auto text-[12px] font-bold tracking-[0.12em] uppercase text-accent">Läs mer →</span>
           </Link>
           <Link
-            className="p-7 gap-3.5 rounded-[20px] bg-surface border border-line min-w-0 box-border wrap-break-word flex flex-col no-underline text-ink"
+            className="p-6 gap-3.5 rounded-[20px] min-w-0 box-border wrap-break-word flex flex-col no-underline text-ink hover:bg-chip"
             href="/agenter/leverantorsagenten"
           >
             <div className="rounded-xl w-12 h-12 bg-chip flex items-center justify-center flex-none">
@@ -359,7 +362,7 @@ export default function HomePage() {
         </div>
       </div>
       <div className="bg-surface min-[900px]:min-h-dvh box-border flex items-center">
-      <div className="mx-auto my-0 px-10 py-20 gap-6 w-full max-w-[1200px] box-border flex flex-wrap">
+      <div className="mx-auto my-0 px-10 py-20 gap-6 w-full max-w-[1200px] box-border flex flex-wrap reveal-stagger">
         <div className="relative flex-[1_1_320px] min-w-0 aspect-[4/3] overflow-hidden rounded-[20px]">
           <Image
             src="/images/butik-kassa.jpg"
@@ -389,7 +392,7 @@ export default function HomePage() {
       </div>
       <div className="min-[900px]:min-h-dvh box-border flex items-center scroll-mt-20" id="trygghet">
         <div className="mx-auto my-0 px-10 py-20 gap-14 w-full max-w-[1200px] box-border flex flex-wrap items-center">
-          <div className="flex-[1_1_420px] min-w-0">
+          <div className="flex-[1_1_420px] min-w-0 reveal">
             <h2 className="mx-0 mt-0 mb-4 font-display font-bold uppercase tracking-[0.01em] text-[clamp(28px,6.5vw,42px)] leading-[1.05] wrap-break-word">
               Kontroll som standard.
             </h2>
@@ -405,7 +408,7 @@ export default function HomePage() {
               </Link>
             </div>
           </div>
-          <div className="gap-3.5 flex-[1_1_420px] min-w-0 flex flex-col">
+          <div className="gap-3.5 flex-[1_1_420px] min-w-0 flex flex-col reveal-stagger">
             <div className="px-5 py-4.5 gap-3.5 rounded-[14px] flex items-start bg-surface border border-line">
               <svg className="mt-[3px] flex-none" width="20" height="20" viewBox="0 0 24 24" aria-hidden="true">
                 <path
@@ -482,7 +485,7 @@ export default function HomePage() {
         </div>
       </div>
       <div className="bg-surface min-[900px]:min-h-dvh box-border flex items-center">
-      <div className="mx-auto my-0 px-10 py-20 w-full max-w-[1200px] box-border text-center">
+      <div className="mx-auto my-0 px-10 py-20 w-full max-w-[1200px] box-border text-center reveal-stagger">
         <div className="mb-5 px-3.5 py-1.5 rounded-full inline-block bg-chip text-contrast text-[13px] font-semibold tracking-[0.14em] uppercase">
           Integrationer
         </div>
@@ -521,7 +524,7 @@ export default function HomePage() {
       </div>
       </div>
       <div className="min-[900px]:min-h-dvh box-border flex items-center">
-        <div className="mx-auto my-0 px-10 py-20 w-full max-w-[1200px] box-border">
+        <div className="mx-auto my-0 px-10 py-20 w-full max-w-[1200px] box-border reveal-stagger">
           <h2 className="mx-0 mt-0 mb-8 font-display font-bold uppercase tracking-[0.01em] text-[clamp(28px,6.5vw,42px)] leading-[1.05] wrap-break-word">
             Jämför alternativen.
           </h2>
@@ -613,10 +616,10 @@ export default function HomePage() {
       </div>
       <div className="bg-surface min-[900px]:min-h-dvh box-border flex items-center">
       <div className="mx-auto my-0 px-10 py-20 w-full max-w-[1200px] box-border">
-        <h2 className="mx-0 mt-0 mb-8 font-display font-bold uppercase tracking-[0.01em] text-[clamp(28px,6.5vw,42px)] leading-[1.05] wrap-break-word">
+        <h2 className="mx-0 mt-0 mb-8 font-display font-bold uppercase tracking-[0.01em] text-[clamp(28px,6.5vw,42px)] leading-[1.05] wrap-break-word reveal">
           Kundröster
         </h2>
-        <div className="gap-6 grid grid-cols-[repeat(auto-fit,minmax(300px,1fr))]">
+        <div className="gap-6 grid grid-cols-[repeat(auto-fit,minmax(300px,1fr))] reveal-stagger">
           <figure className="m-0 p-7 gap-4.5 rounded-[20px] bg-page border border-line min-w-0 box-border wrap-break-word flex flex-col">
             <span className="px-2.5 py-[3px] rounded-full self-start border border-line-soft text-[11px] font-bold tracking-[0.12em] uppercase text-ink-soft">
               Exempelcitat
@@ -642,7 +645,7 @@ export default function HomePage() {
         </div>
       </div>
       </div>
-      <div className="mx-auto my-0 px-10 py-20 gap-12 max-w-[1200px] box-border flex flex-wrap items-center min-[900px]:min-h-dvh content-center">
+      <div className="mx-auto my-0 px-10 py-20 gap-12 max-w-[1200px] box-border flex flex-wrap items-center min-[900px]:min-h-dvh content-center reveal-stagger">
         <div className="p-5 gap-2.5 rounded-[20px] flex-[0_1_280px] min-w-0 aspect-[4/5] border-2 border-dashed border-line-soft bg-surface-muted flex flex-col items-center justify-center text-center box-border">
           <svg width="36" height="36" viewBox="0 0 24 24" aria-hidden="true">
             <path
@@ -680,7 +683,7 @@ export default function HomePage() {
         </div>
       </div>
       <div className="bg-surface min-[900px]:min-h-dvh box-border flex items-center scroll-mt-20" id="kontakt">
-      <div className="mx-auto my-0 px-10 py-20 gap-14 w-full max-w-[1200px] box-border flex flex-wrap items-start">
+      <div className="mx-auto my-0 px-10 py-20 gap-14 w-full max-w-[1200px] box-border flex flex-wrap items-start reveal-stagger">
         <div className="flex-[1_1_360px] min-w-0">
           <div className="mb-5 px-3.5 py-1.5 rounded-full inline-block bg-chip text-contrast text-[13px] font-semibold tracking-[0.14em] uppercase">
             Kontakt

@@ -18,7 +18,8 @@ export default function PriserPage() {
             <h1 className="mx-0 mt-0 mb-8 font-display font-bold text-[clamp(32px,8vw,55px)] leading-[1.04] tracking-[0.01em] uppercase w-full max-w-[1000px] wrap-break-word">
               Priser och tjänster
             </h1>
-            <div className="gap-3 flex flex-wrap justify-center">
+            {/* Fråga 11: växeln är EN glasyta med två segment; det valda segmentet tonas som en primärknapp. */}
+            <div className="pf-switch glass glass--strong" role="group" aria-label="Visa priser för">
               <label className="pf-btn" htmlFor="pf-f">
                 Företag
               </label>

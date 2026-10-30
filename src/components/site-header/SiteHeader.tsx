@@ -199,8 +199,46 @@ export function SiteHeader() {
     if (document.activeElement instanceof HTMLElement) document.activeElement.blur();
   }, [pathname]);
 
+  // The pill follows the scroll: it moves up exactly as many pixels as the page scrolls down, until it
+  // is out of view, and comes back the same way when scrolling up. No animation, so it tracks the
+  // scroll speed. Stays put while a menu is open or at the very top. (Hugos beslut 2026-10-30.)
+  const headerRef = useRef<HTMLElement>(null);
+  const menuIsOpen = menuOpen || openSection !== null;
+  useEffect(() => {
+    const header = headerRef.current;
+    if (!header) return;
+    let lastY = Math.max(0, window.scrollY);
+    let offset = 0;
+    let raf = 0;
+    const apply = () => {
+      header.style.transform = offset > 0 ? `translateY(-${offset}px)` : "";
+    };
+    const update = () => {
+      raf = 0;
+      const y = Math.max(0, window.scrollY);
+      const delta = y - lastY;
+      lastY = y;
+      // Pill height + the 12 px gap above it + room for its shadow.
+      const max = header.offsetHeight + 12 + 24;
+      // Hold still while a menu is pinned open, while the pointer is over the pill or a dropdown
+      // opened by hover (the dropdowns are children of the header), or at the top of the page.
+      const hold = menuIsOpen || y <= 0 || header.matches(":hover");
+      offset = hold ? 0 : Math.min(max, Math.max(0, offset + delta));
+      apply();
+    };
+    const onScroll = () => {
+      if (!raf) raf = requestAnimationFrame(update);
+    };
+    if (menuIsOpen) apply();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      if (raf) cancelAnimationFrame(raf);
+    };
+  }, [menuIsOpen]);
+
   return (
-    <header className="site-header">
+    <header ref={headerRef} className="site-header">
       {/* The glass sits on its own layer behind the content; see the comment at .site-header in globals.css.
           --strong: the header scrolls over the worst backgrounds (a Snow card in dark mode, the Shadow hero
           in light mode), and only the stronger fill keeps the menu text at 4.5:1 there (§9.1). */}

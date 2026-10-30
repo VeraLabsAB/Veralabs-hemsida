@@ -284,6 +284,44 @@ Gemensamt för alla uppgifter:
     (demo, agenter, kontroll, jämförelse, grundaren på `--page`; övriga på
     `--surface`). Kort byter till motsatt färg där de annars smälter in.
     Kontakt och sidfot har samma färg tills fråga 7 (sidfoten) är löst.
+- **Fråga 5, beslutad 2026-10-30 (uppgift e):** glaset ligger på agentkorten
+  under "En agent för varje område", som EN gemensam `glass glass--strong`-
+  panel (radie 28 px) med fyra fält och bara luft emellan; fältet tonas
+  (`--chip`) vid hover. Valt efter jämförelse av tre avgränsningar på
+  `/glas-test` (linjer, tonade plattor, bara luft). Håller taket: två
+  glasytor på skärmen med headern. Hero-exemplet förblir solidt.
+  `.lv-lift:hover` sänkt till 2 px (§8).
+- **Fråga 7–17, beslutade 2026-10-30 (Hugo sa ja till förslagen):**
+  - 7: sidfoten är solid Shadow Grey i båda lägena med Iron Grey-kant
+    upptill. Gjort med `theme-dark` på `<footer>`; alias-blocket i
+    globals.css följer nu också `.theme-dark`/`.theme-inverse`, så scoperna
+    täcker alla tokens.
+  - 11: pris-växeln är en segmenterad kontroll: EN `glass glass--strong`-
+    pill (`.pf-switch`) med två segment, det valda tonat som primärknappen.
+  - 12 och 13: ingen modal och ingen cookie-ruta i v1. **Uppgift f) utgår.**
+  - 14: `/glas-test` behålls bakom `noindex` (varianterna 6a-1–6b ligger
+    kvar som referens).
+  - 15: Hugo kör `npm run build` och testskriptet; Playwright installeras
+    av Hugo när g) är skrivet.
+  - 17: den lösa mappen `veralabs-hemsida:public:images:` tas bort av Hugo
+    (vakten tillåter inga raderingar). Bilden startsidan använder ligger i
+    `public/images/`.
+- **Header följer scrollen (Hugos beslut 2026-10-30):** pillen förskjuts
+  pixel för pixel uppåt när sidan scrollas ned tills den är utanför bild,
+  och tillbaka i scrollens takt uppåt. Ingen animation (därför ingen
+  konflikt med §8). Står still högst upp och när en meny är öppen.
+  Implementerat i `SiteHeader.tsx` med `requestAnimationFrame` och
+  `transform: translateY`. Stegen på startsidan är tre solida rutor i
+  agentpanelens färg och radie (innehåll, inte glas).
+- **Intoning vid scroll (Hugos beslut 2026-10-30):** `.reveal` och
+  `.reveal-stagger` i globals.css tonar in innehåll och lyfter det 20 px
+  medan det scrollas in, styrt av `animation-timeline: view()` med
+  `animation-range: entry 0% cover 28%` och stegvis förskjutning för barn.
+  Ingen JavaScript; av vid `prefers-reduced-motion`. Används på startsidans
+  sektioner utom hero. Obs: `entry X% entry Y%` blev för kort för små
+  element (≈30 px scroll); `cover` ger samma längd oavsett elementets höjd.
+  Avstått från: parallax (rörelse under glas, §8) och scroll snap (test
+  möjligt senare).
 - **Obs, Lightning CSS igen:** deklarationer som läggs i en regel som också
   har `background-*`-rader kan försvinna i kompileringen (`margin-top` och
   `padding-top` i `.lv-hero` försvann, både som `var()`/`calc()` och som

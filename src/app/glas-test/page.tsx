@@ -49,7 +49,7 @@ function AgentPanel({ separator }: { separator: "lines" | "tiles" | "none" }) {
         <a
           key={a.title}
           href="#"
-          className={`box-border flex flex-col gap-3.5 rounded-[20px] p-6 text-ink no-underline ${cell}${
+          className={`box-border flex flex-col gap-3.5 rounded-card p-6 text-ink no-underline ${cell}${
             separator === "lines" && i > 0 ? " min-[940px]:border-l min-[940px]:border-l-line" : ""
           }`}
         >
@@ -155,13 +155,13 @@ export default function GlasTestPage() {
         4. Sämsta bakgrund: glas över Shadow Grey och över Bright Snow (§9.1)
       </h2>
       <div className="mb-12 grid grid-cols-[repeat(auto-fit,minmax(260px,1fr))] gap-6">
-        <div className="box-border rounded-[20px] bg-lv-hero-bg p-8">
+        <div className="box-border rounded-card bg-lv-hero-bg p-8">
           <div className="glass box-border p-6">
             <div className="text-[13px] font-bold tracking-[0.14em] uppercase">Över Shadow Grey</div>
             <p className="mt-2 mb-0 text-[16px] leading-[1.55]">Headern när ett mörkt band scrollar upp under den.</p>
           </div>
         </div>
-        <div className="box-border rounded-[20px] bg-snow p-8">
+        <div className="box-border rounded-card bg-snow p-8">
           <div className="glass box-border p-6">
             <div className="text-[13px] font-bold tracking-[0.14em] uppercase">Över Bright Snow</div>
             <p className="mt-2 mb-0 text-[16px] leading-[1.55]">
@@ -169,7 +169,7 @@ export default function GlasTestPage() {
             </p>
           </div>
         </div>
-        <div className="box-border rounded-[20px] bg-lv-hero-bg p-8">
+        <div className="box-border rounded-card bg-lv-hero-bg p-8">
           <div className="flex flex-wrap gap-3">
             <a className="btn btn--primary theme-dark" href="#">
               Primär · theme-dark

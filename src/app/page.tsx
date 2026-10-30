@@ -1,6 +1,6 @@
-import Image from "next/image";
 import Link from "next/link";
 import type { Metadata } from "next";
+import { VideoBackground } from "@/components/VideoBackground";
 
 export const metadata: Metadata = {
   description:
@@ -40,7 +40,7 @@ export default function HomePage() {
           </div>
           <div className="flex-[1_1_400px] min-w-0 max-w-[520px]">
             <div
-              className="lv-mock p-6 rounded-[20px] bg-lv-card text-lv-ink box-border text-left font-sans"
+              className="lv-mock p-6 rounded-card bg-lv-card text-lv-ink box-border text-left font-sans"
               role="img"
               aria-label="Exempel på VeraAI-appen: veckans bokföring med tolv poster, varav elva klara och en fråga, och knappen Godkänn veckan."
             >
@@ -120,7 +120,7 @@ export default function HomePage() {
               </p>
             </div>
             <div className="flex-[1_1_480px] min-w-0">
-              <div className="p-6 gap-4 rounded-[20px] relative aspect-[16/9] bg-[linear-gradient(135deg,var(--contrast)_0%,var(--accent)_100%)] flex flex-col items-center justify-center text-ink-inverse text-center box-border">
+              <div className="p-6 gap-4 rounded-card relative aspect-[16/9] bg-[linear-gradient(135deg,var(--contrast)_0%,var(--accent)_100%)] flex flex-col items-center justify-center text-ink-inverse text-center box-border">
                 <div className="rounded-full w-18 h-18 bg-page flex items-center justify-center">
                   <svg width="26" height="26" viewBox="0 0 14 14" aria-hidden="true">
                     <path d="M4 2l8 5-8 5z" fill="var(--contrast)" />
@@ -264,7 +264,7 @@ export default function HomePage() {
             mellan fälten; fältet tonas vid hover. Två glasytor på skärmen med headern. */}
         <div className="glass glass--strong box-border rounded-panel p-2 gap-1 grid grid-cols-[repeat(auto-fit,minmax(220px,1fr))] reveal-stagger">
           <Link
-            className="p-6 gap-3.5 rounded-[20px] min-w-0 box-border wrap-break-word flex flex-col no-underline text-ink hover:bg-chip"
+            className="p-6 gap-3.5 rounded-card min-w-0 box-border wrap-break-word flex flex-col no-underline text-ink hover:bg-chip"
             href="/agenter/bokforing"
           >
             <div className="rounded-xl w-12 h-12 bg-chip flex items-center justify-center flex-none">
@@ -286,7 +286,7 @@ export default function HomePage() {
             <span className="mt-auto text-[12px] font-bold tracking-[0.12em] uppercase text-accent">Läs mer →</span>
           </Link>
           <Link
-            className="p-6 gap-3.5 rounded-[20px] min-w-0 box-border wrap-break-word flex flex-col no-underline text-ink hover:bg-chip"
+            className="p-6 gap-3.5 rounded-card min-w-0 box-border wrap-break-word flex flex-col no-underline text-ink hover:bg-chip"
             href="/agenter/trendovervakaren"
           >
             <div className="rounded-xl w-12 h-12 bg-chip flex items-center justify-center flex-none">
@@ -308,7 +308,7 @@ export default function HomePage() {
             <span className="mt-auto text-[12px] font-bold tracking-[0.12em] uppercase text-accent">Läs mer →</span>
           </Link>
           <Link
-            className="p-6 gap-3.5 rounded-[20px] min-w-0 box-border wrap-break-word flex flex-col no-underline text-ink hover:bg-chip"
+            className="p-6 gap-3.5 rounded-card min-w-0 box-border wrap-break-word flex flex-col no-underline text-ink hover:bg-chip"
             href="/agenter/strategikonsulten"
           >
             <div className="rounded-xl w-12 h-12 bg-chip flex items-center justify-center flex-none">
@@ -330,7 +330,7 @@ export default function HomePage() {
             <span className="mt-auto text-[12px] font-bold tracking-[0.12em] uppercase text-accent">Läs mer →</span>
           </Link>
           <Link
-            className="p-6 gap-3.5 rounded-[20px] min-w-0 box-border wrap-break-word flex flex-col no-underline text-ink hover:bg-chip"
+            className="p-6 gap-3.5 rounded-card min-w-0 box-border wrap-break-word flex flex-col no-underline text-ink hover:bg-chip"
             href="/agenter/leverantorsagenten"
           >
             <div className="rounded-xl w-12 h-12 bg-chip flex items-center justify-center flex-none">
@@ -361,36 +361,7 @@ export default function HomePage() {
           </Link>
         </div>
       </div>
-      <div className="bg-surface min-[900px]:min-h-dvh box-border flex items-center">
-      <div className="mx-auto my-0 px-10 py-20 gap-6 w-full max-w-[1200px] box-border flex flex-wrap reveal-stagger">
-        <div className="relative flex-[1_1_320px] min-w-0 aspect-[4/3] overflow-hidden rounded-[20px]">
-          <Image
-            src="/images/butik-kassa.jpg"
-            alt="Butiksägare tar emot en kortbetalning vid kassan"
-            fill
-            sizes="(min-width: 1280px) 580px, (min-width: 768px) 45vw, 100vw"
-            className="object-cover"
-          />
-        </div>
-        <div className="p-6 gap-2 rounded-[20px] flex-[1_1_320px] min-w-0 aspect-[4/3] border-2 border-dashed border-lv-ph-line bg-lv-ph flex flex-col items-center justify-center box-border text-center font-sans">
-          <svg width="28" height="28" viewBox="0 0 24 24" aria-hidden="true">
-            <path
-              d="M4 5h16v14H4z M4 15l5-5 4 4 3-3 4 4 M15 9h.01"
-              fill="none"
-              stroke="var(--lv-muted)"
-              strokeWidth="1.8"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            />
-          </svg>
-          <div className="text-[12px] font-bold tracking-[0.14em] uppercase text-lv-ink">Plats för bild</div>
-          <div className="text-[14px] leading-[1.5] text-lv-muted max-w-[320px]">
-            Någon som går igenom veckans bokföring i telefonen eller datorn.
-          </div>
-        </div>
-      </div>
-      </div>
-      <div className="min-[900px]:min-h-dvh box-border flex items-center scroll-mt-20" id="trygghet">
+      <div className="bg-surface min-[900px]:min-h-dvh box-border flex items-center scroll-mt-20" id="trygghet">
         <div className="mx-auto my-0 px-10 py-20 gap-14 w-full max-w-[1200px] box-border flex flex-wrap items-center">
           <div className="flex-[1_1_420px] min-w-0 reveal">
             <h2 className="mx-0 mt-0 mb-4 font-display font-bold uppercase tracking-[0.01em] text-[clamp(28px,6.5vw,42px)] leading-[1.05] wrap-break-word">
@@ -409,7 +380,7 @@ export default function HomePage() {
             </div>
           </div>
           <div className="gap-3.5 flex-[1_1_420px] min-w-0 flex flex-col reveal-stagger">
-            <div className="px-5 py-4.5 gap-3.5 rounded-[14px] flex items-start bg-surface border border-line">
+            <div className="px-5 py-4.5 gap-3.5 rounded-[14px] flex items-start bg-page border border-line">
               <svg className="mt-[3px] flex-none" width="20" height="20" viewBox="0 0 24 24" aria-hidden="true">
                 <path
                   d="M5 12.5l4.5 4.5L19 7.5"
@@ -427,7 +398,7 @@ export default function HomePage() {
                 </div>
               </div>
             </div>
-            <div className="px-5 py-4.5 gap-3.5 rounded-[14px] flex items-start bg-surface border border-line">
+            <div className="px-5 py-4.5 gap-3.5 rounded-[14px] flex items-start bg-page border border-line">
               <svg className="mt-[3px] flex-none" width="20" height="20" viewBox="0 0 24 24" aria-hidden="true">
                 <path
                   d="M5 12.5l4.5 4.5L19 7.5"
@@ -445,7 +416,7 @@ export default function HomePage() {
                 </div>
               </div>
             </div>
-            <div className="px-5 py-4.5 gap-3.5 rounded-[14px] flex items-start bg-surface border border-line">
+            <div className="px-5 py-4.5 gap-3.5 rounded-[14px] flex items-start bg-page border border-line">
               <svg className="mt-[3px] flex-none" width="20" height="20" viewBox="0 0 24 24" aria-hidden="true">
                 <path
                   d="M5 12.5l4.5 4.5L19 7.5"
@@ -463,7 +434,7 @@ export default function HomePage() {
                 </div>
               </div>
             </div>
-            <div className="px-5 py-4.5 gap-3.5 rounded-[14px] flex items-start bg-surface border border-line">
+            <div className="px-5 py-4.5 gap-3.5 rounded-[14px] flex items-start bg-page border border-line">
               <svg className="mt-[3px] flex-none" width="20" height="20" viewBox="0 0 24 24" aria-hidden="true">
                 <path
                   d="M5 12.5l4.5 4.5L19 7.5"
@@ -484,8 +455,18 @@ export default function HomePage() {
           </div>
         </div>
       </div>
-      <div className="bg-surface min-[900px]:min-h-dvh box-border flex items-center">
-      <div className="mx-auto my-0 px-10 py-20 w-full max-w-[1200px] box-border text-center reveal-stagger">
+      {/* Integrationer: loopad video som bakgrund (Hugos beslut 2026-10-30) med ett mörkt skikt ovanpå,
+          och theme-dark så att text och chips får de mörka tokens oavsett läge. Videon pausas när
+          sektionen inte syns och vid "minska rörelse"; saknas filen visas stillbilden/bakgrunden. */}
+      <div className="relative overflow-hidden theme-dark bg-page text-ink min-[900px]:min-h-dvh box-border flex items-center">
+        <VideoBackground
+          src="/video/integrationer.mp4"
+          poster="/video/integrationer.jpg"
+          speed={0.5}
+          className="absolute inset-0 h-full w-full object-cover"
+        />
+        <div className="absolute inset-0 bg-shadow/65" aria-hidden="true" />
+      <div className="relative mx-auto my-0 px-10 py-20 w-full max-w-[1200px] box-border text-center reveal-stagger">
         <div className="mb-5 px-3.5 py-1.5 rounded-full inline-block bg-chip text-contrast text-[13px] font-semibold tracking-[0.14em] uppercase">
           Integrationer
         </div>
@@ -620,7 +601,7 @@ export default function HomePage() {
           Kundröster
         </h2>
         <div className="gap-6 grid grid-cols-[repeat(auto-fit,minmax(300px,1fr))] reveal-stagger">
-          <figure className="m-0 p-7 gap-4.5 rounded-[20px] bg-page border border-line min-w-0 box-border wrap-break-word flex flex-col">
+          <figure className="m-0 p-7 gap-4.5 rounded-card bg-page border border-line min-w-0 box-border wrap-break-word flex flex-col">
             <span className="px-2.5 py-[3px] rounded-full self-start border border-line-soft text-[11px] font-bold tracking-[0.12em] uppercase text-ink-soft">
               Exempelcitat
             </span>
@@ -631,7 +612,7 @@ export default function HomePage() {
               Anna Berg · Ägare, Exempelbutiken AB
             </figcaption>
           </figure>
-          <figure className="m-0 p-7 gap-4.5 rounded-[20px] bg-page border border-line min-w-0 box-border wrap-break-word flex flex-col">
+          <figure className="m-0 p-7 gap-4.5 rounded-card bg-page border border-line min-w-0 box-border wrap-break-word flex flex-col">
             <span className="px-2.5 py-[3px] rounded-full self-start border border-line-soft text-[11px] font-bold tracking-[0.12em] uppercase text-ink-soft">
               Exempelcitat
             </span>
@@ -646,7 +627,7 @@ export default function HomePage() {
       </div>
       </div>
       <div className="mx-auto my-0 px-10 py-20 gap-12 max-w-[1200px] box-border flex flex-wrap items-center min-[900px]:min-h-dvh content-center reveal-stagger">
-        <div className="p-5 gap-2.5 rounded-[20px] flex-[0_1_280px] min-w-0 aspect-[4/5] border-2 border-dashed border-line-soft bg-surface-muted flex flex-col items-center justify-center text-center box-border">
+        <div className="p-5 gap-2.5 rounded-card flex-[0_1_280px] min-w-0 aspect-[4/5] border-2 border-dashed border-line-soft bg-surface-muted flex flex-col items-center justify-center text-center box-border">
           <svg width="36" height="36" viewBox="0 0 24 24" aria-hidden="true">
             <path
               d="M4 5h16v14H4z M4 15l4-4 4 4 3-3 5 5 M15.5 9.5h.01"
@@ -736,7 +717,7 @@ export default function HomePage() {
           </div>
         </div>
         <form
-          className="p-8 gap-4.5 rounded-[20px] flex-[1_1_440px] bg-page border border-line min-w-0 box-border wrap-break-word flex flex-col shadow-[0_30px_70px_rgba(33,37,41,0.08)]"
+          className="p-8 gap-4.5 rounded-card flex-[1_1_440px] bg-page border border-line min-w-0 box-border wrap-break-word flex flex-col shadow-[0_30px_70px_rgba(33,37,41,0.08)]"
           action="mailto:hej@veralabs.se?subject=Boka%20ett%20samtal"
           method="post"
           encType="text/plain"

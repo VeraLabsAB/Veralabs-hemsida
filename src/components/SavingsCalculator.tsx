@@ -46,7 +46,7 @@ export function SavingsCalculator() {
         <p className="mx-auto mt-0 mb-10 text-[17px] leading-[1.6] max-w-[520px] text-center font-serif text-ink uppercase tracking-[0.03em]">
           Tre siffror ger en uppskattning av kostnad och tid.
         </p>
-        <div className="p-10 rounded-3xl bg-page border border-line box-border">
+        <div className="p-10 rounded-card bg-page border border-line box-border">
           <div className="calc-grid grid-cols-[repeat(auto-fit,minmax(220px,1fr))] items-end">
             <div>
               <label
@@ -110,7 +110,7 @@ export function SavingsCalculator() {
             </div>
           </div>
           <div className="calc-grid mt-8">
-            <div className="p-8 rounded-[20px] bg-contrast text-ink-inverse box-border min-w-0">
+            <div className="p-8 rounded-card bg-contrast text-ink-inverse box-border min-w-0">
               <div className="mb-3 text-[13px] font-semibold tracking-[0.1em] uppercase text-ink-inverse-soft leading-[1.4]">
                 Kostnad i dag
               </div>
@@ -119,7 +119,7 @@ export function SavingsCalculator() {
                 per år, inklusive värdet av er tid.
               </div>
             </div>
-            <div className="p-8 rounded-[20px] bg-contrast text-ink-inverse box-border min-w-0">
+            <div className="p-8 rounded-card bg-contrast text-ink-inverse box-border min-w-0">
               <div className="mb-3 text-[13px] font-semibold tracking-[0.1em] uppercase text-ink-inverse-soft leading-[1.4]">
                 Tid tillbaka
               </div>

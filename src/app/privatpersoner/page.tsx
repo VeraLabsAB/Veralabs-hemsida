@@ -25,7 +25,7 @@ export default function PrivatpersonerPage() {
       <div className="mx-auto my-0 px-10 py-22 max-w-[1200px] box-border">
         <div className="gap-6 grid grid-cols-[repeat(auto-fit,minmax(280px,1fr))]">
           <Link
-            className="p-7 gap-3.5 rounded-[20px] bg-surface border border-line min-w-0 box-border flex flex-col no-underline text-ink wrap-break-word"
+            className="p-7 gap-3.5 rounded-card bg-surface border border-line min-w-0 box-border flex flex-col no-underline text-ink wrap-break-word"
             href="/privat/kalender"
           >
             <div className="rounded-xl w-12 h-12 bg-chip flex items-center justify-center">
@@ -52,7 +52,7 @@ export default function PrivatpersonerPage() {
             </div>
           </Link>
           <Link
-            className="p-7 gap-3.5 rounded-[20px] bg-surface border border-line min-w-0 box-border flex flex-col no-underline text-ink wrap-break-word"
+            className="p-7 gap-3.5 rounded-card bg-surface border border-line min-w-0 box-border flex flex-col no-underline text-ink wrap-break-word"
             href="/privat/traning"
           >
             <div className="rounded-xl w-12 h-12 bg-chip flex items-center justify-center">
@@ -79,7 +79,7 @@ export default function PrivatpersonerPage() {
             </div>
           </Link>
           <Link
-            className="p-7 gap-3.5 rounded-[20px] bg-surface border border-line min-w-0 box-border flex flex-col no-underline text-ink wrap-break-word"
+            className="p-7 gap-3.5 rounded-card bg-surface border border-line min-w-0 box-border flex flex-col no-underline text-ink wrap-break-word"
             href="/privat/ekonomi"
           >
             <div className="rounded-xl w-12 h-12 bg-chip flex items-center justify-center">

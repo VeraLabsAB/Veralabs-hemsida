@@ -37,7 +37,7 @@ export default function TraningPage() {
             </div>
           </div>
           <div className="reveal-soft flex-[1_1_440px] min-w-0">
-            <div className="px-7 py-6 rounded-3xl bg-surface border border-line shadow-[0_30px_70px_rgba(33,37,41,0.12)] box-border w-full">
+            <div className="px-7 py-6 rounded-card bg-surface border border-line shadow-[0_30px_70px_rgba(33,37,41,0.12)] box-border w-full">
               <div className="mb-2 gap-3 flex justify-between items-center">
                 <div>
                   <div className="text-[12px] font-semibold tracking-[0.12em] uppercase text-ink-soft">
@@ -207,7 +207,7 @@ export default function TraningPage() {
             </p>
           </div>
           <div className="gap-6 grid grid-cols-[repeat(auto-fit,minmax(280px,1fr))]">
-            <div className="reveal-soft p-8 gap-4 rounded-[20px] bg-surface border border-line min-w-0 flex flex-col">
+            <div className="reveal-soft p-8 gap-4 rounded-card bg-surface border border-line min-w-0 flex flex-col">
               <div className="flex justify-between items-center">
                 <div className="rounded-xl w-12 h-12 bg-chip flex items-center justify-center">
                   <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true">
@@ -230,7 +230,7 @@ export default function TraningPage() {
                 Mål, nivå, schema och matpreferenser.
               </p>
             </div>
-            <div className="reveal-soft p-8 gap-4 rounded-[20px] bg-surface border border-line min-w-0 flex flex-col">
+            <div className="reveal-soft p-8 gap-4 rounded-card bg-surface border border-line min-w-0 flex flex-col">
               <div className="flex justify-between items-center">
                 <div className="rounded-xl w-12 h-12 bg-chip flex items-center justify-center">
                   <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true">
@@ -253,7 +253,7 @@ export default function TraningPage() {
                 Pass och måltider läggs upp efter ditt mål. Vid osäkerhet frågar Vera.
               </p>
             </div>
-            <div className="reveal-soft p-8 gap-4 rounded-[20px] bg-surface border border-line min-w-0 flex flex-col">
+            <div className="reveal-soft p-8 gap-4 rounded-card bg-surface border border-line min-w-0 flex flex-col">
               <div className="flex justify-between items-center">
                 <div className="rounded-xl w-12 h-12 bg-chip flex items-center justify-center">
                   <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true">
@@ -463,7 +463,7 @@ export default function TraningPage() {
           </Link>
         </div>
         <div className="reveal-soft flex-[1_1_480px] min-w-0">
-          <div className="p-7 rounded-3xl bg-surface border border-line shadow-[0_30px_70px_rgba(33,37,41,0.10)] box-border">
+          <div className="p-7 rounded-card bg-surface border border-line shadow-[0_30px_70px_rgba(33,37,41,0.10)] box-border">
             <div className="gap-3 flex justify-between items-start flex-wrap">
               <div>
                 <div className="text-[12px] font-semibold tracking-[0.12em] uppercase text-ink-soft">
@@ -960,7 +960,7 @@ export default function TraningPage() {
           </h2>
         </div>
         <div className="gap-6 grid grid-cols-[repeat(auto-fit,minmax(260px,1fr))]">
-          <div className="reveal-soft p-7 gap-3.5 rounded-[20px] bg-surface border border-line min-w-0 flex flex-col">
+          <div className="reveal-soft p-7 gap-3.5 rounded-card bg-surface border border-line min-w-0 flex flex-col">
             <div className="rounded-xl w-12 h-12 bg-chip flex items-center justify-center">
               <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true">
                 <path
@@ -978,7 +978,7 @@ export default function TraningPage() {
               En tydlig start utan gissningar.
             </p>
           </div>
-          <div className="reveal-soft p-7 gap-3.5 rounded-[20px] bg-surface border border-line min-w-0 flex flex-col">
+          <div className="reveal-soft p-7 gap-3.5 rounded-card bg-surface border border-line min-w-0 flex flex-col">
             <div className="rounded-xl w-12 h-12 bg-chip flex items-center justify-center">
               <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true">
                 <path
@@ -996,7 +996,7 @@ export default function TraningPage() {
               Nästa nivå, med bättre struktur.
             </p>
           </div>
-          <div className="reveal-soft p-7 gap-3.5 rounded-[20px] bg-surface border border-line min-w-0 flex flex-col">
+          <div className="reveal-soft p-7 gap-3.5 rounded-card bg-surface border border-line min-w-0 flex flex-col">
             <div className="rounded-xl w-12 h-12 bg-chip flex items-center justify-center">
               <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true">
                 <path
@@ -1096,7 +1096,7 @@ export default function TraningPage() {
             </h2>
           </div>
           <div className="gap-6 grid grid-cols-[repeat(auto-fit,minmax(300px,1fr))]">
-            <figure className="m-0 p-7 gap-4.5 rounded-[20px] bg-surface border border-line min-w-0 box-border flex flex-col">
+            <figure className="m-0 p-7 gap-4.5 rounded-card bg-surface border border-line min-w-0 box-border flex flex-col">
               <span className="px-2.5 py-[3px] rounded-full self-start border border-line-soft text-[11px] font-bold tracking-[0.12em] uppercase text-ink-soft">
                 Exempelcitat
               </span>
@@ -1107,7 +1107,7 @@ export default function TraningPage() {
                 Nora Ali · Exempelanvändare
               </figcaption>
             </figure>
-            <figure className="m-0 p-7 gap-4.5 rounded-[20px] bg-surface border border-line min-w-0 box-border flex flex-col">
+            <figure className="m-0 p-7 gap-4.5 rounded-card bg-surface border border-line min-w-0 box-border flex flex-col">
               <span className="px-2.5 py-[3px] rounded-full self-start border border-line-soft text-[11px] font-bold tracking-[0.12em] uppercase text-ink-soft">
                 Exempelcitat
               </span>

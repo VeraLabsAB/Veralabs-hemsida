@@ -36,7 +36,9 @@
   /* Radier (§7) */
   --r-pill: 999px;
   --r-xl: 28px; /* paneler, modaler, rullgardiner */
-  --r-lg: 20px; /* kort */
+  /* Spec §7 säger 20 px för kort; Hugos beslut 2026-10-30: alla rutor har
+     samma rundning som header-pillen (28 px = halva pillens höjd). */
+  --r-lg: 28px; /* kort */
   --r-md: 14px; /* knappar som inte är pills, fält */
   --r-sm: 10px; /* små chips */
 

@@ -7,7 +7,8 @@
     "build": "node node_modules/next/dist/bin/next build",
     "start": "node node_modules/next/dist/bin/next start",
     "lint": "node node_modules/eslint/bin/eslint.js",
-    "format": "node node_modules/prettier/bin/prettier.cjs --write ."
+    "format": "node node_modules/prettier/bin/prettier.cjs --write .",
+    "test:glas": "node scripts/glas/run.mjs"
   },
   "dependencies": {
     "next": "16.4.3",

@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { Archivo_Black, League_Spartan, Montserrat } from "next/font/google";
 import { SiteFooter } from "@/components/SiteFooter";
 import { SiteHeader } from "@/components/site-header/SiteHeader";
-import { themeInitScript } from "@/components/site-header/ThemeToggle";
 import "./globals.css";
 
 const montserrat = Montserrat({
@@ -33,16 +32,16 @@ export const metadata: Metadata = {
   robots: { index: false, follow: false },
 };
 
+/** Mörkt läge är sajtens enda läge (Hugos beslut 2026-10-30): data-theme="dark" sätts fast här.
+ *  De ljusa tokens finns kvar i tokens.css för theme-inverse och för att kunna återinföra
+ *  switchen (ThemeToggle.tsx) senare. */
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
       lang="sv"
+      data-theme="dark"
       className={`${montserrat.variable} ${leagueSpartan.variable} ${archivoBlack.variable}`}
-      suppressHydrationWarning
     >
-      <head>
-        <script dangerouslySetInnerHTML={{ __html: themeInitScript }} />
-      </head>
       <body>
         {/* Soft Light Steel spots behind every page, so glass surfaces have something to blur (DESIGN-GLASS.md §5). */}
         <div className="light-field" aria-hidden="true" />

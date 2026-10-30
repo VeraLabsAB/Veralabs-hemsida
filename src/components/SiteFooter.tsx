@@ -38,7 +38,7 @@ const linkClass = "text-[14px] leading-[1.5] text-ink-soft no-underline";
  *  (DESIGN-GLASS §2), så text, loggan och kanten (Iron Grey) följer med utan egna klasser. */
 export function SiteFooter() {
   return (
-    <footer className="theme-dark border-t border-t-line bg-page">
+    <footer className="theme-dark border-t border-t-line bg-page text-ink">
       <div className="mx-auto box-border max-w-[1200px] px-10 pt-14 pb-7">
         <div className="flex flex-wrap gap-x-8 gap-y-10">
           <div className="min-w-0 flex-[2_1_260px]">

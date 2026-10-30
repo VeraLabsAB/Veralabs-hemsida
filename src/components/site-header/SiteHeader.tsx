@@ -11,7 +11,6 @@ import {
   type KeyboardEvent,
 } from "react";
 import { NAV_SECTIONS, type NavLink, type NavSection } from "./navigation";
-import { ThemeToggle } from "./ThemeToggle";
 
 /* Same breakpoint as the @media rules for .site-header/.site-nav in globals.css.
    On mobile the whole menu is ONE glass panel, so the dropdown panels inside
@@ -262,7 +261,7 @@ export function SiteHeader() {
         data-open={menuOpen || undefined}
         aria-label="Huvudmeny"
       >
-        <ThemeToggle />
+        {/* Ljus/mörk-switchen (ThemeToggle) är borttagen: sajten är bara mörk sedan 2026-10-30. */}
         {NAV_SECTIONS.map((section, index) => (
           <NavDropdown
             key={section.label}
@@ -276,11 +275,16 @@ export function SiteHeader() {
             }
           />
         ))}
-        {/* Flat: it sits inside the header's glass, so it must not be glass itself (Apple: group controls). */}
-        <Link href="/#kontakt" className="btn btn--primary btn--sm btn--flat">
+        {/* On mobile the button lives inside the menu panel; on desktop the copy below the nav is used. */}
+        <Link href="/#kontakt" className="btn btn--primary btn--sm btn--flat nav-cta-mobile">
           Boka en demo
         </Link>
       </nav>
+      {/* Flat: it sits inside the header's glass, so it must not be glass itself (Apple: group controls).
+          Outside the nav so the menu can be centred between the logo and this button. */}
+      <Link href="/#kontakt" className="btn btn--primary btn--sm btn--flat nav-cta-desktop">
+        Boka en demo
+      </Link>
       {/* Scroll-edge effect (§8): a 24 px blurred band under the pill, keeps the controls readable. */}
       <span className="scroll-edge" aria-hidden="true" />
     </header>

@@ -32,7 +32,7 @@ export default function PriserPage() {
         <div className="bg-surface border-t border-t-line border-b border-b-line">
           <div className="mx-auto my-0 px-10 py-20 max-w-[1200px] box-border">
             <div className="only-f pcards-f">
-              <div className="p-8 gap-4 rounded-[20px] box-border min-w-0 bg-page border-2 border-accent flex flex-col">
+              <div className="p-8 gap-4 rounded-card box-border min-w-0 bg-page border-2 border-accent flex flex-col">
                 <span className="px-3 py-[5px] rounded-full self-start bg-chip text-contrast text-[12px] font-semibold tracking-[0.12em] uppercase">
                   Första agenten
                 </span>
@@ -108,7 +108,7 @@ export default function PriserPage() {
                   Få en prisuppskattning
                 </Link>
               </div>
-              <div className="p-8 gap-4 rounded-[20px] box-border min-w-0 bg-page border border-line flex flex-col">
+              <div className="p-8 gap-4 rounded-card box-border min-w-0 bg-page border border-line flex flex-col">
                 <h3 className="m-0 font-display font-bold text-[28px] leading-[1.1] tracking-[0.01em] uppercase wrap-anywhere">
                   Trend&shy;övervakaren
                 </h3>
@@ -181,7 +181,7 @@ export default function PriserPage() {
                   Få en prisuppskattning
                 </Link>
               </div>
-              <div className="p-8 gap-4 rounded-[20px] box-border min-w-0 bg-page border border-line flex flex-col">
+              <div className="p-8 gap-4 rounded-card box-border min-w-0 bg-page border border-line flex flex-col">
                 <h3 className="m-0 font-display font-bold text-[28px] leading-[1.1] tracking-[0.01em] uppercase wrap-anywhere">
                   Strategi&shy;konsulten
                 </h3>
@@ -254,7 +254,7 @@ export default function PriserPage() {
                   Få en prisuppskattning
                 </Link>
               </div>
-              <div className="p-8 gap-4 rounded-[20px] box-border min-w-0 bg-page border border-line flex flex-col">
+              <div className="p-8 gap-4 rounded-card box-border min-w-0 bg-page border border-line flex flex-col">
                 <h3 className="m-0 font-display font-bold text-[28px] leading-[1.1] tracking-[0.01em] uppercase wrap-anywhere">
                   Leverantörs&shy;agenten
                 </h3>
@@ -328,7 +328,7 @@ export default function PriserPage() {
                 </Link>
               </div>
               <div
-                className="wide p-8 gap-4 rounded-[20px] box-border min-w-0 bg-page border border-line flex flex-col"
+                className="wide p-8 gap-4 rounded-card box-border min-w-0 bg-page border border-line flex flex-col"
                 id="paket"
               >
                 <span className="px-3 py-[5px] rounded-full self-start bg-surface-muted text-ink text-[12px] font-semibold tracking-[0.12em] uppercase">
@@ -408,7 +408,7 @@ export default function PriserPage() {
               </div>
             </div>
             <div className="only-p pcards-p">
-              <div className="p-8 gap-4 rounded-[20px] box-border min-w-0 bg-page border border-line flex flex-col">
+              <div className="p-8 gap-4 rounded-card box-border min-w-0 bg-page border border-line flex flex-col">
                 <h3 className="m-0 font-display font-bold text-[28px] leading-[1.1] tracking-[0.01em] uppercase wrap-anywhere">
                   Kalender och vardag
                 </h3>
@@ -481,7 +481,7 @@ export default function PriserPage() {
                   Läs mer
                 </Link>
               </div>
-              <div className="p-8 gap-4 rounded-[20px] box-border min-w-0 bg-page border border-line flex flex-col">
+              <div className="p-8 gap-4 rounded-card box-border min-w-0 bg-page border border-line flex flex-col">
                 <h3 className="m-0 font-display font-bold text-[28px] leading-[1.1] tracking-[0.01em] uppercase wrap-anywhere">
                   Tränings- och kostråd
                 </h3>
@@ -554,7 +554,7 @@ export default function PriserPage() {
                   Läs mer
                 </Link>
               </div>
-              <div className="p-8 gap-4 rounded-[20px] box-border min-w-0 bg-page border border-line flex flex-col">
+              <div className="p-8 gap-4 rounded-card box-border min-w-0 bg-page border border-line flex flex-col">
                 <h3 className="m-0 font-display font-bold text-[28px] leading-[1.1] tracking-[0.01em] uppercase wrap-anywhere">
                   Privatekonomi och sparande
                 </h3>
@@ -673,7 +673,7 @@ export default function PriserPage() {
         </div>
         <SavingsCalculator />
         <div className="only-p mx-auto my-0 px-10 py-22 max-w-[1200px] box-border flex justify-center">
-          <div className="px-10 py-12 rounded-[20px] w-full max-w-[720px] bg-contrast text-ink-inverse box-border text-center">
+          <div className="px-10 py-12 rounded-card w-full max-w-[720px] bg-contrast text-ink-inverse box-border text-center">
             <div className="mb-3 font-display font-bold text-[clamp(32px,7vw,48px)] leading-[1.05] tracking-[0.02em] uppercase">
               XXX kr per tjänst
             </div>

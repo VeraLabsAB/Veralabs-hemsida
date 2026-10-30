@@ -46,7 +46,7 @@ export default function ForetagPage() {
             Specialister som delar samma bild av ert företag.
           </p>
           <div className="gap-6 grid grid-cols-[repeat(auto-fit,minmax(min(440px,100%),1fr))]">
-            <div className="p-8 gap-4 rounded-[20px] bg-page border border-line flex flex-col">
+            <div className="p-8 gap-4 rounded-card bg-page border border-line flex flex-col">
               <div className="gap-3 flex flex-wrap justify-between items-center">
                 <h3 className="m-0 font-display font-bold text-[clamp(22px,6vw,30px)] wrap-break-word tracking-[0.01em] uppercase">
                   Bokförings&shy;agenten
@@ -122,7 +122,7 @@ export default function ForetagPage() {
                 </svg>
               </Link>
             </div>
-            <div className="p-8 gap-4 rounded-[20px] bg-page border border-line flex flex-col">
+            <div className="p-8 gap-4 rounded-card bg-page border border-line flex flex-col">
               <div className="gap-3 flex flex-wrap justify-between items-center">
                 <h3 className="m-0 font-display font-bold text-[clamp(22px,6vw,30px)] wrap-break-word tracking-[0.01em] uppercase">
                   Trend&shy;övervakaren
@@ -195,7 +195,7 @@ export default function ForetagPage() {
                 </svg>
               </Link>
             </div>
-            <div className="p-8 gap-4 rounded-[20px] bg-page border border-line flex flex-col">
+            <div className="p-8 gap-4 rounded-card bg-page border border-line flex flex-col">
               <div className="gap-3 flex flex-wrap justify-between items-center">
                 <h3 className="m-0 font-display font-bold text-[clamp(22px,6vw,30px)] wrap-break-word tracking-[0.01em] uppercase">
                   Strategi&shy;konsulten
@@ -264,7 +264,7 @@ export default function ForetagPage() {
                 </svg>
               </Link>
             </div>
-            <div className="p-8 gap-4 rounded-[20px] bg-page border border-line flex flex-col">
+            <div className="p-8 gap-4 rounded-card bg-page border border-line flex flex-col">
               <div className="gap-3 flex flex-wrap justify-between items-center">
                 <h3 className="m-0 font-display font-bold text-[clamp(22px,6vw,30px)] wrap-break-word tracking-[0.01em] uppercase">
                   Leverantörs&shy;agenten

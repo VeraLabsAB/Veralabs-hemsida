@@ -60,7 +60,7 @@ export default function OmOssPage() {
               på morgonen, med tolv pärmar uppslagna bredvid kassan, och tagit emot kunder mellan varven.
             </p>
           </div>
-          <div className="p-7 gap-3 rounded-[20px] flex-[1_1_380px] min-w-0 min-h-[340px] aspect-[4/3] border-2 border-dashed border-line-soft bg-surface-muted flex flex-col items-center justify-center box-border text-center">
+          <div className="p-7 gap-3 rounded-card flex-[1_1_380px] min-w-0 min-h-[340px] aspect-[4/3] border-2 border-dashed border-line-soft bg-surface-muted flex flex-col items-center justify-center box-border text-center">
             <svg width="40" height="40" viewBox="0 0 24 24" aria-hidden="true">
               <path
                 d="M4 5h16v14H4z M4 15l4-4 4 4 3-3 5 5 M15.5 9.5h.01"
@@ -78,7 +78,7 @@ export default function OmOssPage() {
           </div>
         </div>
         <div className="mt-20 gap-14 flex flex-wrap items-start">
-          <div className="p-7 gap-3 rounded-[20px] flex-[1_1_380px] min-w-0 min-h-[340px] aspect-[4/5] border-2 border-dashed border-line-soft bg-surface-muted flex flex-col items-center justify-center box-border text-center">
+          <div className="p-7 gap-3 rounded-card flex-[1_1_380px] min-w-0 min-h-[340px] aspect-[4/5] border-2 border-dashed border-line-soft bg-surface-muted flex flex-col items-center justify-center box-border text-center">
             <svg width="40" height="40" viewBox="0 0 24 24" aria-hidden="true">
               <path
                 d="M4 5h16v14H4z M4 15l4-4 4 4 3-3 5 5 M15.5 9.5h.01"
@@ -142,19 +142,19 @@ export default function OmOssPage() {
           </div>
         </div>
         <div className="mt-20 gap-6 flex flex-wrap">
-          <div className="p-7 rounded-[20px] flex-[1_1_200px] min-w-0 bg-surface border border-line text-center">
+          <div className="p-7 rounded-card flex-[1_1_200px] min-w-0 bg-surface border border-line text-center">
             <div className="font-display font-bold text-[56px] leading-none text-accent">12</div>
             <div className="mt-2.5 font-serif text-[16px] leading-[1.4] uppercase tracking-[0.03em] text-ink">
               pärmar
             </div>
           </div>
-          <div className="p-7 rounded-[20px] flex-[1_1_200px] min-w-0 bg-surface border border-line text-center">
+          <div className="p-7 rounded-card flex-[1_1_200px] min-w-0 bg-surface border border-line text-center">
             <div className="font-display font-bold text-[56px] leading-none text-accent">16 h</div>
             <div className="mt-2.5 font-serif text-[16px] leading-[1.4] uppercase tracking-[0.03em] text-ink">
               vid datorn
             </div>
           </div>
-          <div className="p-7 rounded-[20px] flex-[1_1_200px] min-w-0 bg-surface border border-line text-center">
+          <div className="p-7 rounded-card flex-[1_1_200px] min-w-0 bg-surface border border-line text-center">
             <div className="font-display font-bold text-[56px] leading-none text-accent">01:00</div>
             <div className="mt-2.5 font-serif text-[16px] leading-[1.4] uppercase tracking-[0.03em] text-ink">
               när dörren låstes
@@ -177,7 +177,7 @@ export default function OmOssPage() {
             Tre invändningar, tre svar
           </h2>
           <div className="mt-5 gap-6 grid grid-cols-[repeat(auto-fit,minmax(280px,1fr))]">
-            <div className="p-7 rounded-[20px] bg-surface border border-line min-w-0">
+            <div className="p-7 rounded-card bg-surface border border-line min-w-0">
               <div className="font-display font-bold uppercase tracking-[0.01em] text-[20px] text-accent">01</div>
               <h3 className="mx-0 my-2.5 font-display font-bold uppercase tracking-[0.01em] text-[24px] leading-[1.1]">
                 Egen regelbok
@@ -186,7 +186,7 @@ export default function OmOssPage() {
                 Vera lär sig hur just ert företag bokför, och följer det.
               </p>
             </div>
-            <div className="p-7 rounded-[20px] bg-surface border border-line min-w-0">
+            <div className="p-7 rounded-card bg-surface border border-line min-w-0">
               <div className="font-display font-bold uppercase tracking-[0.01em] text-[20px] text-accent">02</div>
               <h3 className="mx-0 my-2.5 font-display font-bold uppercase tracking-[0.01em] text-[24px] leading-[1.1]">
                 Granskning
@@ -195,7 +195,7 @@ export default function OmOssPage() {
                 Inget förs in utan ert godkännande, och varje steg loggas.
               </p>
             </div>
-            <div className="p-7 rounded-[20px] bg-surface border border-line min-w-0">
+            <div className="p-7 rounded-card bg-surface border border-line min-w-0">
               <div className="font-display font-bold uppercase tracking-[0.01em] text-[20px] text-accent">03</div>
               <h3 className="mx-0 my-2.5 font-display font-bold uppercase tracking-[0.01em] text-[24px] leading-[1.1]">
                 Direkt till programmet

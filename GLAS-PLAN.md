@@ -322,6 +322,29 @@ Gemensamt för alla uppgifter:
   element (≈30 px scroll); `cover` ger samma längd oavsett elementets höjd.
   Avstått från: parallax (rörelse under glas, §8) och scroll snap (test
   möjligt senare).
+- **Startsidan, 2026-10-30 (Hugos beslut):** bildsektionen (foto +
+  platshållare) är borttagen; `public/images/butik-kassa.jpg` används inte
+  längre. Integrationssektionen har en loopad bakgrundsvideo
+  (`public/video/integrationer.mp4`, 5,6 MB, 720p, 20 s, komprimerad i
+  HandBrake) via `src/components/VideoBackground.tsx`: halvfart, pausas
+  utanför bild och vid `prefers-reduced-motion`, döljs om filen saknas.
+  Mörkt skikt 65 % och `theme-dark` ovanpå för kontrasten. Avvikelse från
+  §8 ("rörliga bakgrunder under glas"): header-pillen passerar videon vid
+  scroll uppåt; accepterat eftersom pillen är dold vid scroll nedåt.
+  Stillbilden `integrationer.jpg` saknas ännu (valfri).
+- **Bara mörkt läge (Hugos beslut 2026-10-30, avvikelse från DESIGN-GLASS
+  §0.9 och §3):** `data-theme="dark"` sätts fast på `<html>` i
+  `layout.tsx`; init-skriptet och switchen är borttagna ur layout och
+  header. `ThemeToggle.tsx` och de ljusa tokens ligger kvar (ljusa tokens
+  används av `theme-inverse` på de ljusa banden), så ljust läge kan
+  återinföras med en attributändring och switchen tillbaka i headern.
+  Testskriptet kör därför bara mörkt (`MODES` i `scripts/glas/run.mjs`).
+  Systemets ljus/mörk-inställning påverkar inte längre sajten.
+- **Kortradie 28 px (Hugos beslut 2026-10-30, avvikelse från §7):** alla
+  rutor har samma rundning som header-pillen (28 px = halva pillens höjd).
+  `--r-lg` är 28 px i tokens.css och alla `rounded-[20px]`/`rounded-3xl`
+  i sidorna är bytta till `rounded-card`, så framtida ändringar görs på ett
+  ställe. Inre rutor (14 px) och chips är oförändrade.
 - **Obs, Lightning CSS igen:** deklarationer som läggs i en regel som också
   har `background-*`-rader kan försvinna i kompileringen (`margin-top` och
   `padding-top` i `.lv-hero` försvann, både som `var()`/`calc()` och som
@@ -507,6 +530,18 @@ Innehåll (punkt för punkt mot §12):
 
 **Klar när:** skriptet körs från ett kommando, skriver ut grönt/rött per
 punkt och sparar skärmdumpar på rätt plats. Hur det körs beror på fråga 15.
+
+**Status 2026-10-30:** skrivet som `scripts/glas/run.mjs` med
+`npm run test:glas` (se `scripts/glas/README.md`). Täcker §12.1–12.9:
+build med varningsbaslinje, hex-grep, filter-grep, glasräkning (start +
+produktsida, öppen rullgardin), axe color-contrast (ljus/mörk × 390/1280 ×
+två sidor), skärmdumpar inkl. emulerad minskad transparens, reduced
+motion, backdrop-grep och Safari-checklista. Startar egen produktionsserver
+på port 3100. **Inte kört ännu:** Hugo installerar Playwright
+(`npm i -D playwright && npx playwright install chromium`) och kör.
+Kända risker vid första körningen: axe kan flagga stegnumren på
+produktsidorna (`text-ink-inverse-soft` på kort, se kontrastrisker i §6)
+och mobil-jämförelsetabellens `opacity: 0.65`.
 
 > Förslag på ordning: g) kan med fördel dras fram till direkt efter b),
 > så att c–f mäts med samma skript i stället för för hand. Jag följer

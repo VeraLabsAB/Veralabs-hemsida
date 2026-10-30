@@ -39,7 +39,7 @@ export default function BokforingPage() {
             </div>
           </div>
           <div className="reveal-soft flex-[1_1_440px] min-w-0">
-            <div className="px-7 py-6 rounded-3xl bg-surface border border-line shadow-[0_30px_70px_rgba(33,37,41,0.12)] box-border w-full">
+            <div className="px-7 py-6 rounded-card bg-surface border border-line shadow-[0_30px_70px_rgba(33,37,41,0.12)] box-border w-full">
               <div className="mb-2 gap-3 flex justify-between items-center">
                 <div>
                   <div className="text-[12px] font-semibold tracking-[0.12em] uppercase text-ink-soft">
@@ -191,7 +191,7 @@ export default function BokforingPage() {
         </div>
         <div className="gap-4 grid grid-cols-[repeat(auto-fit,minmax(200px,1fr))]">
           <a
-            className="reveal-soft p-6 gap-3.5 rounded-[20px] flex flex-col min-w-0 bg-surface border border-line no-underline text-ink wrap-break-word"
+            className="reveal-soft p-6 gap-3.5 rounded-card flex flex-col min-w-0 bg-surface border border-line no-underline text-ink wrap-break-word"
             href="#hur"
           >
             <div className="rounded-xl w-12 h-12 bg-chip flex items-center justify-center">
@@ -215,7 +215,7 @@ export default function BokforingPage() {
             <div className="mt-auto text-[12px] font-bold tracking-[0.12em] uppercase text-accent">Läs mer ↓</div>
           </a>
           <a
-            className="reveal-soft p-6 gap-3.5 rounded-[20px] flex flex-col min-w-0 bg-surface border border-line no-underline text-ink wrap-break-word"
+            className="reveal-soft p-6 gap-3.5 rounded-card flex flex-col min-w-0 bg-surface border border-line no-underline text-ink wrap-break-word"
             href="#fakturering"
           >
             <div className="rounded-xl w-12 h-12 bg-chip flex items-center justify-center">
@@ -239,7 +239,7 @@ export default function BokforingPage() {
             <div className="mt-auto text-[12px] font-bold tracking-[0.12em] uppercase text-accent">Läs mer ↓</div>
           </a>
           <a
-            className="reveal-soft p-6 gap-3.5 rounded-[20px] flex flex-col min-w-0 bg-surface border border-line no-underline text-ink wrap-break-word"
+            className="reveal-soft p-6 gap-3.5 rounded-card flex flex-col min-w-0 bg-surface border border-line no-underline text-ink wrap-break-word"
             href="#moms"
           >
             <div className="rounded-xl w-12 h-12 bg-chip flex items-center justify-center">
@@ -261,7 +261,7 @@ export default function BokforingPage() {
             <div className="mt-auto text-[12px] font-bold tracking-[0.12em] uppercase text-accent">Läs mer ↓</div>
           </a>
           <a
-            className="reveal-soft p-6 gap-3.5 rounded-[20px] flex flex-col min-w-0 bg-surface border border-line no-underline text-ink wrap-break-word"
+            className="reveal-soft p-6 gap-3.5 rounded-card flex flex-col min-w-0 bg-surface border border-line no-underline text-ink wrap-break-word"
             href="#lon"
           >
             <div className="rounded-xl w-12 h-12 bg-chip flex items-center justify-center">
@@ -283,7 +283,7 @@ export default function BokforingPage() {
             <div className="mt-auto text-[12px] font-bold tracking-[0.12em] uppercase text-accent">Läs mer ↓</div>
           </a>
           <a
-            className="reveal-soft p-6 gap-3.5 rounded-[20px] flex flex-col min-w-0 bg-surface border border-line no-underline text-ink wrap-break-word"
+            className="reveal-soft p-6 gap-3.5 rounded-card flex flex-col min-w-0 bg-surface border border-line no-underline text-ink wrap-break-word"
             href="#arsbokslut"
           >
             <div className="rounded-xl w-12 h-12 bg-chip flex items-center justify-center">
@@ -339,7 +339,7 @@ export default function BokforingPage() {
             </p>
           </div>
           <div className="gap-6 grid grid-cols-[repeat(auto-fit,minmax(280px,1fr))]">
-            <div className="reveal-soft p-8 gap-4 rounded-[20px] bg-surface border border-line min-w-0 flex flex-col">
+            <div className="reveal-soft p-8 gap-4 rounded-card bg-surface border border-line min-w-0 flex flex-col">
               <div className="flex justify-between items-center">
                 <div className="rounded-xl w-12 h-12 bg-chip flex items-center justify-center">
                   <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true">
@@ -363,7 +363,7 @@ export default function BokforingPage() {
                 e-posten. Vera kontrollerar att inget saknas.
               </p>
             </div>
-            <div className="reveal-soft p-8 gap-4 rounded-[20px] bg-surface border border-line min-w-0 flex flex-col">
+            <div className="reveal-soft p-8 gap-4 rounded-card bg-surface border border-line min-w-0 flex flex-col">
               <div className="flex justify-between items-center">
                 <div className="rounded-xl w-12 h-12 bg-chip flex items-center justify-center">
                   <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true">
@@ -386,7 +386,7 @@ export default function BokforingPage() {
                 Varje post får ett förslag på konto och moms med motivering. Oklarheter skickas som frågor till er.
               </p>
             </div>
-            <div className="reveal-soft p-8 gap-4 rounded-[20px] bg-surface border border-line min-w-0 flex flex-col">
+            <div className="reveal-soft p-8 gap-4 rounded-card bg-surface border border-line min-w-0 flex flex-col">
               <div className="flex justify-between items-center">
                 <div className="rounded-xl w-12 h-12 bg-chip flex items-center justify-center">
                   <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true">
@@ -595,7 +595,7 @@ export default function BokforingPage() {
           </div>
           <div className="gap-6 grid grid-cols-[repeat(auto-fit,minmax(250px,1fr))]">
             <div
-              className="reveal-soft p-8 gap-4 rounded-[20px] bg-surface border border-line min-w-0 flex flex-col wrap-break-word"
+              className="reveal-soft p-8 gap-4 rounded-card bg-surface border border-line min-w-0 flex flex-col wrap-break-word"
               id="fakturering"
             >
               <div className="gap-3 flex justify-between items-center flex-wrap">
@@ -668,7 +668,7 @@ export default function BokforingPage() {
               </div>
             </div>
             <div
-              className="reveal-soft p-8 gap-4 rounded-[20px] bg-surface border border-line min-w-0 flex flex-col wrap-break-word"
+              className="reveal-soft p-8 gap-4 rounded-card bg-surface border border-line min-w-0 flex flex-col wrap-break-word"
               id="moms"
             >
               <div className="gap-3 flex justify-between items-center flex-wrap">
@@ -740,7 +740,7 @@ export default function BokforingPage() {
               </div>
             </div>
             <div
-              className="reveal-soft p-8 gap-4 rounded-[20px] bg-surface border border-line min-w-0 flex flex-col wrap-break-word"
+              className="reveal-soft p-8 gap-4 rounded-card bg-surface border border-line min-w-0 flex flex-col wrap-break-word"
               id="lon"
             >
               <div className="gap-3 flex justify-between items-center flex-wrap">
@@ -826,7 +826,7 @@ export default function BokforingPage() {
               </div>
             </div>
             <div
-              className="reveal-soft p-8 gap-4 rounded-[20px] bg-surface border border-line min-w-0 flex flex-col wrap-break-word"
+              className="reveal-soft p-8 gap-4 rounded-card bg-surface border border-line min-w-0 flex flex-col wrap-break-word"
               id="arsbokslut"
             >
               <div className="gap-3 flex justify-between items-center flex-wrap">
@@ -941,7 +941,7 @@ export default function BokforingPage() {
           </Link>
         </div>
         <div className="reveal-soft flex-[1_1_480px] min-w-0">
-          <div className="p-7 rounded-3xl bg-surface border border-line shadow-[0_30px_70px_rgba(33,37,41,0.10)] box-border">
+          <div className="p-7 rounded-card bg-surface border border-line shadow-[0_30px_70px_rgba(33,37,41,0.10)] box-border">
             <div className="gap-3 flex justify-between items-start flex-wrap">
               <div>
                 <div className="text-[12px] font-semibold tracking-[0.12em] uppercase text-ink-soft">
@@ -1295,7 +1295,7 @@ export default function BokforingPage() {
             </div>
           </div>
         </div>
-        <div className="p-7 gap-4 rounded-[20px] flex-[1_1_340px] min-w-0 bg-surface border border-line box-border flex items-start">
+        <div className="p-7 gap-4 rounded-card flex-[1_1_340px] min-w-0 bg-surface border border-line box-border flex items-start">
           <div className="rounded-xl w-12 h-12 bg-chip flex items-center justify-center flex-none">
             <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true">
               <path
@@ -1512,7 +1512,7 @@ export default function BokforingPage() {
           </p>
         </div>
         <div className="gap-6 grid grid-cols-[repeat(auto-fit,minmax(250px,1fr))]">
-          <div className="reveal-soft p-7 gap-3.5 rounded-[20px] bg-surface border border-line min-w-0 flex flex-col wrap-break-word">
+          <div className="reveal-soft p-7 gap-3.5 rounded-card bg-surface border border-line min-w-0 flex flex-col wrap-break-word">
             <div className="rounded-xl w-12 h-12 bg-chip flex items-center justify-center">
               <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true">
                 <path
@@ -1530,7 +1530,7 @@ export default function BokforingPage() {
               Bokföringen sköts löpande, och varje motivering gör er tryggare i ekonomin.
             </p>
           </div>
-          <div className="reveal-soft p-7 gap-3.5 rounded-[20px] bg-surface border border-line min-w-0 flex flex-col wrap-break-word">
+          <div className="reveal-soft p-7 gap-3.5 rounded-card bg-surface border border-line min-w-0 flex flex-col wrap-break-word">
             <div className="rounded-xl w-12 h-12 bg-chip flex items-center justify-center">
               <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true">
                 <path
@@ -1548,7 +1548,7 @@ export default function BokforingPage() {
               Volymen kan öka utan att ni behöver anställa en ekonom.
             </p>
           </div>
-          <div className="reveal-soft p-7 gap-3.5 rounded-[20px] bg-surface border border-line min-w-0 flex flex-col wrap-break-word">
+          <div className="reveal-soft p-7 gap-3.5 rounded-card bg-surface border border-line min-w-0 flex flex-col wrap-break-word">
             <div className="rounded-xl w-12 h-12 bg-chip flex items-center justify-center">
               <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true">
                 <path
@@ -1566,7 +1566,7 @@ export default function BokforingPage() {
               Det repetitiva automatiseras. Teamet fokuserar på analys och uppföljning.
             </p>
           </div>
-          <div className="reveal-soft p-7 gap-3.5 rounded-[20px] bg-surface border border-line min-w-0 flex flex-col wrap-break-word">
+          <div className="reveal-soft p-7 gap-3.5 rounded-card bg-surface border border-line min-w-0 flex flex-col wrap-break-word">
             <div className="rounded-xl w-12 h-12 bg-chip flex items-center justify-center">
               <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true">
                 <path
@@ -1687,7 +1687,7 @@ export default function BokforingPage() {
             </h2>
           </div>
           <div className="gap-6 grid grid-cols-[repeat(auto-fit,minmax(300px,1fr))]">
-            <figure className="m-0 p-7 gap-4.5 rounded-[20px] bg-surface border border-line min-w-0 box-border flex flex-col">
+            <figure className="m-0 p-7 gap-4.5 rounded-card bg-surface border border-line min-w-0 box-border flex flex-col">
               <span className="px-2.5 py-[3px] rounded-full self-start border border-line-soft text-[11px] font-bold tracking-[0.12em] uppercase text-ink-soft">
                 Exempelcitat
               </span>
@@ -1698,7 +1698,7 @@ export default function BokforingPage() {
                 Lina Åberg · Ägare, Exempelbutiken AB
               </figcaption>
             </figure>
-            <figure className="m-0 p-7 gap-4.5 rounded-[20px] bg-surface border border-line min-w-0 box-border flex flex-col">
+            <figure className="m-0 p-7 gap-4.5 rounded-card bg-surface border border-line min-w-0 box-border flex flex-col">
               <span className="px-2.5 py-[3px] rounded-full self-start border border-line-soft text-[11px] font-bold tracking-[0.12em] uppercase text-ink-soft">
                 Exempelcitat
               </span>

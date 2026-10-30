@@ -237,6 +237,10 @@ Gemensamt för alla uppgifter:
   glaset blir solid utan felmeddelande. Blanda inte heller `border-color`
   (shorthand) med `border-top-color` i samma regel – det ger tomma longhands
   (`border-right-color: ;`). Skriv kanten som en shorthand med tre värden.
+- **Obs, grenbyte under dev-servern (2026-10-30):** byts gren medan
+  `npm run dev` kör kan Turbopack fortsätta servera den gamla kompilerade
+  CSS:en (startmallens globals.css syntes i Safari efter byte
+  main → forbattra-utseende). Stoppa servern, kör `rm -rf .next`, starta om.
 - **Obs, backdrop root:** ett element med oskärpefilter blir "backdrop
   root" för sina barn – de kan då bara sudda förälderns eget innehåll, inte
   sidan bakom. Därför ligger headerns glas på ett eget lager

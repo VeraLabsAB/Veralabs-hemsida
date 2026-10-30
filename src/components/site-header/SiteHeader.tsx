@@ -14,7 +14,8 @@ import { NAV_SECTIONS, type NavLink, type NavSection } from "./navigation";
 
 /* Same breakpoint as the @media rules for .site-header/.site-nav in globals.css.
    On mobile the whole menu is ONE glass panel, so the dropdown panels inside
-   it must not be glass themselves (Apple: group related controls). */
+   it must not be glass themselves (Apple: group related controls). The sections
+   are accordions there: closed until tapped, one open at a time (data-open). */
 const MOBILE_QUERY = "(max-width: 900px)";
 
 function subscribeMobile(onChange: () => void) {
@@ -153,7 +154,7 @@ function NavDropdown({ section, index, active, open, mobile, onOpenChange }: Dro
         ref={triggerRef}
         className={active ? "nav-trigger active" : "nav-trigger"}
         type="button"
-        aria-expanded={mobile || open}
+        aria-expanded={open}
         aria-controls={panelId}
         onClick={() => onOpenChange(!open)}
       >

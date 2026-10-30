@@ -497,8 +497,12 @@
       border-bottom: 0;
       color: var(--accent);
     }
+    /* Flikarna är dragspel på mobil: stängda tills man trycker (data-open sätts
+       av klicket i SiteHeader.tsx), en öppen i taget. display: none slår ut
+       hover-regeln, så en tryckning öppnar inget av misstag. */
     .nav-dropdown,
     .nav-item.mega > .nav-dropdown {
+      display: none;
       position: static;
       visibility: visible;
       opacity: 1;
@@ -507,6 +511,15 @@
       padding: 0 0 12px;
       min-width: 0;
       max-width: none;
+    }
+    .nav-item[data-open] > .nav-dropdown {
+      display: block;
+    }
+    .nav-trigger svg {
+      transition: transform var(--t-menu) var(--ease-glass);
+    }
+    .nav-item[data-open] > .nav-trigger svg {
+      transform: rotate(180deg);
     }
     .nav-panel {
       padding: 0;

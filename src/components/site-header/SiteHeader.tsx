@@ -104,6 +104,15 @@ function NavDropdown({ section, index, active, open, mobile, onOpenChange }: Dro
 
   const links = () => Array.from(itemRef.current?.querySelectorAll<HTMLAnchorElement>("a.nav-link") ?? []);
 
+  // Mobile accordion: when a section opens, scroll the menu panel so the tapped heading sits at the
+  // top with its list below (iOS otherwise lands mid-list after the content grows).
+  useEffect(() => {
+    if (!mobile || !open) return;
+    const item = itemRef.current;
+    const panel = item?.parentElement;
+    if (item && panel) panel.scrollTo({ top: Math.max(0, item.offsetTop - 8), behavior: "smooth" });
+  }, [open, mobile]);
+
   // After the panel has opened (and become visible), move focus into it if an arrow key asked for it.
   useEffect(() => {
     if (!open || !pendingFocus.current) return;

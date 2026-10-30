@@ -476,6 +476,9 @@
       border-radius: var(--r-xl);
       max-height: calc(100dvh - 48px - 12px - 8px - 12px);
       overflow-y: auto;
+      /* Ingen automatisk scrollförankring: när en flik fälls ut ska den
+         tryckta rubriken stanna överst (rullningen sköts i SiteHeader.tsx). */
+      overflow-anchor: none;
     }
     .site-nav[data-open] {
       display: flex;

@@ -110,7 +110,15 @@ function NavDropdown({ section, index, active, open, mobile, onOpenChange }: Dro
     if (!mobile || !open) return;
     const item = itemRef.current;
     const panel = item?.parentElement;
-    if (item && panel) panel.scrollTo({ top: Math.max(0, item.offsetTop - 8), behavior: "smooth" });
+    if (!item || !panel) return;
+    // Measured, not offsetTop, and done twice (now and next frame) so it wins over Safari's own
+    // scroll adjustment after the content below grows.
+    const align = () => {
+      panel.scrollTop += item.getBoundingClientRect().top - panel.getBoundingClientRect().top - 8;
+    };
+    align();
+    const raf = requestAnimationFrame(align);
+    return () => cancelAnimationFrame(raf);
   }, [open, mobile]);
 
   // After the panel has opened (and become visible), move focus into it if an arrow key asked for it.

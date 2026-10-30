@@ -1,0 +1,202 @@
+/* ── Glas: komponentklassen och fallback-trappan ──────────────────────────
+   Facit: DESIGN-GLASS.md §6 (trappan), §4 (tokens), §8 (rörelse, scroll-kant),
+   §9 (läsbarhet). Det här är den ENDA filen i projektet som får innehålla
+   backdrop-filter. Siffrorna i varje -webkit-backdrop-filter-rad står utskrivna
+   (Safari läser inte var() där), och den oprefixade raden har samma siffror
+   så att de två alltid kan jämföras rad för rad. Den prefixade raden står
+   alltid först (se kommentaren vid steg 2).
+
+   Klasser:
+     .glass           grundytan (kort, knappar, paneler)
+     .glass--strong   mer fyllning och 20 px oskärpa, för ytor med mycket text (rullgardin, modal)
+     .glass--large    mindre oskärpa, för stora ytor (header)
+     .glass--tint     tonad med Gunmetal/Shadow Grey – bara primära handlingar
+     .glass-readable  inre läsbarhetslager bakom text på glas (§9.2)
+     .scroll-edge     24 px suddfält under headern (§8)
+     .btn--primary    = .glass + .glass--tint på en knapp (form i buttons.css)
+     .btn--secondary  = .glass på en knapp
+     .btn--flat       knapp inuti en annan glasyta: solid, inget filter
+     .theme-switch:active .theme-knob   glasknopp medan switchen trycks
+   Oskärpan animeras aldrig: transition räknar upp sina egenskaper, aldrig
+   "all", och backdrop-filter står inte med. ────────────────────────────── */
+
+/* ── Steg 1: läsbar överallt, inga filter. Det här är GRUNDLÄGET. ─────── */
+.glass,
+.btn--primary,
+.btn--secondary {
+  background: var(--bg-surface);
+  color: var(--text-head);
+  border: 1px solid var(--border);
+  border-radius: var(--r-lg);
+  box-shadow: 0 8px 24px rgba(33, 37, 41, 0.1);
+  transition:
+    background-color var(--t-hover) var(--ease-glass),
+    border-color var(--t-hover) var(--ease-glass),
+    box-shadow var(--t-hover) var(--ease-glass),
+    transform var(--t-hover) var(--ease-glass);
+}
+.glass--tint,
+.btn--primary {
+  background: var(--btn-bg);
+  color: var(--btn-text);
+  border-color: var(--btn-bg);
+}
+/* Inre lager bakom text på glas. Radien är koncentrisk med --r-lg och
+   12 px avstånd (§7: inre radie = yttre radie − avståndet). */
+.glass-readable {
+  background: var(--bg-surface);
+  color: var(--text-head);
+  border-radius: calc(var(--r-lg) - 12px);
+}
+/* Suddfältet under headern: osynligt tills steg 2 ger det något att sudda. */
+.scroll-edge {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  height: 24px;
+  pointer-events: none;
+  -webkit-mask-image: linear-gradient(to bottom, black, transparent);
+  mask-image: linear-gradient(to bottom, black, transparent);
+}
+
+/* ── Steg 2: frostat glas, när webbläsaren kan OCH användaren inte bett om
+   mindre transparens. Safari saknar prefers-reduced-transparency, därför
+   är solid grundläget och glas tillägget. ─────────────────────────────── */
+@supports ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+  @media (prefers-reduced-transparency: no-preference) {
+    /* Kanten skrivs som en enda shorthand (upptill, sidor, nedtill) och den
+       prefixade filterraden står FÖRE den oprefixade: Turbopacks
+       CSS-optimerare (Lightning CSS) tappar annars båda raderna och lämnar
+       tomma border-longhands. */
+    .glass,
+    .btn--primary,
+    .btn--secondary {
+      background: var(--glass-fill);
+      border-color: var(--glass-border-top) var(--glass-border) var(--glass-border);
+      box-shadow:
+        var(--glass-shadow),
+        0 0 0 1px var(--glass-border-dark);
+      -webkit-backdrop-filter: blur(16px) saturate(140%);
+      backdrop-filter: blur(16px) saturate(140%);
+    }
+    /* Textpaneler (rullgardin, modal) suddar mer, 20 px = spec:ens tak för
+       stora ytor: en vit kortkant under panelen ska inte avteckna sig.
+       Står FÖRE .glass--large så att headern (large + strong) behåller 12 px. */
+    .glass--strong {
+      background: var(--glass-fill-strong);
+      -webkit-backdrop-filter: blur(20px) saturate(140%);
+      backdrop-filter: blur(20px) saturate(140%);
+    }
+    .glass--large {
+      -webkit-backdrop-filter: blur(12px) saturate(140%);
+      backdrop-filter: blur(12px) saturate(140%);
+    }
+    .glass--tint,
+    .btn--primary {
+      background: var(--glass-tint);
+      color: var(--glass-tint-text);
+      border-color: var(--glass-tint-border-top) var(--glass-tint-border) var(--glass-tint-border);
+    }
+    .glass-readable {
+      background: var(--glass-fill-strong);
+    }
+    .scroll-edge {
+      -webkit-backdrop-filter: blur(8px);
+      backdrop-filter: blur(8px);
+    }
+
+    /* Hover på glasknapp (§8): fyllning +8 %, skuggan växer. Lyftet 1 px
+       ligger i buttons.css. */
+    .btn--secondary:hover {
+      background: var(--glass-fill-hover);
+      box-shadow:
+        var(--glass-shadow-float),
+        0 0 0 1px var(--glass-border-dark);
+    }
+    .btn--primary:hover {
+      background: var(--glass-tint-hover);
+      box-shadow:
+        var(--glass-shadow-float),
+        0 0 0 1px var(--glass-border-dark);
+    }
+
+    /* Ljus/mörk-switchen: knoppen blir glas medan den trycks (§2, §8). */
+    .theme-switch:active .theme-knob {
+      background: var(--glass-tint);
+      -webkit-backdrop-filter: blur(8px) saturate(140%);
+      backdrop-filter: blur(8px) saturate(140%);
+    }
+
+    /* Mörkt läge mättar mindre (tokens: --glass-saturate 120 %). Skrivs ut
+       här eftersom siffrorna inte får vara var() i -webkit-raden. */
+    :root[data-theme="dark"] .glass,
+    :root[data-theme="dark"] .btn--primary,
+    :root[data-theme="dark"] .btn--secondary {
+      -webkit-backdrop-filter: blur(16px) saturate(120%);
+      backdrop-filter: blur(16px) saturate(120%);
+    }
+    :root[data-theme="dark"] .glass--strong {
+      -webkit-backdrop-filter: blur(20px) saturate(120%);
+      backdrop-filter: blur(20px) saturate(120%);
+    }
+    :root[data-theme="dark"] .glass--large {
+      -webkit-backdrop-filter: blur(12px) saturate(120%);
+      backdrop-filter: blur(12px) saturate(120%);
+    }
+  }
+}
+
+/* ── Knapp inuti en annan glasyta (headern, mobilpanelen): solid, inget
+   eget glas. Apple: gruppera kontroller i EN yta. Skrivs med :root för att
+   väga lika tungt som mörkt-läge-reglerna ovan och vinna på ordning. ──── */
+:root .btn--flat,
+:root .btn--flat:hover {
+  background: var(--btn-bg);
+  color: var(--btn-text);
+  border-color: transparent;
+  box-shadow: none;
+  -webkit-backdrop-filter: none;
+  backdrop-filter: none;
+}
+
+/* ── Steg 3: refraktion. INTE i v1 (§11). ─────────────────────────────── */
+
+/* ── Mer kontrast om användaren bett om det: solid yta, tydlig kant. ──── */
+@media (prefers-contrast: more) {
+  .glass,
+  .btn--primary,
+  .btn--secondary {
+    background: var(--bg-surface);
+    border: 2px solid var(--text-head);
+    box-shadow: none;
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
+  }
+  .glass--tint,
+  .btn--primary,
+  .btn--primary:hover {
+    background: var(--btn-bg);
+    color: var(--btn-text);
+    border-color: var(--text-head);
+  }
+  .glass-readable {
+    background: var(--bg-surface);
+  }
+  .scroll-edge,
+  .theme-switch:active .theme-knob {
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
+  }
+}
+
+/* ── Mindre rörelse om användaren bett om det. ────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  .glass,
+  .glass *,
+  .btn--primary,
+  .btn--secondary {
+    transition: none !important;
+    animation: none !important;
+  }
+}

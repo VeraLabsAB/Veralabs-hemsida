@@ -4,42 +4,38 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Bokföringsagenten",
   description:
-    "Vera läser kontoutdrag, kvitton och Z-rapporter, konterar enligt er regelbok och kontrollerar varje post. Ni granskar och godkänner.",
+    "AI-bokföring för aktiebolag. Vera läser kontoutdrag, kvitton och Z-rapporter, konterar enligt din regelbok och lämnar veckan klar för godkännande. Fungerar med Fortnox, Bokio, Spiris och Visma.",
 };
 
 export default function BokforingPage() {
   return (
     <>
-      <div className="bg-[linear-gradient(180deg,var(--page)_0%,var(--surface-muted)_100%)]">
-        <div className="mx-auto my-0 px-10 pt-16 pb-24 gap-14 max-w-[1200px] box-border flex flex-wrap items-center">
+      {/* Samma layout som startsidan (2026-10-30): mörkt helskärms-hero bakom header-pillen med exempelkortet
+          till höger, sedan en skärm per sektion som växlar mellan sidbakgrund och kortyta utan streck emellan. */}
+      <div className="lv-hero text-snow -mt-[68px] pt-[68px] max-[900px]:-mt-[60px] max-[900px]:pt-[60px] min-h-dvh box-border flex items-center">
+        <div className="mx-auto my-0 px-10 pt-20 pb-24 gap-14 w-full max-w-[1200px] box-border flex flex-wrap items-center">
           <div className="flex-[1_1_440px] min-w-0">
-            <div className="mb-6 px-3.5 py-1.5 rounded-full inline-block bg-chip text-contrast text-[13px] font-semibold tracking-[0.14em] uppercase">
+            <div className="mb-6 px-3.5 py-1.5 rounded-full inline-block bg-snow/8 border border-snow/18 text-platinum text-[13px] font-semibold tracking-[0.14em] uppercase">
               Bokförings&shy;agenten
             </div>
-            <h1 className="mx-0 mt-0 mb-6 font-display font-bold uppercase tracking-[0.01em] text-[clamp(30px,8.5vw,56px)] wrap-break-word leading-[1.02]">
-              Bokföringen klar varje vecka.
+            <h1 className="mx-0 mt-0 mb-6 font-display font-bold uppercase tracking-[0.01em] text-[clamp(30px,4.4vw,46px)] leading-[1.05] wrap-break-word text-snow">
+              Bokföringen klar. Varje vecka. Utan dig.
             </h1>
-            <p className="mx-0 mt-0 mb-8 text-[17px] leading-[1.6] max-w-[520px] font-serif text-ink uppercase tracking-[0.03em] font-bold">
-              Vera läser kontoutdrag, kvitton och Z-rapporter, konterar enligt er regelbok och kontrollerar varje post.
-              Ni granskar och godkänner.
+            <p className="mx-0 mt-0 mb-8 text-[18px] leading-[1.65] text-pale-1 font-sans max-w-[520px]">
+              Vera läser kontoutdrag, kvitton och Z-rapporter, konterar enligt din regelbok och kontrollerar varje post.
+              Du granskar och godkänner. Det är allt du behöver göra.
             </p>
             <div className="gap-3 flex flex-wrap">
-              <Link
-                className="btn btn--primary"
-                href="/#kontakt"
-              >
+              <Link className="btn btn--primary theme-dark" href="/#kontakt">
                 Boka en demo
               </Link>
-              <a
-                className="btn btn--secondary"
-                href="#hur"
-              >
+              <a className="btn btn--secondary theme-dark" href="#hur">
                 Så fungerar det
               </a>
             </div>
           </div>
-          <div className="reveal-soft flex-[1_1_440px] min-w-0">
-            <div className="px-7 py-6 rounded-card bg-surface border border-line shadow-[0_30px_70px_rgba(33,37,41,0.12)] box-border w-full">
+          <div className="flex-[1_1_440px] min-w-0">
+            <div className="lv-mock px-7 py-6 rounded-card bg-lv-card text-lv-ink box-border w-full">
               <div className="mb-2 gap-3 flex justify-between items-center">
                 <div>
                   <div className="text-[12px] font-semibold tracking-[0.12em] uppercase text-ink-soft">
@@ -107,7 +103,7 @@ export default function BokforingPage() {
                 <div className="text-right">
                   <div className="text-[13px] font-semibold font-mono tracking-normal">5 000,00</div>
                   <span className="mt-1 px-2 py-0.5 rounded-full inline-block text-[11px] font-semibold tracking-[0.06em] uppercase text-ink-inverse bg-accent">
-                    Fråga till er
+                    Fråga till dig
                   </span>
                 </div>
               </div>
@@ -152,46 +148,70 @@ export default function BokforingPage() {
           </div>
         </div>
       </div>
-      <div className="bg-surface border-t border-t-line border-b border-b-line">
-        <div className="mx-auto my-0 px-10 py-12 gap-y-8 gap-x-14 max-w-[1200px] box-border flex flex-wrap">
-          <div className="px-0 py-2 flex-[1_1_240px] min-w-0">
-            <div className="font-display font-bold uppercase tracking-[0.01em] text-[30px] text-accent leading-[1.1]">
-              Hanterar varje transaktion
+      {/* Tre korta punkter och bakgrunden delar en skärm: punkterna som kort till vänster, texten till höger. */}
+      <div className="bg-surface min-[900px]:min-h-dvh box-border flex items-center">
+        <div className="mx-auto my-0 px-10 py-20 gap-14 w-full max-w-[1200px] box-border flex flex-wrap items-center">
+          <div className="gap-4 flex-[1_1_380px] min-w-0 flex flex-col reveal-stagger">
+          <div className="px-6 py-5 rounded-card bg-page border border-line min-w-0 box-border">
+            <div className="font-display font-bold uppercase tracking-[0.01em] text-[24px] leading-[1.1]">
+              Missar aldrig en post
             </div>
-            <div className="mt-2 text-[15px] leading-[1.5] font-serif text-ink uppercase tracking-[0.03em]">
-              Nya poster förbereds när de kommer in, inte när någon hinner.
-            </div>
-          </div>
-          <div className="px-0 py-2 flex-[1_1_240px] min-w-0">
-            <div className="font-display font-bold uppercase tracking-[0.01em] text-[30px] text-accent leading-[1.1]">
-              Följer er regelbok
-            </div>
-            <div className="mt-2 text-[15px] leading-[1.5] font-serif text-ink uppercase tracking-[0.03em]">
-              Konton, momssatser och motparter enligt era beslut.
+            <div className="mt-1.5 text-[16px] leading-[1.55] text-ink font-sans">
+              Varje transaktion hanteras när den kommer in. Inte när någon hinner.
             </div>
           </div>
-          <div className="px-0 py-2 flex-[1_1_240px] min-w-0">
-            <div className="font-display font-bold uppercase tracking-[0.01em] text-[30px] text-accent leading-[1.1]">
-              Spårbart
+          <div className="px-6 py-5 rounded-card bg-page border border-line min-w-0 box-border">
+            <div className="font-display font-bold uppercase tracking-[0.01em] text-[24px] leading-[1.1]">
+              Följer din regelbok
             </div>
-            <div className="mt-2 text-[15px] leading-[1.5] font-serif text-ink uppercase tracking-[0.03em]">
-              Varje underlag och steg loggas.
+            <div className="mt-1.5 text-[16px] leading-[1.55] text-ink font-sans">
+              Konton, momssatser och motparter precis som du bestämt.
+            </div>
+          </div>
+          <div className="px-6 py-5 rounded-card bg-page border border-line min-w-0 box-border">
+            <div className="font-display font-bold uppercase tracking-[0.01em] text-[24px] leading-[1.1]">
+              Allt spårbart
+            </div>
+            <div className="mt-1.5 text-[16px] leading-[1.55] text-ink font-sans">
+              Varje underlag och varje steg loggas.
+            </div>
+          </div>
+          </div>
+          <div className="flex-[1_1_440px] min-w-0 reveal">
+            <div className="mb-5 px-3.5 py-1.5 rounded-full inline-block bg-chip text-contrast text-[13px] font-semibold tracking-[0.14em] uppercase">
+              Bakgrund
+            </div>
+            <h2 className="mx-0 mt-0 mb-4 font-display font-bold uppercase tracking-[0.01em] text-[clamp(28px,6.5vw,42px)] wrap-break-word leading-[1.05]">
+              Bokföringen ska inte äga dina kvällar.
+            </h2>
+            <div className="mt-2 gap-4 flex flex-col">
+              <p className="m-0 text-[18px] leading-[1.6] max-w-[560px] text-ink font-sans">
+                Kvitton ska samlas in. Varje post ska konteras. Momsen ska stämma. I de flesta småföretag sker det efter
+                stängning, av den som redan jobbat hela dagen.
+              </p>
+              <p className="m-0 text-[18px] leading-[1.6] max-w-[560px] text-ink font-sans">
+                Bokföringsagenten tar över allt det löpande och lämnar ett resultat du granskar på minuter. Ansvaret för
+                bokföringen är fortfarande ditt. Arbetet är Veras.
+              </p>
             </div>
           </div>
         </div>
       </div>
-      <div className="mx-auto my-0 px-10 pt-20 pb-4 max-w-[1200px] box-border" id="uppgifter">
-        <div className="reveal-soft mx-auto mt-0 mb-10 text-center max-w-[720px]">
+      <div
+        className="mx-auto my-0 px-10 py-20 max-w-[1200px] box-border min-[900px]:min-h-dvh flex flex-col justify-center scroll-mt-20"
+        id="uppgifter"
+      >
+        <div className="mb-10 max-w-[720px] reveal">
           <div className="mb-5 px-3.5 py-1.5 rounded-full inline-block bg-chip text-contrast text-[13px] font-semibold tracking-[0.14em] uppercase">
             Omfattning
           </div>
-          <h2 className="m-0 font-display font-bold uppercase tracking-[0.01em] text-[clamp(28px,7vw,44px)] wrap-break-word leading-[1.05]">
-            Från verifikation till årsredovisning.
+          <h2 className="m-0 font-display font-bold uppercase tracking-[0.01em] text-[clamp(28px,6.5vw,42px)] wrap-break-word leading-[1.05]">
+            Från första kvittot till årsredovisningen.
           </h2>
         </div>
-        <div className="gap-4 grid grid-cols-[repeat(auto-fit,minmax(200px,1fr))]">
+        <div className="gap-4 grid grid-cols-[repeat(auto-fit,minmax(200px,1fr))] reveal-stagger">
           <a
-            className="reveal-soft p-6 gap-3.5 rounded-card flex flex-col min-w-0 bg-surface border border-line no-underline text-ink wrap-break-word"
+            className="p-6 gap-3.5 rounded-card flex flex-col min-w-0 bg-surface box-border no-underline text-ink wrap-break-word"
             href="#hur"
           >
             <div className="rounded-xl w-12 h-12 bg-chip flex items-center justify-center">
@@ -209,13 +229,13 @@ export default function BokforingPage() {
             <div className="font-display font-bold uppercase tracking-[0.01em] text-[18px] leading-[1.15]">
               Löpande bokföring
             </div>
-            <div className="text-[15px] leading-[1.5] font-serif text-ink uppercase tracking-[0.03em]">
-              Varje transaktion konteras och stäms av mot banken.
+            <div className="text-[16px] leading-[1.55] text-ink font-sans">
+              Varje transaktion konteras och stäms av mot banken. Samma vecka.
             </div>
             <div className="mt-auto text-[12px] font-bold tracking-[0.12em] uppercase text-accent">Läs mer ↓</div>
           </a>
           <a
-            className="reveal-soft p-6 gap-3.5 rounded-card flex flex-col min-w-0 bg-surface border border-line no-underline text-ink wrap-break-word"
+            className="p-6 gap-3.5 rounded-card flex flex-col min-w-0 bg-surface box-border no-underline text-ink wrap-break-word"
             href="#fakturering"
           >
             <div className="rounded-xl w-12 h-12 bg-chip flex items-center justify-center">
@@ -233,13 +253,13 @@ export default function BokforingPage() {
             <div className="font-display font-bold uppercase tracking-[0.01em] text-[18px] leading-[1.15]">
               Fakturering
             </div>
-            <div className="text-[15px] leading-[1.5] font-serif text-ink uppercase tracking-[0.03em]">
-              Fakturor skapas, skickas efter godkännande och följs upp till betalning.
+            <div className="text-[16px] leading-[1.55] text-ink font-sans">
+              Fakturor skapas, skickas när du godkänt och bevakas tills pengarna är inne.
             </div>
             <div className="mt-auto text-[12px] font-bold tracking-[0.12em] uppercase text-accent">Läs mer ↓</div>
           </a>
           <a
-            className="reveal-soft p-6 gap-3.5 rounded-card flex flex-col min-w-0 bg-surface border border-line no-underline text-ink wrap-break-word"
+            className="p-6 gap-3.5 rounded-card flex flex-col min-w-0 bg-surface box-border no-underline text-ink wrap-break-word"
             href="#moms"
           >
             <div className="rounded-xl w-12 h-12 bg-chip flex items-center justify-center">
@@ -255,13 +275,13 @@ export default function BokforingPage() {
               </svg>
             </div>
             <div className="font-display font-bold uppercase tracking-[0.01em] text-[18px] leading-[1.15]">Moms</div>
-            <div className="text-[15px] leading-[1.5] font-serif text-ink uppercase tracking-[0.03em]">
-              Momsdeklaration för er period, klar före sista dag.
+            <div className="text-[16px] leading-[1.55] text-ink font-sans">
+              Momsdeklarationen klar före sista dag. Varje period.
             </div>
             <div className="mt-auto text-[12px] font-bold tracking-[0.12em] uppercase text-accent">Läs mer ↓</div>
           </a>
           <a
-            className="reveal-soft p-6 gap-3.5 rounded-card flex flex-col min-w-0 bg-surface border border-line no-underline text-ink wrap-break-word"
+            className="p-6 gap-3.5 rounded-card flex flex-col min-w-0 bg-surface box-border no-underline text-ink wrap-break-word"
             href="#lon"
           >
             <div className="rounded-xl w-12 h-12 bg-chip flex items-center justify-center">
@@ -277,13 +297,13 @@ export default function BokforingPage() {
               </svg>
             </div>
             <div className="font-display font-bold uppercase tracking-[0.01em] text-[18px] leading-[1.15]">Lön</div>
-            <div className="text-[15px] leading-[1.5] font-serif text-ink uppercase tracking-[0.03em]">
-              Lönespecifikationer och underlag till arbetsgivardeklarationen.
+            <div className="text-[16px] leading-[1.55] text-ink font-sans">
+              Lönespecifikationer och färdigt underlag till arbetsgivardeklarationen.
             </div>
             <div className="mt-auto text-[12px] font-bold tracking-[0.12em] uppercase text-accent">Läs mer ↓</div>
           </a>
           <a
-            className="reveal-soft p-6 gap-3.5 rounded-card flex flex-col min-w-0 bg-surface border border-line no-underline text-ink wrap-break-word"
+            className="p-6 gap-3.5 rounded-card flex flex-col min-w-0 bg-surface box-border no-underline text-ink wrap-break-word"
             href="#arsbokslut"
           >
             <div className="rounded-xl w-12 h-12 bg-chip flex items-center justify-center">
@@ -301,45 +321,28 @@ export default function BokforingPage() {
             <div className="font-display font-bold uppercase tracking-[0.01em] text-[18px] leading-[1.15]">
               Bokslut och års&shy;redovisning
             </div>
-            <div className="text-[15px] leading-[1.5] font-serif text-ink uppercase tracking-[0.03em]">
-              Avstämningar, bokslutsförslag och utkast till årsredovisning.
+            <div className="text-[16px] leading-[1.55] text-ink font-sans">
+              Avstämningar, bokslutsförslag och ett färdigt utkast till årsredovisning.
             </div>
             <div className="mt-auto text-[12px] font-bold tracking-[0.12em] uppercase text-accent">Läs mer ↓</div>
           </a>
         </div>
       </div>
-      <div className="mx-auto my-0 px-10 py-24 gap-14 max-w-[1200px] box-border flex flex-wrap items-start">
-        <div className="reveal-soft flex-[1_1_440px] min-w-0">
-          <div className="mb-5 px-3.5 py-1.5 rounded-full inline-block bg-chip text-contrast text-[13px] font-semibold tracking-[0.14em] uppercase">
-            Bakgrund
-          </div>
-          <h2 className="mx-0 mt-0 mb-4 font-display font-bold uppercase tracking-[0.01em] text-[clamp(28px,7vw,44px)] wrap-break-word leading-[1.05]">
-            Bokföring ska inte ta kvällarna.
-          </h2>
-        </div>
-        <div className="reveal-soft gap-4 flex-[1_1_440px] min-w-0 flex flex-col">
-          <p className="m-0 text-[17px] leading-[1.6] max-w-[560px] font-serif text-ink uppercase tracking-[0.03em]">
-            Underlag ska samlas in, varje post ska konteras och momsen ska stämma. I många småföretag görs det efter
-            stängning.
-          </p>
-          <p className="m-0 text-[17px] leading-[1.6] max-w-[560px] font-serif text-ink uppercase tracking-[0.03em]">
-            Bokföringsagenten tar över det löpande arbetet och lämnar ett resultat som är lätt att granska. Ansvaret för
-            bokföringen ligger kvar hos företaget.
-          </p>
-        </div>
-      </div>
-      <div className="bg-surface-muted" id="hur">
-        <div className="mx-auto my-0 px-10 py-24 max-w-[1200px] box-border">
-          <div className="mb-12 text-center">
-            <h2 className="mx-0 mt-0 mb-4 font-display font-bold uppercase tracking-[0.01em] text-[clamp(28px,7vw,44px)] wrap-break-word leading-[1.05] text-center">
+      <div className="bg-surface min-[900px]:min-h-dvh box-border flex items-center scroll-mt-20" id="hur">
+        <div className="mx-auto my-0 px-10 py-20 w-full max-w-[1200px] box-border">
+          <div className="mb-10 max-w-[720px] reveal">
+            <div className="mb-5 px-3.5 py-1.5 rounded-full inline-block bg-chip text-contrast text-[13px] font-semibold tracking-[0.14em] uppercase">
+              Så fungerar det
+            </div>
+            <h2 className="mx-0 mt-0 mb-4 font-display font-bold uppercase tracking-[0.01em] text-[clamp(28px,6.5vw,42px)] wrap-break-word leading-[1.05]">
               Arbetsflöde
             </h2>
-            <p className="mx-auto my-0 text-center text-[17px] leading-[1.6] max-w-[560px] font-serif text-ink uppercase tracking-[0.03em]">
-              Tre steg per vecka.
+            <p className="m-0 text-[18px] leading-[1.6] text-ink font-sans">
+              Tre steg. Varje vecka.
             </p>
           </div>
-          <div className="gap-6 grid grid-cols-[repeat(auto-fit,minmax(280px,1fr))]">
-            <div className="reveal-soft p-8 gap-4 rounded-card bg-surface border border-line min-w-0 flex flex-col">
+          <div className="gap-6 grid grid-cols-[repeat(auto-fit,minmax(280px,1fr))] reveal-stagger">
+            <div className="p-7 gap-3.5 rounded-card bg-page border border-line box-border min-w-0 flex flex-col">
               <div className="flex justify-between items-center">
                 <div className="rounded-xl w-12 h-12 bg-chip flex items-center justify-center">
                   <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true">
@@ -358,12 +361,12 @@ export default function BokforingPage() {
                 </span>
               </div>
               <h3 className="m-0 text-[16px] font-bold tracking-[0.1em] uppercase">Insamling</h3>
-              <p className="m-0 text-[16px] leading-[1.55] font-serif text-ink uppercase tracking-[0.03em]">
-                Kontoutdrag, kvitton och Z-rapporter samlas på ett ställe, via uppladdning eller direkt från banken och
-                e-posten. Vera kontrollerar att inget saknas.
+              <p className="m-0 text-[16px] leading-[1.55] text-ink font-sans">
+                Kontoutdrag, kvitton och Z-rapporter hamnar på ett ställe, via uppladdning eller direkt från bank och
+                e-post. Vera kontrollerar att inget saknas och säger till om något gör det.
               </p>
             </div>
-            <div className="reveal-soft p-8 gap-4 rounded-card bg-surface border border-line min-w-0 flex flex-col">
+            <div className="p-7 gap-3.5 rounded-card bg-page border border-line box-border min-w-0 flex flex-col">
               <div className="flex justify-between items-center">
                 <div className="rounded-xl w-12 h-12 bg-chip flex items-center justify-center">
                   <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true">
@@ -382,11 +385,12 @@ export default function BokforingPage() {
                 </span>
               </div>
               <h3 className="m-0 text-[16px] font-bold tracking-[0.1em] uppercase">Förberedelse</h3>
-              <p className="m-0 text-[16px] leading-[1.55] font-serif text-ink uppercase tracking-[0.03em]">
-                Varje post får ett förslag på konto och moms med motivering. Oklarheter skickas som frågor till er.
+              <p className="m-0 text-[16px] leading-[1.55] text-ink font-sans">
+                Varje post får konto, moms och en motivering i klartext. Är något oklart får du en fråga, aldrig en
+                gissning.
               </p>
             </div>
-            <div className="reveal-soft p-8 gap-4 rounded-card bg-surface border border-line min-w-0 flex flex-col">
+            <div className="p-7 gap-3.5 rounded-card bg-page border border-line box-border min-w-0 flex flex-col">
               <div className="flex justify-between items-center">
                 <div className="rounded-xl w-12 h-12 bg-chip flex items-center justify-center">
                   <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true">
@@ -405,13 +409,13 @@ export default function BokforingPage() {
                 </span>
               </div>
               <h3 className="m-0 text-[16px] font-bold tracking-[0.1em] uppercase">Godkännande</h3>
-              <p className="m-0 text-[16px] leading-[1.55] font-serif text-ink uppercase tracking-[0.03em]">
-                I slutet av veckan väntar ett komplett utkast. Efter ert godkännande förs det in i
-                bokförings&shy;programmet, av Vera eller av er beroende på arbetssätt.
+              <p className="m-0 text-[16px] leading-[1.55] text-ink font-sans">
+                I slutet av veckan väntar ett komplett utkast. När du godkänt förs det in i bokförings&shy;programmet,
+                av Vera eller av dig, beroende på vilket läge du valt.
               </p>
             </div>
           </div>
-          <div className="mt-12 gap-3 flex justify-center flex-wrap">
+          <div className="mt-10 gap-3 flex flex-wrap">
             <Link
               className="btn btn--primary"
               href="/#kontakt"
@@ -422,180 +426,175 @@ export default function BokforingPage() {
               className="btn btn--secondary"
               href="/kom-igang"
             >
-              Så kommer ni igång
+              Så kommer du igång
             </Link>
           </div>
         </div>
       </div>
-      <div className="bg-page border-b border-b-line" id="arbetssatt">
-        <div className="mx-auto my-0 px-10 py-24 max-w-[1200px] box-border">
-          <div className="reveal-up mx-auto mt-0 mb-6 text-center max-w-[720px]">
+      <div className="min-[900px]:min-h-dvh box-border flex items-center scroll-mt-20" id="arbetssatt">
+        <div className="mx-auto my-0 px-10 py-20 w-full max-w-[1200px] box-border">
+          <div className="mb-6 max-w-[720px] reveal">
             <div className="mb-5 px-3.5 py-1.5 rounded-full inline-block bg-chip text-contrast text-[13px] font-semibold tracking-[0.14em] uppercase">
               Arbetssätt
             </div>
-            <h2 className="mx-0 mt-0 mb-4 font-display font-bold uppercase tracking-[0.01em] text-[clamp(30px,6.5vw,44px)] leading-[1.05]">
-              Två nivåer av inblandning.
+            <h2 className="mx-0 mt-0 mb-4 font-display font-bold uppercase tracking-[0.01em] text-[clamp(28px,6.5vw,42px)] leading-[1.05] wrap-break-word">
+              Du väljer hur nära du vill följa arbetet.
             </h2>
-            <p className="mx-auto my-0 text-[17px] leading-[1.6] max-w-[560px] font-serif text-ink uppercase tracking-[0.03em]">
-              Ni väljer hur nära ni vill följa arbetet och kan byta när som helst.
+            <p className="m-0 text-[18px] leading-[1.6] text-ink font-sans">
+              Granska varje post, eller godkänn hela veckan på en gång. Byt läge när du vill.
             </p>
           </div>
-          <div className="px-0 py-6 flex flex-col items-center">
-            <div className="reveal-up mb-7 text-center">
-              <div className="font-display font-bold text-[64px] text-accent leading-none">1</div>
-              <h2 className="mx-0 mt-1.5 mb-0 font-display font-bold text-[clamp(28px,6vw,38px)] tracking-[0.01em] uppercase">
-                Välj nivå
+          <div className="py-6 reveal">
+            <div className="mb-6 gap-x-4 gap-y-2 flex flex-wrap items-baseline">
+              <div className="font-display font-bold text-[clamp(28px,5vw,40px)] text-accent leading-none">1</div>
+              <h2 className="m-0 font-display font-bold text-[clamp(22px,4vw,30px)] tracking-[0.01em] uppercase wrap-break-word">
+                Välj läge
               </h2>
             </div>
-            <div className="gap-5 flex flex-wrap justify-center w-full">
-              <div className="reveal-left p-7 rounded-2xl flex-[1_1_320px] max-w-[440px] bg-surface border border-line box-border min-w-0 wrap-break-word">
+            <div className="gap-5 grid grid-cols-[repeat(auto-fit,minmax(260px,1fr))]">
+              <div className="p-7 rounded-card bg-surface box-border min-w-0 wrap-break-word">
                 <div className="mb-3 px-2.5 py-1 rounded-full inline-block bg-chip text-contrast text-[11px] font-bold tracking-[0.12em] uppercase">
                   Granska varje post
                 </div>
-                <h3 className="mx-0 mt-0 mb-2.5 text-[14px] font-semibold tracking-[0.1em] uppercase">Granskat läge</h3>
-                <p className="m-0 font-serif text-[16px] leading-[1.55] text-ink uppercase tracking-[0.03em]">
-                  Varje förslag godkänns separat. Lämpligt under uppstarten eller när ni vill ha full insyn.
+                <h3 className="mx-0 mt-0 mb-2.5 text-[15px] font-bold tracking-[0.1em] uppercase">Granskat läge</h3>
+                <p className="m-0 text-[16px] leading-[1.55] text-ink font-sans">
+                  Du godkänner varje förslag för sig. Perfekt i början, eller när du vill se precis allt.
                 </p>
               </div>
-              <div className="reveal-right p-7 rounded-2xl flex-[1_1_320px] max-w-[440px] bg-surface border border-line box-border min-w-0 wrap-break-word">
+              <div className="p-7 rounded-card bg-surface box-border min-w-0 wrap-break-word">
                 <div className="mb-3 px-2.5 py-1 rounded-full inline-block bg-chip text-contrast text-[11px] font-bold tracking-[0.12em] uppercase">
                   Godkänn veckan samlat
                 </div>
-                <h3 className="mx-0 mt-0 mb-2.5 text-[14px] font-semibold tracking-[0.1em] uppercase">
+                <h3 className="mx-0 mt-0 mb-2.5 text-[15px] font-bold tracking-[0.1em] uppercase">
                   Automatiskt läge
                 </h3>
-                <p className="m-0 font-serif text-[16px] leading-[1.55] text-ink uppercase tracking-[0.03em]">
-                  Vera förbereder löpande via bankkopplingen. Ni godkänner hela veckan i ett steg.
+                <p className="m-0 text-[16px] leading-[1.55] text-ink font-sans">
+                  Vera jobbar på egen hand via bankkopplingen. Du godkänner hela veckan med ett klick.
                 </p>
               </div>
             </div>
           </div>
-          <div className="mx-auto my-0 w-0.5 h-12 bg-accent" />
-          <div className="px-0 py-6 flex flex-col items-center">
-            <div className="reveal-up mb-7 text-center">
-              <div className="font-display font-bold text-[64px] text-accent leading-none">2</div>
-              <h2 className="mx-0 mt-1.5 mb-0 font-display font-bold text-[clamp(28px,6vw,38px)] tracking-[0.01em] uppercase">
+          <div className="py-6 reveal">
+            <div className="mb-6 gap-x-4 gap-y-2 flex flex-wrap items-baseline">
+              <div className="font-display font-bold text-[clamp(28px,5vw,40px)] text-accent leading-none">2</div>
+              <h2 className="m-0 font-display font-bold text-[clamp(22px,4vw,30px)] tracking-[0.01em] uppercase wrap-break-word">
                 Granskat läge i detalj
               </h2>
             </div>
-            <div className="gap-5 flex flex-wrap justify-center w-full">
-              <div className="reveal-left p-7 rounded-2xl flex-[1_1_260px] max-w-[300px] bg-surface border border-line box-border min-w-0 wrap-break-word">
-                <h3 className="mx-0 mt-0 mb-2.5 text-[14px] font-semibold tracking-[0.1em] uppercase">Förslag</h3>
-                <p className="m-0 font-serif text-[16px] leading-[1.55] text-ink uppercase tracking-[0.03em]">
+            <div className="gap-5 grid grid-cols-[repeat(auto-fit,minmax(260px,1fr))]">
+              <div className="p-7 rounded-card bg-surface box-border min-w-0 wrap-break-word">
+                <h3 className="mx-0 mt-0 mb-2.5 text-[15px] font-bold tracking-[0.1em] uppercase">Förslag</h3>
+                <p className="m-0 text-[16px] leading-[1.55] text-ink font-sans">
                   Underlagen läses in och varje post får konto, moms och motivering.
                 </p>
               </div>
-              <div className="reveal-up p-7 rounded-2xl flex-[1_1_260px] max-w-[300px] bg-surface border border-line box-border min-w-0 wrap-break-word">
-                <h3 className="mx-0 mt-0 mb-2.5 text-[14px] font-semibold tracking-[0.1em] uppercase">Granskning</h3>
-                <p className="m-0 font-serif text-[16px] leading-[1.55] text-ink uppercase tracking-[0.03em]">
-                  Veckans rapport finns i appen. Ändra, kommentera eller fråga Vera direkt.
+              <div className="p-7 rounded-card bg-surface box-border min-w-0 wrap-break-word">
+                <h3 className="mx-0 mt-0 mb-2.5 text-[15px] font-bold tracking-[0.1em] uppercase">Granskning</h3>
+                <p className="m-0 text-[16px] leading-[1.55] text-ink font-sans">
+                  Veckans rapport ligger i appen. Ändra, kommentera eller fråga Vera direkt.
                 </p>
               </div>
-              <div className="reveal-right p-7 rounded-2xl flex-[1_1_260px] max-w-[300px] bg-surface border border-line box-border min-w-0 wrap-break-word">
-                <h3 className="mx-0 mt-0 mb-2.5 text-[14px] font-semibold tracking-[0.1em] uppercase">Överföring</h3>
-                <p className="m-0 font-serif text-[16px] leading-[1.55] text-ink uppercase tracking-[0.03em]">
-                  Ni för själva över den granskade bokföringen till ert bokförings&shy;program.
+              <div className="p-7 rounded-card bg-surface box-border min-w-0 wrap-break-word">
+                <h3 className="mx-0 mt-0 mb-2.5 text-[15px] font-bold tracking-[0.1em] uppercase">Överföring</h3>
+                <p className="m-0 text-[16px] leading-[1.55] text-ink font-sans">
+                  Du för själv över den granskade bokföringen till ditt bokförings&shy;program.
                 </p>
               </div>
             </div>
           </div>
-          <div className="mx-auto my-0 w-0.5 h-12 bg-accent" />
-          <div className="px-0 py-6 flex flex-col items-center">
-            <div className="reveal-up mb-7 text-center">
-              <div className="font-display font-bold text-[64px] text-accent leading-none">3</div>
-              <h2 className="mx-0 mt-1.5 mb-0 font-display font-bold text-[clamp(28px,6vw,38px)] tracking-[0.01em] uppercase">
+          <div className="py-6 reveal">
+            <div className="mb-6 gap-x-4 gap-y-2 flex flex-wrap items-baseline">
+              <div className="font-display font-bold text-[clamp(28px,5vw,40px)] text-accent leading-none">3</div>
+              <h2 className="m-0 font-display font-bold text-[clamp(22px,4vw,30px)] tracking-[0.01em] uppercase wrap-break-word">
                 Automatiskt läge i detalj
               </h2>
             </div>
-            <div className="gap-5 flex flex-wrap justify-center w-full">
-              <div className="reveal-left p-7 rounded-2xl flex-[1_1_260px] max-w-[300px] bg-surface border border-line box-border min-w-0 wrap-break-word">
-                <h3 className="mx-0 mt-0 mb-2.5 text-[14px] font-semibold tracking-[0.1em] uppercase">Bankkoppling</h3>
-                <p className="m-0 font-serif text-[16px] leading-[1.55] text-ink uppercase tracking-[0.03em]">
-                  Transaktioner hämtas när de uppstår, tillsammans med tillhörande kvitton och Z-rapporter.
+            <div className="gap-5 grid grid-cols-[repeat(auto-fit,minmax(260px,1fr))]">
+              <div className="p-7 rounded-card bg-surface box-border min-w-0 wrap-break-word">
+                <h3 className="mx-0 mt-0 mb-2.5 text-[15px] font-bold tracking-[0.1em] uppercase">Bankkoppling</h3>
+                <p className="m-0 text-[16px] leading-[1.55] text-ink font-sans">
+                  Transaktioner hämtas i samma stund som de sker, tillsammans med kvitton och Z-rapporter.
                 </p>
               </div>
-              <div className="reveal-up p-7 rounded-2xl flex-[1_1_260px] max-w-[300px] bg-surface border border-line box-border min-w-0 wrap-break-word">
-                <h3 className="mx-0 mt-0 mb-2.5 text-[14px] font-semibold tracking-[0.1em] uppercase">
+              <div className="p-7 rounded-card bg-surface box-border min-w-0 wrap-break-word">
+                <h3 className="mx-0 mt-0 mb-2.5 text-[15px] font-bold tracking-[0.1em] uppercase">
                   Löpande förberedelse
                 </h3>
-                <p className="m-0 font-serif text-[16px] leading-[1.55] text-ink uppercase tracking-[0.03em]">
-                  Bokföringen förbereds i appen under veckan, utan avbrott för er.
+                <p className="m-0 text-[16px] leading-[1.55] text-ink font-sans">
+                  Bokföringen växer fram i appen under veckan. Du störs inte en enda gång.
                 </p>
               </div>
-              <div className="reveal-right p-7 rounded-2xl flex-[1_1_260px] max-w-[300px] bg-surface border border-line box-border min-w-0 wrap-break-word">
-                <h3 className="mx-0 mt-0 mb-2.5 text-[14px] font-semibold tracking-[0.1em] uppercase">
+              <div className="p-7 rounded-card bg-surface box-border min-w-0 wrap-break-word">
+                <h3 className="mx-0 mt-0 mb-2.5 text-[15px] font-bold tracking-[0.1em] uppercase">
                   Ett godkännande
                 </h3>
-                <p className="m-0 font-serif text-[16px] leading-[1.55] text-ink uppercase tracking-[0.03em]">
-                  Ni går igenom utkastet och godkänner. Därefter förs allt in i bokförings&shy;programmet.
+                <p className="m-0 text-[16px] leading-[1.55] text-ink font-sans">
+                  Du går igenom utkastet och godkänner. Därefter för Vera in allt i bokförings&shy;programmet.
                 </p>
               </div>
             </div>
           </div>
-          <div className="mx-auto my-0 w-0.5 h-12 bg-accent" />
-          <div className="px-0 py-6 flex flex-col items-center">
-            <div className="reveal-up mb-7 text-center">
-              <div className="font-display font-bold text-[64px] text-accent leading-none">4</div>
-              <h2 className="mx-0 mt-1.5 mb-0 font-display font-bold text-[clamp(28px,6vw,38px)] tracking-[0.01em] uppercase">
+          <div className="py-6 reveal">
+            <div className="mb-6 gap-x-4 gap-y-2 flex flex-wrap items-baseline">
+              <div className="font-display font-bold text-[clamp(28px,5vw,40px)] text-accent leading-none">4</div>
+              <h2 className="m-0 font-display font-bold text-[clamp(22px,4vw,30px)] tracking-[0.01em] uppercase wrap-break-word">
                 Gränser
               </h2>
             </div>
-            <div className="gap-5 flex flex-wrap justify-center w-full">
-              <div className="reveal-left p-7 rounded-2xl flex-[1_1_260px] max-w-[300px] bg-surface border border-line box-border min-w-0 wrap-break-word">
-                <h3 className="mx-0 mt-0 mb-2.5 text-[14px] font-semibold tracking-[0.1em] uppercase">Beloppsgräns</h3>
-                <p className="m-0 font-serif text-[16px] leading-[1.55] text-ink uppercase tracking-[0.03em]">
-                  Poster över gränsen kräver separat godkännande, oavsett läge.
+            <div className="gap-5 grid grid-cols-[repeat(auto-fit,minmax(260px,1fr))]">
+              <div className="p-7 rounded-card bg-surface box-border min-w-0 wrap-break-word">
+                <h3 className="mx-0 mt-0 mb-2.5 text-[15px] font-bold tracking-[0.1em] uppercase">Beloppsgräns</h3>
+                <p className="m-0 text-[16px] leading-[1.55] text-ink font-sans">
+                  Poster över din beloppsgräns kräver alltid ett eget godkännande. Oavsett läge.
                 </p>
               </div>
-              <div className="reveal-up p-7 rounded-2xl flex-[1_1_260px] max-w-[300px] bg-surface border border-line box-border min-w-0 wrap-break-word">
-                <h3 className="mx-0 mt-0 mb-2.5 text-[14px] font-semibold tracking-[0.1em] uppercase">Avvikelser</h3>
-                <p className="m-0 font-serif text-[16px] leading-[1.55] text-ink uppercase tracking-[0.03em]">
-                  Ny motpart, oväntad moms eller en post utan regel stoppas och blir en fråga.
+              <div className="p-7 rounded-card bg-surface box-border min-w-0 wrap-break-word">
+                <h3 className="mx-0 mt-0 mb-2.5 text-[15px] font-bold tracking-[0.1em] uppercase">Avvikelser</h3>
+                <p className="m-0 text-[16px] leading-[1.55] text-ink font-sans">
+                  Ny motpart, oväntad moms eller en post utan regel stoppas och blir en fråga till dig.
                 </p>
               </div>
-              <div className="reveal-right p-7 rounded-2xl flex-[1_1_260px] max-w-[300px] bg-surface border border-line box-border min-w-0 wrap-break-word">
-                <h3 className="mx-0 mt-0 mb-2.5 text-[14px] font-semibold tracking-[0.1em] uppercase">Flexibelt</h3>
-                <p className="m-0 font-serif text-[16px] leading-[1.55] text-ink uppercase tracking-[0.03em]">
-                  Byt läge när förtroendet eller behovet ändras.
+              <div className="p-7 rounded-card bg-surface box-border min-w-0 wrap-break-word">
+                <h3 className="mx-0 mt-0 mb-2.5 text-[15px] font-bold tracking-[0.1em] uppercase">Flexibelt</h3>
+                <p className="m-0 text-[16px] leading-[1.55] text-ink font-sans">
+                  Byt läge när förtroendet växer eller behovet ändras.
                 </p>
               </div>
             </div>
           </div>
-          <div className="mx-auto my-0 w-0.5 h-12 bg-accent" />
-          <div className="px-0 py-6 flex flex-col items-center">
-            <div className="reveal-up mb-7 text-center">
-              <div className="font-display font-bold text-[64px] text-accent leading-none">5</div>
-              <h2 className="mx-0 mt-1.5 mb-0 font-display font-bold text-[clamp(28px,6vw,38px)] tracking-[0.01em] uppercase">
+          <div className="py-6 reveal">
+            <div className="mb-6 gap-x-4 gap-y-2 flex flex-wrap items-baseline">
+              <div className="font-display font-bold text-[clamp(28px,5vw,40px)] text-accent leading-none">5</div>
+              <h2 className="m-0 font-display font-bold text-[clamp(22px,4vw,30px)] tracking-[0.01em] uppercase wrap-break-word">
                 Spårbarhet
               </h2>
             </div>
-            <div className="gap-5 flex flex-wrap justify-center w-full">
-              <div className="reveal-up p-7 rounded-2xl w-full max-w-[640px] bg-surface border border-line box-border min-w-0 wrap-break-word">
-                <p className="m-0 font-serif text-[16px] leading-[1.55] text-ink uppercase tracking-[0.03em]">
-                  Varje steg loggas: underlag, regel och resultat. Det gör det enkelt att visa hur bokföringen har gått
-                  till.
+            <div className="gap-5 grid grid-cols-[repeat(auto-fit,minmax(260px,1fr))]">
+              <div className="p-7 rounded-card bg-surface box-border min-w-0 wrap-break-word">
+                <p className="m-0 text-[16px] leading-[1.55] text-ink font-sans">
+                  Varje steg loggas: underlag, regel och resultat. Du kan alltid visa exakt hur bokföringen gick till.
                 </p>
               </div>
             </div>
           </div>
         </div>
       </div>
-      <div className="bg-surface border-t border-t-line border-b border-b-line" id="bokslut">
-        <div className="mx-auto my-0 px-10 py-24 max-w-[1200px] box-border">
-          <div className="reveal-soft mx-auto mt-0 mb-12 text-center max-w-[720px]">
+      <div className="bg-surface min-[900px]:min-h-dvh box-border flex items-center scroll-mt-20" id="bokslut">
+        <div className="mx-auto my-0 px-10 py-20 w-full max-w-[1200px] box-border">
+          <div className="mb-10 max-w-[720px] reveal">
             <div className="mb-5 px-3.5 py-1.5 rounded-full inline-block bg-chip text-contrast text-[13px] font-semibold tracking-[0.14em] uppercase">
               Periodiskt arbete
             </div>
-            <h2 className="mx-0 mt-0 mb-4 font-display font-bold uppercase tracking-[0.01em] text-[clamp(28px,7vw,44px)] wrap-break-word leading-[1.05]">
-              Fakturor, moms, lön och bokslut.
+            <h2 className="mx-0 mt-0 mb-4 font-display font-bold uppercase tracking-[0.01em] text-[clamp(28px,6.5vw,42px)] wrap-break-word leading-[1.05]">
+              Fakturor, moms, lön och bokslut. Allt i tid.
             </h2>
-            <p className="mx-auto my-0 text-[17px] leading-[1.6] max-w-[600px] font-serif text-ink uppercase tracking-[0.03em]">
-              Den löpande bokföringen är underlaget för allt som ska rapporteras under året.
+            <p className="m-0 text-[18px] leading-[1.6] text-ink font-sans">
+              När den löpande bokföringen är rätt är allt annat redan halvklart. Vera gör resten.
             </p>
           </div>
           <div className="gap-6 grid grid-cols-[repeat(auto-fit,minmax(250px,1fr))]">
             <div
-              className="reveal-soft p-8 gap-4 rounded-card bg-surface border border-line min-w-0 flex flex-col wrap-break-word"
+              className="p-7 gap-3.5 rounded-card bg-page border border-line box-border min-w-0 flex flex-col wrap-break-word"
               id="fakturering"
             >
               <div className="gap-3 flex justify-between items-center flex-wrap">
@@ -618,12 +617,12 @@ export default function BokforingPage() {
               <h3 className="m-0 font-display font-bold uppercase tracking-[0.01em] text-[26px] leading-[1.1]">
                 Fakturering
               </h3>
-              <p className="m-0 text-[16px] leading-[1.55] font-serif text-ink uppercase tracking-[0.03em]">
-                Ange kund, tjänst och belopp. Vera skapar fakturan med rätt moms och betaluppgifter och bevakar
-                betalningen.
+              <p className="m-0 text-[16px] leading-[1.55] text-ink font-sans">
+                Ange kund, tjänst och belopp. Vera skapar fakturan med rätt moms och betaluppgifter, skickar den när du
+                godkänt och bevakar betalningen.
               </p>
               <div className="gap-2.5 flex flex-col">
-                <div className="gap-2.5 flex items-start text-[14px] font-medium tracking-[0.04em] uppercase leading-[1.4]">
+                <div className="gap-2.5 flex items-start text-[16px] leading-[1.5] text-ink font-sans">
                   <svg className="mt-0.5 flex-none" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true">
                     <path
                       d="M5 12.5l4.5 4.5L19 7.5"
@@ -634,9 +633,9 @@ export default function BokforingPage() {
                       strokeLinejoin="round"
                     />
                   </svg>
-                  <span>Faktura skapas från era uppgifter</span>
+                  <span>Fakturan skapas från dina uppgifter</span>
                 </div>
-                <div className="gap-2.5 flex items-start text-[14px] font-medium tracking-[0.04em] uppercase leading-[1.4]">
+                <div className="gap-2.5 flex items-start text-[16px] leading-[1.5] text-ink font-sans">
                   <svg className="mt-0.5 flex-none" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true">
                     <path
                       d="M5 12.5l4.5 4.5L19 7.5"
@@ -647,9 +646,9 @@ export default function BokforingPage() {
                       strokeLinejoin="round"
                     />
                   </svg>
-                  <span>Skickas efter godkännande</span>
+                  <span>Skickas efter ditt godkännande</span>
                 </div>
-                <div className="gap-2.5 flex items-start text-[14px] font-medium tracking-[0.04em] uppercase leading-[1.4]">
+                <div className="gap-2.5 flex items-start text-[16px] leading-[1.5] text-ink font-sans">
                   <svg className="mt-0.5 flex-none" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true">
                     <path
                       d="M5 12.5l4.5 4.5L19 7.5"
@@ -660,7 +659,7 @@ export default function BokforingPage() {
                       strokeLinejoin="round"
                     />
                   </svg>
-                  <span>Påminnelse vid förfallen betalning</span>
+                  <span>Påminnelse när betalningen förfallit</span>
                 </div>
               </div>
               <div className="mt-auto pt-4 border-t border-t-line-faint text-[13px] font-bold tracking-[0.1em] uppercase text-contrast">
@@ -668,7 +667,7 @@ export default function BokforingPage() {
               </div>
             </div>
             <div
-              className="reveal-soft p-8 gap-4 rounded-card bg-surface border border-line min-w-0 flex flex-col wrap-break-word"
+              className="p-7 gap-3.5 rounded-card bg-page border border-line box-border min-w-0 flex flex-col wrap-break-word"
               id="moms"
             >
               <div className="gap-3 flex justify-between items-center flex-wrap">
@@ -691,11 +690,11 @@ export default function BokforingPage() {
               <h3 className="m-0 font-display font-bold uppercase tracking-[0.01em] text-[26px] leading-[1.1]">
                 Moms&shy;deklaration
               </h3>
-              <p className="m-0 text-[16px] leading-[1.55] font-serif text-ink uppercase tracking-[0.03em]">
-                Utgående och ingående moms räknas fram ur bokföringen. Redovisningsperioden följer er omsättning.
+              <p className="m-0 text-[16px] leading-[1.55] text-ink font-sans">
+                Utgående och ingående moms räknas fram direkt ur bokföringen. Perioden följer din omsättning.
               </p>
               <div className="gap-2.5 flex flex-col">
-                <div className="gap-2.5 flex items-start text-[14px] font-medium tracking-[0.04em] uppercase leading-[1.4]">
+                <div className="gap-2.5 flex items-start text-[16px] leading-[1.5] text-ink font-sans">
                   <svg className="mt-0.5 flex-none" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true">
                     <path
                       d="M5 12.5l4.5 4.5L19 7.5"
@@ -706,9 +705,9 @@ export default function BokforingPage() {
                       strokeLinejoin="round"
                     />
                   </svg>
-                  <span>Avstämning mot bokföringen</span>
+                  <span>Avstämd mot bokföringen</span>
                 </div>
-                <div className="gap-2.5 flex items-start text-[14px] font-medium tracking-[0.04em] uppercase leading-[1.4]">
+                <div className="gap-2.5 flex items-start text-[16px] leading-[1.5] text-ink font-sans">
                   <svg className="mt-0.5 flex-none" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true">
                     <path
                       d="M5 12.5l4.5 4.5L19 7.5"
@@ -721,7 +720,7 @@ export default function BokforingPage() {
                   </svg>
                   <span>Påminnelse före sista dag</span>
                 </div>
-                <div className="gap-2.5 flex items-start text-[14px] font-medium tracking-[0.04em] uppercase leading-[1.4]">
+                <div className="gap-2.5 flex items-start text-[16px] leading-[1.5] text-ink font-sans">
                   <svg className="mt-0.5 flex-none" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true">
                     <path
                       d="M5 12.5l4.5 4.5L19 7.5"
@@ -732,15 +731,15 @@ export default function BokforingPage() {
                       strokeLinejoin="round"
                     />
                   </svg>
-                  <span>Avstämning av skattekontot</span>
+                  <span>Skattekontot avstämt</span>
                 </div>
               </div>
               <div className="mt-auto pt-4 border-t border-t-line-faint text-[13px] font-bold tracking-[0.1em] uppercase text-contrast">
-                Ni lämnar in via Skatteverkets e-tjänst
+                Du lämnar in via Skatteverkets e-tjänst
               </div>
             </div>
             <div
-              className="reveal-soft p-8 gap-4 rounded-card bg-surface border border-line min-w-0 flex flex-col wrap-break-word"
+              className="p-7 gap-3.5 rounded-card bg-page border border-line box-border min-w-0 flex flex-col wrap-break-word"
               id="lon"
             >
               <div className="gap-3 flex justify-between items-center flex-wrap">
@@ -763,12 +762,12 @@ export default function BokforingPage() {
               <h3 className="m-0 font-display font-bold uppercase tracking-[0.01em] text-[26px] leading-[1.1]">
                 Lön och arbets&shy;givar&shy;deklaration
               </h3>
-              <p className="m-0 text-[16px] leading-[1.55] font-serif text-ink uppercase tracking-[0.03em]">
-                Löner bokförs och underlag tas fram för arbetsgivardeklarationen, med skatteavdrag och
+              <p className="m-0 text-[16px] leading-[1.55] text-ink font-sans">
+                Lönerna bokförs och underlaget till arbetsgivardeklarationen tas fram, med skatteavdrag och
                 arbetsgivaravgifter per anställd.
               </p>
               <div className="gap-2.5 flex flex-col">
-                <div className="gap-2.5 flex items-start text-[14px] font-medium tracking-[0.04em] uppercase leading-[1.4]">
+                <div className="gap-2.5 flex items-start text-[16px] leading-[1.5] text-ink font-sans">
                   <svg className="mt-0.5 flex-none" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true">
                     <path
                       d="M5 12.5l4.5 4.5L19 7.5"
@@ -781,7 +780,7 @@ export default function BokforingPage() {
                   </svg>
                   <span>Bokföring av löner</span>
                 </div>
-                <div className="gap-2.5 flex items-start text-[14px] font-medium tracking-[0.04em] uppercase leading-[1.4]">
+                <div className="gap-2.5 flex items-start text-[16px] leading-[1.5] text-ink font-sans">
                   <svg className="mt-0.5 flex-none" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true">
                     <path
                       d="M5 12.5l4.5 4.5L19 7.5"
@@ -794,7 +793,7 @@ export default function BokforingPage() {
                   </svg>
                   <span>Lönespecifikationer</span>
                 </div>
-                <div className="gap-2.5 flex items-start text-[14px] font-medium tracking-[0.04em] uppercase leading-[1.4]">
+                <div className="gap-2.5 flex items-start text-[16px] leading-[1.5] text-ink font-sans">
                   <svg className="mt-0.5 flex-none" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true">
                     <path
                       d="M5 12.5l4.5 4.5L19 7.5"
@@ -807,7 +806,7 @@ export default function BokforingPage() {
                   </svg>
                   <span>Skatt och avgifter per anställd</span>
                 </div>
-                <div className="gap-2.5 flex items-start text-[14px] font-medium tracking-[0.04em] uppercase leading-[1.4]">
+                <div className="gap-2.5 flex items-start text-[16px] leading-[1.5] text-ink font-sans">
                   <svg className="mt-0.5 flex-none" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true">
                     <path
                       d="M5 12.5l4.5 4.5L19 7.5"
@@ -826,7 +825,7 @@ export default function BokforingPage() {
               </div>
             </div>
             <div
-              className="reveal-soft p-8 gap-4 rounded-card bg-surface border border-line min-w-0 flex flex-col wrap-break-word"
+              className="p-7 gap-3.5 rounded-card bg-page border border-line box-border min-w-0 flex flex-col wrap-break-word"
               id="arsbokslut"
             >
               <div className="gap-3 flex justify-between items-center flex-wrap">
@@ -849,12 +848,12 @@ export default function BokforingPage() {
               <h3 className="m-0 font-display font-bold uppercase tracking-[0.01em] text-[26px] leading-[1.1]">
                 Bokslut och års&shy;redovisning
               </h3>
-              <p className="m-0 text-[16px] leading-[1.55] font-serif text-ink uppercase tracking-[0.03em]">
-                Efter räkenskapsårets slut tas bokslutsförslag, utkast till årsredovisning och underlag till
-                inkomstdeklarationen fram.
+              <p className="m-0 text-[16px] leading-[1.55] text-ink font-sans">
+                När räkenskapsåret är slut ligger bokslutsförslag, utkast till årsredovisning och underlag till
+                inkomstdeklarationen klara.
               </p>
               <div className="gap-2.5 flex flex-col">
-                <div className="gap-2.5 flex items-start text-[14px] font-medium tracking-[0.04em] uppercase leading-[1.4]">
+                <div className="gap-2.5 flex items-start text-[16px] leading-[1.5] text-ink font-sans">
                   <svg className="mt-0.5 flex-none" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true">
                     <path
                       d="M5 12.5l4.5 4.5L19 7.5"
@@ -865,9 +864,9 @@ export default function BokforingPage() {
                       strokeLinejoin="round"
                     />
                   </svg>
-                  <span>Avstämning av alla konton</span>
+                  <span>Alla konton avstämda</span>
                 </div>
-                <div className="gap-2.5 flex items-start text-[14px] font-medium tracking-[0.04em] uppercase leading-[1.4]">
+                <div className="gap-2.5 flex items-start text-[16px] leading-[1.5] text-ink font-sans">
                   <svg className="mt-0.5 flex-none" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true">
                     <path
                       d="M5 12.5l4.5 4.5L19 7.5"
@@ -880,7 +879,7 @@ export default function BokforingPage() {
                   </svg>
                   <span>Förslag på avskrivningar och periodiseringar</span>
                 </div>
-                <div className="gap-2.5 flex items-start text-[14px] font-medium tracking-[0.04em] uppercase leading-[1.4]">
+                <div className="gap-2.5 flex items-start text-[16px] leading-[1.5] text-ink font-sans">
                   <svg className="mt-0.5 flex-none" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true">
                     <path
                       d="M5 12.5l4.5 4.5L19 7.5"
@@ -895,11 +894,11 @@ export default function BokforingPage() {
                 </div>
               </div>
               <div className="mt-auto pt-4 border-t border-t-line-faint text-[13px] font-bold tracking-[0.1em] uppercase text-contrast">
-                Styrelsen undertecknar, efter revision om ni har revisor
+                Styrelsen undertecknar, efter revision om du har revisor
               </div>
             </div>
           </div>
-          <div className="reveal-soft mx-auto mt-8 mb-0 px-6 py-5 gap-3.5 rounded-2xl max-w-[760px] bg-page border border-line flex items-start">
+          <div className="mx-0 mt-8 mb-0 px-6 py-5 gap-3.5 rounded-card max-w-[760px] bg-page border border-line flex items-start reveal">
             <svg className="mt-0.5 flex-none" width="22" height="22" viewBox="0 0 24 24" aria-hidden="true">
               <path
                 d="M12 3a9 9 0 100 18 9 9 0 000-18z M12 7v5l3 2"
@@ -910,27 +909,27 @@ export default function BokforingPage() {
                 strokeLinejoin="round"
               />
             </svg>
-            <p className="m-0 text-[15px] leading-[1.55] font-serif text-ink uppercase tracking-[0.03em]">
+            <p className="m-0 text-[16px] leading-[1.55] text-ink font-sans">
               Ett aktiebolag ska lämna in årsredovisningen till Bolagsverket senast sju månader efter räkenskapsårets
-              slut. Vera bevakar datumet.
+              slut. Vera håller koll på datumet, så att du slipper.
             </p>
           </div>
         </div>
       </div>
-      <div className="mx-auto my-0 px-10 py-24 gap-14 max-w-[1200px] box-border flex flex-wrap items-center">
-        <div className="reveal-soft flex-[1_1_400px] min-w-0">
+      <div className="mx-auto my-0 px-10 py-20 gap-14 max-w-[1200px] box-border flex flex-wrap items-center min-[900px]:min-h-dvh content-center">
+        <div className="reveal flex-[1_1_400px] min-w-0">
           <div className="mb-5 px-3.5 py-1.5 rounded-full inline-block bg-chip text-contrast text-[13px] font-semibold tracking-[0.14em] uppercase">
             Transparens
           </div>
-          <h2 className="mx-0 mt-0 mb-4 font-display font-bold uppercase tracking-[0.01em] text-[clamp(28px,7vw,44px)] wrap-break-word leading-[1.05]">
-            Varje förslag har en motivering.
+          <h2 className="mx-0 mt-0 mb-4 font-display font-bold uppercase tracking-[0.01em] text-[clamp(28px,6.5vw,42px)] wrap-break-word leading-[1.05]">
+            Varje förslag förklarar sig självt.
           </h2>
           <div className="mb-8 gap-4 flex flex-col">
-            <p className="m-0 text-[17px] leading-[1.6] max-w-[560px] font-serif text-ink uppercase tracking-[0.03em]">
-              Ni ser vilket konto som föreslås, vilken regel det bygger på och vilka kontroller som har körts.
+            <p className="m-0 text-[18px] leading-[1.6] max-w-[560px] text-ink font-sans">
+              Du ser vilket konto Vera föreslår, vilken regel hon lutar sig mot och vilka kontroller som körts.
             </p>
-            <p className="m-0 text-[17px] leading-[1.6] max-w-[560px] font-serif text-ink uppercase tracking-[0.03em]">
-              Det gör granskningen snabb och visar när en regel behöver justeras.
+            <p className="m-0 text-[18px] leading-[1.6] max-w-[560px] text-ink font-sans">
+              Granskningen tar sekunder, och du ser direkt när en regel behöver justeras.
             </p>
           </div>
           <Link
@@ -940,8 +939,8 @@ export default function BokforingPage() {
             Boka en demo
           </Link>
         </div>
-        <div className="reveal-soft flex-[1_1_480px] min-w-0">
-          <div className="p-7 rounded-card bg-surface border border-line shadow-[0_30px_70px_rgba(33,37,41,0.10)] box-border">
+        <div className="reveal flex-[1_1_480px] min-w-0">
+          <div className="p-7 rounded-card bg-surface border border-line box-border">
             <div className="gap-3 flex justify-between items-start flex-wrap">
               <div>
                 <div className="text-[12px] font-semibold tracking-[0.12em] uppercase text-ink-soft">
@@ -974,8 +973,8 @@ export default function BokforingPage() {
             </div>
             <div className="mt-5 px-4.5 py-4 rounded-[14px] bg-page">
               <div className="mb-1.5 text-[12px] font-bold tracking-[0.12em] uppercase text-contrast">Motivering</div>
-              <div className="text-[15px] leading-[1.5] font-serif text-ink uppercase tracking-[0.03em]">
-                Inbetalningen kommer via Swish till butiken. Enligt er regel ”Swish-försäljning i butik” bokförs den som
+              <div className="text-[16px] leading-[1.55] text-ink font-sans">
+                Inbetalningen kommer via Swish till butiken. Enligt din regel ”Swish-försäljning i butik” bokförs den som
                 försäljning med 25 % moms.
               </div>
             </div>
@@ -1035,7 +1034,7 @@ export default function BokforingPage() {
             </div>
             <div className="mt-5 pt-4 gap-2.5 flex flex-wrap border-t border-t-line-faint items-center">
               <span className="mr-auto text-[12px] font-semibold tracking-[0.08em] uppercase text-ink-soft">
-                Väntar på ert godkännande
+                Väntar på ditt godkännande
               </span>
               <span
                 className="px-4 py-0 rounded-full inline-flex items-center min-h-9.5 border-[1.5px] border-line-strong text-[12px] font-bold tracking-[0.1em] uppercase"
@@ -1053,18 +1052,18 @@ export default function BokforingPage() {
           </div>
         </div>
       </div>
-      <div className="bg-surface border-t border-t-line border-b border-b-line">
-        <div className="mx-auto my-0 px-10 py-24 max-w-[1200px] box-border">
-          <div className="mb-12">
-            <h2 className="mx-0 mt-0 mb-4 font-display font-bold uppercase tracking-[0.01em] text-[clamp(28px,7vw,44px)] wrap-break-word leading-[1.05]">
+      <div className="bg-surface min-[900px]:min-h-dvh box-border flex items-center">
+        <div className="mx-auto my-0 px-10 py-20 w-full max-w-[1200px] box-border">
+          <div className="mb-10 max-w-[720px] reveal">
+            <h2 className="mx-0 mt-0 mb-4 font-display font-bold uppercase tracking-[0.01em] text-[clamp(28px,6.5vw,42px)] wrap-break-word leading-[1.05]">
               Ingår
             </h2>
-            <p className="m-0 text-[17px] leading-[1.6] max-w-[560px] font-serif text-ink uppercase tracking-[0.03em]">
-              Funktioner i den löpande bokföringen.
+            <p className="m-0 text-[18px] leading-[1.6] max-w-[560px] text-ink font-sans">
+              Allt som ingår i den löpande bokföringen.
             </p>
           </div>
           <div className="gap-y-10 gap-x-12 grid grid-cols-[repeat(auto-fit,minmax(320px,1fr))]">
-            <div className="reveal-soft gap-4 flex items-start min-w-0">
+            <div className="reveal gap-4 flex items-start min-w-0">
               <div className="rounded-xl w-12 h-12 bg-chip flex items-center justify-center">
                 <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true">
                   <path
@@ -1079,12 +1078,12 @@ export default function BokforingPage() {
               </div>
               <div className="min-w-0">
                 <h3 className="mx-0 mt-0.5 mb-1.5 text-[15px] font-bold tracking-[0.1em] uppercase">Kontoutdrag</h3>
-                <p className="m-0 text-[15px] leading-[1.5] font-serif text-ink uppercase tracking-[0.03em]">
-                  Transaktioner läses in och matchas mot underlag.
+                <p className="m-0 text-[16px] leading-[1.55] text-ink font-sans">
+                  Varje transaktion läses in och matchas mot sitt underlag.
                 </p>
               </div>
             </div>
-            <div className="reveal-soft gap-4 flex items-start min-w-0">
+            <div className="reveal gap-4 flex items-start min-w-0">
               <div className="rounded-xl w-12 h-12 bg-chip flex items-center justify-center">
                 <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true">
                   <path
@@ -1101,12 +1100,12 @@ export default function BokforingPage() {
                 <h3 className="mx-0 mt-0.5 mb-1.5 text-[15px] font-bold tracking-[0.1em] uppercase">
                   Kvitton och fakturor
                 </h3>
-                <p className="m-0 text-[15px] leading-[1.5] font-serif text-ink uppercase tracking-[0.03em]">
-                  Belopp, datum och moms tolkas automatiskt.
+                <p className="m-0 text-[16px] leading-[1.55] text-ink font-sans">
+                  Belopp, datum och moms läses av automatiskt.
                 </p>
               </div>
             </div>
-            <div className="reveal-soft gap-4 flex items-start min-w-0">
+            <div className="reveal gap-4 flex items-start min-w-0">
               <div className="rounded-xl w-12 h-12 bg-chip flex items-center justify-center">
                 <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true">
                   <path
@@ -1121,12 +1120,12 @@ export default function BokforingPage() {
               </div>
               <div className="min-w-0">
                 <h3 className="mx-0 mt-0.5 mb-1.5 text-[15px] font-bold tracking-[0.1em] uppercase">Z-rapporter</h3>
-                <p className="m-0 text-[15px] leading-[1.5] font-serif text-ink uppercase tracking-[0.03em]">
-                  Dagskassan bokförs med rätt moms.
+                <p className="m-0 text-[16px] leading-[1.55] text-ink font-sans">
+                  Dagskassan bokförs med rätt moms, varje dag.
                 </p>
               </div>
             </div>
-            <div className="reveal-soft gap-4 flex items-start min-w-0">
+            <div className="reveal gap-4 flex items-start min-w-0">
               <div className="rounded-xl w-12 h-12 bg-chip flex items-center justify-center">
                 <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true">
                   <path
@@ -1143,12 +1142,12 @@ export default function BokforingPage() {
                 <h3 className="mx-0 mt-0.5 mb-1.5 text-[15px] font-bold tracking-[0.1em] uppercase">
                   Konteringsförslag
                 </h3>
-                <p className="m-0 text-[15px] leading-[1.5] font-serif text-ink uppercase tracking-[0.03em]">
+                <p className="m-0 text-[16px] leading-[1.55] text-ink font-sans">
                   Konto, moms och motivering för varje post.
                 </p>
               </div>
             </div>
-            <div className="reveal-soft gap-4 flex items-start min-w-0">
+            <div className="reveal gap-4 flex items-start min-w-0">
               <div className="rounded-xl w-12 h-12 bg-chip flex items-center justify-center">
                 <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true">
                   <path
@@ -1163,12 +1162,12 @@ export default function BokforingPage() {
               </div>
               <div className="min-w-0">
                 <h3 className="mx-0 mt-0.5 mb-1.5 text-[15px] font-bold tracking-[0.1em] uppercase">Kontroller</h3>
-                <p className="m-0 text-[15px] leading-[1.5] font-serif text-ink uppercase tracking-[0.03em]">
-                  Dubbletter, saldon och moms kontrolleras innan rapporten.
+                <p className="m-0 text-[16px] leading-[1.55] text-ink font-sans">
+                  Dubbletter, saldon och moms kontrolleras innan du ser rapporten.
                 </p>
               </div>
             </div>
-            <div className="reveal-soft gap-4 flex items-start min-w-0">
+            <div className="reveal gap-4 flex items-start min-w-0">
               <div className="rounded-xl w-12 h-12 bg-chip flex items-center justify-center">
                 <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true">
                   <path
@@ -1185,12 +1184,12 @@ export default function BokforingPage() {
                 <h3 className="mx-0 mt-0.5 mb-1.5 text-[15px] font-bold tracking-[0.1em] uppercase">
                   Frågor vid osäkerhet
                 </h3>
-                <p className="m-0 text-[15px] leading-[1.5] font-serif text-ink uppercase tracking-[0.03em]">
-                  Poster utan matchande regel lyfts till er.
+                <p className="m-0 text-[16px] leading-[1.55] text-ink font-sans">
+                  Poster utan regel lyfts till dig. Vera gissar aldrig.
                 </p>
               </div>
             </div>
-            <div className="reveal-soft gap-4 flex items-start min-w-0">
+            <div className="reveal gap-4 flex items-start min-w-0">
               <div className="rounded-xl w-12 h-12 bg-chip flex items-center justify-center">
                 <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true">
                   <path
@@ -1205,12 +1204,12 @@ export default function BokforingPage() {
               </div>
               <div className="min-w-0">
                 <h3 className="mx-0 mt-0.5 mb-1.5 text-[15px] font-bold tracking-[0.1em] uppercase">Veckorapport</h3>
-                <p className="m-0 text-[15px] leading-[1.5] font-serif text-ink uppercase tracking-[0.03em]">
-                  Allt som väntar på godkännande, samlat på ett ställe.
+                <p className="m-0 text-[16px] leading-[1.55] text-ink font-sans">
+                  Allt som väntar på ditt ok, samlat på ett ställe.
                 </p>
               </div>
             </div>
-            <div className="reveal-soft gap-4 flex items-start min-w-0">
+            <div className="reveal gap-4 flex items-start min-w-0">
               <div className="rounded-xl w-12 h-12 bg-chip flex items-center justify-center">
                 <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true">
                   <path
@@ -1225,12 +1224,12 @@ export default function BokforingPage() {
               </div>
               <div className="min-w-0">
                 <h3 className="mx-0 mt-0.5 mb-1.5 text-[15px] font-bold tracking-[0.1em] uppercase">App och webb</h3>
-                <p className="m-0 text-[15px] leading-[1.5] font-serif text-ink uppercase tracking-[0.03em]">
-                  Tillgång för hela teamet, med notiser när något behöver er.
+                <p className="m-0 text-[16px] leading-[1.55] text-ink font-sans">
+                  Hela teamet har tillgång, med en notis när något behöver dig.
                 </p>
               </div>
             </div>
-            <div className="reveal-soft gap-4 flex items-start min-w-0">
+            <div className="reveal gap-4 flex items-start min-w-0">
               <div className="rounded-xl w-12 h-12 bg-chip flex items-center justify-center">
                 <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true">
                   <path
@@ -1245,7 +1244,7 @@ export default function BokforingPage() {
               </div>
               <div className="min-w-0">
                 <h3 className="mx-0 mt-0.5 mb-1.5 text-[15px] font-bold tracking-[0.1em] uppercase">Loggning</h3>
-                <p className="m-0 text-[15px] leading-[1.5] font-serif text-ink uppercase tracking-[0.03em]">
+                <p className="m-0 text-[16px] leading-[1.55] text-ink font-sans">
                   Fullständig historik för varje post.
                 </p>
               </div>
@@ -1254,7 +1253,7 @@ export default function BokforingPage() {
         </div>
       </div>
       <div
-        className="mx-auto my-0 px-10 py-18 gap-10 max-w-[1200px] box-border flex flex-wrap items-center"
+        className="mx-auto my-0 px-10 py-20 gap-10 max-w-[1200px] box-border flex flex-wrap items-center min-[900px]:min-h-dvh content-center scroll-mt-20 reveal-stagger"
         id="fungerar"
       >
         <div className="flex-[1_1_520px] min-w-0">
@@ -1310,59 +1309,59 @@ export default function BokforingPage() {
           </div>
           <div>
             <div className="mb-2 text-[15px] font-bold tracking-[0.1em] uppercase">Lagring</div>
-            <p className="mx-0 mt-0 mb-3.5 text-[16px] leading-[1.55] font-serif text-ink">
-              Underlagen används bara för ert företag.
+            <p className="mx-0 mt-0 mb-3.5 text-[16px] leading-[1.55] text-ink font-sans">
+              Underlagen används bara för ditt företag. Aldrig för något annat.
             </p>
             <Link
               className="font-bold text-[13px] tracking-[0.12em] uppercase no-underline text-accent"
               href="/sakerhet#skydd"
             >
-              Så skyddar vi er →
+              Så skyddar vi dig →
             </Link>
           </div>
         </div>
       </div>
-      <div className="mx-auto my-0 px-10 py-24 max-w-[1200px] box-border">
-        <div className="mb-12">
-          <h2 className="mx-0 mt-0 mb-4 font-display font-bold uppercase tracking-[0.01em] text-[clamp(28px,7vw,44px)] wrap-break-word leading-[1.05]">
+      <div className="mx-auto my-0 px-10 py-20 max-w-[1200px] box-border min-[900px]:min-h-dvh flex flex-col justify-center">
+        <div className="mb-10 max-w-[720px] reveal">
+          <h2 className="mx-0 mt-0 mb-4 font-display font-bold uppercase tracking-[0.01em] text-[clamp(28px,6.5vw,42px)] wrap-break-word leading-[1.05]">
             Skillnaden
           </h2>
         </div>
         <div className="gap-10 grid grid-cols-[repeat(auto-fit,minmax(240px,1fr))]">
-          <div className="reveal-soft pt-5 border-t-2 border-t-accent min-w-0">
+          <div className="reveal pt-5 border-t-2 border-t-accent min-w-0">
             <div className="font-display font-bold uppercase tracking-[0.01em] text-[20px] text-accent">01</div>
             <h3 className="mx-0 my-2.5 font-display font-bold uppercase tracking-[0.01em] text-[26px] leading-[1.1]">
-              Arbetar på ert sätt
+              Arbetar på ditt sätt
             </h3>
-            <p className="m-0 text-[16px] leading-[1.55] font-serif text-ink uppercase tracking-[0.03em]">
-              Regelboken styr arbetet. Ändras en regel, ändras arbetet direkt.
+            <p className="m-0 text-[16px] leading-[1.55] text-ink font-sans">
+              Regelboken styr allt. Ändrar du en regel ändras arbetet från nästa post.
             </p>
           </div>
-          <div className="reveal-soft pt-5 border-t-2 border-t-accent min-w-0">
+          <div className="reveal pt-5 border-t-2 border-t-accent min-w-0">
             <div className="font-display font-bold uppercase tracking-[0.01em] text-[20px] text-accent">02</div>
             <h3 className="mx-0 my-2.5 font-display font-bold uppercase tracking-[0.01em] text-[26px] leading-[1.1]">
               Inbyggda gränser
             </h3>
-            <p className="m-0 text-[16px] leading-[1.55] font-serif text-ink uppercase tracking-[0.03em]">
-              Beloppsgränser och stopp vid avvikelser är tekniska spärrar, inte rutiner.
+            <p className="m-0 text-[16px] leading-[1.55] text-ink font-sans">
+              Beloppsgränser och stopp vid avvikelser är tekniska spärrar, inte goda föresatser.
             </p>
           </div>
-          <div className="reveal-soft pt-5 border-t-2 border-t-accent min-w-0">
+          <div className="reveal pt-5 border-t-2 border-t-accent min-w-0">
             <div className="font-display font-bold uppercase tracking-[0.01em] text-[20px] text-accent">03</div>
             <h3 className="mx-0 my-2.5 font-display font-bold uppercase tracking-[0.01em] text-[26px] leading-[1.1]">
               Kassa och bank tillsammans
             </h3>
-            <p className="m-0 text-[16px] leading-[1.55] font-serif text-ink uppercase tracking-[0.03em]">
-              Z-rapporter stäms av mot bank och kvitton, så att dagskassan och kontot stämmer.
+            <p className="m-0 text-[16px] leading-[1.55] text-ink font-sans">
+              Z-rapporter stäms av mot bank och kvitton. Dagskassan och kontot stämmer, varje dag.
             </p>
           </div>
-          <div className="reveal-soft pt-5 border-t-2 border-t-accent min-w-0">
+          <div className="reveal pt-5 border-t-2 border-t-accent min-w-0">
             <div className="font-display font-bold uppercase tracking-[0.01em] text-[20px] text-accent">04</div>
             <h3 className="mx-0 my-2.5 font-display font-bold uppercase tracking-[0.01em] text-[26px] leading-[1.1]">
               Kontinuitet
             </h3>
-            <p className="m-0 text-[16px] leading-[1.55] font-serif text-ink uppercase tracking-[0.03em]">
-              Ingen semester, ingen sjukfrånvaro. Kunskapen om er bokföring finns kvar.
+            <p className="m-0 text-[16px] leading-[1.55] text-ink font-sans">
+              Ingen semester, ingen sjukfrånvaro, ingen uppsägning. Kunskapen om din bokföring stannar hos dig.
             </p>
           </div>
         </div>
@@ -1375,10 +1374,10 @@ export default function BokforingPage() {
           </Link>
         </div>
       </div>
-      <div className="bg-surface border-t border-t-line border-b border-b-line">
-        <div className="mx-auto my-0 px-10 py-24 max-w-[1200px] box-border">
-          <div className="mb-10">
-            <h2 className="mx-0 mt-0 mb-4 font-display font-bold uppercase tracking-[0.01em] text-[clamp(28px,7vw,44px)] wrap-break-word leading-[1.05]">
+      <div className="bg-surface min-[900px]:min-h-dvh box-border flex items-center">
+        <div className="mx-auto my-0 px-10 py-20 w-full max-w-[1200px] box-border">
+          <div className="mb-10 max-w-[720px] reveal">
+            <h2 className="mx-0 mt-0 mb-4 font-display font-bold uppercase tracking-[0.01em] text-[clamp(28px,6.5vw,42px)] wrap-break-word leading-[1.05]">
               Jämförelse
             </h2>
           </div>
@@ -1400,87 +1399,87 @@ export default function BokforingPage() {
               </thead>
               <tbody>
                 <tr>
-                  <td className="px-4 py-4.5 border-b border-b-line text-[14px] leading-[1.45] align-top font-semibold tracking-[0.06em] uppercase">
+                  <td className="px-4 py-4.5 border-b border-b-line text-[13px] leading-[1.45] align-top font-sans font-bold tracking-[0.08em] uppercase">
                     Insamling av underlag
                   </td>
-                  <td data-label="Internt" className="px-4 py-4.5 border-b border-b-line text-[14px] leading-[1.45] align-top font-serif text-ink uppercase tracking-[0.03em]">
-                    Görs för hand, ofta i efterhand.
+                  <td data-label="Internt" className="px-4 py-4.5 border-b border-b-line text-[16px] leading-[1.45] align-top text-ink font-sans">
+                    För hand, ofta långt i efterhand.
                   </td>
-                  <td data-label="Redovisningsbyrå" className="px-4 py-4.5 border-b border-b-line text-[14px] leading-[1.45] align-top font-serif text-ink uppercase tracking-[0.03em]">
-                    Ni samlar in och skickar, byrån sorterar.
+                  <td data-label="Redovisningsbyrå" className="px-4 py-4.5 border-b border-b-line text-[16px] leading-[1.45] align-top text-ink font-sans">
+                    Du samlar in och skickar, byrån sorterar.
                   </td>
-                  <td data-label="Vera" className="px-4 py-4.5 border-b border-b-line text-[14px] leading-[1.45] align-top bg-chip font-serif uppercase tracking-[0.03em] font-bold text-contrast">
-                    Hämtas automatiskt när transaktionen sker.
+                  <td data-label="Vera" className="px-4 py-4.5 border-b border-b-line text-[16px] leading-[1.45] align-top bg-chip font-sans font-bold text-contrast">
+                    Hämtas automatiskt i samma stund som transaktionen sker.
                   </td>
                 </tr>
                 <tr>
-                  <td className="px-4 py-4.5 border-b border-b-line text-[14px] leading-[1.45] align-top font-semibold tracking-[0.06em] uppercase">
+                  <td className="px-4 py-4.5 border-b border-b-line text-[13px] leading-[1.45] align-top font-sans font-bold tracking-[0.08em] uppercase">
                     Deadlines
                   </td>
-                  <td data-label="Internt" className="px-4 py-4.5 border-b border-b-line text-[14px] leading-[1.45] align-top font-serif text-ink uppercase tracking-[0.03em]">
-                    Beror på tid och tillgänglighet.
+                  <td data-label="Internt" className="px-4 py-4.5 border-b border-b-line text-[16px] leading-[1.45] align-top text-ink font-sans">
+                    Beror på om du hinner.
                   </td>
-                  <td data-label="Redovisningsbyrå" className="px-4 py-4.5 border-b border-b-line text-[14px] leading-[1.45] align-top font-serif text-ink uppercase tracking-[0.03em]">
-                    Hålls, om underlaget har kommit in i tid.
+                  <td data-label="Redovisningsbyrå" className="px-4 py-4.5 border-b border-b-line text-[16px] leading-[1.45] align-top text-ink font-sans">
+                    Hålls, om du skickat in underlaget i tid.
                   </td>
-                  <td data-label="Vera" className="px-4 py-4.5 border-b border-b-line text-[14px] leading-[1.45] align-top bg-chip font-serif uppercase tracking-[0.03em] font-bold text-contrast">
-                    Bevakas, med underlag klart i god tid.
+                  <td data-label="Vera" className="px-4 py-4.5 border-b border-b-line text-[16px] leading-[1.45] align-top bg-chip font-sans font-bold text-contrast">
+                    Bevakas av Vera, med underlaget klart i god tid.
                   </td>
                 </tr>
                 <tr>
-                  <td className="px-4 py-4.5 border-b border-b-line text-[14px] leading-[1.45] align-top font-semibold tracking-[0.06em] uppercase">
+                  <td className="px-4 py-4.5 border-b border-b-line text-[13px] leading-[1.45] align-top font-sans font-bold tracking-[0.08em] uppercase">
                     Kvalitet
                   </td>
-                  <td data-label="Internt" className="px-4 py-4.5 border-b border-b-line text-[14px] leading-[1.45] align-top font-serif text-ink uppercase tracking-[0.03em]">
+                  <td data-label="Internt" className="px-4 py-4.5 border-b border-b-line text-[16px] leading-[1.45] align-top text-ink font-sans">
                     Beror på kunskap och tidspress.
                   </td>
-                  <td data-label="Redovisningsbyrå" className="px-4 py-4.5 border-b border-b-line text-[14px] leading-[1.45] align-top font-serif text-ink uppercase tracking-[0.03em]">
-                    Hög kompetens, men kontrollen sker ofta i efterhand.
+                  <td data-label="Redovisningsbyrå" className="px-4 py-4.5 border-b border-b-line text-[16px] leading-[1.45] align-top text-ink font-sans">
+                    Hög kompetens, men kontrollen kommer ofta i efterhand.
                   </td>
-                  <td data-label="Vera" className="px-4 py-4.5 border-b border-b-line text-[14px] leading-[1.45] align-top bg-chip font-serif uppercase tracking-[0.03em] font-bold text-contrast">
-                    Fast arbetsmall och kontroll av varje post. Oklarheter stoppas och lyfts till er.
+                  <td data-label="Vera" className="px-4 py-4.5 border-b border-b-line text-[16px] leading-[1.45] align-top bg-chip font-sans font-bold text-contrast">
+                    Varje post kontrolleras innan du ser den. Oklarheter stoppas och lyfts till dig.
                   </td>
                 </tr>
                 <tr>
-                  <td className="px-4 py-4.5 border-b border-b-line text-[14px] leading-[1.45] align-top font-semibold tracking-[0.06em] uppercase">
+                  <td className="px-4 py-4.5 border-b border-b-line text-[13px] leading-[1.45] align-top font-sans font-bold tracking-[0.08em] uppercase">
                     Förståelse för bokföringen
                   </td>
-                  <td data-label="Internt" className="px-4 py-4.5 border-b border-b-line text-[14px] leading-[1.45] align-top font-serif text-ink uppercase tracking-[0.03em]">
-                    Kunskapen sitter hos en person.
+                  <td data-label="Internt" className="px-4 py-4.5 border-b border-b-line text-[16px] leading-[1.45] align-top text-ink font-sans">
+                    Kunskapen sitter i ett huvud.
                   </td>
-                  <td data-label="Redovisningsbyrå" className="px-4 py-4.5 border-b border-b-line text-[14px] leading-[1.45] align-top font-serif text-ink uppercase tracking-[0.03em]">
+                  <td data-label="Redovisningsbyrå" className="px-4 py-4.5 border-b border-b-line text-[16px] leading-[1.45] align-top text-ink font-sans">
                     Förklaringar på begäran, ibland mot avgift.
                   </td>
-                  <td data-label="Vera" className="px-4 py-4.5 border-b border-b-line text-[14px] leading-[1.45] align-top bg-chip font-serif uppercase tracking-[0.03em] font-bold text-contrast">
-                    Motivering till varje post.
+                  <td data-label="Vera" className="px-4 py-4.5 border-b border-b-line text-[16px] leading-[1.45] align-top bg-chip font-sans font-bold text-contrast">
+                    En motivering till varje post, alltid.
                   </td>
                 </tr>
                 <tr>
-                  <td className="px-4 py-4.5 border-b border-b-line text-[14px] leading-[1.45] align-top font-semibold tracking-[0.06em] uppercase">
+                  <td className="px-4 py-4.5 border-b border-b-line text-[13px] leading-[1.45] align-top font-sans font-bold tracking-[0.08em] uppercase">
                     Granskning före bokföring
                   </td>
-                  <td data-label="Internt" className="px-4 py-4.5 border-b border-b-line text-[14px] leading-[1.45] align-top font-serif text-ink uppercase tracking-[0.03em]">
-                    Ofta granskar samma person sitt eget arbete.
+                  <td data-label="Internt" className="px-4 py-4.5 border-b border-b-line text-[16px] leading-[1.45] align-top text-ink font-sans">
+                    Samma person granskar sitt eget arbete.
                   </td>
-                  <td data-label="Redovisningsbyrå" className="px-4 py-4.5 border-b border-b-line text-[14px] leading-[1.45] align-top font-serif text-ink uppercase tracking-[0.03em]">
-                    Resultatet syns ofta först i månadsrapporten.
+                  <td data-label="Redovisningsbyrå" className="px-4 py-4.5 border-b border-b-line text-[16px] leading-[1.45] align-top text-ink font-sans">
+                    Resultatet syns först i månadsrapporten.
                   </td>
-                  <td data-label="Vera" className="px-4 py-4.5 border-b border-b-line text-[14px] leading-[1.45] align-top bg-chip font-serif uppercase tracking-[0.03em] font-bold text-contrast">
+                  <td data-label="Vera" className="px-4 py-4.5 border-b border-b-line text-[16px] leading-[1.45] align-top bg-chip font-sans font-bold text-contrast">
                     Alltid, per post eller per vecka.
                   </td>
                 </tr>
                 <tr>
-                  <td className="px-4 py-4.5 border-b border-b-line text-[14px] leading-[1.45] align-top font-semibold tracking-[0.06em] uppercase">
+                  <td className="px-4 py-4.5 border-b border-b-line text-[13px] leading-[1.45] align-top font-sans font-bold tracking-[0.08em] uppercase">
                     Kostnad
                   </td>
-                  <td data-label="Internt" className="px-4 py-4.5 border-b border-b-line text-[14px] leading-[1.45] align-top font-serif text-ink uppercase tracking-[0.03em]">
-                    Arbetstid eller lön.
+                  <td data-label="Internt" className="px-4 py-4.5 border-b border-b-line text-[16px] leading-[1.45] align-top text-ink font-sans">
+                    Dina kvällar, eller en lön.
                   </td>
-                  <td data-label="Redovisningsbyrå" className="px-4 py-4.5 border-b border-b-line text-[14px] leading-[1.45] align-top font-serif text-ink uppercase tracking-[0.03em]">
-                    Månadsavgift plus timmar utöver avtal.
+                  <td data-label="Redovisningsbyrå" className="px-4 py-4.5 border-b border-b-line text-[16px] leading-[1.45] align-top text-ink font-sans">
+                    Månadsavgift plus timmar utöver avtalet.
                   </td>
-                  <td data-label="Vera" className="px-4 py-4.5 border-b border-b-line text-[14px] leading-[1.45] align-top bg-chip font-serif uppercase tracking-[0.03em] font-bold text-contrast">
-                    Fast månadspris per agent, inga extra timmar.
+                  <td data-label="Vera" className="px-4 py-4.5 border-b border-b-line text-[16px] leading-[1.45] align-top bg-chip font-sans font-bold text-contrast">
+                    Fast månadspris. Inga extra timmar, någonsin.
                   </td>
                 </tr>
               </tbody>
@@ -1497,22 +1496,22 @@ export default function BokforingPage() {
               className="btn btn--secondary"
               href="/priser#kalkylator"
             >
-              Räkna på er besparing
+              Räkna på din besparing
             </Link>
           </div>
         </div>
       </div>
-      <div className="mx-auto my-0 px-10 py-24 max-w-[1200px] box-border">
-        <div className="mb-10">
-          <h2 className="mx-0 mt-0 mb-4 font-display font-bold uppercase tracking-[0.01em] text-[clamp(28px,7vw,44px)] wrap-break-word leading-[1.05]">
+      <div className="mx-auto my-0 px-10 py-20 max-w-[1200px] box-border min-[900px]:min-h-dvh flex flex-col justify-center">
+        <div className="mb-10 max-w-[720px] reveal">
+          <h2 className="mx-0 mt-0 mb-4 font-display font-bold uppercase tracking-[0.01em] text-[clamp(28px,6.5vw,42px)] wrap-break-word leading-[1.05]">
             För företag i alla storlekar
           </h2>
-          <p className="m-0 text-[17px] leading-[1.6] max-w-[640px] font-serif text-ink uppercase tracking-[0.03em]">
-            Regelboken gör att Vera arbetar på ert sätt, oavsett bransch och storlek.
+          <p className="m-0 text-[18px] leading-[1.6] max-w-[640px] text-ink font-sans">
+            Regelboken gör att Vera jobbar på ditt sätt. Oavsett bransch, oavsett storlek.
           </p>
         </div>
         <div className="gap-6 grid grid-cols-[repeat(auto-fit,minmax(250px,1fr))]">
-          <div className="reveal-soft p-7 gap-3.5 rounded-card bg-surface border border-line min-w-0 flex flex-col wrap-break-word">
+          <div className="p-7 gap-3.5 rounded-card bg-surface box-border min-w-0 flex flex-col wrap-break-word">
             <div className="rounded-xl w-12 h-12 bg-chip flex items-center justify-center">
               <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true">
                 <path
@@ -1526,11 +1525,11 @@ export default function BokforingPage() {
               </svg>
             </div>
             <h3 className="m-0 text-[16px] font-bold tracking-[0.1em] uppercase">Enmansföretag</h3>
-            <p className="m-0 text-[16px] leading-[1.55] font-serif text-ink uppercase tracking-[0.03em]">
-              Bokföringen sköts löpande, och varje motivering gör er tryggare i ekonomin.
+            <p className="m-0 text-[16px] leading-[1.55] text-ink font-sans">
+              Bokföringen sköts löpande, och varje motivering gör dig tryggare i din egen ekonomi.
             </p>
           </div>
-          <div className="reveal-soft p-7 gap-3.5 rounded-card bg-surface border border-line min-w-0 flex flex-col wrap-break-word">
+          <div className="p-7 gap-3.5 rounded-card bg-surface box-border min-w-0 flex flex-col wrap-break-word">
             <div className="rounded-xl w-12 h-12 bg-chip flex items-center justify-center">
               <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true">
                 <path
@@ -1544,11 +1543,11 @@ export default function BokforingPage() {
               </svg>
             </div>
             <h3 className="m-0 text-[16px] font-bold tracking-[0.1em] uppercase">Växande företag</h3>
-            <p className="m-0 text-[16px] leading-[1.55] font-serif text-ink uppercase tracking-[0.03em]">
-              Volymen kan öka utan att ni behöver anställa en ekonom.
+            <p className="m-0 text-[16px] leading-[1.55] text-ink font-sans">
+              Volymen kan tiodubblas utan att du behöver anställa en ekonom.
             </p>
           </div>
-          <div className="reveal-soft p-7 gap-3.5 rounded-card bg-surface border border-line min-w-0 flex flex-col wrap-break-word">
+          <div className="p-7 gap-3.5 rounded-card bg-surface box-border min-w-0 flex flex-col wrap-break-word">
             <div className="rounded-xl w-12 h-12 bg-chip flex items-center justify-center">
               <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true">
                 <path
@@ -1562,11 +1561,11 @@ export default function BokforingPage() {
               </svg>
             </div>
             <h3 className="m-0 text-[16px] font-bold tracking-[0.1em] uppercase">Ekonomiavdelningar</h3>
-            <p className="m-0 text-[16px] leading-[1.55] font-serif text-ink uppercase tracking-[0.03em]">
-              Det repetitiva automatiseras. Teamet fokuserar på analys och uppföljning.
+            <p className="m-0 text-[16px] leading-[1.55] text-ink font-sans">
+              Det repetitiva försvinner. Teamet lägger tiden på analys och uppföljning.
             </p>
           </div>
-          <div className="reveal-soft p-7 gap-3.5 rounded-card bg-surface border border-line min-w-0 flex flex-col wrap-break-word">
+          <div className="p-7 gap-3.5 rounded-card bg-surface box-border min-w-0 flex flex-col wrap-break-word">
             <div className="rounded-xl w-12 h-12 bg-chip flex items-center justify-center">
               <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true">
                 <path
@@ -1580,12 +1579,12 @@ export default function BokforingPage() {
               </svg>
             </div>
             <h3 className="m-0 text-[16px] font-bold tracking-[0.1em] uppercase">Företag med redovisningsbyrå</h3>
-            <p className="m-0 text-[16px] leading-[1.55] font-serif text-ink uppercase tracking-[0.03em]">
-              Byrån får ett komplett och ordnat underlag och kan fokusera på rådgivning.
+            <p className="m-0 text-[16px] leading-[1.55] text-ink font-sans">
+              Byrån får ett komplett, ordnat underlag och kan lägga sin tid på rådgivning.
             </p>
           </div>
         </div>
-        <div className="reveal-soft mt-10 gap-3 flex flex-wrap items-center">
+        <div className="reveal mt-10 gap-3 flex flex-wrap items-center">
           <span className="mr-1 text-[13px] font-bold tracking-[0.12em] uppercase text-contrast">Branscher:</span>
           <span className="px-4 py-2 rounded-full bg-surface border border-line text-[13px] font-semibold tracking-[0.08em] uppercase">
             Butik och handel
@@ -1607,55 +1606,58 @@ export default function BokforingPage() {
           </span>
         </div>
       </div>
-      <div className="bg-contrast text-ink-inverse">
-        <div className="mx-auto my-0 px-10 py-24 gap-14 max-w-[1200px] box-border flex flex-wrap items-start">
-          <div className="reveal-soft flex-[1_1_420px] min-w-0">
-            <h2 className="mx-0 mt-0 mb-4 font-display font-bold uppercase tracking-[0.01em] text-[clamp(28px,7vw,44px)] wrap-break-word leading-[1.05] text-ink-inverse">
-              Kontroll
+      <div className="bg-surface min-[900px]:min-h-dvh box-border flex items-center">
+        <div className="mx-auto my-0 px-10 py-20 gap-14 w-full max-w-[1200px] box-border flex flex-wrap items-center">
+          <div className="flex-[1_1_420px] min-w-0 reveal">
+            <div className="mb-5 px-3.5 py-1.5 rounded-full inline-block bg-chip text-contrast text-[13px] font-semibold tracking-[0.14em] uppercase">
+              Trygghet
+            </div>
+            <h2 className="mx-0 mt-0 mb-4 font-display font-bold uppercase tracking-[0.01em] text-[clamp(28px,6.5vw,42px)] wrap-break-word leading-[1.05]">
+              Du har kontrollen. Vera har jobbet.
             </h2>
-            <p className="mx-0 mt-0 mb-7 text-[17px] leading-[1.6] max-w-[520px] font-serif text-ink-inverse-soft uppercase tracking-[0.03em]">
-              Vera föreslår och motiverar. Ansvaret och besluten ligger hos er.
+            <p className="mx-0 mt-0 mb-7 text-[18px] leading-[1.6] max-w-[520px] text-ink font-sans">
+              Vera föreslår och motiverar. Besluten och ansvaret är dina.
             </p>
             <Link
-              className="pb-1 gap-2 inline-flex items-center font-bold text-[13px] tracking-[0.12em] uppercase no-underline text-ink-inverse border-b-[1.5px] border-b-ink-inverse"
+              className="gap-2 inline-flex items-center font-bold text-[13px] tracking-[0.12em] uppercase no-underline text-accent"
               href="/sakerhet"
             >
-              Så skyddar vi er →
+              Så skyddar vi dig →
             </Link>
           </div>
-          <div className="reveal-soft gap-4.5 flex-[1_1_420px] min-w-0 flex flex-col">
-            <div className="gap-3 flex items-start text-[15px] leading-[1.5] text-ink-inverse uppercase tracking-[0.04em] font-medium">
+          <div className="gap-3.5 flex-[1_1_420px] min-w-0 flex flex-col reveal-stagger">
+            <div className="px-5 py-4.5 gap-3.5 rounded-[14px] flex items-start bg-page border border-line text-[16px] leading-[1.55] text-ink font-sans">
               <svg className="mt-0.5 flex-none" width="20" height="20" viewBox="0 0 24 24" aria-hidden="true">
                 <path
                   d="M5 12.5l4.5 4.5L19 7.5"
                   fill="none"
-                  stroke="var(--ink-inverse-soft)"
+                  stroke="var(--accent)"
                   strokeWidth="2.4"
                   strokeLinecap="round"
                   strokeLinejoin="round"
                 />
               </svg>
-              <span>Granskning innan något förs vidare</span>
+              <span>Inget förs vidare utan din granskning</span>
             </div>
-            <div className="gap-3 flex items-start text-[15px] leading-[1.5] text-ink-inverse uppercase tracking-[0.04em] font-medium">
+            <div className="px-5 py-4.5 gap-3.5 rounded-[14px] flex items-start bg-page border border-line text-[16px] leading-[1.55] text-ink font-sans">
               <svg className="mt-0.5 flex-none" width="20" height="20" viewBox="0 0 24 24" aria-hidden="true">
                 <path
                   d="M5 12.5l4.5 4.5L19 7.5"
                   fill="none"
-                  stroke="var(--ink-inverse-soft)"
+                  stroke="var(--accent)"
                   strokeWidth="2.4"
                   strokeLinecap="round"
                   strokeLinejoin="round"
                 />
               </svg>
-              <span>Arbete enligt er regelbok</span>
+              <span>Allt arbete följer din regelbok</span>
             </div>
-            <div className="gap-3 flex items-start text-[15px] leading-[1.5] text-ink-inverse uppercase tracking-[0.04em] font-medium">
+            <div className="px-5 py-4.5 gap-3.5 rounded-[14px] flex items-start bg-page border border-line text-[16px] leading-[1.55] text-ink font-sans">
               <svg className="mt-0.5 flex-none" width="20" height="20" viewBox="0 0 24 24" aria-hidden="true">
                 <path
                   d="M5 12.5l4.5 4.5L19 7.5"
                   fill="none"
-                  stroke="var(--ink-inverse-soft)"
+                  stroke="var(--accent)"
                   strokeWidth="2.4"
                   strokeLinecap="round"
                   strokeLinejoin="round"
@@ -1663,47 +1665,47 @@ export default function BokforingPage() {
               </svg>
               <span>Fullständig loggning</span>
             </div>
-            <div className="gap-3 flex items-start text-[15px] leading-[1.5] text-ink-inverse uppercase tracking-[0.04em] font-medium">
+            <div className="px-5 py-4.5 gap-3.5 rounded-[14px] flex items-start bg-page border border-line text-[16px] leading-[1.55] text-ink font-sans">
               <svg className="mt-0.5 flex-none" width="20" height="20" viewBox="0 0 24 24" aria-hidden="true">
                 <path
                   d="M5 12.5l4.5 4.5L19 7.5"
                   fill="none"
-                  stroke="var(--ink-inverse-soft)"
+                  stroke="var(--accent)"
                   strokeWidth="2.4"
                   strokeLinecap="round"
                   strokeLinejoin="round"
                 />
               </svg>
-              <span>Behörighetsstyrd åtkomst till era uppgifter</span>
+              <span>Bara behöriga kommer åt dina uppgifter</span>
             </div>
           </div>
         </div>
       </div>
-      <div className="bg-surface-muted">
-        <div className="mx-auto my-0 px-10 py-24 max-w-[1200px] box-border">
-          <div className="mb-10">
-            <h2 className="mx-0 mt-0 mb-4 font-display font-bold uppercase tracking-[0.01em] text-[clamp(28px,7vw,44px)] wrap-break-word leading-[1.05]">
+      <div className="min-[900px]:min-h-dvh box-border flex items-center">
+        <div className="mx-auto my-0 px-10 py-20 w-full max-w-[1200px] box-border">
+          <div className="mb-10 max-w-[720px] reveal">
+            <h2 className="mx-0 mt-0 mb-4 font-display font-bold uppercase tracking-[0.01em] text-[clamp(28px,6.5vw,42px)] wrap-break-word leading-[1.05]">
               Kundröster
             </h2>
           </div>
-          <div className="gap-6 grid grid-cols-[repeat(auto-fit,minmax(300px,1fr))]">
-            <figure className="m-0 p-7 gap-4.5 rounded-card bg-surface border border-line min-w-0 box-border flex flex-col">
+          <div className="gap-6 grid grid-cols-[repeat(auto-fit,minmax(300px,1fr))] reveal-stagger">
+            <figure className="m-0 p-7 gap-4.5 rounded-card bg-surface min-w-0 box-border flex flex-col">
               <span className="px-2.5 py-[3px] rounded-full self-start border border-line-soft text-[11px] font-bold tracking-[0.12em] uppercase text-ink-soft">
                 Exempelcitat
               </span>
-              <blockquote className="m-0 text-[20px] leading-[1.6] text-ink font-serif">
+              <blockquote className="m-0 text-[20px] leading-[1.6] text-ink font-sans">
                 ”Momsen är klar innan jag har hunnit tänka på den.”
               </blockquote>
               <figcaption className="text-[13px] font-bold tracking-[0.1em] uppercase text-contrast">
                 Lina Åberg · Ägare, Exempelbutiken AB
               </figcaption>
             </figure>
-            <figure className="m-0 p-7 gap-4.5 rounded-card bg-surface border border-line min-w-0 box-border flex flex-col">
+            <figure className="m-0 p-7 gap-4.5 rounded-card bg-surface min-w-0 box-border flex flex-col">
               <span className="px-2.5 py-[3px] rounded-full self-start border border-line-soft text-[11px] font-bold tracking-[0.12em] uppercase text-ink-soft">
                 Exempelcitat
               </span>
-              <blockquote className="m-0 text-[20px] leading-[1.6] text-ink font-serif">
-                ”Jag ser varför varje post bokförs. Det har lärt mig mer än flera år av egen bokföring.”
+              <blockquote className="m-0 text-[20px] leading-[1.6] text-ink font-sans">
+                ”Jag ser varför varje post bokförs. Jag har lärt mig mer på tre månader än på fem år själv.”
               </blockquote>
               <figcaption className="text-[13px] font-bold tracking-[0.1em] uppercase text-contrast">
                 Erik Sund · VD, Exempelbolaget AB
@@ -1712,9 +1714,9 @@ export default function BokforingPage() {
           </div>
         </div>
       </div>
-      <div className="mx-auto my-0 px-10 py-24 max-w-[900px] box-border">
-        <div className="mb-10 text-center">
-          <h2 className="mx-0 mt-0 mb-4 font-display font-bold uppercase tracking-[0.01em] text-[clamp(28px,7vw,44px)] wrap-break-word leading-[1.05] text-center">
+      <div className="mx-auto my-0 px-10 py-20 max-w-[900px] box-border min-[900px]:min-h-dvh flex flex-col justify-center">
+        <div className="mb-10 max-w-[720px] reveal">
+          <h2 className="mx-0 mt-0 mb-4 font-display font-bold uppercase tracking-[0.01em] text-[clamp(28px,6.5vw,42px)] wrap-break-word leading-[1.05]">
             Frågor om bokföringsagenten
           </h2>
         </div>
@@ -1729,8 +1731,8 @@ export default function BokforingPage() {
                 +
               </span>
             </summary>
-            <p className="mx-1 mt-0 mb-5.5 text-[16px] leading-[1.55] max-w-[760px] font-serif text-ink uppercase tracking-[0.03em]">
-              Fortnox, Bokio, Spiris och Visma eEkonomi.
+            <p className="mx-1 mt-0 mb-5.5 text-[16px] leading-[1.55] max-w-[760px] text-ink font-sans">
+              Fortnox, Bokio, Spiris och Visma eEkonomi. Använder du något annat? Säg till, så ser vi vad som går.
             </p>
           </details>
           <details className="faq border-b border-b-line">
@@ -1743,13 +1745,13 @@ export default function BokforingPage() {
                 +
               </span>
             </summary>
-            <p className="mx-1 mt-0 mb-5.5 text-[16px] leading-[1.55] max-w-[760px] font-serif text-ink uppercase tracking-[0.03em]">
-              Den markeras som fråga och väntar på ert svar. Svaret kan sparas som en ny regel.
+            <p className="mx-1 mt-0 mb-5.5 text-[16px] leading-[1.55] max-w-[760px] text-ink font-sans">
+              Den stannar som en fråga tills du svarat. Ditt svar kan sparas som en ny regel, så att Vera kan nästa gång.
             </p>
           </details>
           <details className="faq border-b border-b-line">
             <summary className="px-1 py-5.5 gap-4 flex justify-between items-center text-[15px] font-semibold tracking-[0.08em] uppercase">
-              Kan vi ändra regelboken?
+              Kan jag ändra regelboken?
               <span
                 className="faq-plus flex-none text-[24px] leading-none text-accent [transition:transform_.15s]"
                 aria-hidden="true"
@@ -1757,8 +1759,8 @@ export default function BokforingPage() {
                 +
               </span>
             </summary>
-            <p className="mx-1 mt-0 mb-5.5 text-[16px] leading-[1.55] max-w-[760px] font-serif text-ink uppercase tracking-[0.03em]">
-              Ja. Säg till vad som ska gälla, så följer Vera den nya regeln från nästa post.
+            <p className="mx-1 mt-0 mb-5.5 text-[16px] leading-[1.55] max-w-[760px] text-ink font-sans">
+              Ja, när du vill. Säg vad som ska gälla, så följer Vera den nya regeln från nästa post.
             </p>
           </details>
           <details className="faq border-b border-b-line">
@@ -1771,8 +1773,8 @@ export default function BokforingPage() {
                 +
               </span>
             </summary>
-            <p className="mx-1 mt-0 mb-5.5 text-[16px] leading-[1.55] max-w-[760px] font-serif text-ink uppercase tracking-[0.03em]">
-              Kontoutdrag, kvitton, leverantörsfakturor och Z-rapporter.
+            <p className="mx-1 mt-0 mb-5.5 text-[16px] leading-[1.55] max-w-[760px] text-ink font-sans">
+              Kontoutdrag, kvitton, leverantörsfakturor och Z-rapporter. Som fil, foto eller direkt från banken.
             </p>
           </details>
           <details className="faq border-b border-b-line">
@@ -1785,8 +1787,8 @@ export default function BokforingPage() {
                 +
               </span>
             </summary>
-            <p className="mx-1 mt-0 mb-5.5 text-[16px] leading-[1.55] max-w-[760px] font-serif text-ink uppercase tracking-[0.03em]">
-              Ungefär en vecka, inklusive genomgången av regelboken.
+            <p className="mx-1 mt-0 mb-5.5 text-[16px] leading-[1.55] max-w-[760px] text-ink font-sans">
+              Ungefär en vecka. Då ingår genomgången av din regelbok.
             </p>
           </details>
           <details className="faq border-b border-b-line">
@@ -1799,13 +1801,14 @@ export default function BokforingPage() {
                 +
               </span>
             </summary>
-            <p className="mx-1 mt-0 mb-5.5 text-[16px] leading-[1.55] max-w-[760px] font-serif text-ink uppercase tracking-[0.03em]">
-              Nej. Revisionen görs av en revisor, och företaget ansvarar för bokföringen.
+            <p className="mx-1 mt-0 mb-5.5 text-[16px] leading-[1.55] max-w-[760px] text-ink font-sans">
+              Nej. Revisionen gör en revisor, och ansvaret för bokföringen ligger alltid hos företaget. Vera gör arbetet
+              däremellan.
             </p>
           </details>
           <details className="faq border-b border-b-line">
             <summary className="px-1 py-5.5 gap-4 flex justify-between items-center text-[15px] font-semibold tracking-[0.08em] uppercase">
-              Fungerar Vera ihop med vår redovisningsbyrå?
+              Fungerar Vera ihop med min redovisningsbyrå?
               <span
                 className="faq-plus flex-none text-[24px] leading-none text-accent [transition:transform_.15s]"
                 aria-hidden="true"
@@ -1813,29 +1816,32 @@ export default function BokforingPage() {
                 +
               </span>
             </summary>
-            <p className="mx-1 mt-0 mb-5.5 text-[16px] leading-[1.55] max-w-[760px] font-serif text-ink uppercase tracking-[0.03em]">
-              Ja. Vera förbereder underlaget, och byrån fortsätter med rådgivning och bokslut.
+            <p className="mx-1 mt-0 mb-5.5 text-[16px] leading-[1.55] max-w-[760px] text-ink font-sans">
+              Ja. Vera förbereder allt underlag, och byrån får mer tid över till rådgivning och bokslut.
             </p>
           </details>
         </div>
       </div>
-      <div className="mx-auto mt-0 mb-24 px-10 py-0 max-w-[1200px] box-border">
-        <div className="reveal-soft px-10 py-18 rounded-[28px] bg-accent text-ink-inverse box-border text-center">
-          <h2 className="mx-0 mt-0 mb-4 font-display font-bold uppercase tracking-[0.01em] text-[clamp(28px,7vw,46px)] wrap-break-word leading-[1.05] text-ink-inverse">
-            Se en vecka med exempel från er bransch
+      <div className="bg-surface min-[900px]:min-h-dvh box-border flex items-center">
+        <div className="mx-auto my-0 px-10 py-20 w-full max-w-[1200px] box-border flex flex-col items-center text-center reveal">
+          <div className="mb-5 px-3.5 py-1.5 rounded-full inline-block bg-chip text-contrast text-[13px] font-semibold tracking-[0.14em] uppercase">
+            Kontakt
+          </div>
+          <h2 className="mx-0 mt-0 mb-4 font-display font-bold uppercase tracking-[0.01em] text-[clamp(28px,6.5vw,42px)] wrap-break-word leading-[1.05]">
+            Se en vecka med exempel från din bransch.
           </h2>
-          <p className="mx-auto mt-0 mb-8 text-[17px] leading-[1.6] max-w-[540px] font-serif text-ink-inverse uppercase tracking-[0.03em]">
-            Vi visar Vera med transaktioner som liknar era.
+          <p className="mx-auto mt-0 mb-8 text-[18px] leading-[1.6] max-w-[540px] text-ink font-sans">
+            Vi visar Vera med transaktioner som ser ut som dina. Då ser du direkt vad hon kan ta över.
           </p>
           <div className="gap-3 flex justify-center flex-wrap">
             <Link
-              className="btn btn--primary theme-inverse"
+              className="btn btn--primary"
               href="/#kontakt"
             >
               Boka en demo
             </Link>
             <Link
-              className="btn btn--secondary theme-inverse"
+              className="btn btn--secondary"
               href="/#kontakt"
             >
               Få en prisuppskattning

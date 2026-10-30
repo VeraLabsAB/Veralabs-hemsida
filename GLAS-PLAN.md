@@ -231,6 +231,12 @@ Gemensamt för alla uppgifter:
   direkt, webbläsardelarna via dev-servern i förhandsvisningen
   (`.claude/launch.json`, konfig "dev") och `npm run build` av Hugo – tills
   fråga 15 är besvarad.
+- **Obs, Edit-verktyget (2026-10-30):** det klipper avslutande blanksteg i
+  `new_string` (och troligen `old_string`). `className="reveal-soft ` →
+  `className="reveal ` gav `revealflex-…`. Avsluta aldrig söksträngen på ett
+  blanksteg; sluta vid `"` eller `>`. Vakten stoppar också webbläsarverktygen
+  och skrivning till `~/.claude`, så förhandsvisning och minnesfiler går inte
+  härifrån.
 - **Obs, Lightning CSS (Turbopacks CSS-optimerare), verifierat 2026-10-29 i
   uppgift b:** skriv alltid `-webkit-backdrop-filter` FÖRE `backdrop-filter`.
   Står den prefixade raden sist tappas båda i den kompilerade CSS:en och
@@ -336,6 +342,30 @@ Gemensamt för alla uppgifter:
   §8 ("rörliga bakgrunder under glas"): header-pillen passerar videon vid
   scroll uppåt; accepterat eftersom pillen är dold vid scroll nedåt.
   Stillbilden `integrationer.jpg` saknas ännu (valfri).
+- **Alla sidor följer startsidans layout (Hugos beslut 2026-10-30):** de 15
+  undersidorna (`foretag`, `kom-igang`, `om-oss`, `priser`, `privatpersoner`,
+  `sa-fungerar-vera`, `sakerhet`, `vanliga-fragor`, de fyra `agenter/*` och de
+  tre `privat/*`) samt `SavingsCalculator.tsx` är ombyggda efter `page.tsx`:
+  mörkt `.lv-hero`-band som går upp bakom header-pillen och fyller första
+  skärmen (produktsidornas exempelkort ligger till höger med `lv-mock`,
+  knapparna är `theme-dark`); därefter en skärm per sektion
+  (`min-[900px]:min-h-dvh`, innehållet lodrätt centrerat, `py-20`) som växlar
+  mellan sidbakgrund och `bg-surface` utan kantlinjer; chip + h2
+  (`clamp(28px,6.5vw,42px)`) + ingress i varje sektionshuvud; kort med
+  `rounded-card`, `bg-page border border-line` på kortyta och `bg-surface`
+  utan kant på sidbakgrund; `.reveal`/`.reveal-stagger` i stället för de
+  gamla sidoglidande `.reveal-left/-right/-up/-soft` (borttagna ur
+  globals.css); sista sektionen är en kontaktdel med chip "Kontakt" i stället
+  för det mörka `bg-contrast`-bandet. Typografin följer med: all brödtext är
+  Montserrat med vanliga bokstäver, 16 px i kort och 18 px i ingresser
+  (`--font-serif` är borttagen ur `@theme`, så fråga 8 är därmed avgjord).
+  Stegsekvenserna (så-fungerar-vera, kom-igang, produktsidornas "I detalj")
+  ligger kvar i en gemensam sektion med en rad per steg: nummer och rubrik
+  på samma rad, korten i ett rutnät, de lodräta accentstrecken borttagna.
+  Menybeskrivningarna (`.nav-link-desc`) är sans på alla sidor. Ej
+  verifierat i webbläsare eller `npm run build` i den sessionen
+  (kommandovakten); glasräkningen ovanför vecket på produktsidorna är
+  header + två knappar = 3.
 - **Bara mörkt läge (Hugos beslut 2026-10-30, avvikelse från DESIGN-GLASS
   §0.9 och §3):** `data-theme="dark"` sätts fast på `<html>` i
   `layout.tsx`; init-skriptet och switchen är borttagna ur layout och

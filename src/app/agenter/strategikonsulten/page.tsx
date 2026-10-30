@@ -4,42 +4,38 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Strategikonsulten",
   description:
-    "Vera analyserar försäljning, kostnader och marginaler och visar vad som påverkar resultatet mest. Inför större beslut räknar hon på alternativen.",
+    "En AI-ekonomichef som alltid har tid. Vera analyserar din försäljning, dina kostnader och marginaler och räknar på alternativen inför varje större beslut. Fast månadspris, ingen timdebitering.",
 };
 
 export default function StrategikonsultenPage() {
   return (
     <>
-      <div className="bg-[linear-gradient(180deg,var(--page)_0%,var(--surface-muted)_100%)]">
-        <div className="mx-auto my-0 px-10 pt-16 pb-24 gap-14 max-w-[1200px] box-border flex flex-wrap items-center">
+      {/* Samma layout som startsidan (2026-10-30): mörkt helskärms-hero bakom header-pillen med exempelkortet
+          till höger, sedan en skärm per sektion som växlar mellan sidbakgrund och kortyta utan streck emellan. */}
+      <div className="lv-hero text-snow -mt-[68px] pt-[68px] max-[900px]:-mt-[60px] max-[900px]:pt-[60px] min-h-dvh box-border flex items-center">
+        <div className="mx-auto my-0 px-10 pt-20 pb-24 gap-14 w-full max-w-[1200px] box-border flex flex-wrap items-center">
           <div className="flex-[1_1_440px] min-w-0">
-            <div className="mb-6 px-3.5 py-1.5 rounded-full inline-block bg-chip text-contrast text-[13px] font-semibold tracking-[0.14em] uppercase">
+            <div className="mb-6 px-3.5 py-1.5 rounded-full inline-block bg-snow/8 border border-snow/18 text-platinum text-[13px] font-semibold tracking-[0.14em] uppercase">
               Strategi&shy;konsulten
             </div>
-            <h1 className="mx-0 mt-0 mb-6 font-display font-bold uppercase tracking-[0.01em] text-[clamp(30px,8.5vw,56px)] wrap-break-word leading-[1.02]">
-              Fatta beslut med siffrorna framför er.
+            <h1 className="mx-0 mt-0 mb-6 font-display font-bold uppercase tracking-[0.01em] text-[clamp(30px,4.4vw,46px)] leading-[1.05] wrap-break-word text-snow">
+              Fatta beslut med siffrorna framför dig.
             </h1>
-            <p className="mx-0 mt-0 mb-8 text-[17px] leading-[1.6] max-w-[520px] font-serif text-ink uppercase tracking-[0.03em] font-bold">
-              Vera analyserar försäljning, kostnader och marginaler och visar vad som påverkar resultatet mest. Inför
-              större beslut räknar hon på alternativen.
+            <p className="mx-0 mt-0 mb-8 text-[18px] leading-[1.65] text-pale-1 font-sans max-w-[520px]">
+              Vera analyserar försäljning, kostnader och marginaler och pekar ut vad som påverkar resultatet mest. Inför
+              större beslut räknar hon på alternativen. Som en ekonomichef som alltid har tid.
             </p>
             <div className="gap-3 flex flex-wrap">
-              <Link
-                className="btn btn--primary"
-                href="/#kontakt"
-              >
+              <Link className="btn btn--primary theme-dark" href="/#kontakt">
                 Boka en demo
               </Link>
-              <a
-                className="btn btn--secondary"
-                href="#hur"
-              >
+              <a className="btn btn--secondary theme-dark" href="#hur">
                 Så fungerar det
               </a>
             </div>
           </div>
-          <div className="reveal-soft flex-[1_1_440px] min-w-0">
-            <div className="px-7 py-6 rounded-card bg-surface border border-line shadow-[0_30px_70px_rgba(33,37,41,0.12)] box-border w-full">
+          <div className="flex-[1_1_440px] min-w-0">
+            <div className="lv-mock px-7 py-6 rounded-card bg-lv-card text-lv-ink box-border w-full">
               <div className="mb-2 gap-3 flex justify-between items-center">
                 <div>
                   <div className="text-[12px] font-semibold tracking-[0.12em] uppercase text-ink-soft">
@@ -111,7 +107,7 @@ export default function StrategikonsultenPage() {
                 <div className="text-right">
                   <div className="text-[13px] font-semibold font-mono tracking-normal">?</div>
                   <span className="mt-1 px-2 py-0.5 rounded-full inline-block text-[11px] font-semibold tracking-[0.06em] uppercase text-ink-inverse bg-accent">
-                    Fråga till er
+                    Fråga till dig
                   </span>
                 </div>
               </div>
@@ -156,66 +152,70 @@ export default function StrategikonsultenPage() {
           </div>
         </div>
       </div>
-      <div className="bg-surface border-t border-t-line border-b border-b-line">
-        <div className="mx-auto my-0 px-10 py-12 gap-y-8 gap-x-14 max-w-[1200px] box-border flex flex-wrap">
-          <div className="px-0 py-2 flex-[1_1_240px] min-w-0">
-            <div className="font-display font-bold uppercase tracking-[0.01em] text-[30px] text-accent leading-[1.1]">
-              Tillgänglig när beslutet uppstår
+      {/* Tre korta punkter och bakgrunden delar en skärm: punkterna som kort till vänster, texten till höger. */}
+      <div className="bg-surface min-[900px]:min-h-dvh box-border flex items-center">
+        <div className="mx-auto my-0 px-10 py-20 gap-14 w-full max-w-[1200px] box-border flex flex-wrap items-center">
+          <div className="gap-4 flex-[1_1_380px] min-w-0 flex flex-col reveal-stagger">
+          <div className="px-6 py-5 rounded-card bg-page border border-line min-w-0 box-border">
+            <div className="font-display font-bold uppercase tracking-[0.01em] text-[24px] leading-[1.1]">
+              Finns när beslutet dyker upp
             </div>
-            <div className="mt-2 text-[15px] leading-[1.5] font-serif text-ink uppercase tracking-[0.03em]">
-              Ingen bokad tid och ingen timdebitering.
-            </div>
-          </div>
-          <div className="px-0 py-2 flex-[1_1_240px] min-w-0">
-            <div className="font-display font-bold uppercase tracking-[0.01em] text-[30px] text-accent leading-[1.1]">
-              Bygger på era siffror
-            </div>
-            <div className="mt-2 text-[15px] leading-[1.5] font-serif text-ink uppercase tracking-[0.03em]">
-              Analysen utgår från er bokföring, inte från branschsnitt.
+            <div className="mt-1.5 text-[16px] leading-[1.55] text-ink font-sans">
+              Ingen bokad tid, ingen timdebitering.
             </div>
           </div>
-          <div className="px-0 py-2 flex-[1_1_240px] min-w-0">
-            <div className="font-display font-bold uppercase tracking-[0.01em] text-[30px] text-accent leading-[1.1]">
+          <div className="px-6 py-5 rounded-card bg-page border border-line min-w-0 box-border">
+            <div className="font-display font-bold uppercase tracking-[0.01em] text-[24px] leading-[1.1]">
+              Bygger på dina siffror
+            </div>
+            <div className="mt-1.5 text-[16px] leading-[1.55] text-ink font-sans">
+              Analysen utgår från din bokföring, inte från ett branschsnitt.
+            </div>
+          </div>
+          <div className="px-6 py-5 rounded-card bg-page border border-line min-w-0 box-border">
+            <div className="font-display font-bold uppercase tracking-[0.01em] text-[24px] leading-[1.1]">
               Visar underlaget
             </div>
-            <div className="mt-2 text-[15px] leading-[1.5] font-serif text-ink uppercase tracking-[0.03em]">
-              Varje råd redovisar de siffror det bygger på.
+            <div className="mt-1.5 text-[16px] leading-[1.55] text-ink font-sans">
+              Varje råd visar siffrorna det bygger på.
             </div>
           </div>
-        </div>
-      </div>
-      <div className="mx-auto my-0 px-10 py-24 gap-14 max-w-[1200px] box-border flex flex-wrap items-start">
-        <div className="reveal-soft flex-[1_1_440px] min-w-0">
+          </div>
+          <div className="flex-[1_1_440px] min-w-0 reveal">
           <div className="mb-5 px-3.5 py-1.5 rounded-full inline-block bg-chip text-contrast text-[13px] font-semibold tracking-[0.14em] uppercase">
             Bakgrund
           </div>
-          <h2 className="mx-0 mt-0 mb-4 font-display font-bold uppercase tracking-[0.01em] text-[clamp(28px,7vw,44px)] wrap-break-word leading-[1.05]">
-            Bättre beslut, utan konsultarvode.
+          <h2 className="mx-0 mt-0 mb-4 font-display font-bold uppercase tracking-[0.01em] text-[clamp(28px,6.5vw,42px)] wrap-break-word leading-[1.05]">
+            Bättre beslut. Utan konsultarvode.
           </h2>
-        </div>
-        <div className="reveal-soft gap-4 flex-[1_1_440px] min-w-0 flex flex-col">
-          <p className="m-0 text-[17px] leading-[1.6] max-w-[560px] font-serif text-ink uppercase tracking-[0.03em]">
-            I mindre företag fattas många beslut av en person: prissättning, sortiment, anställningar. En extern konsult
-            kostar ofta mer än beslutet är värt.
+          <div className="mt-2 gap-4 flex flex-col">
+          <p className="m-0 text-[18px] leading-[1.6] max-w-[560px] text-ink font-sans">
+            I mindre företag fattas de stora besluten av en person, ofta ensam: priser, sortiment, anställningar. En
+            konsult kostar mer än de flesta beslut är värda.
           </p>
-          <p className="m-0 text-[17px] leading-[1.6] max-w-[560px] font-serif text-ink uppercase tracking-[0.03em]">
-            Strategikonsulten känner redan ert företag. Vera pekar ut det som påverkar mest och presenterar alternativen
-            med för- och nackdelar.
+          <p className="m-0 text-[18px] leading-[1.6] max-w-[560px] text-ink font-sans">
+            Strategikonsulten känner redan ditt företag. Vera pekar ut det som påverkar mest och lägger fram
+            alternativen med för- och nackdelar.
           </p>
+          </div>
+          </div>
         </div>
       </div>
-      <div className="bg-surface-muted" id="hur">
-        <div className="mx-auto my-0 px-10 py-24 max-w-[1200px] box-border">
-          <div className="mb-12 text-center">
-            <h2 className="mx-0 mt-0 mb-4 font-display font-bold uppercase tracking-[0.01em] text-[clamp(28px,7vw,44px)] wrap-break-word leading-[1.05] text-center">
+      <div className="min-[900px]:min-h-dvh box-border flex items-center scroll-mt-20" id="hur">
+        <div className="mx-auto my-0 px-10 py-20 w-full max-w-[1200px] box-border">
+          <div className="mb-10 max-w-[720px] reveal">
+            <div className="mb-5 px-3.5 py-1.5 rounded-full inline-block bg-chip text-contrast text-[13px] font-semibold tracking-[0.14em] uppercase">
+              Så fungerar det
+            </div>
+            <h2 className="mx-0 mt-0 mb-4 font-display font-bold uppercase tracking-[0.01em] text-[clamp(28px,6.5vw,42px)] wrap-break-word leading-[1.05]">
               Arbetsflöde
             </h2>
-            <p className="mx-auto my-0 text-center text-[17px] leading-[1.6] max-w-[560px] font-serif text-ink uppercase tracking-[0.03em]">
-              En återkommande månadscykel.
+            <p className="m-0 text-[18px] leading-[1.6] text-ink font-sans">
+              Varje månad, samma tre steg.
             </p>
           </div>
-          <div className="gap-6 grid grid-cols-[repeat(auto-fit,minmax(280px,1fr))]">
-            <div className="reveal-soft p-8 gap-4 rounded-card bg-surface border border-line min-w-0 flex flex-col">
+          <div className="gap-6 grid grid-cols-[repeat(auto-fit,minmax(280px,1fr))] reveal-stagger">
+            <div className="p-7 gap-3.5 rounded-card bg-surface box-border min-w-0 flex flex-col">
               <div className="flex justify-between items-center">
                 <div className="rounded-xl w-12 h-12 bg-chip flex items-center justify-center">
                   <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true">
@@ -234,11 +234,12 @@ export default function StrategikonsultenPage() {
                 </span>
               </div>
               <h3 className="m-0 text-[16px] font-bold tracking-[0.1em] uppercase">Lägesbild</h3>
-              <p className="m-0 text-[16px] leading-[1.55] font-serif text-ink uppercase tracking-[0.03em]">
-                Försäljning, kostnader, marginaler och lager sammanställs. Med bokföringsagenten sker det automatiskt.
+              <p className="m-0 text-[16px] leading-[1.55] text-ink font-sans">
+                Försäljning, kostnader, marginaler och lager sammanställs. Har du Bokföringsagenten sker det av sig
+                självt.
               </p>
             </div>
-            <div className="reveal-soft p-8 gap-4 rounded-card bg-surface border border-line min-w-0 flex flex-col">
+            <div className="p-7 gap-3.5 rounded-card bg-surface box-border min-w-0 flex flex-col">
               <div className="flex justify-between items-center">
                 <div className="rounded-xl w-12 h-12 bg-chip flex items-center justify-center">
                   <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true">
@@ -257,11 +258,11 @@ export default function StrategikonsultenPage() {
                 </span>
               </div>
               <h3 className="m-0 text-[16px] font-bold tracking-[0.1em] uppercase">Analys</h3>
-              <p className="m-0 text-[16px] leading-[1.55] font-serif text-ink uppercase tracking-[0.03em]">
-                Förändringar och avvikelser lyfts fram, rangordnade efter påverkan.
+              <p className="m-0 text-[16px] leading-[1.55] text-ink font-sans">
+                Förändringar och avvikelser lyfts fram, störst påverkan först.
               </p>
             </div>
-            <div className="reveal-soft p-8 gap-4 rounded-card bg-surface border border-line min-w-0 flex flex-col">
+            <div className="p-7 gap-3.5 rounded-card bg-surface box-border min-w-0 flex flex-col">
               <div className="flex justify-between items-center">
                 <div className="rounded-xl w-12 h-12 bg-chip flex items-center justify-center">
                   <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true">
@@ -280,13 +281,13 @@ export default function StrategikonsultenPage() {
                 </span>
               </div>
               <h3 className="m-0 text-[16px] font-bold tracking-[0.1em] uppercase">Rekommendation</h3>
-              <p className="m-0 text-[16px] leading-[1.55] font-serif text-ink uppercase tracking-[0.03em]">
-                Månadsöversikten innehåller läget och konkreta förslag. Ni kan testa scenarier, till exempel en
-                prishöjning.
+              <p className="m-0 text-[16px] leading-[1.55] text-ink font-sans">
+                Månadsöversikten ger dig läget och konkreta förslag. Testa ett scenario, till exempel en prishöjning,
+                innan du bestämmer dig.
               </p>
             </div>
           </div>
-          <div className="mt-12 gap-3 flex justify-center flex-wrap">
+          <div className="mt-10 gap-3 flex flex-wrap">
             <Link
               className="btn btn--primary"
               href="/#kontakt"
@@ -302,171 +303,167 @@ export default function StrategikonsultenPage() {
           </div>
         </div>
       </div>
-      <div className="bg-page border-b border-b-line" id="arbetssatt">
-        <div className="mx-auto my-0 px-10 py-24 max-w-[1200px] box-border">
-          <div className="reveal-up mx-auto mt-0 mb-6 text-center max-w-[720px]">
+      <div className="bg-surface min-[900px]:min-h-dvh box-border flex items-center scroll-mt-20" id="arbetssatt">
+        <div className="mx-auto my-0 px-10 py-20 w-full max-w-[1200px] box-border">
+          <div className="mb-6 max-w-[720px] reveal">
             <div className="mb-5 px-3.5 py-1.5 rounded-full inline-block bg-chip text-contrast text-[13px] font-semibold tracking-[0.14em] uppercase">
               I detalj
             </div>
-            <h2 className="mx-0 mt-0 mb-4 font-display font-bold uppercase tracking-[0.01em] text-[clamp(30px,6.5vw,44px)] leading-[1.05]">
+            <h2 className="mx-0 mt-0 mb-4 font-display font-bold uppercase tracking-[0.01em] text-[clamp(28px,6.5vw,42px)] leading-[1.05] wrap-break-word">
               Från siffror till beslut
             </h2>
-            <p className="mx-auto my-0 text-[17px] leading-[1.6] max-w-[560px] font-serif text-ink uppercase tracking-[0.03em]">
-              Ni avgör hur ofta och i vilka frågor Vera ska bidra.
+            <p className="m-0 text-[18px] leading-[1.6] text-ink font-sans">
+              Du avgör hur ofta och i vilka frågor Vera ska bidra.
             </p>
           </div>
-          <div className="px-0 py-6 flex flex-col items-center">
-            <div className="reveal-up mb-7 text-center">
-              <div className="font-display font-bold text-[64px] text-accent leading-none">1</div>
-              <h2 className="mx-0 mt-1.5 mb-0 font-display font-bold text-[clamp(28px,6vw,38px)] tracking-[0.01em] uppercase">
+          <div className="py-6 reveal">
+            <div className="mb-6 gap-x-4 gap-y-2 flex flex-wrap items-baseline">
+              <div className="font-display font-bold text-[clamp(28px,5vw,40px)] text-accent leading-none">1</div>
+              <h2 className="m-0 font-display font-bold text-[clamp(22px,4vw,30px)] tracking-[0.01em] uppercase wrap-break-word">
                 Arbetsform
               </h2>
             </div>
-            <div className="gap-5 flex flex-wrap justify-center w-full">
-              <div className="reveal-left p-7 rounded-2xl flex-[1_1_320px] max-w-[440px] bg-surface border border-line box-border min-w-0 wrap-break-word">
+            <div className="gap-5 grid grid-cols-[repeat(auto-fit,minmax(260px,1fr))]">
+              <div className="p-7 rounded-card bg-page border border-line box-border min-w-0 wrap-break-word">
                 <div className="mb-3 px-2.5 py-1 rounded-full inline-block bg-chip text-contrast text-[11px] font-bold tracking-[0.12em] uppercase">
                   Proaktivt
                 </div>
-                <h3 className="mx-0 mt-0 mb-2.5 text-[14px] font-semibold tracking-[0.1em] uppercase">
+                <h3 className="mx-0 mt-0 mb-2.5 text-[15px] font-bold tracking-[0.1em] uppercase">
                   Löpande bevakning
                 </h3>
-                <p className="m-0 font-serif text-[16px] leading-[1.55] text-ink uppercase tracking-[0.03em]">
-                  Vera följer nyckeltalen och hör av sig vid förändringar, till exempel en sjunkande marginal.
+                <p className="m-0 text-[16px] leading-[1.55] text-ink font-sans">
+                  Vera följer nyckeltalen och hör av sig när något ändras, till exempel när marginalen sjunker.
                 </p>
               </div>
-              <div className="reveal-right p-7 rounded-2xl flex-[1_1_320px] max-w-[440px] bg-surface border border-line box-border min-w-0 wrap-break-word">
+              <div className="p-7 rounded-card bg-page border border-line box-border min-w-0 wrap-break-word">
                 <div className="mb-3 px-2.5 py-1 rounded-full inline-block bg-chip text-contrast text-[11px] font-bold tracking-[0.12em] uppercase">
                   På begäran
                 </div>
-                <h3 className="mx-0 mt-0 mb-2.5 text-[14px] font-semibold tracking-[0.1em] uppercase">Beslutsstöd</h3>
-                <p className="m-0 font-serif text-[16px] leading-[1.55] text-ink uppercase tracking-[0.03em]">
-                  Ni tar upp ett beslut när det uppstår, och Vera hjälper till att strukturera det.
+                <h3 className="mx-0 mt-0 mb-2.5 text-[15px] font-bold tracking-[0.1em] uppercase">Beslutsstöd</h3>
+                <p className="m-0 text-[16px] leading-[1.55] text-ink font-sans">
+                  Du tar upp ett beslut när det dyker upp, och Vera hjälper dig strukturera det.
                 </p>
               </div>
             </div>
           </div>
-          <div className="mx-auto my-0 w-0.5 h-12 bg-accent" />
-          <div className="px-0 py-6 flex flex-col items-center">
-            <div className="reveal-up mb-7 text-center">
-              <div className="font-display font-bold text-[64px] text-accent leading-none">2</div>
-              <h2 className="mx-0 mt-1.5 mb-0 font-display font-bold text-[clamp(28px,6vw,38px)] tracking-[0.01em] uppercase">
+          <div className="py-6 reveal">
+            <div className="mb-6 gap-x-4 gap-y-2 flex flex-wrap items-baseline">
+              <div className="font-display font-bold text-[clamp(28px,5vw,40px)] text-accent leading-none">2</div>
+              <h2 className="m-0 font-display font-bold text-[clamp(22px,4vw,30px)] tracking-[0.01em] uppercase wrap-break-word">
                 Underlag
               </h2>
             </div>
-            <div className="gap-5 flex flex-wrap justify-center w-full">
-              <div className="reveal-left p-7 rounded-2xl flex-[1_1_260px] max-w-[300px] bg-surface border border-line box-border min-w-0 wrap-break-word">
-                <h3 className="mx-0 mt-0 mb-2.5 text-[14px] font-semibold tracking-[0.1em] uppercase">Mål</h3>
-                <p className="m-0 font-serif text-[16px] leading-[1.55] text-ink uppercase tracking-[0.03em]">
-                  Era mål för året och på längre sikt styr analysen.
+            <div className="gap-5 grid grid-cols-[repeat(auto-fit,minmax(260px,1fr))]">
+              <div className="p-7 rounded-card bg-page border border-line box-border min-w-0 wrap-break-word">
+                <h3 className="mx-0 mt-0 mb-2.5 text-[15px] font-bold tracking-[0.1em] uppercase">Mål</h3>
+                <p className="m-0 text-[16px] leading-[1.55] text-ink font-sans">
+                  Dina mål för året och på längre sikt styr analysen.
                 </p>
               </div>
-              <div className="reveal-up p-7 rounded-2xl flex-[1_1_260px] max-w-[300px] bg-surface border border-line box-border min-w-0 wrap-break-word">
-                <h3 className="mx-0 mt-0 mb-2.5 text-[14px] font-semibold tracking-[0.1em] uppercase">Nyckeltal</h3>
-                <p className="m-0 font-serif text-[16px] leading-[1.55] text-ink uppercase tracking-[0.03em]">
-                  Försäljning, kostnader och lager. Ju mer data, desto skarpare analys.
+              <div className="p-7 rounded-card bg-page border border-line box-border min-w-0 wrap-break-word">
+                <h3 className="mx-0 mt-0 mb-2.5 text-[15px] font-bold tracking-[0.1em] uppercase">Nyckeltal</h3>
+                <p className="m-0 text-[16px] leading-[1.55] text-ink font-sans">
+                  Försäljning, kostnader och lager. Mer data ger skarpare analys.
                 </p>
               </div>
-              <div className="reveal-right p-7 rounded-2xl flex-[1_1_260px] max-w-[300px] bg-surface border border-line box-border min-w-0 wrap-break-word">
-                <h3 className="mx-0 mt-0 mb-2.5 text-[14px] font-semibold tracking-[0.1em] uppercase">
+              <div className="p-7 rounded-card bg-page border border-line box-border min-w-0 wrap-break-word">
+                <h3 className="mx-0 mt-0 mb-2.5 text-[15px] font-bold tracking-[0.1em] uppercase">
                   Förutsättningar
                 </h3>
-                <p className="m-0 font-serif text-[16px] leading-[1.55] text-ink uppercase tracking-[0.03em]">
+                <p className="m-0 text-[16px] leading-[1.55] text-ink font-sans">
                   Bemanning, tid och prioriteringar vägs in.
                 </p>
               </div>
             </div>
           </div>
-          <div className="mx-auto my-0 w-0.5 h-12 bg-accent" />
-          <div className="px-0 py-6 flex flex-col items-center">
-            <div className="reveal-up mb-7 text-center">
-              <div className="font-display font-bold text-[64px] text-accent leading-none">3</div>
-              <h2 className="mx-0 mt-1.5 mb-0 font-display font-bold text-[clamp(28px,6vw,38px)] tracking-[0.01em] uppercase">
+          <div className="py-6 reveal">
+            <div className="mb-6 gap-x-4 gap-y-2 flex flex-wrap items-baseline">
+              <div className="font-display font-bold text-[clamp(28px,5vw,40px)] text-accent leading-none">3</div>
+              <h2 className="m-0 font-display font-bold text-[clamp(22px,4vw,30px)] tracking-[0.01em] uppercase wrap-break-word">
                 Resultat
               </h2>
             </div>
-            <div className="gap-5 flex flex-wrap justify-center w-full">
-              <div className="reveal-left p-7 rounded-2xl flex-[1_1_260px] max-w-[300px] bg-surface border border-line box-border min-w-0 wrap-break-word">
-                <h3 className="mx-0 mt-0 mb-2.5 text-[14px] font-semibold tracking-[0.1em] uppercase">Nuläge</h3>
-                <p className="m-0 font-serif text-[16px] leading-[1.55] text-ink uppercase tracking-[0.03em]">
+            <div className="gap-5 grid grid-cols-[repeat(auto-fit,minmax(260px,1fr))]">
+              <div className="p-7 rounded-card bg-page border border-line box-border min-w-0 wrap-break-word">
+                <h3 className="mx-0 mt-0 mb-2.5 text-[15px] font-bold tracking-[0.1em] uppercase">Nuläge</h3>
+                <p className="m-0 text-[16px] leading-[1.55] text-ink font-sans">
                   Vad som går bättre eller sämre, och varför.
                 </p>
               </div>
-              <div className="reveal-up p-7 rounded-2xl flex-[1_1_260px] max-w-[300px] bg-surface border border-line box-border min-w-0 wrap-break-word">
-                <h3 className="mx-0 mt-0 mb-2.5 text-[14px] font-semibold tracking-[0.1em] uppercase">Alternativ</h3>
-                <p className="m-0 font-serif text-[16px] leading-[1.55] text-ink uppercase tracking-[0.03em]">
+              <div className="p-7 rounded-card bg-page border border-line box-border min-w-0 wrap-break-word">
+                <h3 className="mx-0 mt-0 mb-2.5 text-[15px] font-bold tracking-[0.1em] uppercase">Alternativ</h3>
+                <p className="m-0 text-[16px] leading-[1.55] text-ink font-sans">
                   Flera vägar framåt, med för- och nackdelar.
                 </p>
               </div>
-              <div className="reveal-right p-7 rounded-2xl flex-[1_1_260px] max-w-[300px] bg-surface border border-line box-border min-w-0 wrap-break-word">
-                <h3 className="mx-0 mt-0 mb-2.5 text-[14px] font-semibold tracking-[0.1em] uppercase">Scenarier</h3>
-                <p className="m-0 font-serif text-[16px] leading-[1.55] text-ink uppercase tracking-[0.03em]">
+              <div className="p-7 rounded-card bg-page border border-line box-border min-w-0 wrap-break-word">
+                <h3 className="mx-0 mt-0 mb-2.5 text-[15px] font-bold tracking-[0.1em] uppercase">Scenarier</h3>
+                <p className="m-0 text-[16px] leading-[1.55] text-ink font-sans">
                   Effekten av en prisändring eller satsning, beräknad i förväg.
                 </p>
               </div>
             </div>
           </div>
-          <div className="mx-auto my-0 w-0.5 h-12 bg-accent" />
-          <div className="px-0 py-6 flex flex-col items-center">
-            <div className="reveal-up mb-7 text-center">
-              <div className="font-display font-bold text-[64px] text-accent leading-none">4</div>
-              <h2 className="mx-0 mt-1.5 mb-0 font-display font-bold text-[clamp(28px,6vw,38px)] tracking-[0.01em] uppercase">
+          <div className="py-6 reveal">
+            <div className="mb-6 gap-x-4 gap-y-2 flex flex-wrap items-baseline">
+              <div className="font-display font-bold text-[clamp(28px,5vw,40px)] text-accent leading-none">4</div>
+              <h2 className="m-0 font-display font-bold text-[clamp(22px,4vw,30px)] tracking-[0.01em] uppercase wrap-break-word">
                 Inställningar
               </h2>
             </div>
-            <div className="gap-5 flex flex-wrap justify-center w-full">
-              <div className="reveal-left p-7 rounded-2xl flex-[1_1_260px] max-w-[300px] bg-surface border border-line box-border min-w-0 wrap-break-word">
-                <h3 className="mx-0 mt-0 mb-2.5 text-[14px] font-semibold tracking-[0.1em] uppercase">Fokus</h3>
-                <p className="m-0 font-serif text-[16px] leading-[1.55] text-ink uppercase tracking-[0.03em]">
+            <div className="gap-5 grid grid-cols-[repeat(auto-fit,minmax(260px,1fr))]">
+              <div className="p-7 rounded-card bg-page border border-line box-border min-w-0 wrap-break-word">
+                <h3 className="mx-0 mt-0 mb-2.5 text-[15px] font-bold tracking-[0.1em] uppercase">Fokus</h3>
+                <p className="m-0 text-[16px] leading-[1.55] text-ink font-sans">
                   Välj vilka delar av verksamheten analysen ska omfatta.
                 </p>
               </div>
-              <div className="reveal-up p-7 rounded-2xl flex-[1_1_260px] max-w-[300px] bg-surface border border-line box-border min-w-0 wrap-break-word">
-                <h3 className="mx-0 mt-0 mb-2.5 text-[14px] font-semibold tracking-[0.1em] uppercase">Frekvens</h3>
-                <p className="m-0 font-serif text-[16px] leading-[1.55] text-ink uppercase tracking-[0.03em]">
+              <div className="p-7 rounded-card bg-page border border-line box-border min-w-0 wrap-break-word">
+                <h3 className="mx-0 mt-0 mb-2.5 text-[15px] font-bold tracking-[0.1em] uppercase">Frekvens</h3>
+                <p className="m-0 text-[16px] leading-[1.55] text-ink font-sans">
                   Månadsöversikt, eller notis vid viktiga förändringar.
                 </p>
               </div>
-              <div className="reveal-right p-7 rounded-2xl flex-[1_1_260px] max-w-[300px] bg-surface border border-line box-border min-w-0 wrap-break-word">
-                <h3 className="mx-0 mt-0 mb-2.5 text-[14px] font-semibold tracking-[0.1em] uppercase">Justering</h3>
-                <p className="m-0 font-serif text-[16px] leading-[1.55] text-ink uppercase tracking-[0.03em]">
+              <div className="p-7 rounded-card bg-page border border-line box-border min-w-0 wrap-break-word">
+                <h3 className="mx-0 mt-0 mb-2.5 text-[15px] font-bold tracking-[0.1em] uppercase">Justering</h3>
+                <p className="m-0 text-[16px] leading-[1.55] text-ink font-sans">
                   Mål och fokus uppdateras när företaget förändras.
                 </p>
               </div>
             </div>
           </div>
-          <div className="mx-auto my-0 w-0.5 h-12 bg-accent" />
-          <div className="px-0 py-6 flex flex-col items-center">
-            <div className="reveal-up mb-7 text-center">
-              <div className="font-display font-bold text-[64px] text-accent leading-none">5</div>
-              <h2 className="mx-0 mt-1.5 mb-0 font-display font-bold text-[clamp(28px,6vw,38px)] tracking-[0.01em] uppercase">
+          <div className="py-6 reveal">
+            <div className="mb-6 gap-x-4 gap-y-2 flex flex-wrap items-baseline">
+              <div className="font-display font-bold text-[clamp(28px,5vw,40px)] text-accent leading-none">5</div>
+              <h2 className="m-0 font-display font-bold text-[clamp(22px,4vw,30px)] tracking-[0.01em] uppercase wrap-break-word">
                 Uppföljning
               </h2>
             </div>
-            <div className="gap-5 flex flex-wrap justify-center w-full">
-              <div className="reveal-up p-7 rounded-2xl w-full max-w-[640px] bg-surface border border-line box-border min-w-0 wrap-break-word">
-                <p className="m-0 font-serif text-[16px] leading-[1.55] text-ink uppercase tracking-[0.03em]">
-                  Efter ett beslut följer Vera upp utfallet. Resonemang och resultat sparas, så att ni ser vad som
-                  fungerade.
+            <div className="gap-5 grid grid-cols-[repeat(auto-fit,minmax(260px,1fr))]">
+              <div className="p-7 rounded-card bg-page border border-line box-border min-w-0 wrap-break-word">
+                <p className="m-0 text-[16px] leading-[1.55] text-ink font-sans">
+                  Efter varje beslut följer Vera upp utfallet. Resonemang och resultat sparas, så att du ser vad som
+                  faktiskt fungerade.
                 </p>
               </div>
             </div>
           </div>
         </div>
       </div>
-      <div className="mx-auto my-0 px-10 py-24 gap-14 max-w-[1200px] box-border flex flex-wrap items-center">
-        <div className="reveal-soft flex-[1_1_400px] min-w-0">
+      <div className="mx-auto my-0 px-10 py-20 gap-14 max-w-[1200px] box-border flex flex-wrap items-center min-[900px]:min-h-dvh content-center">
+        <div className="reveal flex-[1_1_400px] min-w-0">
           <div className="mb-5 px-3.5 py-1.5 rounded-full inline-block bg-chip text-contrast text-[13px] font-semibold tracking-[0.14em] uppercase">
             Exempel på råd
           </div>
-          <h2 className="mx-0 mt-0 mb-4 font-display font-bold uppercase tracking-[0.01em] text-[clamp(28px,7vw,44px)] wrap-break-word leading-[1.05]">
-            Samma underlag som Vera.
+          <h2 className="mx-0 mt-0 mb-4 font-display font-bold uppercase tracking-[0.01em] text-[clamp(28px,6.5vw,42px)] wrap-break-word leading-[1.05]">
+            Du ser samma siffror som Vera.
           </h2>
           <div className="mb-8 gap-4 flex flex-col">
-            <p className="m-0 text-[17px] leading-[1.6] max-w-[560px] font-serif text-ink uppercase tracking-[0.03em]">
+            <p className="m-0 text-[18px] leading-[1.6] max-w-[560px] text-ink font-sans">
               Varje råd visar vilka siffror det bygger på, vilka alternativ som finns och vad som talar för och emot.
             </p>
-            <p className="m-0 text-[17px] leading-[1.6] max-w-[560px] font-serif text-ink uppercase tracking-[0.03em]">
-              Ni bedömer rådet med samma information som ligger bakom det.
+            <p className="m-0 text-[18px] leading-[1.6] max-w-[560px] text-ink font-sans">
+              Du bedömer rådet med exakt samma information som ligger bakom det.
             </p>
           </div>
           <Link
@@ -476,8 +473,8 @@ export default function StrategikonsultenPage() {
             Boka en demo
           </Link>
         </div>
-        <div className="reveal-soft flex-[1_1_480px] min-w-0">
-          <div className="p-7 rounded-card bg-surface border border-line shadow-[0_30px_70px_rgba(33,37,41,0.10)] box-border">
+        <div className="reveal flex-[1_1_480px] min-w-0">
+          <div className="p-7 rounded-card bg-surface border border-line box-border">
             <div className="gap-3 flex justify-between items-start flex-wrap">
               <div>
                 <div className="text-[12px] font-semibold tracking-[0.12em] uppercase text-ink-soft">
@@ -510,9 +507,9 @@ export default function StrategikonsultenPage() {
             </div>
             <div className="mt-5 px-4.5 py-4 rounded-[14px] bg-page">
               <div className="mb-1.5 text-[12px] font-bold tracking-[0.12em] uppercase text-contrast">Motivering</div>
-              <div className="text-[15px] leading-[1.5] font-serif text-ink uppercase tracking-[0.03em]">
+              <div className="text-[16px] leading-[1.55] text-ink font-sans">
                 Marginalen har sjunkit fyra procentenheter sedan september, främst för att inköpspriset på jackor har
-                ökat. Förslag: höj priset på jackor med 50 kr eller jämför med en annan leverantör. Vill ni att jag
+                ökat. Förslag: höj priset på jackor med 50 kr eller jämför med en annan leverantör. Vill du att jag
                 räknar på båda?
               </div>
             </div>
@@ -572,7 +569,7 @@ export default function StrategikonsultenPage() {
             </div>
             <div className="mt-5 pt-4 gap-2.5 flex flex-wrap border-t border-t-line-faint items-center">
               <span className="mr-auto text-[12px] font-semibold tracking-[0.08em] uppercase text-ink-soft">
-                Väntar på ert beslut
+                Väntar på ditt beslut
               </span>
               <span
                 className="px-4 py-0 rounded-full inline-flex items-center min-h-9.5 border-[1.5px] border-line-strong text-[12px] font-bold tracking-[0.1em] uppercase"
@@ -590,18 +587,18 @@ export default function StrategikonsultenPage() {
           </div>
         </div>
       </div>
-      <div className="bg-surface border-t border-t-line border-b border-b-line">
-        <div className="mx-auto my-0 px-10 py-24 max-w-[1200px] box-border">
-          <div className="mb-12">
-            <h2 className="mx-0 mt-0 mb-4 font-display font-bold uppercase tracking-[0.01em] text-[clamp(28px,7vw,44px)] wrap-break-word leading-[1.05]">
+      <div className="bg-surface min-[900px]:min-h-dvh box-border flex items-center">
+        <div className="mx-auto my-0 px-10 py-20 w-full max-w-[1200px] box-border">
+          <div className="mb-10 max-w-[720px] reveal">
+            <h2 className="mx-0 mt-0 mb-4 font-display font-bold uppercase tracking-[0.01em] text-[clamp(28px,6.5vw,42px)] wrap-break-word leading-[1.05]">
               Ingår
             </h2>
-            <p className="m-0 text-[17px] leading-[1.6] max-w-[560px] font-serif text-ink uppercase tracking-[0.03em]">
+            <p className="m-0 text-[18px] leading-[1.6] max-w-[560px] text-ink font-sans">
               Beslutsunderlag, månad för månad.
             </p>
           </div>
           <div className="gap-y-10 gap-x-12 grid grid-cols-[repeat(auto-fit,minmax(320px,1fr))]">
-            <div className="reveal-soft gap-4 flex items-start min-w-0">
+            <div className="reveal gap-4 flex items-start min-w-0">
               <div className="rounded-xl w-12 h-12 bg-chip flex items-center justify-center">
                 <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true">
                   <path
@@ -616,12 +613,12 @@ export default function StrategikonsultenPage() {
               </div>
               <div className="min-w-0">
                 <h3 className="mx-0 mt-0.5 mb-1.5 text-[15px] font-bold tracking-[0.1em] uppercase">Lägesöversikt</h3>
-                <p className="m-0 text-[15px] leading-[1.5] font-serif text-ink uppercase tracking-[0.03em]">
+                <p className="m-0 text-[16px] leading-[1.55] text-ink font-sans">
                   Försäljning, kostnader och marginaler i klartext.
                 </p>
               </div>
             </div>
-            <div className="reveal-soft gap-4 flex items-start min-w-0">
+            <div className="reveal gap-4 flex items-start min-w-0">
               <div className="rounded-xl w-12 h-12 bg-chip flex items-center justify-center">
                 <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true">
                   <path
@@ -636,12 +633,12 @@ export default function StrategikonsultenPage() {
               </div>
               <div className="min-w-0">
                 <h3 className="mx-0 mt-0.5 mb-1.5 text-[15px] font-bold tracking-[0.1em] uppercase">Målföljning</h3>
-                <p className="m-0 text-[15px] leading-[1.5] font-serif text-ink uppercase tracking-[0.03em]">
-                  Hur ni ligger till mot era mål.
+                <p className="m-0 text-[16px] leading-[1.55] text-ink font-sans">
+                  Hur du ligger till mot dina mål.
                 </p>
               </div>
             </div>
-            <div className="reveal-soft gap-4 flex items-start min-w-0">
+            <div className="reveal gap-4 flex items-start min-w-0">
               <div className="rounded-xl w-12 h-12 bg-chip flex items-center justify-center">
                 <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true">
                   <path
@@ -658,12 +655,12 @@ export default function StrategikonsultenPage() {
                 <h3 className="mx-0 mt-0.5 mb-1.5 text-[15px] font-bold tracking-[0.1em] uppercase">
                   Tidiga varningar
                 </h3>
-                <p className="m-0 text-[15px] leading-[1.5] font-serif text-ink uppercase tracking-[0.03em]">
+                <p className="m-0 text-[16px] leading-[1.55] text-ink font-sans">
                   Signal när en siffra rör sig åt fel håll.
                 </p>
               </div>
             </div>
-            <div className="reveal-soft gap-4 flex items-start min-w-0">
+            <div className="reveal gap-4 flex items-start min-w-0">
               <div className="rounded-xl w-12 h-12 bg-chip flex items-center justify-center">
                 <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true">
                   <path
@@ -678,12 +675,12 @@ export default function StrategikonsultenPage() {
               </div>
               <div className="min-w-0">
                 <h3 className="mx-0 mt-0.5 mb-1.5 text-[15px] font-bold tracking-[0.1em] uppercase">Motiverade råd</h3>
-                <p className="m-0 text-[15px] leading-[1.5] font-serif text-ink uppercase tracking-[0.03em]">
+                <p className="m-0 text-[16px] leading-[1.55] text-ink font-sans">
                   Varje råd med sitt underlag.
                 </p>
               </div>
             </div>
-            <div className="reveal-soft gap-4 flex items-start min-w-0">
+            <div className="reveal gap-4 flex items-start min-w-0">
               <div className="rounded-xl w-12 h-12 bg-chip flex items-center justify-center">
                 <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true">
                   <path
@@ -700,12 +697,12 @@ export default function StrategikonsultenPage() {
                 <h3 className="mx-0 mt-0.5 mb-1.5 text-[15px] font-bold tracking-[0.1em] uppercase">
                   Scenarioberäkning
                 </h3>
-                <p className="m-0 text-[15px] leading-[1.5] font-serif text-ink uppercase tracking-[0.03em]">
-                  Testa idéer innan ni bestämmer er.
+                <p className="m-0 text-[16px] leading-[1.55] text-ink font-sans">
+                  Testa idéer innan du bestämmer dig.
                 </p>
               </div>
             </div>
-            <div className="reveal-soft gap-4 flex items-start min-w-0">
+            <div className="reveal gap-4 flex items-start min-w-0">
               <div className="rounded-xl w-12 h-12 bg-chip flex items-center justify-center">
                 <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true">
                   <path
@@ -722,12 +719,12 @@ export default function StrategikonsultenPage() {
                 <h3 className="mx-0 mt-0.5 mb-1.5 text-[15px] font-bold tracking-[0.1em] uppercase">
                   Kompletterande frågor
                 </h3>
-                <p className="m-0 text-[15px] leading-[1.5] font-serif text-ink uppercase tracking-[0.03em]">
+                <p className="m-0 text-[16px] leading-[1.55] text-ink font-sans">
                   Saknas data frågar Vera.
                 </p>
               </div>
             </div>
-            <div className="reveal-soft gap-4 flex items-start min-w-0">
+            <div className="reveal gap-4 flex items-start min-w-0">
               <div className="rounded-xl w-12 h-12 bg-chip flex items-center justify-center">
                 <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true">
                   <path
@@ -742,12 +739,12 @@ export default function StrategikonsultenPage() {
               </div>
               <div className="min-w-0">
                 <h3 className="mx-0 mt-0.5 mb-1.5 text-[15px] font-bold tracking-[0.1em] uppercase">Månadsöversikt</h3>
-                <p className="m-0 text-[15px] leading-[1.5] font-serif text-ink uppercase tracking-[0.03em]">
+                <p className="m-0 text-[16px] leading-[1.55] text-ink font-sans">
                   Läge, råd och beslut som väntar, i en rapport.
                 </p>
               </div>
             </div>
-            <div className="reveal-soft gap-4 flex items-start min-w-0">
+            <div className="reveal gap-4 flex items-start min-w-0">
               <div className="rounded-xl w-12 h-12 bg-chip flex items-center justify-center">
                 <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true">
                   <path
@@ -762,12 +759,12 @@ export default function StrategikonsultenPage() {
               </div>
               <div className="min-w-0">
                 <h3 className="mx-0 mt-0.5 mb-1.5 text-[15px] font-bold tracking-[0.1em] uppercase">App och webb</h3>
-                <p className="m-0 text-[15px] leading-[1.5] font-serif text-ink uppercase tracking-[0.03em]">
+                <p className="m-0 text-[16px] leading-[1.55] text-ink font-sans">
                   Notiser när ett beslut behöver tas.
                 </p>
               </div>
             </div>
-            <div className="reveal-soft gap-4 flex items-start min-w-0">
+            <div className="reveal gap-4 flex items-start min-w-0">
               <div className="rounded-xl w-12 h-12 bg-chip flex items-center justify-center">
                 <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true">
                   <path
@@ -782,7 +779,7 @@ export default function StrategikonsultenPage() {
               </div>
               <div className="min-w-0">
                 <h3 className="mx-0 mt-0.5 mb-1.5 text-[15px] font-bold tracking-[0.1em] uppercase">Utfall</h3>
-                <p className="m-0 text-[15px] leading-[1.5] font-serif text-ink uppercase tracking-[0.03em]">
+                <p className="m-0 text-[16px] leading-[1.55] text-ink font-sans">
                   Resultatet av tidigare beslut.
                 </p>
               </div>
@@ -790,47 +787,47 @@ export default function StrategikonsultenPage() {
           </div>
         </div>
       </div>
-      <div className="mx-auto my-0 px-10 py-24 max-w-[1200px] box-border">
-        <div className="mb-12">
-          <h2 className="mx-0 mt-0 mb-4 font-display font-bold uppercase tracking-[0.01em] text-[clamp(28px,7vw,44px)] wrap-break-word leading-[1.05]">
+      <div className="mx-auto my-0 px-10 py-20 max-w-[1200px] box-border min-[900px]:min-h-dvh flex flex-col justify-center">
+        <div className="mb-10 max-w-[720px] reveal">
+          <h2 className="mx-0 mt-0 mb-4 font-display font-bold uppercase tracking-[0.01em] text-[clamp(28px,6.5vw,42px)] wrap-break-word leading-[1.05]">
             Skillnaden
           </h2>
         </div>
         <div className="gap-10 grid grid-cols-[repeat(auto-fit,minmax(240px,1fr))]">
-          <div className="reveal-soft pt-5 border-t-2 border-t-accent min-w-0">
+          <div className="reveal pt-5 border-t-2 border-t-accent min-w-0">
             <div className="font-display font-bold uppercase tracking-[0.01em] text-[20px] text-accent">01</div>
             <h3 className="mx-0 my-2.5 font-display font-bold uppercase tracking-[0.01em] text-[26px] leading-[1.1]">
               Ingen inläsning
             </h3>
-            <p className="m-0 text-[16px] leading-[1.55] font-serif text-ink uppercase tracking-[0.03em]">
-              Vera känner redan försäljning, kostnader och mål.
+            <p className="m-0 text-[16px] leading-[1.55] text-ink font-sans">
+              Vera kan redan din försäljning, dina kostnader och dina mål.
             </p>
           </div>
-          <div className="reveal-soft pt-5 border-t-2 border-t-accent min-w-0">
+          <div className="reveal pt-5 border-t-2 border-t-accent min-w-0">
             <div className="font-display font-bold uppercase tracking-[0.01em] text-[20px] text-accent">02</div>
             <h3 className="mx-0 my-2.5 font-display font-bold uppercase tracking-[0.01em] text-[26px] leading-[1.1]">
               Lär av utfallet
             </h3>
-            <p className="m-0 text-[16px] leading-[1.55] font-serif text-ink uppercase tracking-[0.03em]">
+            <p className="m-0 text-[16px] leading-[1.55] text-ink font-sans">
               Råden justeras efter vad tidigare beslut gav.
             </p>
           </div>
-          <div className="reveal-soft pt-5 border-t-2 border-t-accent min-w-0">
+          <div className="reveal pt-5 border-t-2 border-t-accent min-w-0">
             <div className="font-display font-bold uppercase tracking-[0.01em] text-[20px] text-accent">03</div>
             <h3 className="mx-0 my-2.5 font-display font-bold uppercase tracking-[0.01em] text-[26px] leading-[1.1]">
               Utan timdebitering
             </h3>
-            <p className="m-0 text-[16px] leading-[1.55] font-serif text-ink uppercase tracking-[0.03em]">
-              Frågor kostar inget extra, oavsett hur ofta ni ställer dem.
+            <p className="m-0 text-[16px] leading-[1.55] text-ink font-sans">
+              Fråga hur ofta du vill. Det kostar aldrig extra.
             </p>
           </div>
-          <div className="reveal-soft pt-5 border-t-2 border-t-accent min-w-0">
+          <div className="reveal pt-5 border-t-2 border-t-accent min-w-0">
             <div className="font-display font-bold uppercase tracking-[0.01em] text-[20px] text-accent">04</div>
             <h3 className="mx-0 my-2.5 font-display font-bold uppercase tracking-[0.01em] text-[26px] leading-[1.1]">
               Helhetsbild
             </h3>
-            <p className="m-0 text-[16px] leading-[1.55] font-serif text-ink uppercase tracking-[0.03em]">
-              Tillsammans med bokföring och trendbevakning ser Vera både siffrorna och marknaden.
+            <p className="m-0 text-[16px] leading-[1.55] text-ink font-sans">
+              Med bokföring och trendbevakning ser Vera både dina siffror och din marknad.
             </p>
           </div>
         </div>
@@ -843,10 +840,10 @@ export default function StrategikonsultenPage() {
           </Link>
         </div>
       </div>
-      <div className="bg-surface border-t border-t-line border-b border-b-line">
-        <div className="mx-auto my-0 px-10 py-24 max-w-[1200px] box-border">
-          <div className="mb-10">
-            <h2 className="mx-0 mt-0 mb-4 font-display font-bold uppercase tracking-[0.01em] text-[clamp(28px,7vw,44px)] wrap-break-word leading-[1.05]">
+      <div className="bg-surface min-[900px]:min-h-dvh box-border flex items-center">
+        <div className="mx-auto my-0 px-10 py-20 w-full max-w-[1200px] box-border">
+          <div className="mb-10 max-w-[720px] reveal">
+            <h2 className="mx-0 mt-0 mb-4 font-display font-bold uppercase tracking-[0.01em] text-[clamp(28px,6.5vw,42px)] wrap-break-word leading-[1.05]">
               Jämförelse
             </h2>
           </div>
@@ -868,86 +865,86 @@ export default function StrategikonsultenPage() {
               </thead>
               <tbody>
                 <tr>
-                  <td className="px-4 py-4.5 border-b border-b-line text-[14px] leading-[1.45] align-top font-semibold tracking-[0.06em] uppercase">
+                  <td className="px-4 py-4.5 border-b border-b-line text-[13px] leading-[1.45] align-top font-sans font-bold tracking-[0.08em] uppercase">
                     Vem analyserar?
                   </td>
-                  <td className="px-4 py-4.5 border-b border-b-line text-[14px] leading-[1.45] align-top font-serif text-ink uppercase tracking-[0.03em]">
-                    Ni
+                  <td className="px-4 py-4.5 border-b border-b-line text-[16px] leading-[1.45] align-top text-ink font-sans">
+                    Du, sent på kvällen
                   </td>
-                  <td className="px-4 py-4.5 border-b border-b-line text-[14px] leading-[1.45] align-top font-serif text-ink uppercase tracking-[0.03em]">
+                  <td className="px-4 py-4.5 border-b border-b-line text-[16px] leading-[1.45] align-top text-ink font-sans">
                     Konsulten
                   </td>
-                  <td className="px-4 py-4.5 border-b border-b-line text-[14px] leading-[1.45] align-top bg-chip font-serif uppercase tracking-[0.03em] font-bold text-contrast">
+                  <td className="px-4 py-4.5 border-b border-b-line text-[16px] leading-[1.45] align-top bg-chip font-sans font-bold text-contrast">
                     Vera
                   </td>
                 </tr>
                 <tr>
-                  <td className="px-4 py-4.5 border-b border-b-line text-[14px] leading-[1.45] align-top font-semibold tracking-[0.06em] uppercase">
+                  <td className="px-4 py-4.5 border-b border-b-line text-[13px] leading-[1.45] align-top font-sans font-bold tracking-[0.08em] uppercase">
                     Frekvens
                   </td>
-                  <td className="px-4 py-4.5 border-b border-b-line text-[14px] leading-[1.45] align-top font-serif text-ink uppercase tracking-[0.03em]">
+                  <td className="px-4 py-4.5 border-b border-b-line text-[16px] leading-[1.45] align-top text-ink font-sans">
                     När tid finns
                   </td>
-                  <td className="px-4 py-4.5 border-b border-b-line text-[14px] leading-[1.45] align-top font-serif text-ink uppercase tracking-[0.03em]">
+                  <td className="px-4 py-4.5 border-b border-b-line text-[16px] leading-[1.45] align-top text-ink font-sans">
                     Vid uppdrag
                   </td>
-                  <td className="px-4 py-4.5 border-b border-b-line text-[14px] leading-[1.45] align-top bg-chip font-serif uppercase tracking-[0.03em] font-bold text-contrast">
+                  <td className="px-4 py-4.5 border-b border-b-line text-[16px] leading-[1.45] align-top bg-chip font-sans font-bold text-contrast">
                     Varje månad
                   </td>
                 </tr>
                 <tr>
-                  <td className="px-4 py-4.5 border-b border-b-line text-[14px] leading-[1.45] align-top font-semibold tracking-[0.06em] uppercase">
+                  <td className="px-4 py-4.5 border-b border-b-line text-[13px] leading-[1.45] align-top font-sans font-bold tracking-[0.08em] uppercase">
                     Kännedom om företaget
                   </td>
-                  <td className="px-4 py-4.5 border-b border-b-line text-[14px] leading-[1.45] align-top font-serif text-ink uppercase tracking-[0.03em]">
+                  <td className="px-4 py-4.5 border-b border-b-line text-[16px] leading-[1.45] align-top text-ink font-sans">
                     Hög
                   </td>
-                  <td className="px-4 py-4.5 border-b border-b-line text-[14px] leading-[1.45] align-top font-serif text-ink uppercase tracking-[0.03em]">
-                    Efter inläsning
+                  <td className="px-4 py-4.5 border-b border-b-line text-[16px] leading-[1.45] align-top text-ink font-sans">
+                    Efter inläsning, på din bekostnad
                   </td>
-                  <td className="px-4 py-4.5 border-b border-b-line text-[14px] leading-[1.45] align-top bg-chip font-serif uppercase tracking-[0.03em] font-bold text-contrast">
+                  <td className="px-4 py-4.5 border-b border-b-line text-[16px] leading-[1.45] align-top bg-chip font-sans font-bold text-contrast">
                     Från första dagen
                   </td>
                 </tr>
                 <tr>
-                  <td className="px-4 py-4.5 border-b border-b-line text-[14px] leading-[1.45] align-top font-semibold tracking-[0.06em] uppercase">
+                  <td className="px-4 py-4.5 border-b border-b-line text-[13px] leading-[1.45] align-top font-sans font-bold tracking-[0.08em] uppercase">
                     Motivering
                   </td>
-                  <td className="px-4 py-4.5 border-b border-b-line text-[14px] leading-[1.45] align-top font-serif text-ink uppercase tracking-[0.03em]">
-                    Er egen
+                  <td className="px-4 py-4.5 border-b border-b-line text-[16px] leading-[1.45] align-top text-ink font-sans">
+                    Din egen
                   </td>
-                  <td className="px-4 py-4.5 border-b border-b-line text-[14px] leading-[1.45] align-top font-serif text-ink uppercase tracking-[0.03em]">
+                  <td className="px-4 py-4.5 border-b border-b-line text-[16px] leading-[1.45] align-top text-ink font-sans">
                     I rapporten
                   </td>
-                  <td className="px-4 py-4.5 border-b border-b-line text-[14px] leading-[1.45] align-top bg-chip font-serif uppercase tracking-[0.03em] font-bold text-contrast">
+                  <td className="px-4 py-4.5 border-b border-b-line text-[16px] leading-[1.45] align-top bg-chip font-sans font-bold text-contrast">
                     Till varje råd
                   </td>
                 </tr>
                 <tr>
-                  <td className="px-4 py-4.5 border-b border-b-line text-[14px] leading-[1.45] align-top font-semibold tracking-[0.06em] uppercase">
+                  <td className="px-4 py-4.5 border-b border-b-line text-[13px] leading-[1.45] align-top font-sans font-bold tracking-[0.08em] uppercase">
                     Beslut
                   </td>
-                  <td className="px-4 py-4.5 border-b border-b-line text-[14px] leading-[1.45] align-top font-serif text-ink uppercase tracking-[0.03em]">
-                    Ni
+                  <td className="px-4 py-4.5 border-b border-b-line text-[16px] leading-[1.45] align-top text-ink font-sans">
+                    Du
                   </td>
-                  <td className="px-4 py-4.5 border-b border-b-line text-[14px] leading-[1.45] align-top font-serif text-ink uppercase tracking-[0.03em]">
-                    Ni
+                  <td className="px-4 py-4.5 border-b border-b-line text-[16px] leading-[1.45] align-top text-ink font-sans">
+                    Du
                   </td>
-                  <td className="px-4 py-4.5 border-b border-b-line text-[14px] leading-[1.45] align-top bg-chip font-serif uppercase tracking-[0.03em] font-bold text-contrast">
-                    Ni
+                  <td className="px-4 py-4.5 border-b border-b-line text-[16px] leading-[1.45] align-top bg-chip font-sans font-bold text-contrast">
+                    Du
                   </td>
                 </tr>
                 <tr>
-                  <td className="px-4 py-4.5 border-b border-b-line text-[14px] leading-[1.45] align-top font-semibold tracking-[0.06em] uppercase">
+                  <td className="px-4 py-4.5 border-b border-b-line text-[13px] leading-[1.45] align-top font-sans font-bold tracking-[0.08em] uppercase">
                     Kostnad
                   </td>
-                  <td className="px-4 py-4.5 border-b border-b-line text-[14px] leading-[1.45] align-top font-serif text-ink uppercase tracking-[0.03em]">
-                    Er tid
+                  <td className="px-4 py-4.5 border-b border-b-line text-[16px] leading-[1.45] align-top text-ink font-sans">
+                    Din tid
                   </td>
-                  <td className="px-4 py-4.5 border-b border-b-line text-[14px] leading-[1.45] align-top font-serif text-ink uppercase tracking-[0.03em]">
+                  <td className="px-4 py-4.5 border-b border-b-line text-[16px] leading-[1.45] align-top text-ink font-sans">
                     Timarvode
                   </td>
-                  <td className="px-4 py-4.5 border-b border-b-line text-[14px] leading-[1.45] align-top bg-chip font-serif uppercase tracking-[0.03em] font-bold text-contrast">
+                  <td className="px-4 py-4.5 border-b border-b-line text-[16px] leading-[1.45] align-top bg-chip font-sans font-bold text-contrast">
                     Fast månadspris
                   </td>
                 </tr>
@@ -970,14 +967,14 @@ export default function StrategikonsultenPage() {
           </div>
         </div>
       </div>
-      <div className="mx-auto my-0 px-10 py-24 max-w-[1200px] box-border">
-        <div className="mb-10">
-          <h2 className="mx-0 mt-0 mb-4 font-display font-bold uppercase tracking-[0.01em] text-[clamp(28px,7vw,44px)] wrap-break-word leading-[1.05]">
+      <div className="mx-auto my-0 px-10 py-20 max-w-[1200px] box-border min-[900px]:min-h-dvh flex flex-col justify-center">
+        <div className="mb-10 max-w-[720px] reveal">
+          <h2 className="mx-0 mt-0 mb-4 font-display font-bold uppercase tracking-[0.01em] text-[clamp(28px,6.5vw,42px)] wrap-break-word leading-[1.05]">
             Målgrupp
           </h2>
         </div>
         <div className="gap-6 grid grid-cols-[repeat(auto-fit,minmax(260px,1fr))]">
-          <div className="reveal-soft p-7 gap-3.5 rounded-card bg-surface border border-line min-w-0 flex flex-col">
+          <div className="p-7 gap-3.5 rounded-card bg-surface box-border min-w-0 flex flex-col">
             <div className="rounded-xl w-12 h-12 bg-chip flex items-center justify-center">
               <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true">
                 <path
@@ -991,11 +988,11 @@ export default function StrategikonsultenPage() {
               </svg>
             </div>
             <h3 className="m-0 text-[16px] font-bold tracking-[0.1em] uppercase">Ägarledda företag</h3>
-            <p className="m-0 text-[16px] leading-[1.55] font-serif text-ink uppercase tracking-[0.03em]">
-              Ett bollplank för beslut som annars fattas ensam.
+            <p className="m-0 text-[16px] leading-[1.55] text-ink font-sans">
+              Ett bollplank för de beslut du annars fattar ensam.
             </p>
           </div>
-          <div className="reveal-soft p-7 gap-3.5 rounded-card bg-surface border border-line min-w-0 flex flex-col">
+          <div className="p-7 gap-3.5 rounded-card bg-surface box-border min-w-0 flex flex-col">
             <div className="rounded-xl w-12 h-12 bg-chip flex items-center justify-center">
               <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true">
                 <path
@@ -1009,11 +1006,11 @@ export default function StrategikonsultenPage() {
               </svg>
             </div>
             <h3 className="m-0 text-[16px] font-bold tracking-[0.1em] uppercase">Företag i tillväxt</h3>
-            <p className="m-0 text-[16px] leading-[1.55] font-serif text-ink uppercase tracking-[0.03em]">
+            <p className="m-0 text-[16px] leading-[1.55] text-ink font-sans">
               Underlag inför anställning, ny butik eller nytt sortiment.
             </p>
           </div>
-          <div className="reveal-soft p-7 gap-3.5 rounded-card bg-surface border border-line min-w-0 flex flex-col">
+          <div className="p-7 gap-3.5 rounded-card bg-surface box-border min-w-0 flex flex-col">
             <div className="rounded-xl w-12 h-12 bg-chip flex items-center justify-center">
               <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true">
                 <path
@@ -1027,35 +1024,38 @@ export default function StrategikonsultenPage() {
               </svg>
             </div>
             <h3 className="m-0 text-[16px] font-bold tracking-[0.1em] uppercase">Företag med rådgivare</h3>
-            <p className="m-0 text-[16px] leading-[1.55] font-serif text-ink uppercase tracking-[0.03em]">
+            <p className="m-0 text-[16px] leading-[1.55] text-ink font-sans">
               Bättre förberedda möten med revisor och rådgivare.
             </p>
           </div>
         </div>
       </div>
-      <div className="bg-contrast text-ink-inverse">
-        <div className="mx-auto my-0 px-10 py-24 gap-14 max-w-[1200px] box-border flex flex-wrap items-start">
-          <div className="reveal-soft flex-[1_1_420px] min-w-0">
-            <h2 className="mx-0 mt-0 mb-4 font-display font-bold uppercase tracking-[0.01em] text-[clamp(28px,7vw,44px)] wrap-break-word leading-[1.05] text-ink-inverse">
+      <div className="bg-surface min-[900px]:min-h-dvh box-border flex items-center">
+        <div className="mx-auto my-0 px-10 py-20 gap-14 w-full max-w-[1200px] box-border flex flex-wrap items-center">
+          <div className="flex-[1_1_420px] min-w-0 reveal">
+            <div className="mb-5 px-3.5 py-1.5 rounded-full inline-block bg-chip text-contrast text-[13px] font-semibold tracking-[0.14em] uppercase">
+              Trygghet
+            </div>
+            <h2 className="mx-0 mt-0 mb-4 font-display font-bold uppercase tracking-[0.01em] text-[clamp(28px,6.5vw,42px)] wrap-break-word leading-[1.05]">
               Kontroll
             </h2>
-            <p className="mx-0 mt-0 mb-7 text-[17px] leading-[1.6] max-w-[520px] font-serif text-ink-inverse-soft uppercase tracking-[0.03em]">
-              Strategikonsulten ger beslutsunderlag. Besluten fattar ni.
+            <p className="mx-0 mt-0 mb-7 text-[18px] leading-[1.6] max-w-[520px] text-ink font-sans">
+              Strategikonsulten ger dig underlaget. Besluten fattar du.
             </p>
             <Link
-              className="pb-1 gap-2 inline-flex items-center font-bold text-[13px] tracking-[0.12em] uppercase no-underline text-ink-inverse border-b-[1.5px] border-b-ink-inverse"
+              className="gap-2 inline-flex items-center font-bold text-[13px] tracking-[0.12em] uppercase no-underline text-accent"
               href="/sakerhet"
             >
-              Så skyddar vi er →
+              Så skyddar vi dig →
             </Link>
           </div>
-          <div className="reveal-soft gap-4.5 flex-[1_1_420px] min-w-0 flex flex-col">
-            <div className="gap-3 flex items-start text-[15px] leading-[1.5] text-ink-inverse uppercase tracking-[0.04em] font-medium">
+          <div className="gap-3.5 flex-[1_1_420px] min-w-0 flex flex-col reveal-stagger">
+            <div className="px-5 py-4.5 gap-3.5 rounded-[14px] flex items-start bg-page border border-line text-[16px] leading-[1.55] text-ink font-sans">
               <svg className="mt-0.5 flex-none" width="20" height="20" viewBox="0 0 24 24" aria-hidden="true">
                 <path
                   d="M5 12.5l4.5 4.5L19 7.5"
                   fill="none"
-                  stroke="var(--ink-inverse-soft)"
+                  stroke="var(--accent)"
                   strokeWidth="2.4"
                   strokeLinecap="round"
                   strokeLinejoin="round"
@@ -1063,12 +1063,12 @@ export default function StrategikonsultenPage() {
               </svg>
               <span>Råd, inga beslut</span>
             </div>
-            <div className="gap-3 flex items-start text-[15px] leading-[1.5] text-ink-inverse uppercase tracking-[0.04em] font-medium">
+            <div className="px-5 py-4.5 gap-3.5 rounded-[14px] flex items-start bg-page border border-line text-[16px] leading-[1.55] text-ink font-sans">
               <svg className="mt-0.5 flex-none" width="20" height="20" viewBox="0 0 24 24" aria-hidden="true">
                 <path
                   d="M5 12.5l4.5 4.5L19 7.5"
                   fill="none"
-                  stroke="var(--ink-inverse-soft)"
+                  stroke="var(--accent)"
                   strokeWidth="2.4"
                   strokeLinecap="round"
                   strokeLinejoin="round"
@@ -1076,12 +1076,12 @@ export default function StrategikonsultenPage() {
               </svg>
               <span>Siffrorna bakom varje råd redovisas</span>
             </div>
-            <div className="gap-3 flex items-start text-[15px] leading-[1.5] text-ink-inverse uppercase tracking-[0.04em] font-medium">
+            <div className="px-5 py-4.5 gap-3.5 rounded-[14px] flex items-start bg-page border border-line text-[16px] leading-[1.55] text-ink font-sans">
               <svg className="mt-0.5 flex-none" width="20" height="20" viewBox="0 0 24 24" aria-hidden="true">
                 <path
                   d="M5 12.5l4.5 4.5L19 7.5"
                   fill="none"
-                  stroke="var(--ink-inverse-soft)"
+                  stroke="var(--accent)"
                   strokeWidth="2.4"
                   strokeLinecap="round"
                   strokeLinejoin="round"
@@ -1089,12 +1089,12 @@ export default function StrategikonsultenPage() {
               </svg>
               <span>Bara delade uppgifter används</span>
             </div>
-            <div className="gap-3 flex items-start text-[15px] leading-[1.5] text-ink-inverse uppercase tracking-[0.04em] font-medium">
+            <div className="px-5 py-4.5 gap-3.5 rounded-[14px] flex items-start bg-page border border-line text-[16px] leading-[1.55] text-ink font-sans">
               <svg className="mt-0.5 flex-none" width="20" height="20" viewBox="0 0 24 24" aria-hidden="true">
                 <path
                   d="M5 12.5l4.5 4.5L19 7.5"
                   fill="none"
-                  stroke="var(--ink-inverse-soft)"
+                  stroke="var(--accent)"
                   strokeWidth="2.4"
                   strokeLinecap="round"
                   strokeLinejoin="round"
@@ -1105,30 +1105,30 @@ export default function StrategikonsultenPage() {
           </div>
         </div>
       </div>
-      <div className="bg-surface-muted">
-        <div className="mx-auto my-0 px-10 py-24 max-w-[1200px] box-border">
-          <div className="mb-10">
-            <h2 className="mx-0 mt-0 mb-4 font-display font-bold uppercase tracking-[0.01em] text-[clamp(28px,7vw,44px)] wrap-break-word leading-[1.05]">
+      <div className="min-[900px]:min-h-dvh box-border flex items-center">
+        <div className="mx-auto my-0 px-10 py-20 w-full max-w-[1200px] box-border">
+          <div className="mb-10 max-w-[720px] reveal">
+            <h2 className="mx-0 mt-0 mb-4 font-display font-bold uppercase tracking-[0.01em] text-[clamp(28px,6.5vw,42px)] wrap-break-word leading-[1.05]">
               Kundröster
             </h2>
           </div>
-          <div className="gap-6 grid grid-cols-[repeat(auto-fit,minmax(300px,1fr))]">
-            <figure className="m-0 p-7 gap-4.5 rounded-card bg-surface border border-line min-w-0 box-border flex flex-col">
+          <div className="gap-6 grid grid-cols-[repeat(auto-fit,minmax(300px,1fr))] reveal-stagger">
+            <figure className="m-0 p-7 gap-4.5 rounded-card bg-surface min-w-0 box-border flex flex-col">
               <span className="px-2.5 py-[3px] rounded-full self-start border border-line-soft text-[11px] font-bold tracking-[0.12em] uppercase text-ink-soft">
                 Exempelcitat
               </span>
-              <blockquote className="m-0 text-[20px] leading-[1.6] text-ink font-serif">
+              <blockquote className="m-0 text-[20px] leading-[1.6] text-ink font-sans">
                 ”Vi räknade på en andra butik innan vi skrev på hyresavtalet. Underlaget gjorde beslutet enkelt.”
               </blockquote>
               <figcaption className="text-[13px] font-bold tracking-[0.1em] uppercase text-contrast">
                 Maria Holm · VD, Exempelbolaget AB
               </figcaption>
             </figure>
-            <figure className="m-0 p-7 gap-4.5 rounded-card bg-surface border border-line min-w-0 box-border flex flex-col">
+            <figure className="m-0 p-7 gap-4.5 rounded-card bg-surface min-w-0 box-border flex flex-col">
               <span className="px-2.5 py-[3px] rounded-full self-start border border-line-soft text-[11px] font-bold tracking-[0.12em] uppercase text-ink-soft">
                 Exempelcitat
               </span>
-              <blockquote className="m-0 text-[20px] leading-[1.6] text-ink font-serif">
+              <blockquote className="m-0 text-[20px] leading-[1.6] text-ink font-sans">
                 ”Som att ha en ekonomichef som alltid har tid.”
               </blockquote>
               <figcaption className="text-[13px] font-bold tracking-[0.1em] uppercase text-contrast">
@@ -1138,9 +1138,9 @@ export default function StrategikonsultenPage() {
           </div>
         </div>
       </div>
-      <div className="mx-auto my-0 px-10 py-24 max-w-[900px] box-border">
-        <div className="mb-10 text-center">
-          <h2 className="mx-0 mt-0 mb-4 font-display font-bold uppercase tracking-[0.01em] text-[clamp(28px,7vw,44px)] wrap-break-word leading-[1.05] text-center">
+      <div className="mx-auto my-0 px-10 py-20 max-w-[900px] box-border min-[900px]:min-h-dvh flex flex-col justify-center">
+        <div className="mb-10 max-w-[720px] reveal">
+          <h2 className="mx-0 mt-0 mb-4 font-display font-bold uppercase tracking-[0.01em] text-[clamp(28px,6.5vw,42px)] wrap-break-word leading-[1.05]">
             Frågor om strategikonsulten
           </h2>
         </div>
@@ -1155,13 +1155,14 @@ export default function StrategikonsultenPage() {
                 +
               </span>
             </summary>
-            <p className="mx-1 mt-0 mb-5.5 text-[16px] leading-[1.55] max-w-[760px] font-serif text-ink uppercase tracking-[0.03em]">
-              Nej. Utan den kopplas Vera till ert bokförings&shy;program eller får en rapport varje månad.
+            <p className="mx-1 mt-0 mb-5.5 text-[16px] leading-[1.55] max-w-[760px] text-ink font-sans">
+              Nej. Utan den kopplas Vera till ditt bokförings&shy;program eller får en rapport varje månad. Med den blir
+              analysen skarpare.
             </p>
           </details>
           <details className="faq border-b border-b-line">
             <summary className="px-1 py-5.5 gap-4 flex justify-between items-center text-[15px] font-semibold tracking-[0.08em] uppercase">
-              Fattar Vera beslut åt oss?
+              Fattar Vera beslut åt mig?
               <span
                 className="faq-plus flex-none text-[24px] leading-none text-accent [transition:transform_.15s]"
                 aria-hidden="true"
@@ -1169,8 +1170,8 @@ export default function StrategikonsultenPage() {
                 +
               </span>
             </summary>
-            <p className="mx-1 mt-0 mb-5.5 text-[16px] leading-[1.55] max-w-[760px] font-serif text-ink uppercase tracking-[0.03em]">
-              Nej. Vera räknar och föreslår, ni beslutar.
+            <p className="mx-1 mt-0 mb-5.5 text-[16px] leading-[1.55] max-w-[760px] text-ink font-sans">
+              Nej. Vera räknar och föreslår. Du bestämmer.
             </p>
           </details>
           <details className="faq border-b border-b-line">
@@ -1183,13 +1184,13 @@ export default function StrategikonsultenPage() {
                 +
               </span>
             </summary>
-            <p className="mx-1 mt-0 mb-5.5 text-[16px] leading-[1.55] max-w-[760px] font-serif text-ink uppercase tracking-[0.03em]">
-              Vera ställer kompletterande frågor i stället för att anta.
+            <p className="mx-1 mt-0 mb-5.5 text-[16px] leading-[1.55] max-w-[760px] text-ink font-sans">
+              Vera frågar i stället för att anta.
             </p>
           </details>
           <details className="faq border-b border-b-line">
             <summary className="px-1 py-5.5 gap-4 flex justify-between items-center text-[15px] font-semibold tracking-[0.08em] uppercase">
-              Vilka frågor kan vi ta upp?
+              Vilka frågor kan jag ta upp?
               <span
                 className="faq-plus flex-none text-[24px] leading-none text-accent [transition:transform_.15s]"
                 aria-hidden="true"
@@ -1197,13 +1198,13 @@ export default function StrategikonsultenPage() {
                 +
               </span>
             </summary>
-            <p className="mx-1 mt-0 mb-5.5 text-[16px] leading-[1.55] max-w-[760px] font-serif text-ink uppercase tracking-[0.03em]">
+            <p className="mx-1 mt-0 mb-5.5 text-[16px] leading-[1.55] max-w-[760px] text-ink font-sans">
               Prissättning, sortiment, kostnader, lager och investeringar.
             </p>
           </details>
           <details className="faq border-b border-b-line">
             <summary className="px-1 py-5.5 gap-4 flex justify-between items-center text-[15px] font-semibold tracking-[0.08em] uppercase">
-              Kan vi testa scenarier?
+              Kan jag testa scenarier?
               <span
                 className="faq-plus flex-none text-[24px] leading-none text-accent [transition:transform_.15s]"
                 aria-hidden="true"
@@ -1211,13 +1212,13 @@ export default function StrategikonsultenPage() {
                 +
               </span>
             </summary>
-            <p className="mx-1 mt-0 mb-5.5 text-[16px] leading-[1.55] max-w-[760px] font-serif text-ink uppercase tracking-[0.03em]">
-              Ja. Beskriv idén, så räknar Vera på effekten för försäljning och marginal.
+            <p className="mx-1 mt-0 mb-5.5 text-[16px] leading-[1.55] max-w-[760px] text-ink font-sans">
+              Ja. Beskriv idén, så räknar Vera på vad den gör med försäljning och marginal.
             </p>
           </details>
           <details className="faq border-b border-b-line">
             <summary className="px-1 py-5.5 gap-4 flex justify-between items-center text-[15px] font-semibold tracking-[0.08em] uppercase">
-              Ersätter Vera vår revisor?
+              Ersätter Vera min revisor?
               <span
                 className="faq-plus flex-none text-[24px] leading-none text-accent [transition:transform_.15s]"
                 aria-hidden="true"
@@ -1225,8 +1226,8 @@ export default function StrategikonsultenPage() {
                 +
               </span>
             </summary>
-            <p className="mx-1 mt-0 mb-5.5 text-[16px] leading-[1.55] max-w-[760px] font-serif text-ink uppercase tracking-[0.03em]">
-              Nej. Frågor om skatt, juridik och revision hör hemma hos en expert.
+            <p className="mx-1 mt-0 mb-5.5 text-[16px] leading-[1.55] max-w-[760px] text-ink font-sans">
+              Nej. Skatt, juridik och revision hör hemma hos en expert. Vera gör dig bättre förberedd inför mötet.
             </p>
           </details>
           <details className="faq border-b border-b-line">
@@ -1239,29 +1240,32 @@ export default function StrategikonsultenPage() {
                 +
               </span>
             </summary>
-            <p className="mx-1 mt-0 mb-5.5 text-[16px] leading-[1.55] max-w-[760px] font-serif text-ink uppercase tracking-[0.03em]">
+            <p className="mx-1 mt-0 mb-5.5 text-[16px] leading-[1.55] max-w-[760px] text-ink font-sans">
               En gång i månaden, och direkt vid större förändringar.
             </p>
           </details>
         </div>
       </div>
-      <div className="mx-auto mt-0 mb-24 px-10 py-0 max-w-[1200px] box-border">
-        <div className="reveal-soft px-10 py-18 rounded-[28px] bg-accent text-ink-inverse box-border text-center">
-          <h2 className="mx-0 mt-0 mb-4 font-display font-bold uppercase tracking-[0.01em] text-[clamp(28px,7vw,46px)] wrap-break-word leading-[1.05] text-ink-inverse">
-            Se strategikonsulten med era siffror
+      <div className="bg-surface min-[900px]:min-h-dvh box-border flex items-center">
+        <div className="mx-auto my-0 px-10 py-20 w-full max-w-[1200px] box-border flex flex-col items-center text-center reveal">
+          <div className="mb-5 px-3.5 py-1.5 rounded-full inline-block bg-chip text-contrast text-[13px] font-semibold tracking-[0.14em] uppercase">
+            Kontakt
+          </div>
+          <h2 className="mx-0 mt-0 mb-4 font-display font-bold uppercase tracking-[0.01em] text-[clamp(28px,6.5vw,42px)] wrap-break-word leading-[1.05]">
+            Se Strategikonsulten med dina siffror.
           </h2>
-          <p className="mx-auto mt-0 mb-8 text-[17px] leading-[1.6] max-w-[540px] font-serif text-ink-inverse uppercase tracking-[0.03em]">
-            Vi visar en månadsöversikt med exempel från er bransch.
+          <p className="mx-auto mt-0 mb-8 text-[18px] leading-[1.6] max-w-[540px] text-ink font-sans">
+            Vi visar en månadsöversikt med exempel från din bransch.
           </p>
           <div className="gap-3 flex justify-center flex-wrap">
             <Link
-              className="btn btn--primary theme-inverse"
+              className="btn btn--primary"
               href="/#kontakt"
             >
               Boka en demo
             </Link>
             <Link
-              className="btn btn--secondary theme-inverse"
+              className="btn btn--secondary"
               href="/#kontakt"
             >
               Få en prisuppskattning

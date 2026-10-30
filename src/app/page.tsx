@@ -4,7 +4,7 @@ import { VideoBackground } from "@/components/VideoBackground";
 
 export const metadata: Metadata = {
   description:
-    "Vera är ett team av AI-agenter som förbereder bokföringen, bevakar marknaden och tar fram underlag för era beslut. Ni granskar och godkänner.",
+    "Vera är ett team av AI-agenter som sköter bokföringen, bevakar marknaden och räknar på dina beslut. Du godkänner, Vera gör resten. Från Vera Labs i Stockholm.",
 };
 
 export default function HomePage() {
@@ -16,14 +16,14 @@ export default function HomePage() {
         <div className="mx-auto my-0 px-10 pt-20 pb-24 gap-14 w-full max-w-[1200px] box-border flex flex-wrap items-center">
           <div className="flex-[1_1_440px] min-w-0">
             <div className="mb-6 px-3.5 py-1.5 rounded-full inline-block bg-snow/8 border border-snow/18 text-platinum text-[13px] font-semibold tracking-[0.14em] uppercase">
-              AI-agenter för företag
+              Ett team av AI-agenter för ditt företag
             </div>
             <h1 className="mx-0 mt-0 mb-6 font-display font-bold uppercase tracking-[0.01em] text-[clamp(30px,4.4vw,46px)] leading-[1.05] wrap-break-word text-snow">
-              Mindre administration. Mer företag.
+              Du driver företaget. Vera gör resten.
             </h1>
             <p className="mx-0 mt-0 mb-8 text-[18px] leading-[1.65] text-pale-1 font-sans max-w-[520px]">
-              Vera är ett team av AI-agenter som förbereder bokföringen, bevakar marknaden och tar fram underlag för era
-              beslut. Ni granskar och godkänner.
+              Vera är ett team av AI-agenter som kan ditt företag utan och innan. Hon sköter bokföringen, bevakar
+              marknaden och räknar på dina beslut. Dygnet runt, varje dag. Du granskar och godkänner. Inget mer.
             </p>
             <div className="gap-3 flex flex-wrap">
               {/* The hero band is Shadow Grey in both modes, so the buttons always use the dark token set. */}
@@ -50,7 +50,7 @@ export default function HomePage() {
               </div>
               <div className="mt-4 flex justify-between items-center text-[13px] text-lv-muted">
                 <span>
-                  Vera förbereder
+                  Vera arbetar
                   <span className="lv-dots" aria-hidden="true">
                     <span />
                     <span />
@@ -84,7 +84,7 @@ export default function HomePage() {
                 <div className="lv-row px-0 py-3.5 gap-3 flex items-center justify-between border-t border-t-lv-line">
                   <div className="min-w-0">
                     <div className="text-[14px] font-semibold text-lv-ink">Swish · 450 kr</div>
-                    <div className="mt-0.5 text-[13px] text-lv-muted">Vera undrar: privat eller för företaget?</div>
+                    <div className="mt-0.5 text-[13px] text-lv-muted">Vera frågar: privat eller företaget?</div>
                   </div>
                   <span className="px-[9px] py-[3px] rounded-full border-[1.5px] border-lv-muted text-lv-ink text-[11px] font-bold tracking-[0.08em] uppercase whitespace-nowrap">
                     Fråga
@@ -92,7 +92,7 @@ export default function HomePage() {
                 </div>
               </div>
               <div className="mt-4 gap-3 flex flex-wrap justify-between items-center">
-                <span className="text-[13px] text-lv-muted">Väntar på ert godkännande</span>
+                <span className="text-[13px] text-lv-muted">Väntar på ditt godkännande</span>
                 <span className="px-4.5 py-0 rounded-full inline-flex items-center min-h-10 bg-lv-acc text-lv-acc-ink text-[12px] font-bold tracking-[0.1em] uppercase">
                   Godkänn veckan
                 </span>
@@ -112,11 +112,11 @@ export default function HomePage() {
                 Demo
               </div>
               <h2 className="mx-0 mt-0 mb-4 font-display font-bold uppercase tracking-[0.01em] text-[clamp(28px,6.5vw,42px)] leading-[1.05] wrap-break-word">
-                En vecka med Vera, på två minuter.
+                En hel arbetsvecka. På två minuter.
               </h2>
               <p className="m-0 text-[18px] leading-[1.6] text-ink font-sans max-w-[520px]">
-                Från kontoutdrag till godkänd bokföring: hur Vera samlar in underlag, föreslår konteringar och lyfter
-                det som behöver ert beslut.
+                Följ Vera från första kontoutdraget till godkänd bokföring. Se hur hon samlar in underlagen, konterar
+                enligt dina regler och lyfter fram exakt det som behöver ditt beslut.
               </p>
             </div>
             <div className="flex-[1_1_480px] min-w-0">
@@ -128,7 +128,7 @@ export default function HomePage() {
                 </div>
                 <div className="text-[13px] font-bold tracking-[0.14em] uppercase">Demo · 2 min</div>
                 <div className="text-[14px] leading-[1.5] text-ink-inverse-soft max-w-[340px]">
-                  Demofilmen kommer snart. Boka en demo så visar vi live.
+                  Filmen är på väg. Vill du inte vänta? Boka en demo, så visar vi live.
                 </div>
               </div>
             </div>
@@ -144,7 +144,7 @@ export default function HomePage() {
               Så fungerar det
             </div>
             <h2 className="m-0 font-display font-bold uppercase tracking-[0.01em] text-[clamp(28px,6.5vw,42px)] leading-[1.05] wrap-break-word">
-              Tre steg. Ni bestämmer.
+              Tre steg. Du har sista ordet i alla.
             </h2>
           </div>
           <div className="gap-5 grid grid-cols-[repeat(auto-fit,minmax(260px,1fr))] reveal-stagger">
@@ -161,17 +161,17 @@ export default function HomePage() {
                   />
                 </svg>
               </div>
-              <h3 className="m-0 text-[15px] font-bold tracking-[0.1em] uppercase">1 · Ni sätter reglerna</h3>
+              <h3 className="m-0 text-[15px] font-bold tracking-[0.1em] uppercase">1 · Du sätter reglerna</h3>
               <p className="m-0 text-[16px] leading-[1.55] text-ink font-sans">
-                Vera arbetar efter en regelbok som vi tar fram tillsammans med er: konton, leverantörer, momssatser och
-                beloppsgränser.
+                Tillsammans skriver vi Veras regelbok: dina konton, leverantörer, momssatser och beloppsgränser. Vera
+                följer den till punkt och pricka. Hon improviserar aldrig.
               </p>
               <div
                 className="mt-1.5 px-4 py-3.5 rounded-[14px] bg-page border border-lv-line font-sans text-[13px] leading-[1.45] text-lv-ink"
                 role="img"
                 aria-label="Exempel på en regel i regelboken"
               >
-                <div className="mb-1.5 text-[11px] font-bold tracking-[0.1em] uppercase text-lv-muted">Er regelbok</div>
+                <div className="mb-1.5 text-[11px] font-bold tracking-[0.1em] uppercase text-lv-muted">Din regelbok</div>
                 <div>Leverantör AB → Inköp av varor</div>
                 <div className="text-lv-muted">Alltid 25 % moms</div>
               </div>
@@ -189,17 +189,17 @@ export default function HomePage() {
                   />
                 </svg>
               </div>
-              <h3 className="m-0 text-[15px] font-bold tracking-[0.1em] uppercase">2 · Vera gör förarbetet</h3>
+              <h3 className="m-0 text-[15px] font-bold tracking-[0.1em] uppercase">2 · Vera gör jobbet</h3>
               <p className="m-0 text-[16px] leading-[1.55] text-ink font-sans">
-                Underlag samlas in och sorteras, förslag tas fram och avvikelser markeras. Det som är oklart blir en
-                fråga, aldrig en gissning.
+                Underlagen samlas in, sorteras och konteras. Avvikelser markeras. Är något oklart ställer Vera en fråga
+                i stället för att gissa.
               </p>
               <div
                 className="mt-1.5 px-4 py-3.5 rounded-[14px] bg-page border border-lv-line font-sans text-[13px] leading-[1.45] text-lv-ink"
                 role="img"
                 aria-label="Exempel på en fråga från Vera"
               >
-                <div className="mb-1.5 text-[11px] font-bold tracking-[0.1em] uppercase text-lv-muted">Vera undrar</div>
+                <div className="mb-1.5 text-[11px] font-bold tracking-[0.1em] uppercase text-lv-muted">Vera frågar</div>
                 <div>Kvittot från 12 okt: privat eller för företaget?</div>
                 <div className="mt-2.5 gap-2 flex">
                   <span className="px-3 py-1 rounded-full border-[1.5px] border-lv-line">Privat</span>
@@ -220,9 +220,10 @@ export default function HomePage() {
                   />
                 </svg>
               </div>
-              <h3 className="m-0 text-[15px] font-bold tracking-[0.1em] uppercase">3 · Ni fattar besluten</h3>
+              <h3 className="m-0 text-[15px] font-bold tracking-[0.1em] uppercase">3 · Du fattar besluten</h3>
               <p className="m-0 text-[16px] leading-[1.55] text-ink font-sans">
-                En genomgång i slutet av veckan. Godkänn allt på en gång eller post för post.
+                I slutet av veckan ligger en färdig genomgång och väntar. Godkänn allt med ett klick, eller post för
+                post. Inget bokförs utan ditt klartecken.
               </p>
               <div
                 className="mt-1.5 px-4 py-3.5 rounded-[14px] bg-page border border-lv-line font-sans text-[13px] leading-[1.45] text-lv-ink"
@@ -254,10 +255,10 @@ export default function HomePage() {
             Agenter
           </div>
           <h2 className="mx-0 mt-0 mb-4 font-display font-bold uppercase tracking-[0.01em] text-[clamp(28px,6.5vw,42px)] leading-[1.05] wrap-break-word">
-            En agent för varje område.
+            En specialist för varje område.
           </h2>
           <p className="m-0 text-[18px] leading-[1.6] text-ink font-sans">
-            Börja där det tar mest tid och lägg till fler när ni är redo.
+            Börja där det svider mest. Lägg till fler när du vill.
           </p>
         </div>
         {/* Uppgift e), fråga 5: agentkorten är EN gemensam glaspanel (Apple: gruppera) med bara luft
@@ -281,7 +282,7 @@ export default function HomePage() {
             </div>
             <h3 className="m-0 text-[15px] font-bold tracking-[0.1em] uppercase">Bokförings&shy;agenten</h3>
             <p className="m-0 text-[16px] leading-[1.55] text-ink font-sans">
-              Löpande bokföring, fakturering, moms, lön och bokslut.
+              Sköter löpande bokföring, fakturering, moms, lön och bokslut. Varje vecka, utan att tappa en enda post.
             </p>
             <span className="mt-auto text-[12px] font-bold tracking-[0.12em] uppercase text-accent">Läs mer →</span>
           </Link>
@@ -303,7 +304,7 @@ export default function HomePage() {
             </div>
             <h3 className="m-0 text-[15px] font-bold tracking-[0.1em] uppercase">Trend&shy;övervakaren</h3>
             <p className="m-0 text-[16px] leading-[1.55] text-ink font-sans">
-              Hittar efterfrågan som växer i er bransch, innan den toppar.
+              Ser efterfrågan växa i din bransch innan konkurrenterna gör det.
             </p>
             <span className="mt-auto text-[12px] font-bold tracking-[0.12em] uppercase text-accent">Läs mer →</span>
           </Link>
@@ -325,7 +326,7 @@ export default function HomePage() {
             </div>
             <h3 className="m-0 text-[15px] font-bold tracking-[0.1em] uppercase">Strategi&shy;konsulten</h3>
             <p className="m-0 text-[16px] leading-[1.55] text-ink font-sans">
-              Underlag för prissättning, sortiment och investeringar, byggt på era egna siffror.
+              Räknar på pris, sortiment och investeringar. Med dina egna siffror som grund.
             </p>
             <span className="mt-auto text-[12px] font-bold tracking-[0.12em] uppercase text-accent">Läs mer →</span>
           </Link>
@@ -347,7 +348,7 @@ export default function HomePage() {
             </div>
             <h3 className="m-0 text-[15px] font-bold tracking-[0.1em] uppercase">Leverantörs&shy;agenten</h3>
             <p className="m-0 text-[16px] leading-[1.55] text-ink font-sans">
-              Söker, jämför och sammanställer leverantörer utifrån era krav.
+              Hittar, jämför och sammanställer leverantörer efter dina krav. Du får beslutsunderlaget serverat.
             </p>
             <span className="mt-auto text-[12px] font-bold tracking-[0.12em] uppercase text-accent">Läs mer →</span>
           </Link>
@@ -365,17 +366,17 @@ export default function HomePage() {
         <div className="mx-auto my-0 px-10 py-20 gap-14 w-full max-w-[1200px] box-border flex flex-wrap items-center">
           <div className="flex-[1_1_420px] min-w-0 reveal">
             <h2 className="mx-0 mt-0 mb-4 font-display font-bold uppercase tracking-[0.01em] text-[clamp(28px,6.5vw,42px)] leading-[1.05] wrap-break-word">
-              Kontroll som standard.
+              Full kontroll. Alltid.
             </h2>
             <p className="m-0 text-[18px] leading-[1.6] text-ink font-sans max-w-[520px]">
-              Vera föreslår och motiverar. Ni bestämmer vad som händer.
+              Vera föreslår och förklarar varför. Du avgör vad som händer.
             </p>
             <div className="mt-6">
               <Link
                 className="gap-2 inline-flex items-center font-bold text-[13px] tracking-[0.12em] uppercase no-underline text-accent"
                 href="/sakerhet"
               >
-                Så skyddar vi er →
+                Så skyddar vi dig →
               </Link>
             </div>
           </div>
@@ -394,7 +395,7 @@ export default function HomePage() {
               <div className="min-w-0">
                 <div className="mb-1 font-bold text-[14px] tracking-[0.08em] uppercase">Godkännande</div>
                 <div className="m-0 text-[16px] leading-[1.55] text-ink font-sans">
-                  Inget förs in i era system utan ert klartecken.
+                  Inget förs in i dina system utan ditt klartecken.
                 </div>
               </div>
             </div>
@@ -410,9 +411,9 @@ export default function HomePage() {
                 />
               </svg>
               <div className="min-w-0">
-                <div className="mb-1 font-bold text-[14px] tracking-[0.08em] uppercase">Er regelbok</div>
+                <div className="mb-1 font-bold text-[14px] tracking-[0.08em] uppercase">Din regelbok</div>
                 <div className="m-0 text-[16px] leading-[1.55] text-ink font-sans">
-                  Ni bestämmer hur varje typ av post ska hanteras.
+                  Du bestämmer hur varje typ av post ska hanteras. Vera följer det.
                 </div>
               </div>
             </div>
@@ -430,7 +431,7 @@ export default function HomePage() {
               <div className="min-w-0">
                 <div className="mb-1 font-bold text-[14px] tracking-[0.08em] uppercase">Spårbarhet</div>
                 <div className="m-0 text-[16px] leading-[1.55] text-ink font-sans">
-                  Varje steg loggas och kan granskas i efterhand.
+                  Varje steg loggas och kan granskas i efterhand. Inget sker i det dolda.
                 </div>
               </div>
             </div>
@@ -446,9 +447,9 @@ export default function HomePage() {
                 />
               </svg>
               <div className="min-w-0">
-                <div className="mb-1 font-bold text-[14px] tracking-[0.08em] uppercase">Era uppgifter</div>
+                <div className="mb-1 font-bold text-[14px] tracking-[0.08em] uppercase">Dina uppgifter</div>
                 <div className="m-0 text-[16px] leading-[1.55] text-ink font-sans">
-                  Används bara för ert företag och tränar inga AI-modeller.
+                  Används bara för ditt företag. Tränar aldrig några AI-modeller.
                 </div>
               </div>
             </div>
@@ -471,7 +472,7 @@ export default function HomePage() {
           Integrationer
         </div>
         <h2 className="mx-0 mt-0 mb-4 font-display font-bold uppercase tracking-[0.01em] text-[clamp(28px,6.5vw,42px)] leading-[1.05] wrap-break-word">
-          Fungerar med det ni redan använder.
+          Fungerar med det du redan använder. Byt ingenting.
         </h2>
         <div className="mt-8 gap-4 flex flex-col">
           <div className="gap-3 flex flex-wrap items-center justify-center">
@@ -507,7 +508,7 @@ export default function HomePage() {
       <div className="min-[900px]:min-h-dvh box-border flex items-center">
         <div className="mx-auto my-0 px-10 py-20 w-full max-w-[1200px] box-border reveal-stagger">
           <h2 className="mx-0 mt-0 mb-8 font-display font-bold uppercase tracking-[0.01em] text-[clamp(28px,6.5vw,42px)] leading-[1.05] wrap-break-word">
-            Jämför alternativen.
+            Tre sätt att sköta det. Ett som håller.
           </h2>
           <div className="overflow-x-auto">
             <table className="cmp-table w-full min-w-[640px] border-collapse">
@@ -518,7 +519,7 @@ export default function HomePage() {
                     Göra själv
                   </th>
                   <th className="p-4 text-left text-[12px] font-bold tracking-[0.12em] uppercase text-ink-soft border-b-2 border-b-line">
-                    Konsulter
+                    Byrå eller konsult
                   </th>
                   <th className="p-4 rounded-t-xl rounded-b-none text-left text-[12px] font-bold tracking-[0.12em] uppercase border-b-2 border-b-line bg-contrast text-ink-inverse">
                     Vera
@@ -531,13 +532,13 @@ export default function HomePage() {
                     Vem utför arbetet?
                   </td>
                   <td data-label="Göra själv" className="p-4 border-b border-b-line align-top font-sans text-[16px] leading-[1.45]">
-                    Ni, på kvällar och helger
+                    Du, på kvällar och helger
                   </td>
-                  <td data-label="Konsulter" className="p-4 border-b border-b-line align-top font-sans text-[16px] leading-[1.45]">
+                  <td data-label="Byrå eller konsult" className="p-4 border-b border-b-line align-top font-sans text-[16px] leading-[1.45]">
                     En konsult per område
                   </td>
                   <td data-label="Vera" className="p-4 border-b border-b-line align-top font-sans text-[16px] leading-[1.45] bg-chip text-contrast font-bold">
-                    Specialiserade agenter som samarbetar
+                    Ett team av specialister som jobbar ihop
                   </td>
                 </tr>
                 <tr>
@@ -545,27 +546,27 @@ export default function HomePage() {
                     Tillgänglighet
                   </td>
                   <td data-label="Göra själv" className="p-4 border-b border-b-line align-top font-sans text-[16px] leading-[1.45]">
-                    När tiden finns
+                    När du hinner
                   </td>
-                  <td data-label="Konsulter" className="p-4 border-b border-b-line align-top font-sans text-[16px] leading-[1.45]">
+                  <td data-label="Byrå eller konsult" className="p-4 border-b border-b-line align-top font-sans text-[16px] leading-[1.45]">
                     Kontorstid
                   </td>
                   <td data-label="Vera" className="p-4 border-b border-b-line align-top font-sans text-[16px] leading-[1.45] bg-chip text-contrast font-bold">
-                    Alltid
+                    Dygnet runt, året om
                   </td>
                 </tr>
                 <tr>
                   <td className="p-4 border-b border-b-line align-top leading-[1.45] font-sans text-[13px] font-bold tracking-[0.08em]">
-                    Kännedom om ert företag
+                    Kännedom om ditt företag
                   </td>
                   <td data-label="Göra själv" className="p-4 border-b border-b-line align-top font-sans text-[16px] leading-[1.45]">
-                    Hög, men tiden räcker inte
+                    Total, men tiden räcker inte
                   </td>
-                  <td data-label="Konsulter" className="p-4 border-b border-b-line align-top font-sans text-[16px] leading-[1.45]">
-                    Växer med uppdraget
+                  <td data-label="Byrå eller konsult" className="p-4 border-b border-b-line align-top font-sans text-[16px] leading-[1.45]">
+                    Byggs upp med tiden, försvinner med konsulten
                   </td>
                   <td data-label="Vera" className="p-4 border-b border-b-line align-top font-sans text-[16px] leading-[1.45] bg-chip text-contrast font-bold">
-                    Bygger på er regelbok och historik
+                    Din regelbok och hela din historik, från dag ett
                   </td>
                 </tr>
                 <tr>
@@ -573,9 +574,9 @@ export default function HomePage() {
                     Prismodell
                   </td>
                   <td data-label="Göra själv" className="p-4 border-b border-b-line align-top font-sans text-[16px] leading-[1.45]">
-                    Er arbetstid
+                    Din egen tid
                   </td>
-                  <td data-label="Konsulter" className="p-4 border-b border-b-line align-top font-sans text-[16px] leading-[1.45]">
+                  <td data-label="Byrå eller konsult" className="p-4 border-b border-b-line align-top font-sans text-[16px] leading-[1.45]">
                     Timpris eller månadsavgift
                   </td>
                   <td data-label="Vera" className="p-4 border-b border-b-line align-top font-sans text-[16px] leading-[1.45] bg-chip text-contrast font-bold">
@@ -590,7 +591,7 @@ export default function HomePage() {
               className="gap-2 inline-flex items-center font-bold text-[13px] tracking-[0.12em] uppercase no-underline text-accent"
               href="/agenter/bokforing"
             >
-              Jämförelse för bokföring →
+              Hela jämförelsen för bokföring →
             </Link>
           </div>
         </div>
@@ -603,10 +604,10 @@ export default function HomePage() {
         <div className="gap-6 grid grid-cols-[repeat(auto-fit,minmax(300px,1fr))] reveal-stagger">
           <figure className="m-0 p-7 gap-4.5 rounded-card bg-page border border-line min-w-0 box-border wrap-break-word flex flex-col">
             <span className="px-2.5 py-[3px] rounded-full self-start border border-line-soft text-[11px] font-bold tracking-[0.12em] uppercase text-ink-soft">
-              Exempelcitat
+              Exempelcitat (platshållare)
             </span>
             <blockquote className="m-0 leading-[1.6] text-ink font-sans text-[20px]">
-              ”Bokföringen tog flera kvällar i månaden. Nu går jag igenom veckan på en kvart.”
+              ”Tre kvällar i månaden blev en kvart i veckan.”
             </blockquote>
             <figcaption className="text-[13px] font-bold tracking-[0.1em] uppercase text-contrast">
               Anna Berg · Ägare, Exempelbutiken AB
@@ -614,10 +615,10 @@ export default function HomePage() {
           </figure>
           <figure className="m-0 p-7 gap-4.5 rounded-card bg-page border border-line min-w-0 box-border wrap-break-word flex flex-col">
             <span className="px-2.5 py-[3px] rounded-full self-start border border-line-soft text-[11px] font-bold tracking-[0.12em] uppercase text-ink-soft">
-              Exempelcitat
+              Exempelcitat (platshållare)
             </span>
             <blockquote className="m-0 leading-[1.6] text-ink font-sans text-[20px]">
-              ”Vera flaggade att marginalen på jackorna sjönk innan vi själva såg det.”
+              ”Vera såg att marginalen på jackorna sjönk. Två veckor innan vi gjorde det.”
             </blockquote>
             <figcaption className="text-[13px] font-bold tracking-[0.1em] uppercase text-contrast">
               Erik Sund · VD, Exempelbolaget AB
@@ -648,7 +649,7 @@ export default function HomePage() {
             ”Ingen ska behöva lägga sina kvällar på pappersarbete.”
           </blockquote>
           <p className="m-0 text-[18px] leading-[1.6] text-ink font-sans max-w-[560px]">
-            VeraAI började i en tunnelbanekiosk, med ett bokslut som tog sexton timmar att få klart.
+            VeraAI började i en tunnelbanekiosk i Stockholm, en natt när ett bokslut tog sexton timmar.
           </p>
           <div className="mt-4 text-[13px] font-bold tracking-[0.1em] uppercase text-contrast">
             Hugo · Grundare, Vera Labs AB
@@ -670,10 +671,11 @@ export default function HomePage() {
             Kontakt
           </div>
           <h2 className="mx-0 mt-0 mb-4 font-display font-bold uppercase tracking-[0.01em] text-[clamp(28px,6.5vw,42px)] leading-[1.05] wrap-break-word">
-            Boka en demo.
+            Se vad Vera kan ta över hos dig.
           </h2>
           <p className="m-0 text-[18px] leading-[1.6] text-ink font-sans max-w-[480px]">
-            30 minuter, kostnadsfritt. Vi går igenom ert företag och visar vad Vera kan ta över.
+            30 minuter, kostnadsfritt, inga förpliktelser. Vi går igenom hur du jobbar i dag och visar exakt vilka
+            timmar Vera kan ge dig tillbaka.
           </p>
           <div className="mt-8 gap-3.5 flex flex-col">
             <div className="gap-3 flex items-center">
@@ -752,7 +754,7 @@ export default function HomePage() {
             />
           </label>
           <label className="gap-2 flex flex-col text-[12px] font-bold tracking-[0.12em] uppercase text-ink-soft">
-            Vad vill ni automatisera?
+            Vad vill du automatisera?
             <select
               className="field px-4 py-3 rounded-xl w-full box-border min-h-13 border-[1.5px] border-line bg-surface font-sans text-[16px] text-ink"
               name="behov"
@@ -802,10 +804,10 @@ export default function HomePage() {
             className="btn btn--primary w-full"
             type="submit"
           >
-            Skicka förfrågan
+            Boka min demo
           </button>
           <div className="text-[13px] leading-[1.5] text-ink-muted text-center">
-            Uppgifterna används bara för att kontakta er om demon.
+            Uppgifterna används bara för att kontakta dig om demon.
           </div>
         </form>
       </div>

@@ -51,35 +51,35 @@ export const NAV_SECTIONS: NavSection[] = [
       {
         heading: "Företag",
         links: [
-          { href: "/foretag", title: "Alla agenter", description: "Översikt över alla agenter.", icon: ICONS.grid },
+          { href: "/foretag", title: "Alla agenter", description: "Hela teamet på en sida.", icon: ICONS.grid },
           {
             href: "/agenter/bokforing",
             title: "Bokföringsagenten",
-            description: "Bokföring, moms, lön och bokslut.",
+            description: "Bokföring, moms, lön och bokslut. Varje vecka.",
             icon: ICONS.ledger,
           },
           {
             href: "/agenter/trendovervakaren",
             title: "Trendövervakaren",
-            description: "Efterfrågan som växer i er bransch.",
+            description: "Ser vad som växer i din bransch.",
             icon: ICONS.trend,
           },
           {
             href: "/agenter/strategikonsulten",
             title: "Strategikonsulten",
-            description: "Beslutsunderlag från era egna siffror.",
+            description: "Räknar på dina beslut.",
             icon: ICONS.target,
           },
           {
             href: "/agenter/leverantorsagenten",
             title: "Leverantörsagenten",
-            description: "Sök och jämför leverantörer.",
+            description: "Hittar och jämför leverantörer.",
             icon: ICONS.box,
           },
           {
             href: "/priser#paket",
             title: "Eget paket",
-            description: "Flera agenter med rabatt.",
+            description: "Flera agenter, ett lägre pris.",
             icon: ICONS.layers,
           },
         ],
@@ -90,25 +90,25 @@ export const NAV_SECTIONS: NavSection[] = [
           {
             href: "/privatpersoner",
             title: "Alla tjänster",
-            description: "Översikt över tjänsterna.",
+            description: "Vera för dig som privatperson.",
             icon: ICONS.grid,
           },
           {
             href: "/privat/kalender",
             title: "Kalender och vardag",
-            description: "Planering som får allt att gå ihop.",
+            description: "Får veckan att gå ihop.",
             icon: ICONS.calendar,
           },
           {
             href: "/privat/traning",
             title: "Tränings- och kostråd",
-            description: "Träning och kost efter dina mål.",
+            description: "Träning och kost som följer dina mål.",
             icon: ICONS.heart,
           },
           {
             href: "/privat/ekonomi",
             title: "Privatekonomi och sparande",
-            description: "Budget, utgifter och sparande.",
+            description: "Koll på pengarna, varje månad.",
             icon: ICONS.coin,
           },
         ],
@@ -125,13 +125,13 @@ export const NAV_SECTIONS: NavSection[] = [
           {
             href: "/sa-fungerar-vera",
             title: "Så fungerar Vera",
-            description: "Från uppstart till vardag.",
+            description: "Från första mötet till vardag.",
             icon: ICONS.page,
           },
           {
             href: "/vanliga-fragor",
             title: "Vanliga frågor",
-            description: "Svar på det vanligaste.",
+            description: "Raka svar på det folk undrar.",
             icon: ICONS.question,
           },
           { href: "/#sa", title: "Se en demo", description: "Två minuter med Vera.", icon: ICONS.play },
@@ -148,26 +148,26 @@ export const NAV_SECTIONS: NavSection[] = [
         links: [
           {
             href: "/sakerhet",
-            title: "Ni har sista ordet",
-            description: "Godkännande i varje steg.",
+            title: "Du har sista ordet",
+            description: "Inget bokförs utan ditt ok.",
             icon: ICONS.shield,
           },
           {
             href: "/sakerhet#skydd",
-            title: "Så skyddar vi er",
+            title: "Så skyddar vi dig",
             description: "Spärrar, regler och loggning.",
             icon: ICONS.lock,
           },
           {
             href: "/sakerhet#data",
-            title: "Era uppgifter",
-            description: "Ägande, lagring och GDPR.",
+            title: "Dina uppgifter",
+            description: "Dina data är dina. Lagring och GDPR.",
             icon: ICONS.lockTall,
           },
           {
             href: "/sakerhet#avgransning",
             title: "Vad Vera är, och inte är",
-            description: "Ansvar och avgränsningar.",
+            description: "Vad Vera tar ansvar för.",
             icon: ICONS.info,
           },
         ],
@@ -181,7 +181,7 @@ export const NAV_SECTIONS: NavSection[] = [
       {
         heading: "Priser",
         links: [
-          { href: "/priser", title: "Våra tjänster", description: "Priser per agent och tjänst.", icon: ICONS.tag },
+          { href: "/priser", title: "Våra tjänster", description: "Pris per agent och tjänst.", icon: ICONS.tag },
           {
             href: "/priser#sa-gar-det-till",
             title: "Så går det till",
@@ -190,14 +190,14 @@ export const NAV_SECTIONS: NavSection[] = [
           },
           {
             href: "/priser#kalkylator",
-            title: "Räkna på er besparing",
-            description: "Vad arbetet kostar i dag.",
+            title: "Räkna på din besparing",
+            description: "Vad administrationen kostar dig i dag.",
             icon: ICONS.calculator,
           },
           {
             href: "/#kontakt",
             title: "Få en prisuppskattning",
-            description: "Ett pris för ert företag.",
+            description: "Ett pris för just ditt företag.",
             icon: ICONS.mail,
           },
         ],
@@ -212,7 +212,7 @@ export const NAV_SECTIONS: NavSection[] = [
         heading: "Om oss",
         links: [
           { href: "/om-oss#ide", title: "Vår idé", description: "Varför vi bygger Vera.", icon: ICONS.info },
-          { href: "/om-oss#grundaren", title: "Grundaren", description: "Personen bakom VeraAI.", icon: ICONS.people },
+          { href: "/om-oss#grundaren", title: "Grundaren", description: "Kiosken där allt började.", icon: ICONS.people },
           { href: "/#kontakt", title: "Kontakta oss", description: "Svar inom en arbetsdag.", icon: ICONS.mail },
         ],
       },

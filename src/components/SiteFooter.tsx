@@ -44,7 +44,7 @@ export function SiteFooter() {
           <div className="min-w-0 flex-[2_1_260px]">
             <Logo />
             <p className="mx-0 mt-4 mb-0 max-w-[320px] text-[14px] leading-[1.6] text-ink-soft">
-              AI-agenter som tar hand om administrationen, så att ni kan fokusera på verksamheten.
+              AI-agenter som sköter administrationen, så att du kan driva företaget.
             </p>
             <p className="mx-0 mt-4 mb-0 text-[14px] leading-[1.7] text-ink-soft">
               <a href="mailto:hej@veralabs.se" className="font-semibold text-contrast">
@@ -82,7 +82,7 @@ export function SiteFooter() {
               veralabs.se
             </a>
           </span>
-          <span>VeraAI är ett varumärke från Vera Labs AB. Alla företag och siffror i exemplen är påhittade.</span>
+          <span>VeraAI är ett varumärke från Vera Labs AB, Stockholm. Företag och siffror i exemplen är påhittade.</span>
         </div>
       </div>
     </footer>

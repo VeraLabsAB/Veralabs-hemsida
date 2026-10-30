@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     template: "%s – VeraAI",
   },
   description:
-    "Vera är ett team av AI-agenter som förbereder bokföringen, bevakar marknaden och tar fram underlag för era beslut. Ni granskar och godkänner.",
+    "Vera är ett team av AI-agenter som sköter bokföringen, bevakar marknaden och räknar på dina beslut. Du godkänner, Vera gör resten. Från Vera Labs i Stockholm.",
   robots: { index: false, follow: false },
 };
 
@@ -45,7 +45,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       <body>
         {/* Soft Light Steel spots behind every page, so glass surfaces have something to blur (DESIGN-GLASS.md §5). */}
         <div className="light-field" aria-hidden="true" />
-        {/* Slide-in boxes start 90px off to the side; clip so phones can't scroll sideways. */}
+        {/* Clip so phones can't scroll sideways (safety net for wide tables and example cards). */}
         <div className="min-h-screen overflow-x-clip">
           <SiteHeader />
           <main>{children}</main>

@@ -4,303 +4,324 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Säkerhet",
   description:
-    "Vera förbereder och motiverar. Inget förs in i ert bokförings­program förrän ni har godkänt, per post eller en gång i veckan, oavsett arbetssätt.",
+    "Säkerhet hos Vera: inget bokförs utan ditt godkännande, tekniska spärrar, full loggning och uppgifter som aldrig tränar AI-modeller.",
 };
 
 export default function SakerhetPage() {
   return (
     <>
-      <div className="bg-[linear-gradient(180deg,var(--page)_0%,var(--surface-muted)_100%)]">
-        <div className="mx-auto my-0 px-10 pt-18 pb-22 max-w-[1200px] box-border flex flex-col items-center text-center">
-          <div className="mb-6 px-3.5 py-1.5 rounded-full inline-block bg-chip text-contrast text-[13px] font-semibold tracking-[0.14em] uppercase">
-            Säkerhet
+      {/* Samma layout som startsidan (2026-10-30): mörkt helskärms-hero bakom header-pillen, sedan en skärm
+          per sektion som växlar mellan sidbakgrund och kortyta utan streck emellan. */}
+      <div className="lv-hero text-snow -mt-[68px] pt-[68px] max-[900px]:-mt-[60px] max-[900px]:pt-[60px] min-h-dvh box-border flex items-center">
+        <div className="mx-auto my-0 px-10 pt-20 pb-24 w-full max-w-[1200px] box-border">
+          <div className="max-w-[760px]">
+            <div className="mb-6 px-3.5 py-1.5 rounded-full inline-block bg-snow/8 border border-snow/18 text-platinum text-[13px] font-semibold tracking-[0.14em] uppercase">
+              Säkerhet
+            </div>
+            <h1 className="mx-0 mt-0 mb-6 font-display font-bold uppercase tracking-[0.01em] text-[clamp(32px,5.5vw,56px)] leading-[1.05] wrap-break-word text-snow">
+              Du har sista ordet.
+            </h1>
+            <p className="mx-0 mt-0 mb-8 text-[18px] leading-[1.65] text-pale-1 font-sans max-w-[600px]">
+              Vera förbereder och motiverar. Inget förs in i ditt bokförings&shy;program förrän du godkänt, per post
+              eller en gång i veckan. Oavsett läge, utan undantag.
+            </p>
+            <div className="gap-3 flex flex-wrap">
+              <a className="btn btn--primary theme-dark" href="#skydd">
+                Så skyddar vi dig
+              </a>
+              <Link className="btn btn--secondary theme-dark" href="/#kontakt">
+                Boka en demo
+              </Link>
+            </div>
           </div>
-          <h1 className="mx-0 mt-0 mb-6 font-display font-bold text-[clamp(32px,8vw,55px)] leading-[1.04] tracking-[0.01em] uppercase w-full max-w-[1000px] wrap-break-word">
-            Ni har sista ordet.
-          </h1>
-          <p className="mx-auto my-0 text-[17px] leading-[1.6] text-ink font-serif max-w-[600px] uppercase tracking-[0.03em] font-bold">
-            Vera förbereder och motiverar. Inget förs in i ert bokförings&shy;program förrän ni har godkänt, per post
-            eller en gång i veckan, oavsett arbetssätt.
+        </div>
+      </div>
+      <div className="bg-surface min-[900px]:min-h-dvh box-border flex items-center scroll-mt-20" id="skydd">
+        <div className="mx-auto my-0 px-10 py-20 w-full max-w-[1200px] box-border">
+          <div className="mb-10 max-w-[720px] reveal">
+            <div className="mb-5 px-3.5 py-1.5 rounded-full inline-block bg-chip text-contrast text-[13px] font-semibold tracking-[0.14em] uppercase">
+              Skydd
+            </div>
+            <h2 className="m-0 font-display font-bold uppercase tracking-[0.01em] text-[clamp(28px,6.5vw,42px)] leading-[1.05] wrap-break-word">
+              Så här skyddar vi dig.
+            </h2>
+          </div>
+          <div className="gap-6 grid grid-cols-[repeat(auto-fit,minmax(min(300px,100%),1fr))] reveal-stagger">
+            <div className="p-7 gap-3.5 rounded-card flex items-start bg-page border border-line min-w-0 wrap-break-word">
+              <svg className="mt-0.5 flex-none" width="22" height="22" viewBox="0 0 24 24" aria-hidden="true">
+                <path
+                  d="M5 12.5l4.5 4.5L19 7.5"
+                  fill="none"
+                  stroke="var(--accent)"
+                  strokeWidth="2.4"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
+              <div className="min-w-0">
+                <div className="mb-1 font-bold text-[14px] tracking-[0.08em] uppercase">Godkännande</div>
+                <div className="text-[16px] leading-[1.55] text-ink font-sans">
+                  Inget förs in i dina system och inget skickas iväg utan ditt klartecken.
+                </div>
+              </div>
+            </div>
+            <div className="p-7 gap-3.5 rounded-card flex items-start bg-page border border-line min-w-0 wrap-break-word">
+              <svg className="mt-0.5 flex-none" width="22" height="22" viewBox="0 0 24 24" aria-hidden="true">
+                <path
+                  d="M5 12.5l4.5 4.5L19 7.5"
+                  fill="none"
+                  stroke="var(--accent)"
+                  strokeWidth="2.4"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
+              <div className="min-w-0">
+                <div className="mb-1 font-bold text-[14px] tracking-[0.08em] uppercase">Tekniska spärrar</div>
+                <div className="text-[16px] leading-[1.55] text-ink font-sans">
+                  Vera kan bara utföra en fast lista med åtgärder. Spärrarna som stoppar fel ligger utanför det Vera
+                  själv kan ändra. Det är teknik, inte en rutin.
+                </div>
+              </div>
+            </div>
+            <div className="p-7 gap-3.5 rounded-card flex items-start bg-page border border-line min-w-0 wrap-break-word">
+              <svg className="mt-0.5 flex-none" width="22" height="22" viewBox="0 0 24 24" aria-hidden="true">
+                <path
+                  d="M5 12.5l4.5 4.5L19 7.5"
+                  fill="none"
+                  stroke="var(--accent)"
+                  strokeWidth="2.4"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
+              <div className="min-w-0">
+                <div className="mb-1 font-bold text-[14px] tracking-[0.08em] uppercase">Regelbok</div>
+                <div className="text-[16px] leading-[1.55] text-ink font-sans">
+                  Varje företag har sin egen regelbok. Det som ingen regel täcker blir en fråga till dig, aldrig en
+                  gissning.
+                </div>
+              </div>
+            </div>
+            <div className="p-7 gap-3.5 rounded-card flex items-start bg-page border border-line min-w-0 wrap-break-word">
+              <svg className="mt-0.5 flex-none" width="22" height="22" viewBox="0 0 24 24" aria-hidden="true">
+                <path
+                  d="M5 12.5l4.5 4.5L19 7.5"
+                  fill="none"
+                  stroke="var(--accent)"
+                  strokeWidth="2.4"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
+              <div className="min-w-0">
+                <div className="mb-1 font-bold text-[14px] tracking-[0.08em] uppercase">Loggning</div>
+                <div className="text-[16px] leading-[1.55] text-ink font-sans">
+                  Vad som gjordes, när, och på vilket underlag. Alltid.
+                </div>
+              </div>
+            </div>
+            <div className="p-7 gap-3.5 rounded-card flex items-start bg-page border border-line min-w-0 wrap-break-word">
+              <svg className="mt-0.5 flex-none" width="22" height="22" viewBox="0 0 24 24" aria-hidden="true">
+                <path
+                  d="M5 12.5l4.5 4.5L19 7.5"
+                  fill="none"
+                  stroke="var(--accent)"
+                  strokeWidth="2.4"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
+              <div className="min-w-0">
+                <div className="mb-1 font-bold text-[14px] tracking-[0.08em] uppercase">Behörighet</div>
+                <div className="text-[16px] leading-[1.55] text-ink font-sans">
+                  Vera ser bara de konton och system du kopplar in.
+                </div>
+              </div>
+            </div>
+            <div className="p-7 gap-3.5 rounded-card flex items-start bg-page border border-line min-w-0 wrap-break-word">
+              <svg className="mt-0.5 flex-none" width="22" height="22" viewBox="0 0 24 24" aria-hidden="true">
+                <path
+                  d="M5 12.5l4.5 4.5L19 7.5"
+                  fill="none"
+                  stroke="var(--accent)"
+                  strokeWidth="2.4"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
+              <div className="min-w-0">
+                <div className="mb-1 font-bold text-[14px] tracking-[0.08em] uppercase">Befintliga system</div>
+                <div className="text-[16px] leading-[1.55] text-ink font-sans">
+                  Vera jobbar i dina nuvarande program. Du byter ingenting.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="mx-auto my-0 px-10 py-20 max-w-[1200px] box-border min-[900px]:min-h-dvh flex flex-col justify-center">
+        <div className="mb-10 max-w-[720px] reveal">
+          <div className="mb-5 px-3.5 py-1.5 rounded-full inline-block bg-chip text-contrast text-[13px] font-semibold tracking-[0.14em] uppercase">
+            Per agent
+          </div>
+          <h2 className="mx-0 mt-0 mb-4 font-display font-bold uppercase tracking-[0.01em] text-[clamp(28px,6.5vw,42px)] leading-[1.05] wrap-break-word">
+            Per agent
+          </h2>
+          <p className="m-0 text-[18px] leading-[1.6] text-ink font-sans">
+            Samma princip för alla agenter. Så här ser den ut i praktiken.
           </p>
         </div>
+        <div className="gap-6 grid grid-cols-[repeat(auto-fit,minmax(min(240px,100%),1fr))] reveal-stagger">
+          <div className="p-7 gap-3.5 rounded-card flex items-start bg-surface min-w-0 wrap-break-word">
+            <svg className="mt-0.5 flex-none" width="22" height="22" viewBox="0 0 24 24" aria-hidden="true">
+              <path
+                d="M5 12.5l4.5 4.5L19 7.5"
+                fill="none"
+                stroke="var(--accent)"
+                strokeWidth="2.4"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+            </svg>
+            <div className="min-w-0">
+              <div className="mb-1 font-bold text-[14px] tracking-[0.08em] uppercase">Bokföring</div>
+              <div className="text-[16px] leading-[1.55] text-ink font-sans">
+                Förs in i bokförings&shy;programmet först när du godkänt.
+              </div>
+            </div>
+          </div>
+          <div className="p-7 gap-3.5 rounded-card flex items-start bg-surface min-w-0 wrap-break-word">
+            <svg className="mt-0.5 flex-none" width="22" height="22" viewBox="0 0 24 24" aria-hidden="true">
+              <path
+                d="M5 12.5l4.5 4.5L19 7.5"
+                fill="none"
+                stroke="var(--accent)"
+                strokeWidth="2.4"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+            </svg>
+            <div className="min-w-0">
+              <div className="mb-1 font-bold text-[14px] tracking-[0.08em] uppercase">Trender och strategi</div>
+              <div className="text-[16px] leading-[1.55] text-ink font-sans">
+                Förslag och råd med underlag. Aldrig egna åtgärder.
+              </div>
+            </div>
+          </div>
+          <div className="p-7 gap-3.5 rounded-card flex items-start bg-surface min-w-0 wrap-break-word">
+            <svg className="mt-0.5 flex-none" width="22" height="22" viewBox="0 0 24 24" aria-hidden="true">
+              <path
+                d="M5 12.5l4.5 4.5L19 7.5"
+                fill="none"
+                stroke="var(--accent)"
+                strokeWidth="2.4"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+            </svg>
+            <div className="min-w-0">
+              <div className="mb-1 font-bold text-[14px] tracking-[0.08em] uppercase">Leverantörer</div>
+              <div className="text-[16px] leading-[1.55] text-ink font-sans">
+                Ingen kontakt utan ditt godkännande. Avtal och inköp sköter du.
+              </div>
+            </div>
+          </div>
+          <div className="p-7 gap-3.5 rounded-card flex items-start bg-surface min-w-0 wrap-break-word">
+            <svg className="mt-0.5 flex-none" width="22" height="22" viewBox="0 0 24 24" aria-hidden="true">
+              <path
+                d="M5 12.5l4.5 4.5L19 7.5"
+                fill="none"
+                stroke="var(--accent)"
+                strokeWidth="2.4"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+            </svg>
+            <div className="min-w-0">
+              <div className="mb-1 font-bold text-[14px] tracking-[0.08em] uppercase">Privatpersoner</div>
+              <div className="text-[16px] leading-[1.55] text-ink font-sans">
+                Läsbehörighet till konton, aldrig mer. Inget flyttas eller bokas utan ditt ja.
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-      <div className="bg-surface border-t border-t-line border-b border-b-line">
-        <div className="mx-auto my-0 px-10 py-20 max-w-[1200px] box-border">
-          <h2
-            className="mx-0 mt-0 mb-10 font-display font-bold text-[clamp(28px,6vw,42px)] leading-[1.05] tracking-[0.01em] uppercase wrap-break-word"
-            id="skydd"
-          >
-            Så här skyddar vi er
+      <div className="bg-surface min-[900px]:min-h-dvh box-border flex items-center scroll-mt-20" id="data">
+        <div className="mx-auto my-0 px-10 py-20 w-full max-w-[1200px] box-border">
+        <div className="mb-10 max-w-[720px] reveal">
+          <div className="mb-5 px-3.5 py-1.5 rounded-full inline-block bg-chip text-contrast text-[13px] font-semibold tracking-[0.14em] uppercase">
+            Uppgifter
+          </div>
+          <h2 className="mx-0 mt-0 mb-4 font-display font-bold uppercase tracking-[0.01em] text-[clamp(28px,6.5vw,42px)] leading-[1.05] wrap-break-word">
+            Dina uppgifter
           </h2>
-          <div className="gap-6 grid grid-cols-[repeat(auto-fit,minmax(min(300px,100%),1fr))]">
-            <div className="p-7 gap-3.5 rounded-2xl flex items-start bg-page min-w-0 wrap-break-word">
-              <svg className="mt-0.5 flex-none" width="22" height="22" viewBox="0 0 24 24" aria-hidden="true">
-                <path
-                  d="M5 12.5l4.5 4.5L19 7.5"
-                  fill="none"
-                  stroke="var(--accent)"
-                  strokeWidth="2.4"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-              </svg>
-              <div className="min-w-0">
-                <div className="mb-1.5 font-semibold text-[14px] tracking-[0.08em] uppercase">Godkännande</div>
-                <div className="font-serif text-[17px] leading-[1.6] text-ink uppercase tracking-[0.03em]">
-                  Inget förs in i era system och inget skickas iväg utan ert klartecken.
-                </div>
-              </div>
-            </div>
-            <div className="p-7 gap-3.5 rounded-2xl flex items-start bg-page min-w-0 wrap-break-word">
-              <svg className="mt-0.5 flex-none" width="22" height="22" viewBox="0 0 24 24" aria-hidden="true">
-                <path
-                  d="M5 12.5l4.5 4.5L19 7.5"
-                  fill="none"
-                  stroke="var(--accent)"
-                  strokeWidth="2.4"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-              </svg>
-              <div className="min-w-0">
-                <div className="mb-1.5 font-semibold text-[14px] tracking-[0.08em] uppercase">Tekniska spärrar</div>
-                <div className="font-serif text-[17px] leading-[1.6] text-ink uppercase tracking-[0.03em]">
-                  Vera kan bara utföra en fast uppsättning åtgärder. Kontrollerna som stoppar fel ligger utanför det
-                  Vera själv kan ändra.
-                </div>
-              </div>
-            </div>
-            <div className="p-7 gap-3.5 rounded-2xl flex items-start bg-page min-w-0 wrap-break-word">
-              <svg className="mt-0.5 flex-none" width="22" height="22" viewBox="0 0 24 24" aria-hidden="true">
-                <path
-                  d="M5 12.5l4.5 4.5L19 7.5"
-                  fill="none"
-                  stroke="var(--accent)"
-                  strokeWidth="2.4"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-              </svg>
-              <div className="min-w-0">
-                <div className="mb-1.5 font-semibold text-[14px] tracking-[0.08em] uppercase">Regelbok</div>
-                <div className="font-serif text-[17px] leading-[1.6] text-ink uppercase tracking-[0.03em]">
-                  Varje företag har en egen regelbok. Det som inte täcks av en regel blir en fråga.
-                </div>
-              </div>
-            </div>
-            <div className="p-7 gap-3.5 rounded-2xl flex items-start bg-page min-w-0 wrap-break-word">
-              <svg className="mt-0.5 flex-none" width="22" height="22" viewBox="0 0 24 24" aria-hidden="true">
-                <path
-                  d="M5 12.5l4.5 4.5L19 7.5"
-                  fill="none"
-                  stroke="var(--accent)"
-                  strokeWidth="2.4"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-              </svg>
-              <div className="min-w-0">
-                <div className="mb-1.5 font-semibold text-[14px] tracking-[0.08em] uppercase">Loggning</div>
-                <div className="font-serif text-[17px] leading-[1.6] text-ink uppercase tracking-[0.03em]">
-                  Vad som gjordes, när och på vilket underlag.
-                </div>
-              </div>
-            </div>
-            <div className="p-7 gap-3.5 rounded-2xl flex items-start bg-page min-w-0 wrap-break-word">
-              <svg className="mt-0.5 flex-none" width="22" height="22" viewBox="0 0 24 24" aria-hidden="true">
-                <path
-                  d="M5 12.5l4.5 4.5L19 7.5"
-                  fill="none"
-                  stroke="var(--accent)"
-                  strokeWidth="2.4"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-              </svg>
-              <div className="min-w-0">
-                <div className="mb-1.5 font-semibold text-[14px] tracking-[0.08em] uppercase">Behörighet</div>
-                <div className="font-serif text-[17px] leading-[1.6] text-ink uppercase tracking-[0.03em]">
-                  Vera ser bara de konton och system ni kopplar in.
-                </div>
-              </div>
-            </div>
-            <div className="p-7 gap-3.5 rounded-2xl flex items-start bg-page min-w-0 wrap-break-word">
-              <svg className="mt-0.5 flex-none" width="22" height="22" viewBox="0 0 24 24" aria-hidden="true">
-                <path
-                  d="M5 12.5l4.5 4.5L19 7.5"
-                  fill="none"
-                  stroke="var(--accent)"
-                  strokeWidth="2.4"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-              </svg>
-              <div className="min-w-0">
-                <div className="mb-1.5 font-semibold text-[14px] tracking-[0.08em] uppercase">Befintliga system</div>
-                <div className="font-serif text-[17px] leading-[1.6] text-ink uppercase tracking-[0.03em]">
-                  Vera arbetar i era nuvarande program.
-                </div>
-              </div>
-            </div>
-          </div>
+          <p className="m-0 text-[18px] leading-[1.6] text-ink font-sans">
+            Vem som äger dem, var de ligger och hur de skyddas.
+          </p>
         </div>
-      </div>
-      <div className="mx-auto my-0 px-10 pt-20 pb-0 max-w-[1200px] box-border">
-        <h2 className="mx-0 mt-0 mb-4 font-display font-bold text-[clamp(28px,6vw,42px)] leading-[1.05] tracking-[0.01em] uppercase wrap-break-word">
-          Per agent
-        </h2>
-        <p className="mx-0 mt-0 mb-10 max-w-[640px] font-serif text-[17px] leading-[1.6] text-ink uppercase tracking-[0.03em]">
-          Principen är densamma. Tillämpningen skiljer sig.
-        </p>
-        <div className="gap-6 grid grid-cols-[repeat(auto-fit,minmax(min(240px,100%),1fr))]">
-          <div className="p-7 gap-3.5 rounded-2xl flex items-start bg-surface min-w-0 wrap-break-word">
-            <svg className="mt-0.5 flex-none" width="22" height="22" viewBox="0 0 24 24" aria-hidden="true">
-              <path
-                d="M5 12.5l4.5 4.5L19 7.5"
-                fill="none"
-                stroke="var(--accent)"
-                strokeWidth="2.4"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-            </svg>
-            <div className="min-w-0">
-              <div className="mb-1.5 font-semibold text-[14px] tracking-[0.08em] uppercase">Bokföring</div>
-              <div className="font-serif text-[17px] leading-[1.6] text-ink uppercase tracking-[0.03em]">
-                Införs i bokförings&shy;programmet först efter godkännande.
-              </div>
-            </div>
-          </div>
-          <div className="p-7 gap-3.5 rounded-2xl flex items-start bg-surface min-w-0 wrap-break-word">
-            <svg className="mt-0.5 flex-none" width="22" height="22" viewBox="0 0 24 24" aria-hidden="true">
-              <path
-                d="M5 12.5l4.5 4.5L19 7.5"
-                fill="none"
-                stroke="var(--accent)"
-                strokeWidth="2.4"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-            </svg>
-            <div className="min-w-0">
-              <div className="mb-1.5 font-semibold text-[14px] tracking-[0.08em] uppercase">Trender och strategi</div>
-              <div className="font-serif text-[17px] leading-[1.6] text-ink uppercase tracking-[0.03em]">
-                Förslag och råd med underlag, aldrig egna åtgärder.
-              </div>
-            </div>
-          </div>
-          <div className="p-7 gap-3.5 rounded-2xl flex items-start bg-surface min-w-0 wrap-break-word">
-            <svg className="mt-0.5 flex-none" width="22" height="22" viewBox="0 0 24 24" aria-hidden="true">
-              <path
-                d="M5 12.5l4.5 4.5L19 7.5"
-                fill="none"
-                stroke="var(--accent)"
-                strokeWidth="2.4"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-            </svg>
-            <div className="min-w-0">
-              <div className="mb-1.5 font-semibold text-[14px] tracking-[0.08em] uppercase">Leverantörer</div>
-              <div className="font-serif text-[17px] leading-[1.6] text-ink uppercase tracking-[0.03em]">
-                Ingen kontakt utan godkännande. Avtal och inköp sköter ni.
-              </div>
-            </div>
-          </div>
-          <div className="p-7 gap-3.5 rounded-2xl flex items-start bg-surface min-w-0 wrap-break-word">
-            <svg className="mt-0.5 flex-none" width="22" height="22" viewBox="0 0 24 24" aria-hidden="true">
-              <path
-                d="M5 12.5l4.5 4.5L19 7.5"
-                fill="none"
-                stroke="var(--accent)"
-                strokeWidth="2.4"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-            </svg>
-            <div className="min-w-0">
-              <div className="mb-1.5 font-semibold text-[14px] tracking-[0.08em] uppercase">Privatpersoner</div>
-              <div className="font-serif text-[17px] leading-[1.6] text-ink uppercase tracking-[0.03em]">
-                Läsbehörighet till konton. Inget flyttas eller bokas utan ditt ja.
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div className="mx-auto my-0 px-10 py-20 max-w-[1200px] box-border">
-        <h2
-          className="mx-0 mt-0 mb-4 font-display font-bold text-[clamp(28px,6vw,42px)] leading-[1.05] tracking-[0.01em] uppercase wrap-break-word"
-          id="data"
-        >
-          Era uppgifter
-        </h2>
-        <p className="mx-0 mt-0 mb-6 max-w-[640px] font-serif text-[17px] leading-[1.6] text-ink uppercase tracking-[0.03em]">
-          Ägande, lagring och skydd.
-        </p>
-        <div className="border-t border-t-line">
+        <div className="border-t border-t-line reveal-stagger">
           <div className="px-0 py-6 gap-y-2 gap-x-8 flex flex-wrap border-b border-b-line">
             <div className="flex-[1_1_240px] max-w-[320px] font-bold text-[14px] tracking-[0.08em] uppercase leading-[1.5]">
               Ägande
             </div>
-            <div className="flex-[2_1_360px] min-w-0 font-serif text-[17px] leading-[1.6] text-ink uppercase tracking-[0.03em]">
-              Uppgifterna och regelboken tillhör ert företag och används bara för er.
+            <div className="flex-[2_1_360px] min-w-0 text-[16px] leading-[1.55] text-ink font-sans">
+              Uppgifterna och regelboken tillhör ditt företag och används bara för dig.
             </div>
           </div>
           <div className="px-0 py-6 gap-y-2 gap-x-8 flex flex-wrap border-b border-b-line">
             <div className="flex-[1_1_240px] max-w-[320px] font-bold text-[14px] tracking-[0.08em] uppercase leading-[1.5]">
               AI-träning
             </div>
-            <div className="flex-[2_1_360px] min-w-0 font-serif text-[17px] leading-[1.6] text-ink uppercase tracking-[0.03em]">
+            <div className="flex-[2_1_360px] min-w-0 text-[16px] leading-[1.55] text-ink font-sans">
               Vera bygger på Claude från Anthropic och används via Anthropics tjänst för företag. Enligt villkoren
-              används uppgifterna inte för att träna AI-modeller.
+              används dina uppgifter inte för att träna AI-modeller.
             </div>
           </div>
           <div className="px-0 py-6 gap-y-2 gap-x-8 flex flex-wrap border-b border-b-line">
             <div className="flex-[1_1_240px] max-w-[320px] font-bold text-[14px] tracking-[0.08em] uppercase leading-[1.5]">
               Skydd
             </div>
-            <div className="flex-[2_1_360px] min-w-0 font-serif text-[17px] leading-[1.6] text-ink uppercase tracking-[0.03em]">
-              Kryptering vid överföring och lagring. Egna konton med tvåstegs&shy;verifiering och behörigheter per
-              person.
+            <div className="flex-[2_1_360px] min-w-0 text-[16px] leading-[1.55] text-ink font-sans">
+              Kryptering vid överföring och lagring. Egna konton med tvåstegs&shy;verifiering, och behörigheter per
+              person så att var och en bara ser det hen ska.
             </div>
           </div>
           <div className="px-0 py-6 gap-y-2 gap-x-8 flex flex-wrap border-b border-b-line">
             <div className="flex-[1_1_240px] max-w-[320px] font-bold text-[14px] tracking-[0.08em] uppercase leading-[1.5]">
               Lagringstid
             </div>
-            <div className="flex-[2_1_360px] min-w-0 font-serif text-[17px] leading-[1.6] text-ink uppercase tracking-[0.03em]">
-              Loggar sparas så länge tjänsten används och raderas när kontot avslutas. Bokföringens underlag finns kvar
-              i ert bokförings&shy;program, där de enligt bokföringslagen ska sparas i sju år.
+            <div className="flex-[2_1_360px] min-w-0 text-[16px] leading-[1.55] text-ink font-sans">
+              Loggar sparas så länge du använder tjänsten och raderas när du avslutar kontot. Bokföringens underlag
+              finns kvar i ditt bokförings&shy;program, där bokföringslagen kräver att de sparas i sju år.
             </div>
           </div>
           <div className="px-0 py-6 gap-y-2 gap-x-8 flex flex-wrap border-b border-b-line">
             <div className="flex-[1_1_240px] max-w-[320px] font-bold text-[14px] tracking-[0.08em] uppercase leading-[1.5]">
               GDPR
             </div>
-            <div className="flex-[2_1_360px] min-w-0 font-serif text-[17px] leading-[1.6] text-ink uppercase tracking-[0.03em]">
-              Ett personuppgifts&shy;biträdes&shy;avtal tecknas när Vera hanterar personuppgifter åt er.
+            <div className="flex-[2_1_360px] min-w-0 text-[16px] leading-[1.55] text-ink font-sans">
+              Ett personuppgifts&shy;biträdes&shy;avtal tecknas när Vera hanterar personuppgifter åt dig.
             </div>
           </div>
         </div>
+        </div>
       </div>
-      <div className="bg-surface border-t border-t-line border-b border-b-line">
-        <div className="mx-auto my-0 px-10 py-22 gap-12 max-w-[1200px] box-border flex flex-wrap items-start">
+      <div className="min-[900px]:min-h-dvh box-border flex items-center scroll-mt-20" id="avgransning">
+        <div className="mx-auto my-0 px-10 py-20 gap-12 w-full max-w-[1200px] box-border flex flex-wrap items-start reveal-stagger">
           <div className="flex-[1_1_300px] min-w-0">
-            <h2
-              className="mx-0 mt-0 mb-5 font-display font-bold text-[clamp(28px,6vw,42px)] leading-[1.05] tracking-[0.01em] uppercase wrap-break-word"
-              id="avgransning"
-            >
+            <h2 className="mx-0 mt-0 mb-5 font-display font-bold text-[clamp(28px,6vw,42px)] leading-[1.05] tracking-[0.01em] uppercase wrap-break-word">
               Vera är
             </h2>
-            <p className="m-0 font-serif text-[17px] leading-[1.6] text-ink uppercase tracking-[0.03em]">
-              Ett stöd som förbereder, kontrollerar och förklarar.
+            <p className="m-0 text-[18px] leading-[1.6] text-ink font-sans">
+              En kollega som förbereder, kontrollerar och förklarar.
             </p>
           </div>
           <div className="flex-[1_1_300px] min-w-0">
             <h2 className="mx-0 mt-0 mb-5 font-display font-bold text-[clamp(28px,6vw,42px)] leading-[1.05] tracking-[0.01em] uppercase wrap-break-word">
               Vera är inte
             </h2>
-            <p className="m-0 font-serif text-[17px] leading-[1.6] text-ink uppercase tracking-[0.03em]">
+            <p className="m-0 text-[18px] leading-[1.6] text-ink font-sans">
               Revisor eller juridiskt ansvarig. Företaget, genom styrelsen eller ägaren, ansvarar för bokföringen och
               besluten. Vera ger inga råd om enskilda värdepapper.
             </p>
@@ -309,27 +330,32 @@ export default function SakerhetPage() {
             <h2 className="mx-0 mt-0 mb-5 font-display font-bold text-[clamp(28px,6vw,42px)] leading-[1.05] tracking-[0.01em] uppercase wrap-break-word">
               Vid fel
             </h2>
-            <p className="m-0 font-serif text-[17px] leading-[1.6] text-ink uppercase tracking-[0.03em]">
-              Rättelsen sparas i regelboken. Har en post redan bokförts görs en rättelsepost som godkänns som vanligt,
-              och allt syns i loggen.
+            <p className="m-0 text-[18px] leading-[1.6] text-ink font-sans">
+              Rättelsen sparas i regelboken, så att samma fel inte uppstår igen. Är posten redan bokförd görs en
+              rättelsepost som du godkänner som vanligt. Allt syns i loggen.
             </p>
           </div>
         </div>
       </div>
-      <div className="bg-contrast text-ink-inverse">
-        <div className="mx-auto my-0 px-10 py-18 max-w-[1200px] box-border flex flex-col items-center text-center">
-          <h2 className="mx-0 mt-0 mb-4 font-display font-bold text-[clamp(28px,6vw,40px)] tracking-[0.01em] uppercase wrap-break-word">
+      <div className="bg-surface min-[900px]:min-h-dvh box-border flex items-center">
+        <div className="mx-auto my-0 px-10 py-20 w-full max-w-[1200px] box-border flex flex-col items-center text-center reveal">
+          <div className="mb-5 px-3.5 py-1.5 rounded-full inline-block bg-chip text-contrast text-[13px] font-semibold tracking-[0.14em] uppercase">
+            Kontakt
+          </div>
+          <h2 className="mx-0 mt-0 mb-4 font-display font-bold uppercase tracking-[0.01em] text-[clamp(28px,6.5vw,42px)] leading-[1.05] wrap-break-word">
             Frågor om säkerhet?
           </h2>
-          <p className="mx-auto mt-0 mb-7 text-[17px] leading-[1.6] text-ink-inverse-soft font-serif max-w-[520px] uppercase tracking-[0.03em]">
-            Vi går igenom hur era uppgifter hanteras.
+          <p className="mx-auto mt-0 mb-8 text-[18px] leading-[1.6] text-ink font-sans max-w-[520px]">
+            Vi går igenom exakt hur dina uppgifter hanteras. Fråga vad du vill.
           </p>
-          <Link
-            className="btn btn--primary theme-inverse"
-            href="/#kontakt"
-          >
-            Boka en demo
-          </Link>
+          <div className="gap-3 flex flex-wrap justify-center">
+            <Link className="btn btn--primary" href="/#kontakt">
+              Boka en demo
+            </Link>
+            <Link className="btn btn--secondary" href="/vanliga-fragor">
+              Vanliga frågor
+            </Link>
+          </div>
         </div>
       </div>
     </>

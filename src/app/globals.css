@@ -140,7 +140,8 @@
   --font-sans: var(--font-montserrat), system-ui, sans-serif;
   --font-display: var(--font-league-spartan), sans-serif;
   --font-brand: var(--font-archivo-black), sans-serif;
-  --font-serif: "Times New Roman", Times, serif;
+  /* --font-serif (Times New Roman i versaler) togs bort 2026-10-30: ett typsnittsystem
+     på alla sidor (DESIGN-GLASS §10), brödtexten är Montserrat som på startsidan. */
   --font-mono: ui-monospace, SFMono-Regular, Menlo, monospace;
 }
 
@@ -347,22 +348,14 @@
     text-transform: uppercase;
     line-height: 1.4;
   }
+  /* Samma typsnitt som brödtexten på alla sidor (startsidans stil, 2026-10-30). */
   .nav-link-desc {
     display: block;
     margin-top: 3px;
-    font-family: var(--font-serif);
-    font-size: 14px;
-    line-height: 1.4;
-    color: var(--ink-soft);
-    text-transform: uppercase;
-    letter-spacing: 0.03em;
-  }
-  :root:has(.lv-page) .nav-link-desc {
     font-family: var(--font-sans);
     font-size: 13px;
     line-height: 1.45;
-    text-transform: none;
-    letter-spacing: normal;
+    color: var(--ink-soft);
   }
   .nav-burger {
     display: none;
@@ -632,78 +625,8 @@
     }
   }
 
-  /* ── Scroll reveal: boxes slide in as they reach the screen.
-     Without browser support everything is shown directly. ─────────────── */
-  @keyframes vera-in-left {
-    from {
-      opacity: 0;
-      transform: translateX(-90px);
-    }
-    to {
-      opacity: 1;
-      transform: translateX(0);
-    }
-  }
-  @keyframes vera-in-right {
-    from {
-      opacity: 0;
-      transform: translateX(90px);
-    }
-    to {
-      opacity: 1;
-      transform: translateX(0);
-    }
-  }
-  @keyframes vera-in-up {
-    from {
-      opacity: 0;
-      transform: translateY(60px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-  @keyframes vera-in-soft {
-    from {
-      opacity: 0;
-      transform: translateY(48px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-  @supports (animation-timeline: view()) {
-    .reveal-left {
-      animation: vera-in-left linear both;
-      animation-timeline: view();
-      animation-range: entry 0% cover 30%;
-    }
-    .reveal-right {
-      animation: vera-in-right linear both;
-      animation-timeline: view();
-      animation-range: entry 0% cover 30%;
-    }
-    .reveal-up {
-      animation: vera-in-up linear both;
-      animation-timeline: view();
-      animation-range: entry 0% cover 30%;
-    }
-    .reveal-soft {
-      animation: vera-in-soft linear both;
-      animation-timeline: view();
-      animation-range: entry 0% cover 25%;
-    }
-  }
-  @media (prefers-reduced-motion: reduce) {
-    .reveal-left,
-    .reveal-right,
-    .reveal-up,
-    .reveal-soft {
-      animation: none !important;
-    }
-  }
+  /* De gamla sidoglidande intoningarna (.reveal-left/-right/-up/-soft) är borttagna
+     2026-10-30: alla sidor använder nu startsidans .reveal / .reveal-stagger nedan. */
 
   /* ── Intoning i glasstil (Hugos beslut 2026-10-30): innehållet tonas in
      och lyfts 20 px medan det scrollas in, styrt av scrollen själv

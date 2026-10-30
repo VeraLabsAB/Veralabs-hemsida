@@ -4,7 +4,8 @@ import { SavingsCalculator } from "@/components/SavingsCalculator";
 
 export const metadata: Metadata = {
   title: "Priser",
-  description: "Hela den löpande ekonomin.",
+  description:
+    "Priser för Vera: fast månadspris per agent, rabatt när du väljer flera, gratis demo och en testmånad du bara betalar för om du är nöjd.",
 };
 
 export default function PriserPage() {
@@ -13,25 +14,47 @@ export default function PriserPage() {
       <input className="pf-in" type="radio" name="pf" id="pf-f" defaultChecked aria-label="Företag" />
       <input className="pf-in" type="radio" name="pf" id="pf-p" aria-label="Privatperson" />
       <div className="pf-main">
-        <div className="bg-[linear-gradient(180deg,var(--page)_0%,var(--surface-muted)_100%)]">
-          <div className="mx-auto my-0 px-10 pt-18 pb-22 max-w-[1200px] box-border flex flex-col items-center text-center">
-            <h1 className="mx-0 mt-0 mb-8 font-display font-bold text-[clamp(32px,8vw,55px)] leading-[1.04] tracking-[0.01em] uppercase w-full max-w-[1000px] wrap-break-word">
-              Priser och tjänster
-            </h1>
-            {/* Fråga 11: växeln är EN glasyta med två segment; det valda segmentet tonas som en primärknapp. */}
-            <div className="pf-switch glass glass--strong" role="group" aria-label="Visa priser för">
-              <label className="pf-btn" htmlFor="pf-f">
-                Företag
-              </label>
-              <label className="pf-btn" htmlFor="pf-p">
-                Privatperson
-              </label>
+        {/* Samma layout som startsidan (2026-10-30): mörkt helskärms-hero bakom header-pillen, sedan en skärm
+            per sektion som växlar mellan sidbakgrund och kortyta utan streck emellan. */}
+        <div className="lv-hero text-snow -mt-[68px] pt-[68px] max-[900px]:-mt-[60px] max-[900px]:pt-[60px] min-h-dvh box-border flex items-center">
+          <div className="mx-auto my-0 px-10 pt-20 pb-24 w-full max-w-[1200px] box-border">
+            <div className="max-w-[760px]">
+              <div className="mb-6 px-3.5 py-1.5 rounded-full inline-block bg-snow/8 border border-snow/18 text-platinum text-[13px] font-semibold tracking-[0.14em] uppercase">
+                Priser
+              </div>
+              <h1 className="mx-0 mt-0 mb-6 font-display font-bold uppercase tracking-[0.01em] text-[clamp(32px,5.5vw,56px)] leading-[1.05] wrap-break-word text-snow">
+                Ett fast pris. Inga timmar att räkna.
+              </h1>
+              <p className="mx-0 mt-0 mb-8 text-[18px] leading-[1.65] text-pale-1 font-sans max-w-[560px]">
+                Ett fast månadspris per agent, lägre när du väljer flera. Demon är gratis och testmånaden betalar du
+                bara för om du är nöjd.
+              </p>
+              {/* Fråga 11: växeln är EN glasyta med två segment; det valda segmentet tonas som en primärknapp. */}
+              <div className="pf-switch glass glass--strong" role="group" aria-label="Visa priser för">
+                <label className="pf-btn" htmlFor="pf-f">
+                  Företag
+                </label>
+                <label className="pf-btn" htmlFor="pf-p">
+                  Privatperson
+                </label>
+              </div>
             </div>
           </div>
         </div>
-        <div className="bg-surface border-t border-t-line border-b border-b-line">
-          <div className="mx-auto my-0 px-10 py-20 max-w-[1200px] box-border">
-            <div className="only-f pcards-f">
+        <div className="bg-surface min-[900px]:min-h-dvh box-border flex items-center scroll-mt-20" id="tjanster">
+          <div className="mx-auto my-0 px-10 py-20 w-full max-w-[1200px] box-border">
+            <div className="mb-10 max-w-[720px] reveal">
+              <div className="mb-5 px-3.5 py-1.5 rounded-full inline-block bg-chip text-contrast text-[13px] font-semibold tracking-[0.14em] uppercase">
+                Våra tjänster
+              </div>
+              <h2 className="only-f m-0 font-display font-bold uppercase tracking-[0.01em] text-[clamp(28px,6.5vw,42px)] leading-[1.05] wrap-break-word">
+                Välj de agenter som ger dig mest tid tillbaka.
+              </h2>
+              <h2 className="only-p m-0 font-display font-bold uppercase tracking-[0.01em] text-[clamp(28px,6.5vw,42px)] leading-[1.05] wrap-break-word">
+                Tre tjänster för ditt eget liv.
+              </h2>
+            </div>
+            <div className="only-f pcards-f reveal-stagger">
               <div className="p-8 gap-4 rounded-card box-border min-w-0 bg-page border-2 border-accent flex flex-col">
                 <span className="px-3 py-[5px] rounded-full self-start bg-chip text-contrast text-[12px] font-semibold tracking-[0.12em] uppercase">
                   Första agenten
@@ -39,8 +62,8 @@ export default function PriserPage() {
                 <h3 className="m-0 font-display font-bold text-[28px] leading-[1.1] tracking-[0.01em] uppercase wrap-anywhere">
                   Bokförings&shy;agenten
                 </h3>
-                <p className="m-0 text-[16px] leading-[1.55] font-serif text-ink uppercase tracking-[0.03em]">
-                  Hela den löpande ekonomin.
+                <p className="m-0 text-[16px] leading-[1.55] text-ink font-sans">
+                  Hela den löpande ekonomin, varje vecka.
                 </p>
                 <div className="px-0 pt-4 pb-2 gap-2.5 flex flex-col border-t border-t-line">
                   <div className="gap-2.5 flex items-start">
@@ -56,8 +79,8 @@ export default function PriserPage() {
                         />
                       </svg>
                     </span>
-                    <span className="text-[14px] font-medium leading-[1.45] tracking-[0.04em] uppercase min-w-0">
-                      Konteringsförslag enligt regelbok
+                    <span className="text-[16px] leading-[1.5] text-ink font-sans min-w-0">
+                      Kontering enligt din regelbok
                     </span>
                   </div>
                   <div className="gap-2.5 flex items-start">
@@ -73,7 +96,7 @@ export default function PriserPage() {
                         />
                       </svg>
                     </span>
-                    <span className="text-[14px] font-medium leading-[1.45] tracking-[0.04em] uppercase min-w-0">
+                    <span className="text-[16px] leading-[1.5] text-ink font-sans min-w-0">
                       Avstämningar och veckorapport
                     </span>
                   </div>
@@ -90,15 +113,15 @@ export default function PriserPage() {
                         />
                       </svg>
                     </span>
-                    <span className="text-[14px] font-medium leading-[1.45] tracking-[0.04em] uppercase min-w-0">
-                      Godkännande före bokföring
+                    <span className="text-[16px] leading-[1.5] text-ink font-sans min-w-0">
+                      Inget bokförs utan ditt ok
                     </span>
                   </div>
                 </div>
                 <div className="font-display font-bold text-[26px] tracking-[0.02em] uppercase leading-[1.1]">
                   XXX kr
                   <span className="mt-1 block font-sans text-[12px] font-semibold tracking-[0.1em] text-ink-muted">
-                    Per månad och agent, exkl. moms
+                    Per månad och agent, exkl. moms. Allt ingår.
                   </span>
                 </div>
                 <Link
@@ -112,8 +135,8 @@ export default function PriserPage() {
                 <h3 className="m-0 font-display font-bold text-[28px] leading-[1.1] tracking-[0.01em] uppercase wrap-anywhere">
                   Trend&shy;övervakaren
                 </h3>
-                <p className="m-0 text-[16px] leading-[1.55] font-serif text-ink uppercase tracking-[0.03em]">
-                  Marknadssignaler vägda mot ert sortiment.
+                <p className="m-0 text-[16px] leading-[1.55] text-ink font-sans">
+                  Marknaden bevakad, vägd mot ditt sortiment.
                 </p>
                 <div className="px-0 pt-4 pb-2 gap-2.5 flex flex-col border-t border-t-line">
                   <div className="gap-2.5 flex items-start">
@@ -129,7 +152,7 @@ export default function PriserPage() {
                         />
                       </svg>
                     </span>
-                    <span className="text-[14px] font-medium leading-[1.45] tracking-[0.04em] uppercase min-w-0">
+                    <span className="text-[16px] leading-[1.5] text-ink font-sans min-w-0">
                       Bevakning av sökningar och marknadsplatser
                     </span>
                   </div>
@@ -146,7 +169,7 @@ export default function PriserPage() {
                         />
                       </svg>
                     </span>
-                    <span className="text-[14px] font-medium leading-[1.45] tracking-[0.04em] uppercase min-w-0">
+                    <span className="text-[16px] leading-[1.5] text-ink font-sans min-w-0">
                       Inköpsförslag
                     </span>
                   </div>
@@ -163,7 +186,7 @@ export default function PriserPage() {
                         />
                       </svg>
                     </span>
-                    <span className="text-[14px] font-medium leading-[1.45] tracking-[0.04em] uppercase min-w-0">
+                    <span className="text-[16px] leading-[1.5] text-ink font-sans min-w-0">
                       Underlag för kampanjer
                     </span>
                   </div>
@@ -171,7 +194,7 @@ export default function PriserPage() {
                 <div className="font-display font-bold text-[26px] tracking-[0.02em] uppercase leading-[1.1]">
                   XXX kr
                   <span className="mt-1 block font-sans text-[12px] font-semibold tracking-[0.1em] text-ink-muted">
-                    Per månad och agent, exkl. moms
+                    Per månad och agent, exkl. moms. Allt ingår.
                   </span>
                 </div>
                 <Link
@@ -185,8 +208,8 @@ export default function PriserPage() {
                 <h3 className="m-0 font-display font-bold text-[28px] leading-[1.1] tracking-[0.01em] uppercase wrap-anywhere">
                   Strategi&shy;konsulten
                 </h3>
-                <p className="m-0 text-[16px] leading-[1.55] font-serif text-ink uppercase tracking-[0.03em]">
-                  Analys och scenarier från era egna siffror.
+                <p className="m-0 text-[16px] leading-[1.55] text-ink font-sans">
+                  Analys och scenarier från dina egna siffror.
                 </p>
                 <div className="px-0 pt-4 pb-2 gap-2.5 flex flex-col border-t border-t-line">
                   <div className="gap-2.5 flex items-start">
@@ -202,7 +225,7 @@ export default function PriserPage() {
                         />
                       </svg>
                     </span>
-                    <span className="text-[14px] font-medium leading-[1.45] tracking-[0.04em] uppercase min-w-0">
+                    <span className="text-[16px] leading-[1.5] text-ink font-sans min-w-0">
                       Månadsöversikt
                     </span>
                   </div>
@@ -219,7 +242,7 @@ export default function PriserPage() {
                         />
                       </svg>
                     </span>
-                    <span className="text-[14px] font-medium leading-[1.45] tracking-[0.04em] uppercase min-w-0">
+                    <span className="text-[16px] leading-[1.5] text-ink font-sans min-w-0">
                       Prioriterade åtgärder
                     </span>
                   </div>
@@ -236,7 +259,7 @@ export default function PriserPage() {
                         />
                       </svg>
                     </span>
-                    <span className="text-[14px] font-medium leading-[1.45] tracking-[0.04em] uppercase min-w-0">
+                    <span className="text-[16px] leading-[1.5] text-ink font-sans min-w-0">
                       Uppföljning av beslut
                     </span>
                   </div>
@@ -244,7 +267,7 @@ export default function PriserPage() {
                 <div className="font-display font-bold text-[26px] tracking-[0.02em] uppercase leading-[1.1]">
                   XXX kr
                   <span className="mt-1 block font-sans text-[12px] font-semibold tracking-[0.1em] text-ink-muted">
-                    Per månad och agent, exkl. moms
+                    Per månad och agent, exkl. moms. Allt ingår.
                   </span>
                 </div>
                 <Link
@@ -258,8 +281,8 @@ export default function PriserPage() {
                 <h3 className="m-0 font-display font-bold text-[28px] leading-[1.1] tracking-[0.01em] uppercase wrap-anywhere">
                   Leverantörs&shy;agenten
                 </h3>
-                <p className="m-0 text-[16px] leading-[1.55] font-serif text-ink uppercase tracking-[0.03em]">
-                  Sökning och jämförelse av leverantörer.
+                <p className="m-0 text-[16px] leading-[1.55] text-ink font-sans">
+                  Rätt leverantör, hittad och jämförd.
                 </p>
                 <div className="px-0 pt-4 pb-2 gap-2.5 flex flex-col border-t border-t-line">
                   <div className="gap-2.5 flex items-start">
@@ -275,7 +298,7 @@ export default function PriserPage() {
                         />
                       </svg>
                     </span>
-                    <span className="text-[14px] font-medium leading-[1.45] tracking-[0.04em] uppercase min-w-0">
+                    <span className="text-[16px] leading-[1.5] text-ink font-sans min-w-0">
                       Grossister och tillverkare
                     </span>
                   </div>
@@ -292,7 +315,7 @@ export default function PriserPage() {
                         />
                       </svg>
                     </span>
-                    <span className="text-[14px] font-medium leading-[1.45] tracking-[0.04em] uppercase min-w-0">
+                    <span className="text-[16px] leading-[1.5] text-ink font-sans min-w-0">
                       Villkor sida vid sida
                     </span>
                   </div>
@@ -309,7 +332,7 @@ export default function PriserPage() {
                         />
                       </svg>
                     </span>
-                    <span className="text-[14px] font-medium leading-[1.45] tracking-[0.04em] uppercase min-w-0">
+                    <span className="text-[16px] leading-[1.5] text-ink font-sans min-w-0">
                       Förberedda förfrågningar
                     </span>
                   </div>
@@ -317,7 +340,7 @@ export default function PriserPage() {
                 <div className="font-display font-bold text-[26px] tracking-[0.02em] uppercase leading-[1.1]">
                   XXX kr
                   <span className="mt-1 block font-sans text-[12px] font-semibold tracking-[0.1em] text-ink-muted">
-                    Per månad och agent, exkl. moms
+                    Per månad och agent, exkl. moms. Allt ingår.
                   </span>
                 </div>
                 <Link
@@ -337,8 +360,8 @@ export default function PriserPage() {
                 <h3 className="m-0 font-display font-bold text-[28px] leading-[1.1] tracking-[0.01em] uppercase wrap-anywhere">
                   Eget paket
                 </h3>
-                <p className="m-0 text-[16px] leading-[1.55] font-serif text-ink uppercase tracking-[0.03em]">
-                  Två eller fler agenter med rabatt.
+                <p className="m-0 text-[16px] leading-[1.55] text-ink font-sans">
+                  Två eller fler agenter. Ett lägre pris.
                 </p>
                 <div className="px-0 pt-4 pb-2 gap-2.5 flex flex-col border-t border-t-line">
                   <div className="gap-2.5 flex items-start">
@@ -354,7 +377,7 @@ export default function PriserPage() {
                         />
                       </svg>
                     </span>
-                    <span className="text-[14px] font-medium leading-[1.45] tracking-[0.04em] uppercase min-w-0">
+                    <span className="text-[16px] leading-[1.5] text-ink font-sans min-w-0">
                       Valfri kombination
                     </span>
                   </div>
@@ -371,8 +394,8 @@ export default function PriserPage() {
                         />
                       </svg>
                     </span>
-                    <span className="text-[14px] font-medium leading-[1.45] tracking-[0.04em] uppercase min-w-0">
-                      Gemensam regelbok
+                    <span className="text-[16px] leading-[1.5] text-ink font-sans min-w-0">
+                      En regelbok som alla agenter delar
                     </span>
                   </div>
                   <div className="gap-2.5 flex items-start">
@@ -388,8 +411,8 @@ export default function PriserPage() {
                         />
                       </svg>
                     </span>
-                    <span className="text-[14px] font-medium leading-[1.45] tracking-[0.04em] uppercase min-w-0">
-                      Rabatt på månadspriset
+                    <span className="text-[16px] leading-[1.5] text-ink font-sans min-w-0">
+                      XXX % rabatt på månadspriset
                     </span>
                   </div>
                 </div>
@@ -407,13 +430,13 @@ export default function PriserPage() {
                 </Link>
               </div>
             </div>
-            <div className="only-p pcards-p">
+            <div className="only-p pcards-p reveal-stagger">
               <div className="p-8 gap-4 rounded-card box-border min-w-0 bg-page border border-line flex flex-col">
                 <h3 className="m-0 font-display font-bold text-[28px] leading-[1.1] tracking-[0.01em] uppercase wrap-anywhere">
                   Kalender och vardag
                 </h3>
-                <p className="m-0 text-[16px] leading-[1.55] font-serif text-ink uppercase tracking-[0.03em]">
-                  Samlad planering för jobb, familj och fritid.
+                <p className="m-0 text-[16px] leading-[1.55] text-ink font-sans">
+                  Jobb, familj och fritid i en plan som går ihop.
                 </p>
                 <div className="px-0 pt-4 pb-2 gap-2.5 flex flex-col border-t border-t-line">
                   <div className="gap-2.5 flex items-start">
@@ -429,7 +452,7 @@ export default function PriserPage() {
                         />
                       </svg>
                     </span>
-                    <span className="text-[14px] font-medium leading-[1.45] tracking-[0.04em] uppercase min-w-0">
+                    <span className="text-[16px] leading-[1.5] text-ink font-sans min-w-0">
                       Alla kalendrar på ett ställe
                     </span>
                   </div>
@@ -446,7 +469,7 @@ export default function PriserPage() {
                         />
                       </svg>
                     </span>
-                    <span className="text-[14px] font-medium leading-[1.45] tracking-[0.04em] uppercase min-w-0">
+                    <span className="text-[16px] leading-[1.5] text-ink font-sans min-w-0">
                       Krockhantering och påminnelser
                     </span>
                   </div>
@@ -463,7 +486,7 @@ export default function PriserPage() {
                         />
                       </svg>
                     </span>
-                    <span className="text-[14px] font-medium leading-[1.45] tracking-[0.04em] uppercase min-w-0">
+                    <span className="text-[16px] leading-[1.5] text-ink font-sans min-w-0">
                       Låst tid som aldrig flyttas
                     </span>
                   </div>
@@ -485,8 +508,8 @@ export default function PriserPage() {
                 <h3 className="m-0 font-display font-bold text-[28px] leading-[1.1] tracking-[0.01em] uppercase wrap-anywhere">
                   Tränings- och kostråd
                 </h3>
-                <p className="m-0 text-[16px] leading-[1.55] font-serif text-ink uppercase tracking-[0.03em]">
-                  Upplägg efter mål, nivå och schema.
+                <p className="m-0 text-[16px] leading-[1.55] text-ink font-sans">
+                  Pass och måltider efter ditt mål, din nivå och din vecka.
                 </p>
                 <div className="px-0 pt-4 pb-2 gap-2.5 flex flex-col border-t border-t-line">
                   <div className="gap-2.5 flex items-start">
@@ -502,7 +525,7 @@ export default function PriserPage() {
                         />
                       </svg>
                     </span>
-                    <span className="text-[14px] font-medium leading-[1.45] tracking-[0.04em] uppercase min-w-0">
+                    <span className="text-[16px] leading-[1.5] text-ink font-sans min-w-0">
                       Veckovis träningsplan
                     </span>
                   </div>
@@ -519,7 +542,7 @@ export default function PriserPage() {
                         />
                       </svg>
                     </span>
-                    <span className="text-[14px] font-medium leading-[1.45] tracking-[0.04em] uppercase min-w-0">
+                    <span className="text-[16px] leading-[1.5] text-ink font-sans min-w-0">
                       Måltider och inköpslista
                     </span>
                   </div>
@@ -536,7 +559,7 @@ export default function PriserPage() {
                         />
                       </svg>
                     </span>
-                    <span className="text-[14px] font-medium leading-[1.45] tracking-[0.04em] uppercase min-w-0">
+                    <span className="text-[16px] leading-[1.5] text-ink font-sans min-w-0">
                       Löpande justering
                     </span>
                   </div>
@@ -558,8 +581,8 @@ export default function PriserPage() {
                 <h3 className="m-0 font-display font-bold text-[28px] leading-[1.1] tracking-[0.01em] uppercase wrap-anywhere">
                   Privatekonomi och sparande
                 </h3>
-                <p className="m-0 text-[16px] leading-[1.55] font-serif text-ink uppercase tracking-[0.03em]">
-                  Budget, sparplan och kostnadskoll.
+                <p className="m-0 text-[16px] leading-[1.55] text-ink font-sans">
+                  Budget, sparplan och koll på vart pengarna går.
                 </p>
                 <div className="px-0 pt-4 pb-2 gap-2.5 flex flex-col border-t border-t-line">
                   <div className="gap-2.5 flex items-start">
@@ -575,7 +598,7 @@ export default function PriserPage() {
                         />
                       </svg>
                     </span>
-                    <span className="text-[14px] font-medium leading-[1.45] tracking-[0.04em] uppercase min-w-0">
+                    <span className="text-[16px] leading-[1.5] text-ink font-sans min-w-0">
                       Automatisk kategorisering
                     </span>
                   </div>
@@ -592,7 +615,7 @@ export default function PriserPage() {
                         />
                       </svg>
                     </span>
-                    <span className="text-[14px] font-medium leading-[1.45] tracking-[0.04em] uppercase min-w-0">
+                    <span className="text-[16px] leading-[1.5] text-ink font-sans min-w-0">
                       Sparplan per mål
                     </span>
                   </div>
@@ -609,7 +632,7 @@ export default function PriserPage() {
                         />
                       </svg>
                     </span>
-                    <span className="text-[14px] font-medium leading-[1.45] tracking-[0.04em] uppercase min-w-0">
+                    <span className="text-[16px] leading-[1.5] text-ink font-sans min-w-0">
                       Läsbehörighet, aldrig överföringar
                     </span>
                   </div>
@@ -630,116 +653,134 @@ export default function PriserPage() {
             </div>
           </div>
         </div>
-        <div className="only-f mx-auto my-0 px-10 py-22 max-w-[1200px] box-border">
-          <h2
-            className="mx-0 mt-0 mb-10 font-display font-bold text-[clamp(28px,6vw,42px)] wrap-break-word tracking-[0.01em] uppercase"
-            id="sa-gar-det-till"
-          >
-            Så här går det till
-          </h2>
-          <div className="gap-6 grid grid-cols-[repeat(auto-fit,minmax(300px,1fr))]">
-            <div className="p-7 rounded-2xl bg-page">
+        <div
+          className="only-f mx-auto my-0 px-10 py-20 max-w-[1200px] box-border min-[900px]:min-h-dvh flex flex-col justify-center scroll-mt-20"
+          id="sa-gar-det-till"
+        >
+          <div className="mb-10 max-w-[720px] reveal">
+            <div className="mb-5 px-3.5 py-1.5 rounded-full inline-block bg-chip text-contrast text-[13px] font-semibold tracking-[0.14em] uppercase">
+              Så går det till
+            </div>
+            <h2 className="mx-0 mt-0 mb-4 font-display font-bold uppercase tracking-[0.01em] text-[clamp(28px,6.5vw,42px)] leading-[1.05] wrap-break-word">
+              Gratis demo. En testmånad. Sedan ett fast pris.
+            </h2>
+            <p className="m-0 text-[18px] leading-[1.6] text-ink font-sans">
+              Du riskerar ingenting förrän du sett Vera jobba med din egen data.
+            </p>
+          </div>
+          <div className="gap-6 grid grid-cols-[repeat(auto-fit,minmax(300px,1fr))] reveal-stagger">
+            <div className="p-7 rounded-card bg-surface box-border">
               <div className="font-display font-bold text-[44px] text-accent leading-none">1</div>
               <h3 className="mx-0 mt-3 mb-2.5 text-[16px] font-semibold tracking-[0.1em] uppercase">Demo</h3>
-              <p className="mx-0 mt-0 mb-2.5 text-[16px] leading-[1.55] font-serif text-ink uppercase tracking-[0.03em]">
-                Ett kostnadsfritt möte där vi visar Vera med exempel från er verksamhet och föreslår vilka agenter som
-                passar.
+              <p className="mx-0 mt-0 mb-2.5 text-[16px] leading-[1.55] text-ink font-sans">
+                Ett kostnadsfritt möte där vi visar Vera med exempel från din verksamhet och föreslår vilka agenter som
+                passar dig.
               </p>
-              <p className="mx-0 mt-0 mb-2.5 text-[16px] leading-[1.55] font-serif text-ink uppercase tracking-[0.03em]">
-                Ni kan påverka upplägget direkt, tills det motsvarar era behov.
+              <p className="mx-0 mt-0 mb-2.5 text-[16px] leading-[1.55] text-ink font-sans">
+                Du styr upplägget direkt i mötet, tills det är precis vad du behöver.
               </p>
             </div>
-            <div className="p-7 rounded-2xl bg-page">
+            <div className="p-7 rounded-card bg-surface box-border">
               <div className="font-display font-bold text-[44px] text-accent leading-none">2</div>
               <h3 className="mx-0 mt-3 mb-2.5 text-[16px] font-semibold tracking-[0.1em] uppercase">Testmånad</h3>
-              <p className="mx-0 mt-0 mb-2.5 text-[16px] leading-[1.55] font-serif text-ink uppercase tracking-[0.03em]">
-                Agenterna arbetar med er riktiga data i en månad, mot en handläggningsavgift på XXX kr.
+              <p className="mx-0 mt-0 mb-2.5 text-[16px] leading-[1.55] text-ink font-sans">
+                Agenterna jobbar med din riktiga data i en månad, mot en handläggningsavgift på XXX kr.
               </p>
-              <p className="mx-0 mt-0 mb-2.5 text-[16px] leading-[1.55] font-serif text-ink uppercase tracking-[0.03em]">
-                Fungerar det inte som ni vill justerar vi. Räcker det inte betalas avgiften tillbaka.
+              <p className="mx-0 mt-0 mb-2.5 text-[16px] leading-[1.55] text-ink font-sans">
+                Fungerar det inte som du vill justerar vi. Räcker inte det får du hela avgiften tillbaka.
               </p>
             </div>
-            <div className="p-7 rounded-2xl bg-page">
+            <div className="p-7 rounded-card bg-surface box-border">
               <div className="font-display font-bold text-[44px] text-accent leading-none">3</div>
               <h3 className="mx-0 mt-3 mb-2.5 text-[16px] font-semibold tracking-[0.1em] uppercase">Månadspris</h3>
-              <p className="mx-0 mt-0 mb-2.5 text-[16px] leading-[1.55] font-serif text-ink uppercase tracking-[0.03em]">
-                XXX kr per agent och månad. Väljer ni flera agenter får ni rabatt. Support och uppdateringar ingår.
+              <p className="mx-0 mt-0 mb-2.5 text-[16px] leading-[1.55] text-ink font-sans">
+                XXX kr per agent och månad. Väljer du flera agenter sjunker priset. Support och uppdateringar ingår,
+                alltid.
               </p>
-              <p className="mx-0 mt-0 mb-2.5 text-[16px] leading-[1.55] font-serif text-ink uppercase tracking-[0.03em]">
-                Räkna nedan på vad arbetet kostar i dag.
+              <p className="mx-0 mt-0 mb-2.5 text-[16px] leading-[1.55] text-ink font-sans">
+                Räkna nedan på vad samma arbete kostar dig i dag.
               </p>
             </div>
           </div>
         </div>
         <SavingsCalculator />
-        <div className="only-p mx-auto my-0 px-10 py-22 max-w-[1200px] box-border flex justify-center">
-          <div className="px-10 py-12 rounded-card w-full max-w-[720px] bg-contrast text-ink-inverse box-border text-center">
-            <div className="mb-3 font-display font-bold text-[clamp(32px,7vw,48px)] leading-[1.05] tracking-[0.02em] uppercase">
-              XXX kr per tjänst
+        <div className="only-p mx-auto my-0 px-10 py-20 max-w-[1200px] box-border min-[900px]:min-h-dvh flex flex-col items-center justify-center">
+          <div className="px-10 py-12 rounded-card w-full max-w-[720px] bg-surface box-border text-center reveal">
+            <div className="mb-5 px-3.5 py-1.5 rounded-full inline-block bg-chip text-contrast text-[13px] font-semibold tracking-[0.14em] uppercase">
+              Pris
             </div>
-            <p className="mx-auto my-0 text-[17px] leading-[1.6] text-ink-inverse-soft font-serif max-w-[520px] uppercase tracking-[0.03em]">
-              Månadspris inklusive moms. Support och uppdateringar ingår.
+            <div className="mb-3 font-display font-bold text-[clamp(32px,7vw,48px)] leading-[1.05] tracking-[0.02em] uppercase">
+              XXX kr per tjänst och månad
+            </div>
+            <p className="mx-auto my-0 text-[18px] leading-[1.6] text-ink font-sans max-w-[520px]">
+              Inklusive moms. Support och uppdateringar ingår. Säg upp när du vill.
             </p>
           </div>
         </div>
-        <div className="only-f mx-auto my-0 px-10 py-22 max-w-[1200px] box-border">
-          <h2
-            className="mx-0 mt-0 mb-8 font-display font-bold text-[clamp(28px,6vw,42px)] wrap-break-word tracking-[0.01em] uppercase"
-            id="faq"
-          >
-            Frågor om pris
-          </h2>
-          <div className="gap-5 grid grid-cols-[repeat(auto-fit,minmax(min(320px,100%),1fr))]">
-            <div className="p-6 rounded-2xl bg-page">
-              <h3 className="mx-0 mt-0 mb-2 text-[15px] font-semibold tracking-[0.08em] uppercase">
+        <div
+          className="only-f mx-auto my-0 px-10 py-20 max-w-[1200px] box-border min-[900px]:min-h-dvh flex flex-col justify-center scroll-mt-20"
+          id="faq"
+        >
+          <div className="mb-10 max-w-[720px] reveal">
+            <div className="mb-5 px-3.5 py-1.5 rounded-full inline-block bg-chip text-contrast text-[13px] font-semibold tracking-[0.14em] uppercase">
+              Vanliga frågor
+            </div>
+            <h2 className="m-0 font-display font-bold uppercase tracking-[0.01em] text-[clamp(28px,6.5vw,42px)] leading-[1.05] wrap-break-word">
+              Frågor om pris
+            </h2>
+          </div>
+          <div className="gap-5 grid grid-cols-[repeat(auto-fit,minmax(min(320px,100%),1fr))] reveal-stagger">
+            <div className="p-6 rounded-card bg-surface box-border">
+              <h3 className="mx-0 mt-0 mb-2 text-[15px] font-bold tracking-[0.1em] uppercase">
                 Vad ingår i månadspriset?
               </h3>
-              <p className="m-0 text-[16px] leading-[1.55] font-serif text-ink uppercase tracking-[0.03em]">
-                Uppstart, regelbok, integrationer, agenten, support och uppdateringar.
+              <p className="m-0 text-[16px] leading-[1.55] text-ink font-sans">
+                Allt: uppstart, regelbok, integrationer, agenten, support och uppdateringar. Inga tillägg, inga timmar.
               </p>
             </div>
-            <div className="p-6 rounded-2xl bg-page">
-              <h3 className="mx-0 mt-0 mb-2 text-[15px] font-semibold tracking-[0.08em] uppercase">
+            <div className="p-6 rounded-card bg-surface box-border">
+              <h3 className="mx-0 mt-0 mb-2 text-[15px] font-bold tracking-[0.1em] uppercase">
                 Hur fungerar rabatten?
               </h3>
-              <p className="m-0 text-[16px] leading-[1.55] font-serif text-ink uppercase tracking-[0.03em]">
-                Väljer ni flera agenter får ni XXX % rabatt på det samlade månadspriset.
+              <p className="m-0 text-[16px] leading-[1.55] text-ink font-sans">
+                Väljer du flera agenter får du XXX % rabatt på det samlade månadspriset.
               </p>
             </div>
-            <div className="p-6 rounded-2xl bg-page">
-              <h3 className="mx-0 mt-0 mb-2 text-[15px] font-semibold tracking-[0.08em] uppercase">
-                Kan vi lägga till agenter senare?
+            <div className="p-6 rounded-card bg-surface box-border">
+              <h3 className="mx-0 mt-0 mb-2 text-[15px] font-bold tracking-[0.1em] uppercase">
+                Kan jag lägga till agenter senare?
               </h3>
-              <p className="m-0 text-[16px] leading-[1.55] font-serif text-ink uppercase tracking-[0.03em]">
-                Ja, när som helst.
+              <p className="m-0 text-[16px] leading-[1.55] text-ink font-sans">
+                Ja, när som helst. De delar redan din regelbok, så uppstarten går fort.
               </p>
             </div>
-            <div className="p-6 rounded-2xl bg-page">
-              <h3 className="mx-0 mt-0 mb-2 text-[15px] font-semibold tracking-[0.08em] uppercase">
-                Hur säger vi upp?
+            <div className="p-6 rounded-card bg-surface box-border">
+              <h3 className="mx-0 mt-0 mb-2 text-[15px] font-bold tracking-[0.1em] uppercase">
+                Hur säger jag upp?
               </h3>
-              <p className="m-0 text-[16px] leading-[1.55] font-serif text-ink uppercase tracking-[0.03em]">
-                Ni betalar per månad och kan säga upp med XXX uppsägningstid.
+              <p className="m-0 text-[16px] leading-[1.55] text-ink font-sans">
+                Du betalar per månad och säger upp med XXX uppsägningstid. Ingen bindningstid.
               </p>
             </div>
-            <div className="p-6 rounded-2xl bg-page">
-              <h3 className="mx-0 mt-0 mb-2 text-[15px] font-semibold tracking-[0.08em] uppercase">Ingår moms?</h3>
-              <p className="m-0 text-[16px] leading-[1.55] font-serif text-ink uppercase tracking-[0.03em]">
-                Priser för företag anges exklusive moms. Priser för privatpersoner anges inklusive moms.
+            <div className="p-6 rounded-card bg-surface box-border">
+              <h3 className="mx-0 mt-0 mb-2 text-[15px] font-bold tracking-[0.1em] uppercase">Ingår moms?</h3>
+              <p className="m-0 text-[16px] leading-[1.55] text-ink font-sans">
+                Priser för företag anges exklusive moms, priser för privatpersoner inklusive moms.
               </p>
             </div>
-            <div className="p-6 rounded-2xl bg-page">
-              <h3 className="mx-0 mt-0 mb-2 text-[15px] font-semibold tracking-[0.08em] uppercase">
+            <div className="p-6 rounded-card bg-surface box-border">
+              <h3 className="mx-0 mt-0 mb-2 text-[15px] font-bold tracking-[0.1em] uppercase">
                 Kostar demon något?
               </h3>
-              <p className="m-0 text-[16px] leading-[1.55] font-serif text-ink uppercase tracking-[0.03em]">
-                Nej, demon är kostnadsfri.
+              <p className="m-0 text-[16px] leading-[1.55] text-ink font-sans">
+                Nej. Demon är gratis och utan förpliktelser.
               </p>
             </div>
-            <div className="p-6 rounded-2xl bg-page">
-              <h3 className="mx-0 mt-0 mb-2 text-[15px] font-semibold tracking-[0.08em] uppercase">Är priset fast?</h3>
-              <p className="m-0 text-[16px] leading-[1.55] font-serif text-ink uppercase tracking-[0.03em]">
-                Ja. Priset tas fram efter demon och gäller sedan som ett fast månadspris.
+            <div className="p-6 rounded-card bg-surface box-border">
+              <h3 className="mx-0 mt-0 mb-2 text-[15px] font-bold tracking-[0.1em] uppercase">Är priset fast?</h3>
+              <p className="m-0 text-[16px] leading-[1.55] text-ink font-sans">
+                Ja. Priset sätts efter demon och gäller sedan som ett fast månadspris. Det ändras inte för att du får
+                fler transaktioner.
               </p>
             </div>
           </div>
@@ -752,20 +793,26 @@ export default function PriserPage() {
             </Link>
           </div>
         </div>
-        <div className="only-f bg-contrast text-ink-inverse">
-          <div className="mx-auto my-0 px-10 py-18 max-w-[1200px] box-border flex flex-col items-center text-center">
-            <h2 className="mx-0 mt-0 mb-4 font-display font-bold text-[clamp(28px,6vw,40px)] tracking-[0.01em] uppercase wrap-break-word">
+        <div className="only-f bg-surface min-[900px]:min-h-dvh box-border flex items-center">
+          <div className="mx-auto my-0 px-10 py-20 w-full max-w-[1200px] box-border flex flex-col items-center text-center reveal">
+            <div className="mb-5 px-3.5 py-1.5 rounded-full inline-block bg-chip text-contrast text-[13px] font-semibold tracking-[0.14em] uppercase">
+              Kontakt
+            </div>
+            <h2 className="mx-0 mt-0 mb-4 font-display font-bold uppercase tracking-[0.01em] text-[clamp(28px,6.5vw,42px)] leading-[1.05] wrap-break-word">
               Få en prisuppskattning
             </h2>
-            <p className="mx-auto mt-0 mb-7 text-[17px] leading-[1.6] text-ink-inverse-soft font-serif max-w-[520px] uppercase tracking-[0.03em]">
-              Vi tar fram ett pris utifrån ert företag och de agenter ni behöver.
+            <p className="mx-auto mt-0 mb-8 text-[18px] leading-[1.6] text-ink font-sans max-w-[520px]">
+              Vi tar fram ett pris för just ditt företag och de agenter du behöver. Boka en demo, så har du det inom
+              en vecka.
             </p>
-            <Link
-              className="btn btn--primary theme-inverse"
-              href="/#kontakt"
-            >
-              Boka en demo
-            </Link>
+            <div className="gap-3 flex flex-wrap justify-center">
+              <Link className="btn btn--primary" href="/#kontakt">
+                Boka en demo
+              </Link>
+              <Link className="btn btn--secondary" href="/vanliga-fragor">
+                Vanliga frågor
+              </Link>
+            </div>
           </div>
         </div>
       </div>

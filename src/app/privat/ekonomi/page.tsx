@@ -4,42 +4,38 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Privatekonomi och sparande",
   description:
-    "Vera sorterar dina utgifter, hittar det som kan sänkas och gör en sparplan som håller. Du bestämmer vart pengarna går.",
+    "Vera sorterar dina utgifter, hittar pengarna som bara försvinner och gör en sparplan som håller. Du bestämmer vart varje krona går.",
 };
 
 export default function EkonomiPage() {
   return (
     <>
-      <div className="bg-[linear-gradient(180deg,var(--page)_0%,var(--surface-muted)_100%)]">
-        <div className="mx-auto my-0 px-10 pt-16 pb-24 gap-14 max-w-[1200px] box-border flex flex-wrap items-center">
+      {/* Samma layout som startsidan (2026-10-30): mörkt helskärms-hero bakom header-pillen med exempelkortet
+          till höger, sedan en skärm per sektion som växlar mellan sidbakgrund och kortyta utan streck emellan. */}
+      <div className="lv-hero text-snow -mt-[68px] pt-[68px] max-[900px]:-mt-[60px] max-[900px]:pt-[60px] min-h-dvh box-border flex items-center">
+        <div className="mx-auto my-0 px-10 pt-20 pb-24 gap-14 w-full max-w-[1200px] box-border flex flex-wrap items-center">
           <div className="flex-[1_1_440px] min-w-0">
-            <div className="mb-6 px-3.5 py-1.5 rounded-full inline-block bg-chip text-contrast text-[13px] font-semibold tracking-[0.14em] uppercase">
+            <div className="mb-6 px-3.5 py-1.5 rounded-full inline-block bg-snow/8 border border-snow/18 text-platinum text-[13px] font-semibold tracking-[0.14em] uppercase">
               Privatekonomi och sparande
             </div>
-            <h1 className="mx-0 mt-0 mb-6 font-display font-bold uppercase tracking-[0.01em] text-[clamp(30px,8.5vw,56px)] wrap-break-word leading-[1.02]">
-              Full koll på pengarna, utan kalkylblad.
+            <h1 className="mx-0 mt-0 mb-6 font-display font-bold uppercase tracking-[0.01em] text-[clamp(30px,4.4vw,46px)] leading-[1.05] wrap-break-word text-snow">
+              Full koll på pengarna. Utan ett enda kalkylblad.
             </h1>
-            <p className="mx-0 mt-0 mb-8 text-[17px] leading-[1.6] max-w-[520px] font-serif text-ink uppercase tracking-[0.03em] font-bold">
-              Vera sorterar dina utgifter, hittar det som kan sänkas och gör en sparplan som håller. Du bestämmer vart
-              pengarna går.
+            <p className="mx-0 mt-0 mb-8 text-[18px] leading-[1.65] text-pale-1 font-sans max-w-[520px]">
+              Vera sorterar dina utgifter, hittar pengarna som bara försvinner och gör en sparplan som håller. Du
+              bestämmer vart varje krona går.
             </p>
             <div className="gap-3 flex flex-wrap">
-              <Link
-                className="btn btn--primary"
-                href="/#kontakt"
-              >
+              <Link className="btn btn--primary theme-dark" href="/#kontakt">
                 Kom igång
               </Link>
-              <a
-                className="btn btn--secondary"
-                href="#hur"
-              >
+              <a className="btn btn--secondary theme-dark" href="#hur">
                 Så fungerar det
               </a>
             </div>
           </div>
-          <div className="reveal-soft flex-[1_1_440px] min-w-0">
-            <div className="px-7 py-6 rounded-card bg-surface border border-line shadow-[0_30px_70px_rgba(33,37,41,0.12)] box-border w-full">
+          <div className="flex-[1_1_440px] min-w-0">
+            <div className="lv-mock px-7 py-6 rounded-card bg-lv-card text-lv-ink box-border w-full">
               <div className="mb-2 gap-3 flex justify-between items-center">
                 <div>
                   <div className="text-[12px] font-semibold tracking-[0.12em] uppercase text-ink-soft">
@@ -152,65 +148,69 @@ export default function EkonomiPage() {
           </div>
         </div>
       </div>
-      <div className="bg-surface border-t border-t-line border-b border-b-line">
-        <div className="mx-auto my-0 px-10 py-12 gap-y-8 gap-x-14 max-w-[1200px] box-border flex flex-wrap">
-          <div className="px-0 py-2 flex-[1_1_240px] min-w-0">
-            <div className="font-display font-bold uppercase tracking-[0.01em] text-[30px] text-accent leading-[1.1]">
+      {/* Tre korta punkter och bakgrunden delar en skärm: punkterna som kort till vänster, texten till höger. */}
+      <div className="bg-surface min-[900px]:min-h-dvh box-border flex items-center">
+        <div className="mx-auto my-0 px-10 py-20 gap-14 w-full max-w-[1200px] box-border flex flex-wrap items-center">
+          <div className="gap-4 flex-[1_1_380px] min-w-0 flex flex-col reveal-stagger">
+          <div className="px-6 py-5 rounded-card bg-page border border-line min-w-0 box-border">
+            <div className="font-display font-bold uppercase tracking-[0.01em] text-[24px] leading-[1.1]">
               Uppdateras varje dag
             </div>
-            <div className="mt-2 text-[15px] leading-[1.5] font-serif text-ink uppercase tracking-[0.03em]">
+            <div className="mt-1.5 text-[16px] leading-[1.55] text-ink font-sans">
               Nya köp sorteras in direkt.
             </div>
           </div>
-          <div className="px-0 py-2 flex-[1_1_240px] min-w-0">
-            <div className="font-display font-bold uppercase tracking-[0.01em] text-[30px] text-accent leading-[1.1]">
-              Känner din ekonomi
+          <div className="px-6 py-5 rounded-card bg-page border border-line min-w-0 box-border">
+            <div className="font-display font-bold uppercase tracking-[0.01em] text-[24px] leading-[1.1]">
+              Kan din ekonomi
             </div>
-            <div className="mt-2 text-[15px] leading-[1.5] font-serif text-ink uppercase tracking-[0.03em]">
+            <div className="mt-1.5 text-[16px] leading-[1.55] text-ink font-sans">
               Inkomster, fasta kostnader och sparmål.
             </div>
           </div>
-          <div className="px-0 py-2 flex-[1_1_240px] min-w-0">
-            <div className="font-display font-bold uppercase tracking-[0.01em] text-[30px] text-accent leading-[1.1]">
+          <div className="px-6 py-5 rounded-card bg-page border border-line min-w-0 box-border">
+            <div className="font-display font-bold uppercase tracking-[0.01em] text-[24px] leading-[1.1]">
               Spårbart
             </div>
-            <div className="mt-2 text-[15px] leading-[1.5] font-serif text-ink uppercase tracking-[0.03em]">
+            <div className="mt-1.5 text-[16px] leading-[1.55] text-ink font-sans">
               Du ser vart varje krona tar vägen.
             </div>
           </div>
-        </div>
-      </div>
-      <div className="mx-auto my-0 px-10 py-24 gap-14 max-w-[1200px] box-border flex flex-wrap items-start">
-        <div className="reveal-soft flex-[1_1_440px] min-w-0">
+          </div>
+          <div className="flex-[1_1_440px] min-w-0 reveal">
           <div className="mb-5 px-3.5 py-1.5 rounded-full inline-block bg-chip text-contrast text-[13px] font-semibold tracking-[0.14em] uppercase">
             Bakgrund
           </div>
-          <h2 className="mx-0 mt-0 mb-4 font-display font-bold uppercase tracking-[0.01em] text-[clamp(28px,7vw,44px)] wrap-break-word leading-[1.05]">
-            Spara mer, utan att tänka på det.
+          <h2 className="mx-0 mt-0 mb-4 font-display font-bold uppercase tracking-[0.01em] text-[clamp(28px,6.5vw,42px)] wrap-break-word leading-[1.05]">
+            Spara mer. Utan att tänka på det.
           </h2>
-        </div>
-        <div className="reveal-soft gap-4 flex-[1_1_440px] min-w-0 flex flex-col">
-          <p className="m-0 text-[17px] leading-[1.6] max-w-[560px] font-serif text-ink uppercase tracking-[0.03em]">
-            Prenumerationer, småköp och fasta kostnader gör det svårt att se helheten. Budgetar i kalkylblad håller
-            sällan länge.
+          <div className="mt-2 gap-4 flex flex-col">
+          <p className="m-0 text-[18px] leading-[1.6] max-w-[560px] text-ink font-sans">
+            Prenumerationer, småköp och fasta kostnader gör det svårt att se helheten. Budgeten i kalkylbladet håller
+            till den 10:e.
           </p>
-          <p className="m-0 text-[17px] leading-[1.6] max-w-[560px] font-serif text-ink uppercase tracking-[0.03em]">
-            Vera ger dig överblicken automatiskt och visar var det finns pengar att frigöra.
+          <p className="m-0 text-[18px] leading-[1.6] max-w-[560px] text-ink font-sans">
+            Vera ger dig överblicken av sig själv och pekar ut exakt var det finns pengar att frigöra.
           </p>
+          </div>
+          </div>
         </div>
       </div>
-      <div className="bg-surface-muted" id="hur">
-        <div className="mx-auto my-0 px-10 py-24 max-w-[1200px] box-border">
-          <div className="mb-12 text-center">
-            <h2 className="mx-0 mt-0 mb-4 font-display font-bold uppercase tracking-[0.01em] text-[clamp(28px,7vw,44px)] wrap-break-word leading-[1.05] text-center">
+      <div className="min-[900px]:min-h-dvh box-border flex items-center scroll-mt-20" id="hur">
+        <div className="mx-auto my-0 px-10 py-20 w-full max-w-[1200px] box-border">
+          <div className="mb-10 max-w-[720px] reveal">
+            <div className="mb-5 px-3.5 py-1.5 rounded-full inline-block bg-chip text-contrast text-[13px] font-semibold tracking-[0.14em] uppercase">
+              Så fungerar det
+            </div>
+            <h2 className="mx-0 mt-0 mb-4 font-display font-bold uppercase tracking-[0.01em] text-[clamp(28px,6.5vw,42px)] wrap-break-word leading-[1.05]">
               Arbetsflöde
             </h2>
-            <p className="mx-auto my-0 text-center text-[17px] leading-[1.6] max-w-[560px] font-serif text-ink uppercase tracking-[0.03em]">
+            <p className="m-0 text-[18px] leading-[1.6] text-ink font-sans">
               Tre steg, varje månad.
             </p>
           </div>
-          <div className="gap-6 grid grid-cols-[repeat(auto-fit,minmax(280px,1fr))]">
-            <div className="reveal-soft p-8 gap-4 rounded-card bg-surface border border-line min-w-0 flex flex-col">
+          <div className="gap-6 grid grid-cols-[repeat(auto-fit,minmax(280px,1fr))] reveal-stagger">
+            <div className="p-7 gap-3.5 rounded-card bg-surface box-border min-w-0 flex flex-col">
               <div className="flex justify-between items-center">
                 <div className="rounded-xl w-12 h-12 bg-chip flex items-center justify-center">
                   <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true">
@@ -229,11 +229,11 @@ export default function EkonomiPage() {
                 </span>
               </div>
               <h3 className="m-0 text-[16px] font-bold tracking-[0.1em] uppercase">Samla</h3>
-              <p className="m-0 text-[16px] leading-[1.55] font-serif text-ink uppercase tracking-[0.03em]">
+              <p className="m-0 text-[16px] leading-[1.55] text-ink font-sans">
                 Konton och kort kopplas med läsbehörighet, så att allt hamnar på ett ställe.
               </p>
             </div>
-            <div className="reveal-soft p-8 gap-4 rounded-card bg-surface border border-line min-w-0 flex flex-col">
+            <div className="p-7 gap-3.5 rounded-card bg-surface box-border min-w-0 flex flex-col">
               <div className="flex justify-between items-center">
                 <div className="rounded-xl w-12 h-12 bg-chip flex items-center justify-center">
                   <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true">
@@ -252,11 +252,11 @@ export default function EkonomiPage() {
                 </span>
               </div>
               <h3 className="m-0 text-[16px] font-bold tracking-[0.1em] uppercase">Sortera</h3>
-              <p className="m-0 text-[16px] leading-[1.55] font-serif text-ink uppercase tracking-[0.03em]">
+              <p className="m-0 text-[16px] leading-[1.55] text-ink font-sans">
                 Varje köp kategoriseras och läckor markeras. Vid osäkerhet frågar Vera.
               </p>
             </div>
-            <div className="reveal-soft p-8 gap-4 rounded-card bg-surface border border-line min-w-0 flex flex-col">
+            <div className="p-7 gap-3.5 rounded-card bg-surface box-border min-w-0 flex flex-col">
               <div className="flex justify-between items-center">
                 <div className="rounded-xl w-12 h-12 bg-chip flex items-center justify-center">
                   <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true">
@@ -275,12 +275,12 @@ export default function EkonomiPage() {
                 </span>
               </div>
               <h3 className="m-0 text-[16px] font-bold tracking-[0.1em] uppercase">Planera</h3>
-              <p className="m-0 text-[16px] leading-[1.55] font-serif text-ink uppercase tracking-[0.03em]">
+              <p className="m-0 text-[16px] leading-[1.55] text-ink font-sans">
                 Månadsöversikten visar läget och hur sparmålet kan nås.
               </p>
             </div>
           </div>
-          <div className="mt-12 gap-3 flex justify-center flex-wrap">
+          <div className="mt-10 gap-3 flex flex-wrap">
             <Link
               className="btn btn--primary"
               href="/#kontakt"
@@ -296,153 +296,149 @@ export default function EkonomiPage() {
           </div>
         </div>
       </div>
-      <div className="bg-page border-b border-b-line" id="arbetssatt">
-        <div className="mx-auto my-0 px-10 py-24 max-w-[1200px] box-border">
-          <div className="reveal-up mx-auto mt-0 mb-6 text-center max-w-[720px]">
+      <div className="bg-surface min-[900px]:min-h-dvh box-border flex items-center scroll-mt-20" id="arbetssatt">
+        <div className="mx-auto my-0 px-10 py-20 w-full max-w-[1200px] box-border">
+          <div className="mb-6 max-w-[720px] reveal">
             <div className="mb-5 px-3.5 py-1.5 rounded-full inline-block bg-chip text-contrast text-[13px] font-semibold tracking-[0.14em] uppercase">
               I detalj
             </div>
-            <h2 className="mx-0 mt-0 mb-4 font-display font-bold uppercase tracking-[0.01em] text-[clamp(30px,6.5vw,44px)] leading-[1.05]">
+            <h2 className="mx-0 mt-0 mb-4 font-display font-bold uppercase tracking-[0.01em] text-[clamp(28px,6.5vw,42px)] leading-[1.05] wrap-break-word">
               Från lön till sparmål
             </h2>
-            <p className="mx-auto my-0 text-[17px] leading-[1.6] max-w-[560px] font-serif text-ink uppercase tracking-[0.03em]">
+            <p className="m-0 text-[18px] leading-[1.6] text-ink font-sans">
               Du bestämmer vad pengarna ska gå till.
             </p>
           </div>
-          <div className="px-0 py-6 flex flex-col items-center">
-            <div className="reveal-up mb-7 text-center">
-              <div className="font-display font-bold text-[64px] text-accent leading-none">1</div>
-              <h2 className="mx-0 mt-1.5 mb-0 font-display font-bold text-[clamp(28px,6vw,38px)] tracking-[0.01em] uppercase">
+          <div className="py-6 reveal">
+            <div className="mb-6 gap-x-4 gap-y-2 flex flex-wrap items-baseline">
+              <div className="font-display font-bold text-[clamp(28px,5vw,40px)] text-accent leading-none">1</div>
+              <h2 className="m-0 font-display font-bold text-[clamp(22px,4vw,30px)] tracking-[0.01em] uppercase wrap-break-word">
                 Mål
               </h2>
             </div>
-            <div className="gap-5 flex flex-wrap justify-center w-full">
-              <div className="reveal-left p-7 rounded-2xl flex-[1_1_320px] max-w-[440px] bg-surface border border-line box-border min-w-0 wrap-break-word">
+            <div className="gap-5 grid grid-cols-[repeat(auto-fit,minmax(260px,1fr))]">
+              <div className="p-7 rounded-card bg-page border border-line box-border min-w-0 wrap-break-word">
                 <div className="mb-3 px-2.5 py-1 rounded-full inline-block bg-chip text-contrast text-[11px] font-bold tracking-[0.12em] uppercase">
                   Buffert
                 </div>
-                <h3 className="mx-0 mt-0 mb-2.5 text-[14px] font-semibold tracking-[0.1em] uppercase">
+                <h3 className="mx-0 mt-0 mb-2.5 text-[15px] font-bold tracking-[0.1em] uppercase">
                   Trygghet först
                 </h3>
-                <p className="m-0 font-serif text-[16px] leading-[1.55] text-ink uppercase tracking-[0.03em]">
+                <p className="m-0 text-[16px] leading-[1.55] text-ink font-sans">
                   En reserv för oväntade utgifter, till exempel tre månadslöner.
                 </p>
               </div>
-              <div className="reveal-right p-7 rounded-2xl flex-[1_1_320px] max-w-[440px] bg-surface border border-line box-border min-w-0 wrap-break-word">
+              <div className="p-7 rounded-card bg-page border border-line box-border min-w-0 wrap-break-word">
                 <div className="mb-3 px-2.5 py-1 rounded-full inline-block bg-chip text-contrast text-[11px] font-bold tracking-[0.12em] uppercase">
                   Sparmål
                 </div>
-                <h3 className="mx-0 mt-0 mb-2.5 text-[14px] font-semibold tracking-[0.1em] uppercase">
+                <h3 className="mx-0 mt-0 mb-2.5 text-[15px] font-bold tracking-[0.1em] uppercase">
                   Spara till något
                 </h3>
-                <p className="m-0 font-serif text-[16px] leading-[1.55] text-ink uppercase tracking-[0.03em]">
+                <p className="m-0 text-[16px] leading-[1.55] text-ink font-sans">
                   Resan, körkortet eller kontantinsatsen, med en månadssumma som går ihop.
                 </p>
               </div>
             </div>
           </div>
-          <div className="mx-auto my-0 w-0.5 h-12 bg-accent" />
-          <div className="px-0 py-6 flex flex-col items-center">
-            <div className="reveal-up mb-7 text-center">
-              <div className="font-display font-bold text-[64px] text-accent leading-none">2</div>
-              <h2 className="mx-0 mt-1.5 mb-0 font-display font-bold text-[clamp(28px,6vw,38px)] tracking-[0.01em] uppercase">
+          <div className="py-6 reveal">
+            <div className="mb-6 gap-x-4 gap-y-2 flex flex-wrap items-baseline">
+              <div className="font-display font-bold text-[clamp(28px,5vw,40px)] text-accent leading-none">2</div>
+              <h2 className="m-0 font-display font-bold text-[clamp(22px,4vw,30px)] tracking-[0.01em] uppercase wrap-break-word">
                 Utgångsläge
               </h2>
             </div>
-            <div className="gap-5 flex flex-wrap justify-center w-full">
-              <div className="reveal-left p-7 rounded-2xl flex-[1_1_260px] max-w-[300px] bg-surface border border-line box-border min-w-0 wrap-break-word">
-                <h3 className="mx-0 mt-0 mb-2.5 text-[14px] font-semibold tracking-[0.1em] uppercase">Inkomster</h3>
-                <p className="m-0 font-serif text-[16px] leading-[1.55] text-ink uppercase tracking-[0.03em]">
+            <div className="gap-5 grid grid-cols-[repeat(auto-fit,minmax(260px,1fr))]">
+              <div className="p-7 rounded-card bg-page border border-line box-border min-w-0 wrap-break-word">
+                <h3 className="mx-0 mt-0 mb-2.5 text-[15px] font-bold tracking-[0.1em] uppercase">Inkomster</h3>
+                <p className="m-0 text-[16px] leading-[1.55] text-ink font-sans">
                   Lön och andra inbetalningar.
                 </p>
               </div>
-              <div className="reveal-up p-7 rounded-2xl flex-[1_1_260px] max-w-[300px] bg-surface border border-line box-border min-w-0 wrap-break-word">
-                <h3 className="mx-0 mt-0 mb-2.5 text-[14px] font-semibold tracking-[0.1em] uppercase">
+              <div className="p-7 rounded-card bg-page border border-line box-border min-w-0 wrap-break-word">
+                <h3 className="mx-0 mt-0 mb-2.5 text-[15px] font-bold tracking-[0.1em] uppercase">
                   Fasta utgifter
                 </h3>
-                <p className="m-0 font-serif text-[16px] leading-[1.55] text-ink uppercase tracking-[0.03em]">
+                <p className="m-0 text-[16px] leading-[1.55] text-ink font-sans">
                   Hyra, el, försäkringar och lån.
                 </p>
               </div>
-              <div className="reveal-right p-7 rounded-2xl flex-[1_1_260px] max-w-[300px] bg-surface border border-line box-border min-w-0 wrap-break-word">
-                <h3 className="mx-0 mt-0 mb-2.5 text-[14px] font-semibold tracking-[0.1em] uppercase">
+              <div className="p-7 rounded-card bg-page border border-line box-border min-w-0 wrap-break-word">
+                <h3 className="mx-0 mt-0 mb-2.5 text-[15px] font-bold tracking-[0.1em] uppercase">
                   Rörliga utgifter
                 </h3>
-                <p className="m-0 font-serif text-[16px] leading-[1.55] text-ink uppercase tracking-[0.03em]">
+                <p className="m-0 text-[16px] leading-[1.55] text-ink font-sans">
                   Mat, nöjen och kläder.
                 </p>
               </div>
             </div>
           </div>
-          <div className="mx-auto my-0 w-0.5 h-12 bg-accent" />
-          <div className="px-0 py-6 flex flex-col items-center">
-            <div className="reveal-up mb-7 text-center">
-              <div className="font-display font-bold text-[64px] text-accent leading-none">3</div>
-              <h2 className="mx-0 mt-1.5 mb-0 font-display font-bold text-[clamp(28px,6vw,38px)] tracking-[0.01em] uppercase">
+          <div className="py-6 reveal">
+            <div className="mb-6 gap-x-4 gap-y-2 flex flex-wrap items-baseline">
+              <div className="font-display font-bold text-[clamp(28px,5vw,40px)] text-accent leading-none">3</div>
+              <h2 className="m-0 font-display font-bold text-[clamp(22px,4vw,30px)] tracking-[0.01em] uppercase wrap-break-word">
                 Planen
               </h2>
             </div>
-            <div className="gap-5 flex flex-wrap justify-center w-full">
-              <div className="reveal-left p-7 rounded-2xl flex-[1_1_260px] max-w-[300px] bg-surface border border-line box-border min-w-0 wrap-break-word">
-                <h3 className="mx-0 mt-0 mb-2.5 text-[14px] font-semibold tracking-[0.1em] uppercase">Budget</h3>
-                <p className="m-0 font-serif text-[16px] leading-[1.55] text-ink uppercase tracking-[0.03em]">
+            <div className="gap-5 grid grid-cols-[repeat(auto-fit,minmax(260px,1fr))]">
+              <div className="p-7 rounded-card bg-page border border-line box-border min-w-0 wrap-break-word">
+                <h3 className="mx-0 mt-0 mb-2.5 text-[15px] font-bold tracking-[0.1em] uppercase">Budget</h3>
+                <p className="m-0 text-[16px] leading-[1.55] text-ink font-sans">
                   Byggd på hur du faktiskt lever.
                 </p>
               </div>
-              <div className="reveal-up p-7 rounded-2xl flex-[1_1_260px] max-w-[300px] bg-surface border border-line box-border min-w-0 wrap-break-word">
-                <h3 className="mx-0 mt-0 mb-2.5 text-[14px] font-semibold tracking-[0.1em] uppercase">Sparplan</h3>
-                <p className="m-0 font-serif text-[16px] leading-[1.55] text-ink uppercase tracking-[0.03em]">
+              <div className="p-7 rounded-card bg-page border border-line box-border min-w-0 wrap-break-word">
+                <h3 className="mx-0 mt-0 mb-2.5 text-[15px] font-bold tracking-[0.1em] uppercase">Sparplan</h3>
+                <p className="m-0 text-[16px] leading-[1.55] text-ink font-sans">
                   En realistisk summa varje månad.
                 </p>
               </div>
-              <div className="reveal-right p-7 rounded-2xl flex-[1_1_260px] max-w-[300px] bg-surface border border-line box-border min-w-0 wrap-break-word">
-                <h3 className="mx-0 mt-0 mb-2.5 text-[14px] font-semibold tracking-[0.1em] uppercase">Läckor</h3>
-                <p className="m-0 font-serif text-[16px] leading-[1.55] text-ink uppercase tracking-[0.03em]">
+              <div className="p-7 rounded-card bg-page border border-line box-border min-w-0 wrap-break-word">
+                <h3 className="mx-0 mt-0 mb-2.5 text-[15px] font-bold tracking-[0.1em] uppercase">Läckor</h3>
+                <p className="m-0 text-[16px] leading-[1.55] text-ink font-sans">
                   Prenumerationer och kostnader som kan sänkas.
                 </p>
               </div>
             </div>
           </div>
-          <div className="mx-auto my-0 w-0.5 h-12 bg-accent" />
-          <div className="px-0 py-6 flex flex-col items-center">
-            <div className="reveal-up mb-7 text-center">
-              <div className="font-display font-bold text-[64px] text-accent leading-none">4</div>
-              <h2 className="mx-0 mt-1.5 mb-0 font-display font-bold text-[clamp(28px,6vw,38px)] tracking-[0.01em] uppercase">
+          <div className="py-6 reveal">
+            <div className="mb-6 gap-x-4 gap-y-2 flex flex-wrap items-baseline">
+              <div className="font-display font-bold text-[clamp(28px,5vw,40px)] text-accent leading-none">4</div>
+              <h2 className="m-0 font-display font-bold text-[clamp(22px,4vw,30px)] tracking-[0.01em] uppercase wrap-break-word">
                 Ramar
               </h2>
             </div>
-            <div className="gap-5 flex flex-wrap justify-center w-full">
-              <div className="reveal-left p-7 rounded-2xl flex-[1_1_260px] max-w-[300px] bg-surface border border-line box-border min-w-0 wrap-break-word">
-                <h3 className="mx-0 mt-0 mb-2.5 text-[14px] font-semibold tracking-[0.1em] uppercase">Gränser</h3>
-                <p className="m-0 font-serif text-[16px] leading-[1.55] text-ink uppercase tracking-[0.03em]">
+            <div className="gap-5 grid grid-cols-[repeat(auto-fit,minmax(260px,1fr))]">
+              <div className="p-7 rounded-card bg-page border border-line box-border min-w-0 wrap-break-word">
+                <h3 className="mx-0 mt-0 mb-2.5 text-[15px] font-bold tracking-[0.1em] uppercase">Gränser</h3>
+                <p className="m-0 text-[16px] leading-[1.55] text-ink font-sans">
                   Per kategori, med notis när du närmar dig.
                 </p>
               </div>
-              <div className="reveal-up p-7 rounded-2xl flex-[1_1_260px] max-w-[300px] bg-surface border border-line box-border min-w-0 wrap-break-word">
-                <h3 className="mx-0 mt-0 mb-2.5 text-[14px] font-semibold tracking-[0.1em] uppercase">Frekvens</h3>
-                <p className="m-0 font-serif text-[16px] leading-[1.55] text-ink uppercase tracking-[0.03em]">
+              <div className="p-7 rounded-card bg-page border border-line box-border min-w-0 wrap-break-word">
+                <h3 className="mx-0 mt-0 mb-2.5 text-[15px] font-bold tracking-[0.1em] uppercase">Frekvens</h3>
+                <p className="m-0 text-[16px] leading-[1.55] text-ink font-sans">
                   Månadsöversikt, eller notis när något sticker ut.
                 </p>
               </div>
-              <div className="reveal-right p-7 rounded-2xl flex-[1_1_260px] max-w-[300px] bg-surface border border-line box-border min-w-0 wrap-break-word">
-                <h3 className="mx-0 mt-0 mb-2.5 text-[14px] font-semibold tracking-[0.1em] uppercase">Ändra</h3>
-                <p className="m-0 font-serif text-[16px] leading-[1.55] text-ink uppercase tracking-[0.03em]">
+              <div className="p-7 rounded-card bg-page border border-line box-border min-w-0 wrap-break-word">
+                <h3 className="mx-0 mt-0 mb-2.5 text-[15px] font-bold tracking-[0.1em] uppercase">Ändra</h3>
+                <p className="m-0 text-[16px] leading-[1.55] text-ink font-sans">
                   Byt mål när livet förändras.
                 </p>
               </div>
             </div>
           </div>
-          <div className="mx-auto my-0 w-0.5 h-12 bg-accent" />
-          <div className="px-0 py-6 flex flex-col items-center">
-            <div className="reveal-up mb-7 text-center">
-              <div className="font-display font-bold text-[64px] text-accent leading-none">5</div>
-              <h2 className="mx-0 mt-1.5 mb-0 font-display font-bold text-[clamp(28px,6vw,38px)] tracking-[0.01em] uppercase">
+          <div className="py-6 reveal">
+            <div className="mb-6 gap-x-4 gap-y-2 flex flex-wrap items-baseline">
+              <div className="font-display font-bold text-[clamp(28px,5vw,40px)] text-accent leading-none">5</div>
+              <h2 className="m-0 font-display font-bold text-[clamp(22px,4vw,30px)] tracking-[0.01em] uppercase wrap-break-word">
                 Uppföljning
               </h2>
             </div>
-            <div className="gap-5 flex flex-wrap justify-center w-full">
-              <div className="reveal-up p-7 rounded-2xl w-full max-w-[640px] bg-surface border border-line box-border min-w-0 wrap-break-word">
-                <p className="m-0 font-serif text-[16px] leading-[1.55] text-ink uppercase tracking-[0.03em]">
+            <div className="gap-5 grid grid-cols-[repeat(auto-fit,minmax(260px,1fr))]">
+              <div className="p-7 rounded-card bg-page border border-line box-border min-w-0 wrap-break-word">
+                <p className="m-0 text-[16px] leading-[1.55] text-ink font-sans">
                   Vera följer hur det går mot målet och justerar planen.
                 </p>
               </div>
@@ -450,19 +446,19 @@ export default function EkonomiPage() {
           </div>
         </div>
       </div>
-      <div className="mx-auto my-0 px-10 py-24 gap-14 max-w-[1200px] box-border flex flex-wrap items-center">
-        <div className="reveal-soft flex-[1_1_400px] min-w-0">
+      <div className="mx-auto my-0 px-10 py-20 gap-14 max-w-[1200px] box-border flex flex-wrap items-center min-[900px]:min-h-dvh content-center">
+        <div className="reveal flex-[1_1_400px] min-w-0">
           <div className="mb-5 px-3.5 py-1.5 rounded-full inline-block bg-chip text-contrast text-[13px] font-semibold tracking-[0.14em] uppercase">
             Exempel på förslag
           </div>
-          <h2 className="mx-0 mt-0 mb-4 font-display font-bold uppercase tracking-[0.01em] text-[clamp(28px,7vw,44px)] wrap-break-word leading-[1.05]">
+          <h2 className="mx-0 mt-0 mb-4 font-display font-bold uppercase tracking-[0.01em] text-[clamp(28px,6.5vw,42px)] wrap-break-word leading-[1.05]">
             Du ser alltid varför.
           </h2>
           <div className="mb-8 gap-4 flex flex-col">
-            <p className="m-0 text-[17px] leading-[1.6] max-w-[560px] font-serif text-ink uppercase tracking-[0.03em]">
+            <p className="m-0 text-[18px] leading-[1.6] max-w-[560px] text-ink font-sans">
               Varje förslag visar vad det bygger på och vad det betyder för ditt sparmål.
             </p>
-            <p className="m-0 text-[17px] leading-[1.6] max-w-[560px] font-serif text-ink uppercase tracking-[0.03em]">
+            <p className="m-0 text-[18px] leading-[1.6] max-w-[560px] text-ink font-sans">
               Säg nej till det du vill behålla.
             </p>
           </div>
@@ -473,8 +469,8 @@ export default function EkonomiPage() {
             Kom igång
           </Link>
         </div>
-        <div className="reveal-soft flex-[1_1_480px] min-w-0">
-          <div className="p-7 rounded-card bg-surface border border-line shadow-[0_30px_70px_rgba(33,37,41,0.10)] box-border">
+        <div className="reveal flex-[1_1_480px] min-w-0">
+          <div className="p-7 rounded-card bg-surface border border-line box-border">
             <div className="gap-3 flex justify-between items-start flex-wrap">
               <div>
                 <div className="text-[12px] font-semibold tracking-[0.12em] uppercase text-ink-soft">
@@ -507,7 +503,7 @@ export default function EkonomiPage() {
             </div>
             <div className="mt-5 px-4.5 py-4 rounded-[14px] bg-page">
               <div className="mb-1.5 text-[12px] font-bold tracking-[0.12em] uppercase text-contrast">Motivering</div>
-              <div className="text-[15px] leading-[1.5] font-serif text-ink uppercase tracking-[0.03em]">
+              <div className="text-[16px] leading-[1.55] text-ink font-sans">
                 Du betalar 387 kr i månaden för tjänster du knappt använder. Säger du upp dem och lägger pengarna på
                 sparkontot har du 4 644 kr mer om ett år.
               </div>
@@ -586,18 +582,18 @@ export default function EkonomiPage() {
           </div>
         </div>
       </div>
-      <div className="bg-surface border-t border-t-line border-b border-b-line">
-        <div className="mx-auto my-0 px-10 py-24 max-w-[1200px] box-border">
-          <div className="mb-12">
-            <h2 className="mx-0 mt-0 mb-4 font-display font-bold uppercase tracking-[0.01em] text-[clamp(28px,7vw,44px)] wrap-break-word leading-[1.05]">
+      <div className="bg-surface min-[900px]:min-h-dvh box-border flex items-center">
+        <div className="mx-auto my-0 px-10 py-20 w-full max-w-[1200px] box-border">
+          <div className="mb-10 max-w-[720px] reveal">
+            <h2 className="mx-0 mt-0 mb-4 font-display font-bold uppercase tracking-[0.01em] text-[clamp(28px,6.5vw,42px)] wrap-break-word leading-[1.05]">
               Ingår
             </h2>
-            <p className="m-0 text-[17px] leading-[1.6] max-w-[560px] font-serif text-ink uppercase tracking-[0.03em]">
+            <p className="m-0 text-[18px] leading-[1.6] max-w-[560px] text-ink font-sans">
               Ekonomin, månad för månad.
             </p>
           </div>
           <div className="gap-y-10 gap-x-12 grid grid-cols-[repeat(auto-fit,minmax(320px,1fr))]">
-            <div className="reveal-soft gap-4 flex items-start min-w-0">
+            <div className="reveal gap-4 flex items-start min-w-0">
               <div className="rounded-xl w-12 h-12 bg-chip flex items-center justify-center">
                 <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true">
                   <path
@@ -612,12 +608,12 @@ export default function EkonomiPage() {
               </div>
               <div className="min-w-0">
                 <h3 className="mx-0 mt-0.5 mb-1.5 text-[15px] font-bold tracking-[0.1em] uppercase">Samlade konton</h3>
-                <p className="m-0 text-[15px] leading-[1.5] font-serif text-ink uppercase tracking-[0.03em]">
+                <p className="m-0 text-[16px] leading-[1.55] text-ink font-sans">
                   Inkomster och utgifter på ett ställe.
                 </p>
               </div>
             </div>
-            <div className="reveal-soft gap-4 flex items-start min-w-0">
+            <div className="reveal gap-4 flex items-start min-w-0">
               <div className="rounded-xl w-12 h-12 bg-chip flex items-center justify-center">
                 <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true">
                   <path
@@ -634,12 +630,12 @@ export default function EkonomiPage() {
                 <h3 className="mx-0 mt-0.5 mb-1.5 text-[15px] font-bold tracking-[0.1em] uppercase">
                   Automatisk budget
                 </h3>
-                <p className="m-0 text-[15px] leading-[1.5] font-serif text-ink uppercase tracking-[0.03em]">
+                <p className="m-0 text-[16px] leading-[1.55] text-ink font-sans">
                   Köp sorteras in direkt.
                 </p>
               </div>
             </div>
-            <div className="reveal-soft gap-4 flex items-start min-w-0">
+            <div className="reveal gap-4 flex items-start min-w-0">
               <div className="rounded-xl w-12 h-12 bg-chip flex items-center justify-center">
                 <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true">
                   <path
@@ -654,12 +650,12 @@ export default function EkonomiPage() {
               </div>
               <div className="min-w-0">
                 <h3 className="mx-0 mt-0.5 mb-1.5 text-[15px] font-bold tracking-[0.1em] uppercase">Sparmål</h3>
-                <p className="m-0 text-[15px] leading-[1.5] font-serif text-ink uppercase tracking-[0.03em]">
+                <p className="m-0 text-[16px] leading-[1.55] text-ink font-sans">
                   Hur nära du är.
                 </p>
               </div>
             </div>
-            <div className="reveal-soft gap-4 flex items-start min-w-0">
+            <div className="reveal gap-4 flex items-start min-w-0">
               <div className="rounded-xl w-12 h-12 bg-chip flex items-center justify-center">
                 <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true">
                   <path
@@ -674,12 +670,12 @@ export default function EkonomiPage() {
               </div>
               <div className="min-w-0">
                 <h3 className="mx-0 mt-0.5 mb-1.5 text-[15px] font-bold tracking-[0.1em] uppercase">Läckor</h3>
-                <p className="m-0 text-[15px] leading-[1.5] font-serif text-ink uppercase tracking-[0.03em]">
+                <p className="m-0 text-[16px] leading-[1.55] text-ink font-sans">
                   Kostnader som kan sänkas.
                 </p>
               </div>
             </div>
-            <div className="reveal-soft gap-4 flex items-start min-w-0">
+            <div className="reveal gap-4 flex items-start min-w-0">
               <div className="rounded-xl w-12 h-12 bg-chip flex items-center justify-center">
                 <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true">
                   <path
@@ -694,12 +690,12 @@ export default function EkonomiPage() {
               </div>
               <div className="min-w-0">
                 <h3 className="mx-0 mt-0.5 mb-1.5 text-[15px] font-bold tracking-[0.1em] uppercase">Varningar</h3>
-                <p className="m-0 text-[15px] leading-[1.5] font-serif text-ink uppercase tracking-[0.03em]">
+                <p className="m-0 text-[16px] leading-[1.55] text-ink font-sans">
                   Innan budgeten spricker.
                 </p>
               </div>
             </div>
-            <div className="reveal-soft gap-4 flex items-start min-w-0">
+            <div className="reveal gap-4 flex items-start min-w-0">
               <div className="rounded-xl w-12 h-12 bg-chip flex items-center justify-center">
                 <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true">
                   <path
@@ -716,12 +712,12 @@ export default function EkonomiPage() {
                 <h3 className="mx-0 mt-0.5 mb-1.5 text-[15px] font-bold tracking-[0.1em] uppercase">
                   Frågor vid osäkerhet
                 </h3>
-                <p className="m-0 text-[15px] leading-[1.5] font-serif text-ink uppercase tracking-[0.03em]">
+                <p className="m-0 text-[16px] leading-[1.55] text-ink font-sans">
                   Till exempel hur ett köp ska sorteras.
                 </p>
               </div>
             </div>
-            <div className="reveal-soft gap-4 flex items-start min-w-0">
+            <div className="reveal gap-4 flex items-start min-w-0">
               <div className="rounded-xl w-12 h-12 bg-chip flex items-center justify-center">
                 <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true">
                   <path
@@ -736,12 +732,12 @@ export default function EkonomiPage() {
               </div>
               <div className="min-w-0">
                 <h3 className="mx-0 mt-0.5 mb-1.5 text-[15px] font-bold tracking-[0.1em] uppercase">Månadsöversikt</h3>
-                <p className="m-0 text-[15px] leading-[1.5] font-serif text-ink uppercase tracking-[0.03em]">
+                <p className="m-0 text-[16px] leading-[1.55] text-ink font-sans">
                   Hela månaden på en sida.
                 </p>
               </div>
             </div>
-            <div className="reveal-soft gap-4 flex items-start min-w-0">
+            <div className="reveal gap-4 flex items-start min-w-0">
               <div className="rounded-xl w-12 h-12 bg-chip flex items-center justify-center">
                 <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true">
                   <path
@@ -756,12 +752,12 @@ export default function EkonomiPage() {
               </div>
               <div className="min-w-0">
                 <h3 className="mx-0 mt-0.5 mb-1.5 text-[15px] font-bold tracking-[0.1em] uppercase">App och webb</h3>
-                <p className="m-0 text-[15px] leading-[1.5] font-serif text-ink uppercase tracking-[0.03em]">
+                <p className="m-0 text-[16px] leading-[1.55] text-ink font-sans">
                   Ekonomin i telefonen och datorn.
                 </p>
               </div>
             </div>
-            <div className="reveal-soft gap-4 flex items-start min-w-0">
+            <div className="reveal gap-4 flex items-start min-w-0">
               <div className="rounded-xl w-12 h-12 bg-chip flex items-center justify-center">
                 <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true">
                   <path
@@ -776,7 +772,7 @@ export default function EkonomiPage() {
               </div>
               <div className="min-w-0">
                 <h3 className="mx-0 mt-0.5 mb-1.5 text-[15px] font-bold tracking-[0.1em] uppercase">Uppföljning</h3>
-                <p className="m-0 text-[15px] leading-[1.5] font-serif text-ink uppercase tracking-[0.03em]">
+                <p className="m-0 text-[16px] leading-[1.55] text-ink font-sans">
                   Hur det gick med dina mål.
                 </p>
               </div>
@@ -784,46 +780,46 @@ export default function EkonomiPage() {
           </div>
         </div>
       </div>
-      <div className="mx-auto my-0 px-10 py-24 max-w-[1200px] box-border">
-        <div className="mb-12">
-          <h2 className="mx-0 mt-0 mb-4 font-display font-bold uppercase tracking-[0.01em] text-[clamp(28px,7vw,44px)] wrap-break-word leading-[1.05]">
+      <div className="mx-auto my-0 px-10 py-20 max-w-[1200px] box-border min-[900px]:min-h-dvh flex flex-col justify-center">
+        <div className="mb-10 max-w-[720px] reveal">
+          <h2 className="mx-0 mt-0 mb-4 font-display font-bold uppercase tracking-[0.01em] text-[clamp(28px,6.5vw,42px)] wrap-break-word leading-[1.05]">
             Skillnaden
           </h2>
         </div>
         <div className="gap-10 grid grid-cols-[repeat(auto-fit,minmax(240px,1fr))]">
-          <div className="reveal-soft pt-5 border-t-2 border-t-accent min-w-0">
+          <div className="reveal pt-5 border-t-2 border-t-accent min-w-0">
             <div className="font-display font-bold uppercase tracking-[0.01em] text-[20px] text-accent">01</div>
             <h3 className="mx-0 my-2.5 font-display font-bold uppercase tracking-[0.01em] text-[26px] leading-[1.1]">
-              Känner din ekonomi
+              Ser helheten
             </h3>
-            <p className="m-0 text-[16px] leading-[1.55] font-serif text-ink uppercase tracking-[0.03em]">
+            <p className="m-0 text-[16px] leading-[1.55] text-ink font-sans">
               Vad som är fast, vad som varierar och vad du sparar till.
             </p>
           </div>
-          <div className="reveal-soft pt-5 border-t-2 border-t-accent min-w-0">
+          <div className="reveal pt-5 border-t-2 border-t-accent min-w-0">
             <div className="font-display font-bold uppercase tracking-[0.01em] text-[20px] text-accent">02</div>
             <h3 className="mx-0 my-2.5 font-display font-bold uppercase tracking-[0.01em] text-[26px] leading-[1.1]">
               Alltid aktuell
             </h3>
-            <p className="m-0 text-[16px] leading-[1.55] font-serif text-ink uppercase tracking-[0.03em]">
+            <p className="m-0 text-[16px] leading-[1.55] text-ink font-sans">
               Notis direkt när något avviker.
             </p>
           </div>
-          <div className="reveal-soft pt-5 border-t-2 border-t-accent min-w-0">
+          <div className="reveal pt-5 border-t-2 border-t-accent min-w-0">
             <div className="font-display font-bold uppercase tracking-[0.01em] text-[20px] text-accent">03</div>
             <h3 className="mx-0 my-2.5 font-display font-bold uppercase tracking-[0.01em] text-[26px] leading-[1.1]">
               Inga kalkylblad
             </h3>
-            <p className="m-0 text-[16px] leading-[1.55] font-serif text-ink uppercase tracking-[0.03em]">
-              Inget behöver föras in för hand.
+            <p className="m-0 text-[16px] leading-[1.55] text-ink font-sans">
+              Inget förs in för hand. Någonsin.
             </p>
           </div>
-          <div className="reveal-soft pt-5 border-t-2 border-t-accent min-w-0">
+          <div className="reveal pt-5 border-t-2 border-t-accent min-w-0">
             <div className="font-display font-bold uppercase tracking-[0.01em] text-[20px] text-accent">04</div>
             <h3 className="mx-0 my-2.5 font-display font-bold uppercase tracking-[0.01em] text-[26px] leading-[1.1]">
               Med kalendern
             </h3>
-            <p className="m-0 text-[16px] leading-[1.55] font-serif text-ink uppercase tracking-[0.03em]">
+            <p className="m-0 text-[16px] leading-[1.55] text-ink font-sans">
               Påminnelser om räkningar innan de förfaller.
             </p>
           </div>
@@ -837,10 +833,10 @@ export default function EkonomiPage() {
           </Link>
         </div>
       </div>
-      <div className="bg-surface border-t border-t-line border-b border-b-line">
-        <div className="mx-auto my-0 px-10 py-24 max-w-[1200px] box-border">
-          <div className="mb-10">
-            <h2 className="mx-0 mt-0 mb-4 font-display font-bold uppercase tracking-[0.01em] text-[clamp(28px,7vw,44px)] wrap-break-word leading-[1.05]">
+      <div className="bg-surface min-[900px]:min-h-dvh box-border flex items-center">
+        <div className="mx-auto my-0 px-10 py-20 w-full max-w-[1200px] box-border">
+          <div className="mb-10 max-w-[720px] reveal">
+            <h2 className="mx-0 mt-0 mb-4 font-display font-bold uppercase tracking-[0.01em] text-[clamp(28px,6.5vw,42px)] wrap-break-word leading-[1.05]">
               Jämförelse
             </h2>
           </div>
@@ -862,86 +858,86 @@ export default function EkonomiPage() {
               </thead>
               <tbody>
                 <tr>
-                  <td className="px-4 py-4.5 border-b border-b-line text-[14px] leading-[1.45] align-top font-semibold tracking-[0.06em] uppercase">
+                  <td className="px-4 py-4.5 border-b border-b-line text-[13px] leading-[1.45] align-top font-sans font-bold tracking-[0.08em] uppercase">
                     Vem sorterar?
                   </td>
-                  <td className="px-4 py-4.5 border-b border-b-line text-[14px] leading-[1.45] align-top font-serif text-ink uppercase tracking-[0.03em]">
+                  <td className="px-4 py-4.5 border-b border-b-line text-[16px] leading-[1.45] align-top text-ink font-sans">
                     Du, i ett kalkylblad
                   </td>
-                  <td className="px-4 py-4.5 border-b border-b-line text-[14px] leading-[1.45] align-top font-serif text-ink uppercase tracking-[0.03em]">
+                  <td className="px-4 py-4.5 border-b border-b-line text-[16px] leading-[1.45] align-top text-ink font-sans">
                     Appen, delvis
                   </td>
-                  <td className="px-4 py-4.5 border-b border-b-line text-[14px] leading-[1.45] align-top bg-chip font-serif uppercase tracking-[0.03em] font-bold text-contrast">
+                  <td className="px-4 py-4.5 border-b border-b-line text-[16px] leading-[1.45] align-top bg-chip font-sans font-bold text-contrast">
                     Vera
                   </td>
                 </tr>
                 <tr>
-                  <td className="px-4 py-4.5 border-b border-b-line text-[14px] leading-[1.45] align-top font-semibold tracking-[0.06em] uppercase">
+                  <td className="px-4 py-4.5 border-b border-b-line text-[13px] leading-[1.45] align-top font-sans font-bold tracking-[0.08em] uppercase">
                     Hittar läckor
                   </td>
-                  <td className="px-4 py-4.5 border-b border-b-line text-[14px] leading-[1.45] align-top font-serif text-ink uppercase tracking-[0.03em]">
+                  <td className="px-4 py-4.5 border-b border-b-line text-[16px] leading-[1.45] align-top text-ink font-sans">
                     Om du letar
                   </td>
-                  <td className="px-4 py-4.5 border-b border-b-line text-[14px] leading-[1.45] align-top font-serif text-ink uppercase tracking-[0.03em]">
+                  <td className="px-4 py-4.5 border-b border-b-line text-[16px] leading-[1.45] align-top text-ink font-sans">
                     Sällan
                   </td>
-                  <td className="px-4 py-4.5 border-b border-b-line text-[14px] leading-[1.45] align-top bg-chip font-serif uppercase tracking-[0.03em] font-bold text-contrast">
+                  <td className="px-4 py-4.5 border-b border-b-line text-[16px] leading-[1.45] align-top bg-chip font-sans font-bold text-contrast">
                     Varje månad
                   </td>
                 </tr>
                 <tr>
-                  <td className="px-4 py-4.5 border-b border-b-line text-[14px] leading-[1.45] align-top font-semibold tracking-[0.06em] uppercase">
+                  <td className="px-4 py-4.5 border-b border-b-line text-[13px] leading-[1.45] align-top font-sans font-bold tracking-[0.08em] uppercase">
                     Sparhjälp
                   </td>
-                  <td className="px-4 py-4.5 border-b border-b-line text-[14px] leading-[1.45] align-top font-serif text-ink uppercase tracking-[0.03em]">
+                  <td className="px-4 py-4.5 border-b border-b-line text-[16px] leading-[1.45] align-top text-ink font-sans">
                     Om du orkar
                   </td>
-                  <td className="px-4 py-4.5 border-b border-b-line text-[14px] leading-[1.45] align-top font-serif text-ink uppercase tracking-[0.03em]">
+                  <td className="px-4 py-4.5 border-b border-b-line text-[16px] leading-[1.45] align-top text-ink font-sans">
                     Visar siffror
                   </td>
-                  <td className="px-4 py-4.5 border-b border-b-line text-[14px] leading-[1.45] align-top bg-chip font-serif uppercase tracking-[0.03em] font-bold text-contrast">
+                  <td className="px-4 py-4.5 border-b border-b-line text-[16px] leading-[1.45] align-top bg-chip font-sans font-bold text-contrast">
                     Plan för ditt mål
                   </td>
                 </tr>
                 <tr>
-                  <td className="px-4 py-4.5 border-b border-b-line text-[14px] leading-[1.45] align-top font-semibold tracking-[0.06em] uppercase">
+                  <td className="px-4 py-4.5 border-b border-b-line text-[13px] leading-[1.45] align-top font-sans font-bold tracking-[0.08em] uppercase">
                     Motivering
                   </td>
-                  <td className="px-4 py-4.5 border-b border-b-line text-[14px] leading-[1.45] align-top font-serif text-ink uppercase tracking-[0.03em]">
+                  <td className="px-4 py-4.5 border-b border-b-line text-[16px] leading-[1.45] align-top text-ink font-sans">
                     Din egen
                   </td>
-                  <td className="px-4 py-4.5 border-b border-b-line text-[14px] leading-[1.45] align-top font-serif text-ink uppercase tracking-[0.03em]">
+                  <td className="px-4 py-4.5 border-b border-b-line text-[16px] leading-[1.45] align-top text-ink font-sans">
                     Sällan
                   </td>
-                  <td className="px-4 py-4.5 border-b border-b-line text-[14px] leading-[1.45] align-top bg-chip font-serif uppercase tracking-[0.03em] font-bold text-contrast">
+                  <td className="px-4 py-4.5 border-b border-b-line text-[16px] leading-[1.45] align-top bg-chip font-sans font-bold text-contrast">
                     Till varje förslag
                   </td>
                 </tr>
                 <tr>
-                  <td className="px-4 py-4.5 border-b border-b-line text-[14px] leading-[1.45] align-top font-semibold tracking-[0.06em] uppercase">
+                  <td className="px-4 py-4.5 border-b border-b-line text-[13px] leading-[1.45] align-top font-sans font-bold tracking-[0.08em] uppercase">
                     Beslut
                   </td>
-                  <td className="px-4 py-4.5 border-b border-b-line text-[14px] leading-[1.45] align-top font-serif text-ink uppercase tracking-[0.03em]">
+                  <td className="px-4 py-4.5 border-b border-b-line text-[16px] leading-[1.45] align-top text-ink font-sans">
                     Du
                   </td>
-                  <td className="px-4 py-4.5 border-b border-b-line text-[14px] leading-[1.45] align-top font-serif text-ink uppercase tracking-[0.03em]">
+                  <td className="px-4 py-4.5 border-b border-b-line text-[16px] leading-[1.45] align-top text-ink font-sans">
                     Du
                   </td>
-                  <td className="px-4 py-4.5 border-b border-b-line text-[14px] leading-[1.45] align-top bg-chip font-serif uppercase tracking-[0.03em] font-bold text-contrast">
+                  <td className="px-4 py-4.5 border-b border-b-line text-[16px] leading-[1.45] align-top bg-chip font-sans font-bold text-contrast">
                     Du
                   </td>
                 </tr>
                 <tr>
-                  <td className="px-4 py-4.5 border-b border-b-line text-[14px] leading-[1.45] align-top font-semibold tracking-[0.06em] uppercase">
+                  <td className="px-4 py-4.5 border-b border-b-line text-[13px] leading-[1.45] align-top font-sans font-bold tracking-[0.08em] uppercase">
                     Kostnad
                   </td>
-                  <td className="px-4 py-4.5 border-b border-b-line text-[14px] leading-[1.45] align-top font-serif text-ink uppercase tracking-[0.03em]">
+                  <td className="px-4 py-4.5 border-b border-b-line text-[16px] leading-[1.45] align-top text-ink font-sans">
                     Din tid
                   </td>
-                  <td className="px-4 py-4.5 border-b border-b-line text-[14px] leading-[1.45] align-top font-serif text-ink uppercase tracking-[0.03em]">
+                  <td className="px-4 py-4.5 border-b border-b-line text-[16px] leading-[1.45] align-top text-ink font-sans">
                     Gratis eller månadsavgift
                   </td>
-                  <td className="px-4 py-4.5 border-b border-b-line text-[14px] leading-[1.45] align-top bg-chip font-serif uppercase tracking-[0.03em] font-bold text-contrast">
+                  <td className="px-4 py-4.5 border-b border-b-line text-[16px] leading-[1.45] align-top bg-chip font-sans font-bold text-contrast">
                     Månadspris, inkl. moms
                   </td>
                 </tr>
@@ -964,14 +960,14 @@ export default function EkonomiPage() {
           </div>
         </div>
       </div>
-      <div className="mx-auto my-0 px-10 py-24 max-w-[1200px] box-border">
-        <div className="mb-10">
-          <h2 className="mx-0 mt-0 mb-4 font-display font-bold uppercase tracking-[0.01em] text-[clamp(28px,7vw,44px)] wrap-break-word leading-[1.05]">
+      <div className="mx-auto my-0 px-10 py-20 max-w-[1200px] box-border min-[900px]:min-h-dvh flex flex-col justify-center">
+        <div className="mb-10 max-w-[720px] reveal">
+          <h2 className="mx-0 mt-0 mb-4 font-display font-bold uppercase tracking-[0.01em] text-[clamp(28px,6.5vw,42px)] wrap-break-word leading-[1.05]">
             Passar för
           </h2>
         </div>
         <div className="gap-6 grid grid-cols-[repeat(auto-fit,minmax(260px,1fr))]">
-          <div className="reveal-soft p-7 gap-3.5 rounded-card bg-surface border border-line min-w-0 flex flex-col">
+          <div className="p-7 gap-3.5 rounded-card bg-surface box-border min-w-0 flex flex-col">
             <div className="rounded-xl w-12 h-12 bg-chip flex items-center justify-center">
               <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true">
                 <path
@@ -985,11 +981,11 @@ export default function EkonomiPage() {
               </svg>
             </div>
             <h3 className="m-0 text-[16px] font-bold tracking-[0.1em] uppercase">Studenter</h3>
-            <p className="m-0 text-[16px] leading-[1.55] font-serif text-ink uppercase tracking-[0.03em]">
+            <p className="m-0 text-[16px] leading-[1.55] text-ink font-sans">
               Pengar som räcker hela månaden.
             </p>
           </div>
-          <div className="reveal-soft p-7 gap-3.5 rounded-card bg-surface border border-line min-w-0 flex flex-col">
+          <div className="p-7 gap-3.5 rounded-card bg-surface box-border min-w-0 flex flex-col">
             <div className="rounded-xl w-12 h-12 bg-chip flex items-center justify-center">
               <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true">
                 <path
@@ -1003,11 +999,11 @@ export default function EkonomiPage() {
               </svg>
             </div>
             <h3 className="m-0 text-[16px] font-bold tracking-[0.1em] uppercase">Sparare</h3>
-            <p className="m-0 text-[16px] leading-[1.55] font-serif text-ink uppercase tracking-[0.03em]">
+            <p className="m-0 text-[16px] leading-[1.55] text-ink font-sans">
               En plan för resan, körkortet eller bostaden.
             </p>
           </div>
-          <div className="reveal-soft p-7 gap-3.5 rounded-card bg-surface border border-line min-w-0 flex flex-col">
+          <div className="p-7 gap-3.5 rounded-card bg-surface box-border min-w-0 flex flex-col">
             <div className="rounded-xl w-12 h-12 bg-chip flex items-center justify-center">
               <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true">
                 <path
@@ -1021,48 +1017,51 @@ export default function EkonomiPage() {
               </svg>
             </div>
             <h3 className="m-0 text-[16px] font-bold tracking-[0.1em] uppercase">Hushåll</h3>
-            <p className="m-0 text-[16px] leading-[1.55] font-serif text-ink uppercase tracking-[0.03em]">
+            <p className="m-0 text-[16px] leading-[1.55] text-ink font-sans">
               Gemensam överblick utan kalkylblad.
             </p>
           </div>
         </div>
       </div>
-      <div className="bg-contrast text-ink-inverse">
-        <div className="mx-auto my-0 px-10 py-24 gap-14 max-w-[1200px] box-border flex flex-wrap items-start">
-          <div className="reveal-soft flex-[1_1_420px] min-w-0">
-            <h2 className="mx-0 mt-0 mb-4 font-display font-bold uppercase tracking-[0.01em] text-[clamp(28px,7vw,44px)] wrap-break-word leading-[1.05] text-ink-inverse">
+      <div className="bg-surface min-[900px]:min-h-dvh box-border flex items-center">
+        <div className="mx-auto my-0 px-10 py-20 gap-14 w-full max-w-[1200px] box-border flex flex-wrap items-center">
+          <div className="flex-[1_1_420px] min-w-0 reveal">
+            <div className="mb-5 px-3.5 py-1.5 rounded-full inline-block bg-chip text-contrast text-[13px] font-semibold tracking-[0.14em] uppercase">
+              Trygghet
+            </div>
+            <h2 className="mx-0 mt-0 mb-4 font-display font-bold uppercase tracking-[0.01em] text-[clamp(28px,6.5vw,42px)] wrap-break-word leading-[1.05]">
               Kontroll
             </h2>
-            <p className="mx-0 mt-0 mb-7 text-[17px] leading-[1.6] max-w-[520px] font-serif text-ink-inverse-soft uppercase tracking-[0.03em]">
-              Vera ger förslag och överblick. Över pengarna bestämmer du.
+            <p className="mx-0 mt-0 mb-7 text-[18px] leading-[1.6] max-w-[520px] text-ink font-sans">
+              Vera ger förslag och överblick. Pengarna bestämmer du över.
             </p>
             <Link
-              className="pb-1 gap-2 inline-flex items-center font-bold text-[13px] tracking-[0.12em] uppercase no-underline text-ink-inverse border-b-[1.5px] border-b-ink-inverse"
+              className="gap-2 inline-flex items-center font-bold text-[13px] tracking-[0.12em] uppercase no-underline text-accent"
               href="/sakerhet"
             >
               Säkerhet →
             </Link>
           </div>
-          <div className="reveal-soft gap-4.5 flex-[1_1_420px] min-w-0 flex flex-col">
-            <div className="gap-3 flex items-start text-[15px] leading-[1.5] text-ink-inverse uppercase tracking-[0.04em] font-medium">
+          <div className="gap-3.5 flex-[1_1_420px] min-w-0 flex flex-col reveal-stagger">
+            <div className="px-5 py-4.5 gap-3.5 rounded-[14px] flex items-start bg-page border border-line text-[16px] leading-[1.55] text-ink font-sans">
               <svg className="mt-0.5 flex-none" width="20" height="20" viewBox="0 0 24 24" aria-hidden="true">
                 <path
                   d="M5 12.5l4.5 4.5L19 7.5"
                   fill="none"
-                  stroke="var(--ink-inverse-soft)"
+                  stroke="var(--accent)"
                   strokeWidth="2.4"
                   strokeLinecap="round"
                   strokeLinejoin="round"
                 />
               </svg>
-              <span>Vera kan läsa, aldrig flytta pengar</span>
+              <span>Vera kan läsa. Aldrig flytta pengar.</span>
             </div>
-            <div className="gap-3 flex items-start text-[15px] leading-[1.5] text-ink-inverse uppercase tracking-[0.04em] font-medium">
+            <div className="px-5 py-4.5 gap-3.5 rounded-[14px] flex items-start bg-page border border-line text-[16px] leading-[1.55] text-ink font-sans">
               <svg className="mt-0.5 flex-none" width="20" height="20" viewBox="0 0 24 24" aria-hidden="true">
                 <path
                   d="M5 12.5l4.5 4.5L19 7.5"
                   fill="none"
-                  stroke="var(--ink-inverse-soft)"
+                  stroke="var(--accent)"
                   strokeWidth="2.4"
                   strokeLinecap="round"
                   strokeLinejoin="round"
@@ -1070,12 +1069,12 @@ export default function EkonomiPage() {
               </svg>
               <span>Varje förslag motiveras</span>
             </div>
-            <div className="gap-3 flex items-start text-[15px] leading-[1.5] text-ink-inverse uppercase tracking-[0.04em] font-medium">
+            <div className="px-5 py-4.5 gap-3.5 rounded-[14px] flex items-start bg-page border border-line text-[16px] leading-[1.55] text-ink font-sans">
               <svg className="mt-0.5 flex-none" width="20" height="20" viewBox="0 0 24 24" aria-hidden="true">
                 <path
                   d="M5 12.5l4.5 4.5L19 7.5"
                   fill="none"
-                  stroke="var(--ink-inverse-soft)"
+                  stroke="var(--accent)"
                   strokeWidth="2.4"
                   strokeLinecap="round"
                   strokeLinejoin="round"
@@ -1083,12 +1082,12 @@ export default function EkonomiPage() {
               </svg>
               <span>Bara det du delar används</span>
             </div>
-            <div className="gap-3 flex items-start text-[15px] leading-[1.5] text-ink-inverse uppercase tracking-[0.04em] font-medium">
+            <div className="px-5 py-4.5 gap-3.5 rounded-[14px] flex items-start bg-page border border-line text-[16px] leading-[1.55] text-ink font-sans">
               <svg className="mt-0.5 flex-none" width="20" height="20" viewBox="0 0 24 24" aria-hidden="true">
                 <path
                   d="M5 12.5l4.5 4.5L19 7.5"
                   fill="none"
-                  stroke="var(--ink-inverse-soft)"
+                  stroke="var(--accent)"
                   strokeWidth="2.4"
                   strokeLinecap="round"
                   strokeLinejoin="round"
@@ -1099,30 +1098,30 @@ export default function EkonomiPage() {
           </div>
         </div>
       </div>
-      <div className="bg-surface-muted">
-        <div className="mx-auto my-0 px-10 py-24 max-w-[1200px] box-border">
-          <div className="mb-10">
-            <h2 className="mx-0 mt-0 mb-4 font-display font-bold uppercase tracking-[0.01em] text-[clamp(28px,7vw,44px)] wrap-break-word leading-[1.05]">
+      <div className="min-[900px]:min-h-dvh box-border flex items-center">
+        <div className="mx-auto my-0 px-10 py-20 w-full max-w-[1200px] box-border">
+          <div className="mb-10 max-w-[720px] reveal">
+            <h2 className="mx-0 mt-0 mb-4 font-display font-bold uppercase tracking-[0.01em] text-[clamp(28px,6.5vw,42px)] wrap-break-word leading-[1.05]">
               Användarröster
             </h2>
           </div>
-          <div className="gap-6 grid grid-cols-[repeat(auto-fit,minmax(300px,1fr))]">
-            <figure className="m-0 p-7 gap-4.5 rounded-card bg-surface border border-line min-w-0 box-border flex flex-col">
+          <div className="gap-6 grid grid-cols-[repeat(auto-fit,minmax(300px,1fr))] reveal-stagger">
+            <figure className="m-0 p-7 gap-4.5 rounded-card bg-surface min-w-0 box-border flex flex-col">
               <span className="px-2.5 py-[3px] rounded-full self-start border border-line-soft text-[11px] font-bold tracking-[0.12em] uppercase text-ink-soft">
                 Exempelcitat
               </span>
-              <blockquote className="m-0 text-[20px] leading-[1.6] text-ink font-serif">
+              <blockquote className="m-0 text-[20px] leading-[1.6] text-ink font-sans">
                 ”Jag hittade 400 kronor i månaden som bara försvann.”
               </blockquote>
               <figcaption className="text-[13px] font-bold tracking-[0.1em] uppercase text-contrast">
                 Elin Wahl · Exempelanvändare
               </figcaption>
             </figure>
-            <figure className="m-0 p-7 gap-4.5 rounded-card bg-surface border border-line min-w-0 box-border flex flex-col">
+            <figure className="m-0 p-7 gap-4.5 rounded-card bg-surface min-w-0 box-border flex flex-col">
               <span className="px-2.5 py-[3px] rounded-full self-start border border-line-soft text-[11px] font-bold tracking-[0.12em] uppercase text-ink-soft">
                 Exempelcitat
               </span>
-              <blockquote className="m-0 text-[20px] leading-[1.6] text-ink font-serif">
+              <blockquote className="m-0 text-[20px] leading-[1.6] text-ink font-sans">
                 ”Nu vet jag vart lönen tar vägen.”
               </blockquote>
               <figcaption className="text-[13px] font-bold tracking-[0.1em] uppercase text-contrast">
@@ -1132,9 +1131,9 @@ export default function EkonomiPage() {
           </div>
         </div>
       </div>
-      <div className="mx-auto my-0 px-10 py-24 max-w-[900px] box-border">
-        <div className="mb-10 text-center">
-          <h2 className="mx-0 mt-0 mb-4 font-display font-bold uppercase tracking-[0.01em] text-[clamp(28px,7vw,44px)] wrap-break-word leading-[1.05] text-center">
+      <div className="mx-auto my-0 px-10 py-20 max-w-[900px] box-border min-[900px]:min-h-dvh flex flex-col justify-center">
+        <div className="mb-10 max-w-[720px] reveal">
+          <h2 className="mx-0 mt-0 mb-4 font-display font-bold uppercase tracking-[0.01em] text-[clamp(28px,6.5vw,42px)] wrap-break-word leading-[1.05]">
             Frågor om privatekonomi
           </h2>
         </div>
@@ -1149,7 +1148,7 @@ export default function EkonomiPage() {
                 +
               </span>
             </summary>
-            <p className="mx-1 mt-0 mb-5.5 text-[16px] leading-[1.55] max-w-[760px] font-serif text-ink uppercase tracking-[0.03em]">
+            <p className="mx-1 mt-0 mb-5.5 text-[16px] leading-[1.55] max-w-[760px] text-ink font-sans">
               Via banken med BankID. Vera får bara läsbehörighet.
             </p>
           </details>
@@ -1163,7 +1162,7 @@ export default function EkonomiPage() {
                 +
               </span>
             </summary>
-            <p className="mx-1 mt-0 mb-5.5 text-[16px] leading-[1.55] max-w-[760px] font-serif text-ink uppercase tracking-[0.03em]">
+            <p className="mx-1 mt-0 mb-5.5 text-[16px] leading-[1.55] max-w-[760px] text-ink font-sans">
               Nej. Vera hjälper till med budget, sparande och utgifter.
             </p>
           </details>
@@ -1177,7 +1176,7 @@ export default function EkonomiPage() {
                 +
               </span>
             </summary>
-            <p className="mx-1 mt-0 mb-5.5 text-[16px] leading-[1.55] max-w-[760px] font-serif text-ink uppercase tracking-[0.03em]">
+            <p className="mx-1 mt-0 mb-5.5 text-[16px] leading-[1.55] max-w-[760px] text-ink font-sans">
               Vera frågar, till exempel hur ett köp ska sorteras.
             </p>
           </details>
@@ -1191,8 +1190,8 @@ export default function EkonomiPage() {
                 +
               </span>
             </summary>
-            <p className="mx-1 mt-0 mb-5.5 text-[16px] leading-[1.55] max-w-[760px] font-serif text-ink uppercase tracking-[0.03em]">
-              De används bara för dig. Läs mer på säkerhetssidan.
+            <p className="mx-1 mt-0 mb-5.5 text-[16px] leading-[1.55] max-w-[760px] text-ink font-sans">
+              De används bara för dig, och Vera har bara läsbehörighet. Läs mer på säkerhetssidan.
             </p>
           </details>
           <details className="faq border-b border-b-line">
@@ -1205,7 +1204,7 @@ export default function EkonomiPage() {
                 +
               </span>
             </summary>
-            <p className="mx-1 mt-0 mb-5.5 text-[16px] leading-[1.55] max-w-[760px] font-serif text-ink uppercase tracking-[0.03em]">
+            <p className="mx-1 mt-0 mb-5.5 text-[16px] leading-[1.55] max-w-[760px] text-ink font-sans">
               Ja. Vera fördelar sparandet efter dina prioriteringar.
             </p>
           </details>
@@ -1219,7 +1218,7 @@ export default function EkonomiPage() {
                 +
               </span>
             </summary>
-            <p className="mx-1 mt-0 mb-5.5 text-[16px] leading-[1.55] max-w-[760px] font-serif text-ink uppercase tracking-[0.03em]">
+            <p className="mx-1 mt-0 mb-5.5 text-[16px] leading-[1.55] max-w-[760px] text-ink font-sans">
               Ja. En gemensam översikt och varsin privat del.
             </p>
           </details>
@@ -1233,29 +1232,32 @@ export default function EkonomiPage() {
                 +
               </span>
             </summary>
-            <p className="mx-1 mt-0 mb-5.5 text-[16px] leading-[1.55] max-w-[760px] font-serif text-ink uppercase tracking-[0.03em]">
-              Du betalar per månad och kan säga upp med XXX uppsägningstid.
+            <p className="mx-1 mt-0 mb-5.5 text-[16px] leading-[1.55] max-w-[760px] text-ink font-sans">
+              Du betalar per månad och kan säga upp när du vill, med XXX uppsägningstid.
             </p>
           </details>
         </div>
       </div>
-      <div className="mx-auto mt-0 mb-24 px-10 py-0 max-w-[1200px] box-border">
-        <div className="reveal-soft px-10 py-18 rounded-[28px] bg-accent text-ink-inverse box-border text-center">
-          <h2 className="mx-0 mt-0 mb-4 font-display font-bold uppercase tracking-[0.01em] text-[clamp(28px,7vw,46px)] wrap-break-word leading-[1.05] text-ink-inverse">
-            Se din första månadsöversikt
+      <div className="bg-surface min-[900px]:min-h-dvh box-border flex items-center">
+        <div className="mx-auto my-0 px-10 py-20 w-full max-w-[1200px] box-border flex flex-col items-center text-center reveal">
+          <div className="mb-5 px-3.5 py-1.5 rounded-full inline-block bg-chip text-contrast text-[13px] font-semibold tracking-[0.14em] uppercase">
+            Kontakt
+          </div>
+          <h2 className="mx-0 mt-0 mb-4 font-display font-bold uppercase tracking-[0.01em] text-[clamp(28px,6.5vw,42px)] wrap-break-word leading-[1.05]">
+            Se din första månadsöversikt.
           </h2>
-          <p className="mx-auto mt-0 mb-8 text-[17px] leading-[1.6] max-w-[540px] font-serif text-ink-inverse uppercase tracking-[0.03em]">
-            Kom igång och få överblick över din ekonomi.
+          <p className="mx-auto mt-0 mb-8 text-[18px] leading-[1.6] max-w-[540px] text-ink font-sans">
+            Koppla kontona med BankID och se vart pengarna tar vägen.
           </p>
           <div className="gap-3 flex justify-center flex-wrap">
             <Link
-              className="btn btn--primary theme-inverse"
+              className="btn btn--primary"
               href="/#kontakt"
             >
               Kom igång
             </Link>
             <Link
-              className="btn btn--secondary theme-inverse"
+              className="btn btn--secondary"
               href="/priser"
             >
               Se priser

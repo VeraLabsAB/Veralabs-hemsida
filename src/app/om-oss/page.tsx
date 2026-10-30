@@ -4,58 +4,76 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Om oss",
   description:
-    "Vera Labs AB är ett AI-bolag från Stockholm. Vi utvecklar VeraAI, agenter som tar hand om det administrativa i mindre företag.",
+    "Vera Labs AB är ett AI-bolag från Stockholm som bygger VeraAI. Idén föddes i en tunnelbanekiosk, en natt när ett bokslut tog sexton timmar.",
 };
 
 export default function OmOssPage() {
   return (
     <>
-      <div className="bg-[linear-gradient(180deg,var(--page)_0%,var(--surface-muted)_100%)]">
-        <div className="mx-auto my-0 px-10 pt-18 pb-24 max-w-[1200px] box-border flex flex-col items-center text-center">
-          <div className="mb-6 px-3.5 py-1.5 rounded-full inline-block bg-chip text-contrast text-[13px] font-semibold tracking-[0.14em] uppercase">
-            Om oss
+      {/* Samma layout som startsidan (2026-10-30): mörkt helskärms-hero bakom header-pillen, sedan en skärm
+          per sektion som växlar mellan sidbakgrund och kortyta utan streck emellan. */}
+      <div className="lv-hero text-snow -mt-[68px] pt-[68px] max-[900px]:-mt-[60px] max-[900px]:pt-[60px] min-h-dvh box-border flex items-center">
+        <div className="mx-auto my-0 px-10 pt-20 pb-24 w-full max-w-[1200px] box-border">
+          <div className="max-w-[760px]">
+            <div className="mb-6 px-3.5 py-1.5 rounded-full inline-block bg-snow/8 border border-snow/18 text-platinum text-[13px] font-semibold tracking-[0.14em] uppercase">
+              Om oss
+            </div>
+            <h1 className="mx-0 mt-0 mb-6 font-display font-bold uppercase tracking-[0.01em] text-[clamp(32px,5.5vw,56px)] leading-[1.05] wrap-break-word text-snow">
+              Pappers&shy;arbetet ska aldrig få stoppa ett bra företag.
+            </h1>
+            <p className="mx-0 mt-0 mb-8 text-[18px] leading-[1.65] text-pale-1 font-sans max-w-[560px]">
+              Vera Labs AB är ett AI-bolag från Stockholm. Vi bygger VeraAI: agenter som tar hand om allt det
+              administrativa, så att den som driver företaget kan göra just det.
+            </p>
+            <div className="gap-3 flex flex-wrap">
+              <a className="btn btn--primary theme-dark" href="#historia">
+                Läs historien
+              </a>
+              <Link className="btn btn--secondary theme-dark" href="/#kontakt">
+                Boka en demo
+              </Link>
+            </div>
           </div>
-          <h1 className="mx-0 mt-0 mb-6 wrap-break-word font-display font-bold uppercase tracking-[0.01em] text-[clamp(32px,8vw,56px)] leading-[1.04] w-full max-w-[1000px]">
-            Pappers&shy;arbetet ska inte stoppa bra företag.
-          </h1>
-          <p className="mx-auto my-0 text-[17px] leading-[1.6] max-w-[560px] font-serif text-ink uppercase tracking-[0.03em] font-bold">
-            Vera Labs AB är ett AI-bolag från Stockholm. Vi utvecklar VeraAI, agenter som tar hand om det administrativa
-            i mindre företag.
-          </p>
         </div>
       </div>
-      <div className="bg-surface border-t border-t-line border-b border-b-line" id="ide">
-        <div className="mx-auto my-0 px-10 py-22 gap-12 max-w-[1200px] box-border flex flex-wrap items-start">
+      <div className="bg-surface min-[900px]:min-h-dvh box-border flex items-center scroll-mt-20" id="ide">
+        <div className="mx-auto my-0 px-10 py-20 gap-12 w-full max-w-[1200px] box-border flex flex-wrap items-start reveal-stagger">
           <div className="flex-[1_1_400px] min-w-0">
-            <h2 className="mx-0 mt-0 mb-5 font-display font-bold uppercase tracking-[0.01em] text-[clamp(28px,6vw,42px)] leading-[1.05] wrap-break-word">
-              Varför Vera finns
+            <div className="mb-5 px-3.5 py-1.5 rounded-full inline-block bg-chip text-contrast text-[13px] font-semibold tracking-[0.14em] uppercase">
+              Vår idé
+            </div>
+            <h2 className="mx-0 mt-0 mb-5 font-display font-bold uppercase tracking-[0.01em] text-[clamp(28px,6.5vw,42px)] leading-[1.05] wrap-break-word">
+              Varför Vera finns.
             </h2>
           </div>
           <div className="gap-4.5 flex-[1_1_480px] min-w-0 flex flex-col">
-            <p className="m-0 text-[18px] leading-[1.65] font-serif text-ink uppercase tracking-[0.03em]">
-              Småföretag har i dag två val: att sköta bokföringen själva, ofta på kvällar och helger, eller att anlita
-              en redovisningskonsult som kan kosta uppemot 1 000 kr i timmen.
+            <p className="m-0 text-[18px] leading-[1.65] text-ink font-sans">
+              Småföretag har haft två val: sköta bokföringen själva, på kvällar och helger, eller anlita en
+              redovisningskonsult för uppemot 1 000 kr i timmen.
             </p>
-            <p className="m-0 text-[18px] leading-[1.65] font-serif text-ink uppercase tracking-[0.03em]">
-              Vi byggde <b>Vera</b> som ett tredje val. Hon tar redovisningen från första transaktion till färdig
-              bokföring och visar varför varje post hamnar där den gör. Den som är ny som företagare får ett stöd som
-              också lär ut.
+            <p className="m-0 text-[18px] leading-[1.65] text-ink font-sans">
+              Vi byggde <b>Vera</b> som det tredje valet. Hon tar bokföringen från första transaktionen till färdigt
+              bokslut och visar varför varje post hamnar där den gör. Är du ny som företagare får du en kollega som
+              också lär dig.
             </p>
           </div>
         </div>
       </div>
-      <div className="mx-auto my-0 px-10 pt-24 pb-20 max-w-[1200px] box-border">
-        <div className="mx-auto my-0 max-w-[760px] text-center">
-          <div className="mx-auto mt-0 mb-5 px-3.5 py-1.5 rounded-full table bg-chip text-contrast text-[13px] font-semibold tracking-[0.14em] uppercase">
+      <div
+        className="mx-auto my-0 px-10 py-20 max-w-[1200px] box-border min-[900px]:min-h-dvh flex flex-col justify-center scroll-mt-20"
+        id="historia"
+      >
+        <div className="max-w-[720px] reveal">
+          <div className="mb-5 px-3.5 py-1.5 rounded-full inline-block bg-chip text-contrast text-[13px] font-semibold tracking-[0.14em] uppercase">
             Vår historia
           </div>
-          <h2 className="mx-0 mt-0 mb-5 font-display font-bold uppercase tracking-[0.01em] text-[clamp(28px,_7.5vw,_42px)] leading-[1.05] text-center wrap-break-word">
+          <h2 className="m-0 font-display font-bold uppercase tracking-[0.01em] text-[clamp(28px,6.5vw,42px)] leading-[1.05] wrap-break-word">
             Sexton timmar i en tunnelbanekiosk
           </h2>
         </div>
-        <div className="mt-20 gap-14 flex flex-wrap items-center">
+        <div className="mt-14 gap-14 flex flex-wrap items-center reveal-stagger">
           <div className="flex-[1_1_420px] min-w-0">
-            <p className="m-0 text-[18px] leading-[1.65] font-serif text-ink uppercase tracking-[0.03em]">
+            <p className="m-0 text-[18px] leading-[1.65] text-ink font-sans">
               Klockan var ett på natten när vi till slut låste dörren. Min vän hade suttit med årets bokslut sedan nio
               på morgonen, med tolv pärmar uppslagna bredvid kassan, och tagit emot kunder mellan varven.
             </p>
@@ -77,7 +95,7 @@ export default function OmOssPage() {
             </div>
           </div>
         </div>
-        <div className="mt-20 gap-14 flex flex-wrap items-start">
+        <div className="mt-16 gap-14 flex flex-wrap items-start reveal-stagger">
           <div className="p-7 gap-3 rounded-card flex-[1_1_380px] min-w-0 min-h-[340px] aspect-[4/5] border-2 border-dashed border-line-soft bg-surface-muted flex flex-col items-center justify-center box-border text-center">
             <svg width="40" height="40" viewBox="0 0 24 24" aria-hidden="true">
               <path
@@ -95,21 +113,21 @@ export default function OmOssPage() {
             </div>
           </div>
           <div className="gap-5.5 flex-[1_1_420px] min-w-0 flex flex-col">
-            <p className="m-0 text-[18px] leading-[1.65] font-serif text-ink uppercase tracking-[0.03em]">
+            <p className="m-0 text-[18px] leading-[1.65] text-ink font-sans">
               Hans familj driver kiosker i tunnelbanan, och under gymnasiet jobbade jag där. Den sommarkvällen hade jag
               kommit för att skjutsa hem honom. I stället blev jag sittande och såg honom knappa in rad efter rad från
               skattekontot.
             </p>
-            <p className="m-0 text-[18px] leading-[1.65] font-serif text-ink uppercase tracking-[0.03em]">
+            <p className="m-0 text-[18px] leading-[1.65] text-ink font-sans">
               Jag kände igen det. Jag har alltid velat driva företag, och varje gång jag har försökt har jag fastnat på
               samma ställe: bokföring, moms och deklarationer. Det var aldrig idéerna som tog stopp, utan allt runt
               omkring dem.
             </p>
-            <p className="m-0 text-[18px] leading-[1.65] font-serif text-ink uppercase tracking-[0.03em]">
+            <p className="m-0 text-[18px] leading-[1.65] text-ink font-sans">
               Det här borde en AI kunna göra, sa jag. Han var inte övertygad, och han hade tre skäl:
             </p>
             <ul className="m-0 py-0 pr-0 pl-5 gap-3.5 list-none flex flex-col border-l-[3px] border-l-accent">
-              <li className="gap-3.5 flex items-start text-[18px] leading-[1.55] font-serif text-ink uppercase tracking-[0.03em]">
+              <li className="gap-3.5 flex items-start text-[18px] leading-[1.55] text-ink font-sans">
                 <span
                   className="font-display font-bold uppercase tracking-[0.01em] text-accent text-[22px] leading-[1.2]"
                   aria-hidden="true"
@@ -120,7 +138,7 @@ export default function OmOssPage() {
                   Den vet inte hur just <b>vi</b> bokför.
                 </span>
               </li>
-              <li className="gap-3.5 flex items-start text-[18px] leading-[1.55] font-serif text-ink uppercase tracking-[0.03em]">
+              <li className="gap-3.5 flex items-start text-[18px] leading-[1.55] text-ink font-sans">
                 <span
                   className="font-display font-bold uppercase tracking-[0.01em] text-accent text-[22px] leading-[1.2]"
                   aria-hidden="true"
@@ -129,7 +147,7 @@ export default function OmOssPage() {
                 </span>
                 <span>Någon måste ändå granska allt den gör.</span>
               </li>
-              <li className="gap-3.5 flex items-start text-[18px] leading-[1.55] font-serif text-ink uppercase tracking-[0.03em]">
+              <li className="gap-3.5 flex items-start text-[18px] leading-[1.55] text-ink font-sans">
                 <span
                   className="font-display font-bold uppercase tracking-[0.01em] text-accent text-[22px] leading-[1.2]"
                   aria-hidden="true"
@@ -141,116 +159,127 @@ export default function OmOssPage() {
             </ul>
           </div>
         </div>
-        <div className="mt-20 gap-6 flex flex-wrap">
-          <div className="p-7 rounded-card flex-[1_1_200px] min-w-0 bg-surface border border-line text-center">
+        <div className="mt-16 gap-6 flex flex-wrap reveal-stagger">
+          <div className="p-7 rounded-card flex-[1_1_200px] min-w-0 bg-surface box-border text-center">
             <div className="font-display font-bold text-[56px] leading-none text-accent">12</div>
-            <div className="mt-2.5 font-serif text-[16px] leading-[1.4] uppercase tracking-[0.03em] text-ink">
+            <div className="mt-2.5 text-[16px] leading-[1.5] text-ink font-sans">
               pärmar
             </div>
           </div>
-          <div className="p-7 rounded-card flex-[1_1_200px] min-w-0 bg-surface border border-line text-center">
+          <div className="p-7 rounded-card flex-[1_1_200px] min-w-0 bg-surface box-border text-center">
             <div className="font-display font-bold text-[56px] leading-none text-accent">16 h</div>
-            <div className="mt-2.5 font-serif text-[16px] leading-[1.4] uppercase tracking-[0.03em] text-ink">
+            <div className="mt-2.5 text-[16px] leading-[1.5] text-ink font-sans">
               vid datorn
             </div>
           </div>
-          <div className="p-7 rounded-card flex-[1_1_200px] min-w-0 bg-surface border border-line text-center">
+          <div className="p-7 rounded-card flex-[1_1_200px] min-w-0 bg-surface box-border text-center">
             <div className="font-display font-bold text-[56px] leading-none text-accent">01:00</div>
-            <div className="mt-2.5 font-serif text-[16px] leading-[1.4] uppercase tracking-[0.03em] text-ink">
+            <div className="mt-2.5 text-[16px] leading-[1.5] text-ink font-sans">
               när dörren låstes
             </div>
           </div>
         </div>
-        <div className="mx-auto mt-20 mb-0 gap-5.5 max-w-[760px] text-center flex flex-col">
-          <p className="m-0 text-[18px] leading-[1.65] font-serif text-ink uppercase tracking-[0.03em] text-center">
-            Tre rimliga invändningar. Men alla tre gick att lösa, och de blev ritningen till Vera.
+        <div className="mx-0 mt-16 mb-0 gap-5.5 max-w-[760px] flex flex-col reveal">
+          <p className="m-0 text-[18px] leading-[1.65] text-ink font-sans">
+            Tre rimliga invändningar. Alla tre gick att lösa. De blev ritningen till Vera.
           </p>
-          <p className="m-0 text-[18px] leading-[1.65] font-serif text-ink uppercase tracking-[0.03em] text-center">
+          <p className="m-0 text-[18px] leading-[1.65] text-ink font-sans">
             Målet är enkelt: ett litet företag ska ha samma ordning i ekonomin som ett stort, utan att någon behöver
             sitta kvar till ett på natten.
           </p>
         </div>
       </div>
-      <div className="bg-surface-muted">
-        <div className="mx-auto my-0 px-10 py-22 max-w-[1200px] box-border">
-          <h2 className="mx-0 mt-0 mb-5 font-display font-bold uppercase tracking-[0.01em] text-[clamp(28px,7.5vw,42px)] leading-[1.05] wrap-break-word">
-            Tre invändningar, tre svar
-          </h2>
-          <div className="mt-5 gap-6 grid grid-cols-[repeat(auto-fit,minmax(280px,1fr))]">
-            <div className="p-7 rounded-card bg-surface border border-line min-w-0">
+      <div className="bg-surface min-[900px]:min-h-dvh box-border flex items-center">
+        <div className="mx-auto my-0 px-10 py-20 w-full max-w-[1200px] box-border">
+          <div className="mb-10 max-w-[720px] reveal">
+            <div className="mb-5 px-3.5 py-1.5 rounded-full inline-block bg-chip text-contrast text-[13px] font-semibold tracking-[0.14em] uppercase">
+              Svaren
+            </div>
+            <h2 className="m-0 font-display font-bold uppercase tracking-[0.01em] text-[clamp(28px,6.5vw,42px)] leading-[1.05] wrap-break-word">
+              Tre invändningar. Tre svar.
+            </h2>
+          </div>
+          <div className="gap-6 grid grid-cols-[repeat(auto-fit,minmax(280px,1fr))] reveal-stagger">
+            <div className="p-7 rounded-card bg-page border border-line min-w-0 box-border">
               <div className="font-display font-bold uppercase tracking-[0.01em] text-[20px] text-accent">01</div>
               <h3 className="mx-0 my-2.5 font-display font-bold uppercase tracking-[0.01em] text-[24px] leading-[1.1]">
                 Egen regelbok
               </h3>
-              <p className="m-0 text-[16px] leading-[1.55] font-serif text-ink uppercase tracking-[0.03em]">
-                Vera lär sig hur just ert företag bokför, och följer det.
+              <p className="m-0 text-[16px] leading-[1.55] text-ink font-sans">
+                Vera lär sig hur just ditt företag bokför, och följer det till punkt och pricka.
               </p>
             </div>
-            <div className="p-7 rounded-card bg-surface border border-line min-w-0">
+            <div className="p-7 rounded-card bg-page border border-line min-w-0 box-border">
               <div className="font-display font-bold uppercase tracking-[0.01em] text-[20px] text-accent">02</div>
               <h3 className="mx-0 my-2.5 font-display font-bold uppercase tracking-[0.01em] text-[24px] leading-[1.1]">
                 Granskning
               </h3>
-              <p className="m-0 text-[16px] leading-[1.55] font-serif text-ink uppercase tracking-[0.03em]">
-                Inget förs in utan ert godkännande, och varje steg loggas.
+              <p className="m-0 text-[16px] leading-[1.55] text-ink font-sans">
+                Inget förs in utan ditt godkännande, och varje steg loggas.
               </p>
             </div>
-            <div className="p-7 rounded-card bg-surface border border-line min-w-0">
+            <div className="p-7 rounded-card bg-page border border-line min-w-0 box-border">
               <div className="font-display font-bold uppercase tracking-[0.01em] text-[20px] text-accent">03</div>
               <h3 className="mx-0 my-2.5 font-display font-bold uppercase tracking-[0.01em] text-[24px] leading-[1.1]">
                 Direkt till programmet
               </h3>
-              <p className="m-0 text-[16px] leading-[1.55] font-serif text-ink uppercase tracking-[0.03em]">
-                I automatiskt läge förs den godkända bokföringen in åt er.
+              <p className="m-0 text-[16px] leading-[1.55] text-ink font-sans">
+                I automatiskt läge för Vera in den godkända bokföringen åt dig. Inget skrivs in för hand.
               </p>
             </div>
           </div>
         </div>
       </div>
-      <div className="mx-auto my-0 px-10 py-24 max-w-[760px] box-border" id="grundaren">
-        <h2 className="mx-0 mt-0 mb-5 font-display font-bold uppercase tracking-[0.01em] text-[clamp(28px,6vw,42px)] leading-[1.05]">
-          Där vi är nu
-        </h2>
-        <div className="gap-5.5 flex flex-col">
-          <p className="m-0 text-[18px] leading-[1.65] font-serif text-ink uppercase tracking-[0.03em]">
-            Efter [X] månaders utveckling lanserar vi Vera med den första agenten, bokföringsagenten. Fler agenter
-            följer.
+      <div
+        className="mx-auto my-0 px-10 py-20 max-w-[1200px] box-border min-[900px]:min-h-dvh flex flex-col justify-center scroll-mt-20"
+        id="grundaren"
+      >
+        <div className="mb-10 max-w-[720px] reveal">
+          <div className="mb-5 px-3.5 py-1.5 rounded-full inline-block bg-chip text-contrast text-[13px] font-semibold tracking-[0.14em] uppercase">
+            Idag
+          </div>
+          <h2 className="m-0 font-display font-bold uppercase tracking-[0.01em] text-[clamp(28px,6.5vw,42px)] leading-[1.05] wrap-break-word">
+            Där vi är nu.
+          </h2>
+        </div>
+        <div className="gap-5.5 flex flex-col max-w-[760px] reveal-stagger">
+          <p className="m-0 text-[18px] leading-[1.65] text-ink font-sans">
+            Efter [X] månaders utveckling lanserar vi Vera med den första agenten, Bokföringsagenten. Fler agenter är
+            på väg.
           </p>
-          <p className="m-0 text-[18px] leading-[1.65] font-serif text-ink uppercase tracking-[0.03em]">
+          <p className="m-0 text-[18px] leading-[1.65] text-ink font-sans">
             Jag är ingen utbildad ekonom, och det är en del av poängen. Vera är byggd för att förklara, inte bara
-            utföra, och för att ni ska bestämma hur mycket hon sköter själv.
+            utföra, och för att du ska bestämma hur mycket hon sköter själv.
           </p>
-          <p className="m-0 text-[18px] leading-[1.65] font-serif text-ink uppercase tracking-[0.03em]">
+          <p className="m-0 text-[18px] leading-[1.65] text-ink font-sans">
             För företagare som hellre lägger tiden på kunderna än på blanketterna.
           </p>
         </div>
-        <div className="mt-9 pt-6 gap-4 border-t border-t-line flex items-center">
+        <div className="mt-9 pt-6 gap-4 max-w-[760px] border-t border-t-line flex items-center reveal">
           <div className="rounded-full w-14 h-14 bg-chip flex-none" />
           <div>
-            <div className="text-[15px] font-bold tracking-[0.1em] uppercase">Hugo</div>
-            <div className="mt-0.5 text-[14px] text-ink-soft tracking-[0.06em] uppercase">Grundare, Vera Labs AB</div>
+            <div className="text-[15px] font-bold tracking-[0.1em] uppercase">Hugo Lindholmer</div>
+            <div className="mt-0.5 text-[14px] text-ink-soft tracking-[0.06em] uppercase">Medgrundare, Vera Labs AB</div>
+            <div className="mt-1.5 text-[14px] text-ink-soft font-sans">Tillsammans med Casper Engström, medgrundare.</div>
           </div>
         </div>
       </div>
-      <div className="bg-contrast text-ink-inverse">
-        <div className="mx-auto my-0 px-10 py-18 max-w-[1200px] box-border flex flex-col items-center text-center">
-          <h2 className="mx-0 mt-0 mb-4 font-display font-bold uppercase tracking-[0.01em] text-[clamp(28px,6vw,40px)] wrap-break-word">
-            Låt oss visa hur Vera skulle arbeta hos er.
+      <div className="bg-surface min-[900px]:min-h-dvh box-border flex items-center">
+        <div className="mx-auto my-0 px-10 py-20 w-full max-w-[1200px] box-border flex flex-col items-center text-center reveal">
+          <div className="mb-5 px-3.5 py-1.5 rounded-full inline-block bg-chip text-contrast text-[13px] font-semibold tracking-[0.14em] uppercase">
+            Kontakt
+          </div>
+          <h2 className="mx-0 mt-0 mb-4 font-display font-bold uppercase tracking-[0.01em] text-[clamp(28px,6.5vw,42px)] leading-[1.05] wrap-break-word">
+            Låt oss visa hur Vera skulle jobba hos dig.
           </h2>
-          <p className="mx-auto mt-0 mb-7 text-[17px] leading-[1.6] text-ink-inverse-soft font-serif max-w-[520px] uppercase tracking-[0.03em]">
-            Vi går igenom en vecka med exempel från er verksamhet.
+          <p className="mx-auto mt-0 mb-8 text-[18px] leading-[1.6] text-ink font-sans max-w-[520px]">
+            Vi går igenom en vecka med exempel från din verksamhet.
           </p>
           <div className="gap-3 flex flex-wrap justify-center">
-            <Link
-              className="btn btn--primary theme-inverse"
-              href="/#kontakt"
-            >
+            <Link className="btn btn--primary" href="/#kontakt">
               Boka en demo
             </Link>
-            <Link
-              className="btn btn--secondary theme-inverse"
-              href="/agenter/bokforing"
-            >
+            <Link className="btn btn--secondary" href="/agenter/bokforing">
               Läs om bokföringsagenten
             </Link>
           </div>

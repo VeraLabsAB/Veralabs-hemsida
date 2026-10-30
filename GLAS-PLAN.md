@@ -537,11 +537,13 @@ build med varningsbaslinje, hex-grep, filter-grep, glasräkning (start +
 produktsida, öppen rullgardin), axe color-contrast (ljus/mörk × 390/1280 ×
 två sidor), skärmdumpar inkl. emulerad minskad transparens, reduced
 motion, backdrop-grep och Safari-checklista. Startar egen produktionsserver
-på port 3100. **Inte kört ännu:** Hugo installerar Playwright
-(`npm i -D playwright && npx playwright install chromium`) och kör.
-Kända risker vid första körningen: axe kan flagga stegnumren på
-produktsidorna (`text-ink-inverse-soft` på kort, se kontrastrisker i §6)
-och mobil-jämförelsetabellens `opacity: 0.65`.
+på port 3100. **Kört 2026-10-30 av Hugo: allt grönt** (Playwright
+installerat, `npm run test:glas`). Första körningen gav ett äkta
+kontrastfel, loggans "LABS" i Slate Grey på Shadow Grey (3,3:1), rättat
+till Pale Slate; övriga axe-träffar var blandfärger mitt i intoningar,
+så axe mäter nu med "minska rörelse". Byggbaslinjen är tom (inga
+varningar). Skärmdumpar i `docs/skarmdumpar/2026-10-30/`. Kvar: Hugos
+manuella Safari-kontroll (§12.9, checklistan skrivs ut av skriptet).
 
 > Förslag på ordning: g) kan med fördel dras fram till direkt efter b),
 > så att c–f mäts med samma skript i stället för för hand. Jag följer

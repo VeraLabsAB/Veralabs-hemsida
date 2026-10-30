@@ -42,7 +42,7 @@ den vanliga körningen är den som gäller.
 | 2 | Inga hex-färger i `src/app` och `src/components`; exakt nio i `tokens.css` | §12.2 |
 | 3 | `backdrop-filter` bara i `glass.css`, prefixad tvilling utan `var()` | §12.3 |
 | 4 | Max 3 glasytor ovanför vecket (start + produktsida), max 4 med öppen rullgardin | §12.4 |
-| 5 | axe `color-contrast`: noll fel, 390 + 1280 px, start + produktsida (bara mörkt läge, sajtens enda sedan 2026-10-30) | §12.5 |
+| 5 | axe `color-contrast`: noll fel, 390 + 1280 px, start + produktsida (bara mörkt läge, sajtens enda sedan 2026-10-30). Mäts med "minska rörelse" så att intoningar inte ger blandfärger | §12.5 |
 | 6 | Skärmdumpar i `docs/skarmdumpar/<datum>/`: desktop, mobil och minskad transparens | §12.6 |
 | 7 | Emulerad `prefers-reduced-motion`: inga övergångar eller animationer kvar | §12.7 |
 | 8 | Ingen `transition`/`animation` som nämner backdrop | §12.8 |

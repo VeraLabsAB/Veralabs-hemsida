@@ -235,7 +235,9 @@ async function browserChecks() {
 
   /* 5. axe color-contrast: 390 + 1280, startsidan och en produktsida.
      Sajten är bara mörk sedan 2026-10-30 (data-theme="dark" fast i layout.tsx),
-     så "ljus" testas inte; sätt MODES till [false, true] om switchen återinförs. */
+     så "ljus" testas inte; sätt MODES till [false, true] om switchen återinförs.
+     Mäts med "minska rörelse" aktivt: annars fångar axe halvgenomskinlig text mitt
+     i en intoning och rapporterar blandfärger som inte finns i vila. */
   const MODES = [true];
   {
     const details = [];
@@ -243,7 +245,14 @@ async function browserChecks() {
     for (const path of ["/", "/agenter/bokforing"]) {
       for (const dark of MODES) {
         for (const width of [390, 1280]) {
-          const { context, page } = await open({ width, height: 844, dark, path });
+          const { context, page } = await open({ width, height: 844, dark, reducedMotion: true, path });
+          await page.evaluate(() => {
+            for (const a of document.getAnimations()) {
+              try {
+                a.finish();
+              } catch {}
+            }
+          });
           await page.addScriptTag({ content: axeSource });
           const violations = await page.evaluate(async () => {
             const r = await window.axe.run(document, { runOnly: ["color-contrast"] });

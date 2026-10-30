@@ -75,7 +75,9 @@ export function Logo() {
       </svg>
       <span className="inline-flex items-baseline gap-[0.45em] whitespace-nowrap leading-none">
         <span className="font-display text-[25px] font-bold tracking-[0.03em] text-logo-ink">VERA</span>
-        <span className="font-sans text-[23px] font-normal tracking-[0.2em] text-slate">LABS</span>
+        {/* Pale Slate, inte Slate Grey: 23 px normal vikt räknas inte som stor text, och Slate på
+            Shadow Grey ger bara 3,3:1 (axe, 2026-10-30). Pale Slate ger över 7:1. */}
+        <span className="font-sans text-[23px] font-normal tracking-[0.2em] text-pale-2">LABS</span>
       </span>
     </Link>
   );

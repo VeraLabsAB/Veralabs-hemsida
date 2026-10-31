@@ -4,7 +4,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Om oss",
   description:
-    "Vera Labs AB är ett AI-bolag från Stockholm som bygger VeraAI. Idén föddes i en tunnelbanekiosk, en natt när ett bokslut tog sexton timmar.",
+    "Kassio Labs AB är ett AI-bolag från Stockholm som bygger Kassio Finance. Idén föddes i en tunnelbanekiosk, en natt när ett bokslut tog sexton timmar.",
 };
 
 export default function OmOssPage() {
@@ -22,7 +22,7 @@ export default function OmOssPage() {
               Pappers&shy;arbetet ska aldrig få stoppa ett bra företag.
             </h1>
             <p className="mx-0 mt-0 mb-8 text-[18px] leading-[1.65] text-pale-1 font-sans max-w-[560px]">
-              Vera Labs AB är ett AI-bolag från Stockholm. Vi bygger VeraAI: agenter som tar hand om allt det
+              Kassio Labs AB är ett AI-bolag från Stockholm. Vi bygger Kassio Finance: agenter som tar hand om allt det
               administrativa, så att den som driver företaget kan göra just det.
             </p>
             <div className="gap-3 flex flex-wrap">
@@ -244,7 +244,7 @@ export default function OmOssPage() {
         </div>
         <div className="gap-5.5 flex flex-col max-w-[760px] reveal-stagger">
           <p className="m-0 text-[18px] leading-[1.65] text-ink font-sans">
-            Efter [X] månaders utveckling lanserar vi Vera med den första agenten, Bokföringsagenten. Fler agenter är
+            Efter [X] månaders utveckling lanserar vi Vera med den första agenten, Kassio Finance. Fler agenter är
             på väg.
           </p>
           <p className="m-0 text-[18px] leading-[1.65] text-ink font-sans">
@@ -259,8 +259,47 @@ export default function OmOssPage() {
           <div className="rounded-full w-14 h-14 bg-chip flex-none" />
           <div>
             <div className="text-[15px] font-bold tracking-[0.1em] uppercase">Hugo Lindholmer</div>
-            <div className="mt-0.5 text-[14px] text-ink-soft tracking-[0.06em] uppercase">Medgrundare, Vera Labs AB</div>
+            <div className="mt-0.5 text-[14px] text-ink-soft tracking-[0.06em] uppercase">Medgrundare, Kassio Labs AB</div>
             <div className="mt-1.5 text-[14px] text-ink-soft font-sans">Tillsammans med Casper Engström, medgrundare.</div>
+          </div>
+        </div>
+      </div>
+      {/* Grundaren: flyttad hit från startsidan 2026-10-31. Enda ändringen är att "Läs historien" pekar
+          på #historia här på sidan i stället för på /om-oss. */}
+      <div className="mx-auto my-0 px-10 py-20 gap-12 max-w-[1200px] box-border flex flex-wrap items-center min-[900px]:min-h-dvh content-center reveal-stagger">
+        <div className="p-5 gap-2.5 rounded-card flex-[0_1_280px] min-w-0 aspect-[4/5] border-2 border-dashed border-line-soft bg-surface-muted flex flex-col items-center justify-center text-center box-border">
+          <svg width="36" height="36" viewBox="0 0 24 24" aria-hidden="true">
+            <path
+              d="M4 5h16v14H4z M4 15l4-4 4 4 3-3 5 5 M15.5 9.5h.01"
+              fill="none"
+              stroke="var(--accent)"
+              strokeWidth="1.6"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
+          </svg>
+          <div className="text-[12px] font-bold tracking-[0.14em] uppercase text-contrast">Porträtt av grundaren</div>
+        </div>
+        <div className="flex-[1_1_420px] min-w-0">
+          <div className="mb-5 px-3.5 py-1.5 rounded-full inline-block bg-chip text-contrast text-[13px] font-semibold tracking-[0.14em] uppercase">
+            Grundaren
+          </div>
+          <blockquote className="mx-0 mt-0 mb-5 font-display font-bold uppercase tracking-[0.01em] text-[clamp(24px,4.5vw,34px)] leading-[1.15]">
+            ”Ingen ska behöva lägga sina kvällar på pappersarbete.”
+          </blockquote>
+          <p className="m-0 text-[18px] leading-[1.6] text-ink font-sans max-w-[560px]">
+            Kassio Finance började i en tunnelbanekiosk i Stockholm, en natt när ett bokslut tog sexton timmar.
+          </p>
+          <div className="mt-4 text-[13px] font-bold tracking-[0.1em] uppercase text-contrast">
+            Hugo · Grundare, Kassio Labs AB
+          </div>
+          <div className="mt-6">
+            <a
+              className="gap-2 inline-flex items-center font-bold text-[13px] tracking-[0.12em] uppercase no-underline text-accent"
+              href="#historia"
+            >
+              Läs historien →
+            </a>
           </div>
         </div>
       </div>
@@ -280,7 +319,7 @@ export default function OmOssPage() {
               Boka en demo
             </Link>
             <Link className="btn btn--secondary" href="/agenter/bokforing">
-              Läs om bokföringsagenten
+              Läs om Kassio Finance
             </Link>
           </div>
         </div>

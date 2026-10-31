@@ -68,7 +68,7 @@ function DropdownLink({ link }: { link: NavLink }) {
 
 export function Logo() {
   return (
-    <Link href="/" className="flex items-center gap-2.5 text-ink no-underline" aria-label="Vera Labs, till startsidan">
+    <Link href="/" className="flex items-center gap-2.5 text-ink no-underline" aria-label="Kassio Labs, till startsidan">
       <svg className="flex-none" width="34" height="34" viewBox="0 0 452 452" aria-hidden="true">
         <rect width="452" height="452" rx="100" fill="var(--logo-sq)" />
         <path d="M78 105H155L226 266L190 345Z" fill="var(--c-snow)" />
@@ -94,10 +94,14 @@ type DropdownProps = {
 };
 
 /** One menu section: trigger button + glass panel. Hover opens for the mouse (CSS);
- *  Enter/Space toggles, Esc closes and keeps focus on the button, arrows move between rows. */
+ *  Enter/Space toggles, Esc closes and keeps focus on the button, arrows move between rows.
+ *  A section with `href` gets a link as desktop trigger instead: hover opens the dropdown as
+ *  usual, a click goes to the page. On mobile it stays a button, so the accordion still opens. */
 function NavDropdown({ section, index, active, open, mobile, onOpenChange }: DropdownProps) {
   const itemRef = useRef<HTMLDivElement>(null);
   const triggerRef = useRef<HTMLButtonElement>(null);
+  const linkTriggerRef = useRef<HTMLAnchorElement>(null);
+  const linkTrigger = Boolean(section.href) && !mobile;
   const pendingFocus = useRef<"first" | "last" | null>(null);
   const panelId = `nav-panel-${index}`;
   const mega = section.groups.length > 1;
@@ -136,7 +140,7 @@ function NavDropdown({ section, index, active, open, mobile, onOpenChange }: Dro
       if (!open) return;
       e.preventDefault();
       onOpenChange(false);
-      triggerRef.current?.focus();
+      (linkTrigger ? linkTriggerRef : triggerRef).current?.focus();
       return;
     }
     if (e.key !== "ArrowDown" && e.key !== "ArrowUp") return;
@@ -167,17 +171,30 @@ function NavDropdown({ section, index, active, open, mobile, onOpenChange }: Dro
       onKeyDown={onKeyDown}
       onBlur={onBlur}
     >
-      <button
-        ref={triggerRef}
-        className={active ? "nav-trigger active" : "nav-trigger"}
-        type="button"
-        aria-expanded={open}
-        aria-controls={panelId}
-        onClick={() => onOpenChange(!open)}
-      >
-        {section.label}
-        <Chevron />
-      </button>
+      {linkTrigger ? (
+        <Link
+          ref={linkTriggerRef}
+          className={active ? "nav-trigger active no-underline" : "nav-trigger no-underline"}
+          href={section.href!}
+          aria-expanded={open}
+          aria-controls={panelId}
+        >
+          {section.label}
+          <Chevron />
+        </Link>
+      ) : (
+        <button
+          ref={triggerRef}
+          className={active ? "nav-trigger active" : "nav-trigger"}
+          type="button"
+          aria-expanded={open}
+          aria-controls={panelId}
+          onClick={() => onOpenChange(!open)}
+        >
+          {section.label}
+          <Chevron />
+        </button>
+      )}
       <div className="nav-dropdown">
         <div id={panelId} className={mobile ? "nav-panel" : "nav-panel glass glass--strong"}>
           {mega ? (

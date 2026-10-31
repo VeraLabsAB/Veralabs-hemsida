@@ -297,7 +297,7 @@ export default function LeverantorsagentenPage() {
               className="btn btn--secondary"
               href="/sa-fungerar-vera"
             >
-              Så fungerar Vera
+              Så fungerar Kassio Finance
             </Link>
           </div>
         </div>
@@ -859,7 +859,7 @@ export default function LeverantorsagentenPage() {
                     Inköpskonsult
                   </th>
                   <th className="p-4 rounded-t-xl rounded-b-none text-left text-[12px] font-bold tracking-[0.12em] uppercase border-b-2 border-b-line bg-contrast text-ink-inverse">
-                    Vera
+                    Kassio Finance
                   </th>
                 </tr>
               </thead>
@@ -945,7 +945,7 @@ export default function LeverantorsagentenPage() {
                     Arvode
                   </td>
                   <td className="px-4 py-4.5 border-b border-b-line text-[16px] leading-[1.45] align-top bg-chip font-sans font-bold text-contrast">
-                    Fast månadspris
+                    Ett pris per månad
                   </td>
                 </tr>
               </tbody>
@@ -962,7 +962,7 @@ export default function LeverantorsagentenPage() {
               className="btn btn--secondary"
               href="/#kontakt"
             >
-              Få en prisuppskattning
+              Köp nu
             </Link>
           </div>
         </div>
@@ -1268,7 +1268,7 @@ export default function LeverantorsagentenPage() {
               className="btn btn--secondary"
               href="/#kontakt"
             >
-              Få en prisuppskattning
+              Köp nu
             </Link>
           </div>
         </div>

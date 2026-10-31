@@ -730,9 +730,6 @@
     max-width: 960px;
     margin: 0 auto;
   }
-  .pcards-f .wide {
-    grid-column: 1/-1;
-  }
   .pcards-p {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));

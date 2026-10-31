@@ -291,7 +291,7 @@ export default function EkonomiPage() {
               className="btn btn--secondary"
               href="/sa-fungerar-vera"
             >
-              Så fungerar Vera
+              Så fungerar Kassio Finance
             </Link>
           </div>
         </div>
@@ -852,7 +852,7 @@ export default function EkonomiPage() {
                     Budgetapp
                   </th>
                   <th className="p-4 rounded-t-xl rounded-b-none text-left text-[12px] font-bold tracking-[0.12em] uppercase border-b-2 border-b-line bg-contrast text-ink-inverse">
-                    Vera
+                    Kassio Finance
                   </th>
                 </tr>
               </thead>

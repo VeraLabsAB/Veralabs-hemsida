@@ -6,15 +6,15 @@ const COLUMNS = [
     heading: "Produkter",
     links: [
       { href: "/foretag", label: "Alla agenter" },
-      { href: "/agenter/bokforing", label: "Bokföringsagenten" },
+      { href: "/agenter/bokforing", label: "Kassio Finance" },
       { href: "/privatpersoner", label: "För privatpersoner" },
       { href: "/priser", label: "Priser" },
     ],
   },
   {
-    heading: "Vera",
+    heading: "Kassio Finance",
     links: [
-      { href: "/sa-fungerar-vera", label: "Så fungerar Vera" },
+      { href: "/sa-fungerar-vera", label: "Så fungerar Kassio Finance" },
       { href: "/vanliga-fragor", label: "Vanliga frågor" },
       { href: "/sakerhet", label: "Säkerhet" },
       { href: "/om-oss", label: "Om oss" },
@@ -77,12 +77,12 @@ export function SiteFooter() {
         </div>
         <div className="mt-10 flex flex-wrap justify-between gap-x-6 gap-y-2 border-t border-t-line pt-5 text-[13px] leading-[1.5] text-ink-muted">
           <span>
-            © 2026 Vera Labs AB · Org.nr [XXXXXX-XXXX] ·{" "}
+            © 2026 Kassio Labs AB · Org.nr [XXXXXX-XXXX] ·{" "}
             <a href="https://veralabs.se" className="text-ink-muted">
               veralabs.se
             </a>
           </span>
-          <span>VeraAI är ett varumärke från Vera Labs AB, Stockholm. Företag och siffror i exemplen är påhittade.</span>
+          <span>Kassio Finance är ett varumärke från Kassio Labs AB, Stockholm. Företag och siffror i exemplen är påhittade.</span>
         </div>
       </div>
     </footer>

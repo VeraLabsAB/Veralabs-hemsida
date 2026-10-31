@@ -24,11 +24,11 @@ const archivoBlack = Archivo_Black({
 
 export const metadata: Metadata = {
   title: {
-    default: "VeraAI – AI-agenter för företag",
-    template: "%s – VeraAI",
+    default: "Kassio Finance – AI-agenter för företag",
+    template: "%s – Kassio Finance",
   },
   description:
-    "Vera är ett team av AI-agenter som sköter bokföringen, bevakar marknaden och räknar på dina beslut. Du godkänner, Vera gör resten. Från Vera Labs i Stockholm.",
+    "Vera är ett team av AI-agenter som sköter bokföringen, bevakar marknaden och räknar på dina beslut. Du godkänner, Vera gör resten. Från Kassio Labs i Stockholm.",
   robots: { index: false, follow: false },
 };
 

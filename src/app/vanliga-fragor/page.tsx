@@ -4,7 +4,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Vanliga frågor",
   description:
-    "Raka svar på det vanligaste om Vera: uppstart, data, ansvar och pris. Saknas din fråga svarar vi inom en arbetsdag.",
+    "Raka svar på det vanligaste om Kassio Finance: uppstart, data, ansvar och pris. Saknas din fråga svarar vi inom en arbetsdag.",
 };
 
 export default function VanligaFragorPage() {
@@ -278,7 +278,7 @@ export default function VanligaFragorPage() {
               </summary>
               <p className="mx-0 mt-0 mb-5.5 text-[18px] leading-[1.6] text-ink font-sans max-w-[760px]">
                 Demon är gratis. Testmånaden kostar en handläggningsavgift som du får tillbaka om du inte är nöjd.
-                Därefter ett fast månadspris per agent.
+                Därefter ett pris per månad och agent. Väljer du två eller fler agenter blir totalpriset 15 % billigare.
               </p>
             </details>
             <details className="faq border-b border-b-line">

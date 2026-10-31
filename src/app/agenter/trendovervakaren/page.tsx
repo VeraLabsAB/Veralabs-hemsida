@@ -292,7 +292,7 @@ export default function TrendovervakarenPage() {
               className="btn btn--secondary"
               href="/sa-fungerar-vera"
             >
-              Så fungerar Vera
+              Så fungerar Kassio Finance
             </Link>
           </div>
         </div>
@@ -826,7 +826,7 @@ export default function TrendovervakarenPage() {
               Kopplad till bokföringen
             </h3>
             <p className="m-0 text-[16px] leading-[1.55] text-ink font-sans">
-              Med Bokföringsagenten vägs din verkliga försäljning in, inte bara marknadens.
+              Med Kassio Finance vägs din verkliga försäljning in, inte bara marknadens.
             </p>
           </div>
         </div>
@@ -858,7 +858,7 @@ export default function TrendovervakarenPage() {
                     Trendbyrå
                   </th>
                   <th className="p-4 rounded-t-xl rounded-b-none text-left text-[12px] font-bold tracking-[0.12em] uppercase border-b-2 border-b-line bg-contrast text-ink-inverse">
-                    Vera
+                    Kassio Finance
                   </th>
                 </tr>
               </thead>
@@ -944,7 +944,7 @@ export default function TrendovervakarenPage() {
                     Löpande avgift
                   </td>
                   <td className="px-4 py-4.5 border-b border-b-line text-[16px] leading-[1.45] align-top bg-chip font-sans font-bold text-contrast">
-                    Fast månadspris
+                    Ett pris per månad
                   </td>
                 </tr>
               </tbody>
@@ -961,7 +961,7 @@ export default function TrendovervakarenPage() {
               className="btn btn--secondary"
               href="/#kontakt"
             >
-              Få en prisuppskattning
+              Köp nu
             </Link>
           </div>
         </div>
@@ -1266,7 +1266,7 @@ export default function TrendovervakarenPage() {
               className="btn btn--secondary"
               href="/#kontakt"
             >
-              Få en prisuppskattning
+              Köp nu
             </Link>
           </div>
         </div>

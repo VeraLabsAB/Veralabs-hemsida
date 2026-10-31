@@ -2,9 +2,9 @@ import Link from "next/link";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Så fungerar Vera",
+  title: "Så fungerar Kassio Finance",
   description:
-    "Så fungerar Vera: ett team av AI-agenter som delar samma regelbok och samma data om ditt företag. Sju steg från uppstart till full kontroll.",
+    "Så fungerar Kassio Finance: ett team av AI-agenter som delar samma regelbok och samma data om ditt företag. Sju steg från uppstart till full kontroll.",
 };
 
 export default function SaFungerarVeraPage() {
@@ -17,7 +17,7 @@ export default function SaFungerarVeraPage() {
         <div className="mx-auto my-0 px-10 pt-20 pb-24 w-full max-w-[1200px] box-border">
           <div className="max-w-[760px]">
             <div className="mb-6 px-3.5 py-1.5 rounded-full inline-block bg-snow/8 border border-snow/18 text-platinum text-[13px] font-semibold tracking-[0.14em] uppercase">
-              Så fungerar Vera
+              Så fungerar Kassio Finance
             </div>
             <h1 className="mx-0 mt-0 mb-6 font-display font-bold uppercase tracking-[0.01em] text-[clamp(32px,5.5vw,56px)] leading-[1.05] wrap-break-word text-snow">
               Ett team som kan ditt företag utan och innan.
@@ -88,7 +88,7 @@ export default function SaFungerarVeraPage() {
               className="ml-auto inline-block text-[13px] font-bold tracking-[0.12em] uppercase no-underline text-accent"
               href="/agenter/bokforing"
             >
-              Bokföringsagenten →
+              Kassio Finance →
             </Link>
           </div>
           <div className="gap-5 grid grid-cols-[repeat(auto-fit,minmax(260px,1fr))]">

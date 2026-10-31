@@ -1,8 +1,9 @@
 import Link from "next/link";
 import type { Metadata } from "next";
+import { VideoBackground } from "@/components/VideoBackground";
 
 export const metadata: Metadata = {
-  title: "Bokföringsagenten",
+  title: "Kassio Finance",
   description:
     "AI-bokföring för aktiebolag. Vera läser kontoutdrag, kvitton och Z-rapporter, konterar enligt din regelbok och lämnar veckan klar för godkännande. Fungerar med Fortnox, Bokio, Spiris och Visma.",
 };
@@ -16,7 +17,7 @@ export default function BokforingPage() {
         <div className="mx-auto my-0 px-10 pt-20 pb-24 gap-14 w-full max-w-[1200px] box-border flex flex-wrap items-center">
           <div className="flex-[1_1_440px] min-w-0">
             <div className="mb-6 px-3.5 py-1.5 rounded-full inline-block bg-snow/8 border border-snow/18 text-platinum text-[13px] font-semibold tracking-[0.14em] uppercase">
-              Bokförings&shy;agenten
+              Kassio Finance
             </div>
             <h1 className="mx-0 mt-0 mb-6 font-display font-bold uppercase tracking-[0.01em] text-[clamp(30px,4.4vw,46px)] leading-[1.05] wrap-break-word text-snow">
               Bokföringen klar. Varje vecka. Utan dig.
@@ -190,7 +191,7 @@ export default function BokforingPage() {
                 stängning, av den som redan jobbat hela dagen.
               </p>
               <p className="m-0 text-[18px] leading-[1.6] max-w-[560px] text-ink font-sans">
-                Bokföringsagenten tar över allt det löpande och lämnar ett resultat du granskar på minuter. Ansvaret för
+                Kassio Finance tar över allt det löpande och lämnar ett resultat du granskar på minuter. Ansvaret för
                 bokföringen är fortfarande ditt. Arbetet är Veras.
               </p>
             </div>
@@ -1393,7 +1394,7 @@ export default function BokforingPage() {
                     Redovisningsbyrå
                   </th>
                   <th className="p-4 rounded-t-xl rounded-b-none text-left text-[12px] font-bold tracking-[0.12em] uppercase border-b-2 border-b-line bg-contrast text-ink-inverse">
-                    Vera
+                    Kassio Finance
                   </th>
                 </tr>
               </thead>
@@ -1408,7 +1409,7 @@ export default function BokforingPage() {
                   <td data-label="Redovisningsbyrå" className="px-4 py-4.5 border-b border-b-line text-[16px] leading-[1.45] align-top text-ink font-sans">
                     Du samlar in och skickar, byrån sorterar.
                   </td>
-                  <td data-label="Vera" className="px-4 py-4.5 border-b border-b-line text-[16px] leading-[1.45] align-top bg-chip font-sans font-bold text-contrast">
+                  <td data-label="Kassio Finance" className="px-4 py-4.5 border-b border-b-line text-[16px] leading-[1.45] align-top bg-chip font-sans font-bold text-contrast">
                     Hämtas automatiskt i samma stund som transaktionen sker.
                   </td>
                 </tr>
@@ -1422,7 +1423,7 @@ export default function BokforingPage() {
                   <td data-label="Redovisningsbyrå" className="px-4 py-4.5 border-b border-b-line text-[16px] leading-[1.45] align-top text-ink font-sans">
                     Hålls, om du skickat in underlaget i tid.
                   </td>
-                  <td data-label="Vera" className="px-4 py-4.5 border-b border-b-line text-[16px] leading-[1.45] align-top bg-chip font-sans font-bold text-contrast">
+                  <td data-label="Kassio Finance" className="px-4 py-4.5 border-b border-b-line text-[16px] leading-[1.45] align-top bg-chip font-sans font-bold text-contrast">
                     Bevakas av Vera, med underlaget klart i god tid.
                   </td>
                 </tr>
@@ -1436,7 +1437,7 @@ export default function BokforingPage() {
                   <td data-label="Redovisningsbyrå" className="px-4 py-4.5 border-b border-b-line text-[16px] leading-[1.45] align-top text-ink font-sans">
                     Hög kompetens, men kontrollen kommer ofta i efterhand.
                   </td>
-                  <td data-label="Vera" className="px-4 py-4.5 border-b border-b-line text-[16px] leading-[1.45] align-top bg-chip font-sans font-bold text-contrast">
+                  <td data-label="Kassio Finance" className="px-4 py-4.5 border-b border-b-line text-[16px] leading-[1.45] align-top bg-chip font-sans font-bold text-contrast">
                     Varje post kontrolleras innan du ser den. Oklarheter stoppas och lyfts till dig.
                   </td>
                 </tr>
@@ -1450,7 +1451,7 @@ export default function BokforingPage() {
                   <td data-label="Redovisningsbyrå" className="px-4 py-4.5 border-b border-b-line text-[16px] leading-[1.45] align-top text-ink font-sans">
                     Förklaringar på begäran, ibland mot avgift.
                   </td>
-                  <td data-label="Vera" className="px-4 py-4.5 border-b border-b-line text-[16px] leading-[1.45] align-top bg-chip font-sans font-bold text-contrast">
+                  <td data-label="Kassio Finance" className="px-4 py-4.5 border-b border-b-line text-[16px] leading-[1.45] align-top bg-chip font-sans font-bold text-contrast">
                     En motivering till varje post, alltid.
                   </td>
                 </tr>
@@ -1464,7 +1465,7 @@ export default function BokforingPage() {
                   <td data-label="Redovisningsbyrå" className="px-4 py-4.5 border-b border-b-line text-[16px] leading-[1.45] align-top text-ink font-sans">
                     Resultatet syns först i månadsrapporten.
                   </td>
-                  <td data-label="Vera" className="px-4 py-4.5 border-b border-b-line text-[16px] leading-[1.45] align-top bg-chip font-sans font-bold text-contrast">
+                  <td data-label="Kassio Finance" className="px-4 py-4.5 border-b border-b-line text-[16px] leading-[1.45] align-top bg-chip font-sans font-bold text-contrast">
                     Alltid, per post eller per vecka.
                   </td>
                 </tr>
@@ -1478,8 +1479,8 @@ export default function BokforingPage() {
                   <td data-label="Redovisningsbyrå" className="px-4 py-4.5 border-b border-b-line text-[16px] leading-[1.45] align-top text-ink font-sans">
                     Månadsavgift plus timmar utöver avtalet.
                   </td>
-                  <td data-label="Vera" className="px-4 py-4.5 border-b border-b-line text-[16px] leading-[1.45] align-top bg-chip font-sans font-bold text-contrast">
-                    Fast månadspris. Inga extra timmar, någonsin.
+                  <td data-label="Kassio Finance" className="px-4 py-4.5 border-b border-b-line text-[16px] leading-[1.45] align-top bg-chip font-sans font-bold text-contrast">
+                    Ett pris per månad. Inga extra timmar, någonsin.
                   </td>
                 </tr>
               </tbody>
@@ -1717,7 +1718,7 @@ export default function BokforingPage() {
       <div className="mx-auto my-0 px-10 py-20 max-w-[900px] box-border min-[900px]:min-h-dvh flex flex-col justify-center">
         <div className="mb-10 max-w-[720px] reveal">
           <h2 className="mx-0 mt-0 mb-4 font-display font-bold uppercase tracking-[0.01em] text-[clamp(28px,6.5vw,42px)] wrap-break-word leading-[1.05]">
-            Frågor om bokföringsagenten
+            Frågor om Kassio Finance
           </h2>
         </div>
         <div className="border-t border-t-line">
@@ -1822,6 +1823,56 @@ export default function BokforingPage() {
           </details>
         </div>
       </div>
+      {/* Integrationer: flyttad hit från startsidan 2026-10-31, oförändrad. Loopad video som bakgrund
+          (Hugos beslut 2026-10-30) med ett mörkt skikt ovanpå, och theme-dark så att text och chips får
+          de mörka tokens oavsett läge. Videon pausas när sektionen inte syns och vid "minska rörelse";
+          saknas filen visas stillbilden/bakgrunden. */}
+      <div className="relative overflow-hidden theme-dark bg-page text-ink min-[900px]:min-h-dvh box-border flex items-center">
+        <VideoBackground
+          src="/video/integrationer.mp4"
+          poster="/video/integrationer.jpg"
+          speed={0.5}
+          className="absolute inset-0 h-full w-full object-cover"
+        />
+        <div className="absolute inset-0 bg-shadow/65" aria-hidden="true" />
+        <div className="relative mx-auto my-0 px-10 py-20 w-full max-w-[1200px] box-border text-center reveal-stagger">
+          <div className="mb-5 px-3.5 py-1.5 rounded-full inline-block bg-chip text-contrast text-[13px] font-semibold tracking-[0.14em] uppercase">
+            Integrationer
+          </div>
+          <h2 className="mx-0 mt-0 mb-4 font-display font-bold uppercase tracking-[0.01em] text-[clamp(28px,6.5vw,42px)] leading-[1.05] wrap-break-word">
+            Fungerar med det du redan använder. Byt ingenting.
+          </h2>
+          <div className="mt-8 gap-4 flex flex-col">
+            <div className="gap-3 flex flex-wrap items-center justify-center">
+              <span className="mr-1 text-[13px] font-bold tracking-[0.12em] uppercase text-contrast">Bokföring:</span>
+              <span className="px-4.5 py-2.5 rounded-full bg-page border border-line font-display font-bold text-[16px] tracking-[0.02em]">
+                Fortnox
+              </span>
+              <span className="px-4.5 py-2.5 rounded-full bg-page border border-line font-display font-bold text-[16px] tracking-[0.02em]">
+                Bokio
+              </span>
+              <span className="px-4.5 py-2.5 rounded-full bg-page border border-line font-display font-bold text-[16px] tracking-[0.02em]">
+                Spiris
+              </span>
+              <span className="px-4.5 py-2.5 rounded-full bg-page border border-line font-display font-bold text-[16px] tracking-[0.02em]">
+                Visma eEkonomi
+              </span>
+            </div>
+            <div className="gap-3 flex flex-wrap items-center justify-center">
+              <span className="mr-1 text-[13px] font-bold tracking-[0.12em] uppercase text-contrast">Kassa:</span>
+              <span className="px-4.5 py-2.5 rounded-full bg-page border border-line font-display font-bold text-[16px] tracking-[0.02em]">
+                Zettle
+              </span>
+              <span className="px-4.5 py-2.5 rounded-full bg-page border border-line font-display font-bold text-[16px] tracking-[0.02em]">
+                SumUp
+              </span>
+              <span className="px-4.5 py-2.5 rounded-full bg-page border border-line font-display font-bold text-[16px] tracking-[0.02em]">
+                Trivec
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
       <div className="bg-surface min-[900px]:min-h-dvh box-border flex items-center">
         <div className="mx-auto my-0 px-10 py-20 w-full max-w-[1200px] box-border flex flex-col items-center text-center reveal">
           <div className="mb-5 px-3.5 py-1.5 rounded-full inline-block bg-chip text-contrast text-[13px] font-semibold tracking-[0.14em] uppercase">
@@ -1844,7 +1895,7 @@ export default function BokforingPage() {
               className="btn btn--secondary"
               href="/#kontakt"
             >
-              Få en prisuppskattning
+              Köp nu
             </Link>
           </div>
         </div>

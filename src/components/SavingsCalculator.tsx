@@ -144,7 +144,7 @@ export function SavingsCalculator() {
               className="btn btn--primary"
               href="/#kontakt"
             >
-              Få en prisuppskattning
+              Köp nu
             </Link>
           </div>
         </div>

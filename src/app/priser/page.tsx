@@ -5,7 +5,7 @@ import { SavingsCalculator } from "@/components/SavingsCalculator";
 export const metadata: Metadata = {
   title: "Priser",
   description:
-    "Priser för Vera: fast månadspris per agent, rabatt när du väljer flera, gratis demo och en testmånad du bara betalar för om du är nöjd.",
+    "Priser för Kassio Finance: ett pris per månad och agent, 15 % rabatt när du väljer två eller fler, gratis demo och en testmånad du bara betalar för om du är nöjd.",
 };
 
 export default function PriserPage() {
@@ -23,11 +23,11 @@ export default function PriserPage() {
                 Priser
               </div>
               <h1 className="mx-0 mt-0 mb-6 font-display font-bold uppercase tracking-[0.01em] text-[clamp(32px,5.5vw,56px)] leading-[1.05] wrap-break-word text-snow">
-                Ett fast pris. Inga timmar att räkna.
+                Ett pris per månad. Inga timmar att räkna.
               </h1>
               <p className="mx-0 mt-0 mb-8 text-[18px] leading-[1.65] text-pale-1 font-sans max-w-[560px]">
-                Ett fast månadspris per agent, lägre när du väljer flera. Demon är gratis och testmånaden betalar du
-                bara för om du är nöjd.
+                Varje agent har ett pris per månad. Väljer du två eller fler agenter blir totalpriset 15 % billigare.
+                Demon är gratis och testmånaden betalar du bara för om du är nöjd.
               </p>
               {/* Fråga 11: växeln är EN glasyta med två segment; det valda segmentet tonas som en primärknapp. */}
               <div className="pf-switch glass glass--strong" role="group" aria-label="Visa priser för">
@@ -60,7 +60,7 @@ export default function PriserPage() {
                   Första agenten
                 </span>
                 <h3 className="m-0 font-display font-bold text-[28px] leading-[1.1] tracking-[0.01em] uppercase wrap-anywhere">
-                  Bokförings&shy;agenten
+                  Kassio Finance
                 </h3>
                 <p className="m-0 text-[16px] leading-[1.55] text-ink font-sans">
                   Hela den löpande ekonomin, varje vecka.
@@ -128,7 +128,7 @@ export default function PriserPage() {
                   className="btn btn--primary mt-auto self-start"
                   href="/#kontakt"
                 >
-                  Få en prisuppskattning
+                  Köp nu
                 </Link>
               </div>
               <div className="p-8 gap-4 rounded-card box-border min-w-0 bg-page border border-line flex flex-col">
@@ -201,7 +201,7 @@ export default function PriserPage() {
                   className="btn btn--primary mt-auto self-start"
                   href="/#kontakt"
                 >
-                  Få en prisuppskattning
+                  Köp nu
                 </Link>
               </div>
               <div className="p-8 gap-4 rounded-card box-border min-w-0 bg-page border border-line flex flex-col">
@@ -274,7 +274,7 @@ export default function PriserPage() {
                   className="btn btn--primary mt-auto self-start"
                   href="/#kontakt"
                 >
-                  Få en prisuppskattning
+                  Köp nu
                 </Link>
               </div>
               <div className="p-8 gap-4 rounded-card box-border min-w-0 bg-page border border-line flex flex-col">
@@ -347,86 +347,7 @@ export default function PriserPage() {
                   className="btn btn--primary mt-auto self-start"
                   href="/#kontakt"
                 >
-                  Få en prisuppskattning
-                </Link>
-              </div>
-              <div
-                className="wide p-8 gap-4 rounded-card box-border min-w-0 bg-page border border-line flex flex-col"
-                id="paket"
-              >
-                <span className="px-3 py-[5px] rounded-full self-start bg-surface-muted text-ink text-[12px] font-semibold tracking-[0.12em] uppercase">
-                  Paket
-                </span>
-                <h3 className="m-0 font-display font-bold text-[28px] leading-[1.1] tracking-[0.01em] uppercase wrap-anywhere">
-                  Eget paket
-                </h3>
-                <p className="m-0 text-[16px] leading-[1.55] text-ink font-sans">
-                  Två eller fler agenter. Ett lägre pris.
-                </p>
-                <div className="px-0 pt-4 pb-2 gap-2.5 flex flex-col border-t border-t-line">
-                  <div className="gap-2.5 flex items-start">
-                    <span className="contents">
-                      <svg className="mt-[3px] flex-none" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true">
-                        <path
-                          d="M5 12.5l4.5 4.5L19 7.5"
-                          fill="none"
-                          stroke="var(--accent)"
-                          strokeWidth="2.4"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                        />
-                      </svg>
-                    </span>
-                    <span className="text-[16px] leading-[1.5] text-ink font-sans min-w-0">
-                      Valfri kombination
-                    </span>
-                  </div>
-                  <div className="gap-2.5 flex items-start">
-                    <span className="contents">
-                      <svg className="mt-[3px] flex-none" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true">
-                        <path
-                          d="M5 12.5l4.5 4.5L19 7.5"
-                          fill="none"
-                          stroke="var(--accent)"
-                          strokeWidth="2.4"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                        />
-                      </svg>
-                    </span>
-                    <span className="text-[16px] leading-[1.5] text-ink font-sans min-w-0">
-                      En regelbok som alla agenter delar
-                    </span>
-                  </div>
-                  <div className="gap-2.5 flex items-start">
-                    <span className="contents">
-                      <svg className="mt-[3px] flex-none" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true">
-                        <path
-                          d="M5 12.5l4.5 4.5L19 7.5"
-                          fill="none"
-                          stroke="var(--accent)"
-                          strokeWidth="2.4"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                        />
-                      </svg>
-                    </span>
-                    <span className="text-[16px] leading-[1.5] text-ink font-sans min-w-0">
-                      XXX % rabatt på månadspriset
-                    </span>
-                  </div>
-                </div>
-                <div className="font-display font-bold text-[26px] tracking-[0.02em] uppercase leading-[1.1]">
-                  XXX %
-                  <span className="mt-1 block font-sans text-[12px] font-semibold tracking-[0.1em] text-ink-muted">
-                    Rabatt på samlat månadspris
-                  </span>
-                </div>
-                <Link
-                  className="btn btn--primary mt-auto self-start"
-                  href="/#kontakt"
-                >
-                  Få en prisuppskattning
+                  Köp nu
                 </Link>
               </div>
             </div>
@@ -662,7 +583,7 @@ export default function PriserPage() {
               Så går det till
             </div>
             <h2 className="mx-0 mt-0 mb-4 font-display font-bold uppercase tracking-[0.01em] text-[clamp(28px,6.5vw,42px)] leading-[1.05] wrap-break-word">
-              Gratis demo. En testmånad. Sedan ett fast pris.
+              Gratis demo. En testmånad. Sedan ett pris per månad.
             </h2>
             <p className="m-0 text-[18px] leading-[1.6] text-ink font-sans">
               Du riskerar ingenting förrän du sett Vera jobba med din egen data.
@@ -694,8 +615,8 @@ export default function PriserPage() {
               <div className="font-display font-bold text-[44px] text-accent leading-none">3</div>
               <h3 className="mx-0 mt-3 mb-2.5 text-[16px] font-semibold tracking-[0.1em] uppercase">Månadspris</h3>
               <p className="mx-0 mt-0 mb-2.5 text-[16px] leading-[1.55] text-ink font-sans">
-                XXX kr per agent och månad. Väljer du flera agenter sjunker priset. Support och uppdateringar ingår,
-                alltid.
+                XXX kr per agent och månad. Väljer du två eller fler agenter blir totalpriset 15 % billigare. Support
+                och uppdateringar ingår, alltid.
               </p>
               <p className="mx-0 mt-0 mb-2.5 text-[16px] leading-[1.55] text-ink font-sans">
                 Räkna nedan på vad samma arbete kostar dig i dag.
@@ -743,7 +664,7 @@ export default function PriserPage() {
                 Hur fungerar rabatten?
               </h3>
               <p className="m-0 text-[16px] leading-[1.55] text-ink font-sans">
-                Väljer du flera agenter får du XXX % rabatt på det samlade månadspriset.
+                Väljer du två eller fler agenter får du 15 % rabatt på det samlade månadspriset.
               </p>
             </div>
             <div className="p-6 rounded-card bg-surface box-border">
@@ -777,10 +698,10 @@ export default function PriserPage() {
               </p>
             </div>
             <div className="p-6 rounded-card bg-surface box-border">
-              <h3 className="mx-0 mt-0 mb-2 text-[15px] font-bold tracking-[0.1em] uppercase">Är priset fast?</h3>
+              <h3 className="mx-0 mt-0 mb-2 text-[15px] font-bold tracking-[0.1em] uppercase">Ändras priset?</h3>
               <p className="m-0 text-[16px] leading-[1.55] text-ink font-sans">
-                Ja. Priset sätts efter demon och gäller sedan som ett fast månadspris. Det ändras inte för att du får
-                fler transaktioner.
+                Nej. Varje agent har ett pris per månad som sätts efter demon. Det ändras inte för att du får fler
+                transaktioner.
               </p>
             </div>
           </div>
@@ -799,7 +720,7 @@ export default function PriserPage() {
               Kontakt
             </div>
             <h2 className="mx-0 mt-0 mb-4 font-display font-bold uppercase tracking-[0.01em] text-[clamp(28px,6.5vw,42px)] leading-[1.05] wrap-break-word">
-              Få en prisuppskattning
+              Köp nu
             </h2>
             <p className="mx-auto mt-0 mb-8 text-[18px] leading-[1.6] text-ink font-sans max-w-[520px]">
               Vi tar fram ett pris för just ditt företag och de agenter du behöver. Boka en demo, så har du det inom

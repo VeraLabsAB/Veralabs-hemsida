@@ -4,7 +4,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "För privatpersoner",
   description:
-    "Vera för privatpersoner: en AI som håller ordning på din kalender, din träning och dina pengar. Du godkänner, Vera gör resten.",
+    "Kassio Finance för privatpersoner: en AI som håller ordning på din kalender, din träning och dina pengar. Du godkänner, Vera gör resten.",
 };
 
 export default function PrivatpersonerPage() {

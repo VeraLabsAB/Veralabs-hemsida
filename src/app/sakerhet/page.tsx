@@ -4,7 +4,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Säkerhet",
   description:
-    "Säkerhet hos Vera: inget bokförs utan ditt godkännande, tekniska spärrar, full loggning och uppgifter som aldrig tränar AI-modeller.",
+    "Säkerhet hos Kassio Finance: inget bokförs utan ditt godkännande, tekniska spärrar, full loggning och uppgifter som aldrig tränar AI-modeller.",
 };
 
 export default function SakerhetPage() {

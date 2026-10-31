@@ -4,7 +4,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Så kommer du igång",
   description:
-    "Kom igång med Bokföringsagenten på en vecka: genomgång, regelbok, bankkoppling och testmånad. Det mesta gör vi.",
+    "Kom igång med Kassio Finance på en vecka: genomgång, regelbok, bankkoppling och testmånad. Det mesta gör vi.",
 };
 
 export default function KomIgangPage() {
@@ -24,7 +24,7 @@ export default function KomIgangPage() {
             </Link>
             <div className="mb-6 block">
               <span className="px-3.5 py-1.5 rounded-full inline-block bg-snow/8 border border-snow/18 text-platinum text-[13px] font-semibold tracking-[0.14em] uppercase">
-                Bokföringsagenten
+                Kassio Finance
               </span>
             </div>
             <h1 className="mx-0 mt-0 mb-6 font-display font-bold uppercase tracking-[0.01em] text-[clamp(32px,5.5vw,56px)] leading-[1.05] wrap-break-word text-snow">
@@ -99,7 +99,7 @@ export default function KomIgangPage() {
             <div className="p-7 rounded-card bg-page border border-line box-border min-w-0 wrap-break-word">
               <h3 className="mx-0 mt-0 mb-2.5 text-[15px] font-bold tracking-[0.1em] uppercase">Bank</h3>
               <p className="m-0 text-[16px] leading-[1.55] text-ink font-sans">
-                Nya transaktioner hämtas automatiskt och visas i VeraAI-appen tillsammans med det som väntar på dig.
+                Nya transaktioner hämtas automatiskt och visas i Kassio Finance-appen tillsammans med det som väntar på dig.
               </p>
             </div>
             <div className="p-7 rounded-card bg-page border border-line box-border min-w-0 wrap-break-word">

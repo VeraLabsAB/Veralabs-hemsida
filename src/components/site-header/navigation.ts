@@ -13,6 +13,8 @@ export type NavGroup = {
 
 export type NavSection = {
   label: string;
+  /** When set, the desktop heading is a link to this page; hover still opens the dropdown. */
+  href?: string;
   /** Route prefixes that mark this section as the current one. */
   match: string[];
   /** One group renders as a simple dropdown, two as the wide mega menu. */
@@ -25,7 +27,6 @@ const ICONS = {
   trend: "M3 17l6-6 4 4 8-8 M15 7h6v6",
   target: "M12 3a9 9 0 100 18 9 9 0 000-18z M12 8a4 4 0 100 8 4 4 0 000-8z M12 12h.01",
   box: "M3 8l9-5 9 5v8l-9 5-9-5z M3 8l9 5 9-5 M12 13v8",
-  layers: "M4 7l8-4 8 4-8 4z M4 12l8 4 8-4 M4 17l8 4 8-4",
   calendar: "M5 5h14v15H5z M5 10h14 M9 3v4 M15 3v4",
   heart: "M12 20s-7-4.5-7-10a4 4 0 017-2.5A4 4 0 0119 10c0 5.5-7 10-7 10z",
   coin: "M12 3a9 9 0 100 18 9 9 0 000-18z M9 12h6 M12 8v8",
@@ -46,15 +47,15 @@ const ICONS = {
 export const NAV_SECTIONS: NavSection[] = [
   {
     label: "Produkter",
+    href: "/foretag",
     match: ["/foretag", "/agenter", "/privatpersoner", "/privat", "/kom-igang"],
     groups: [
       {
         heading: "Företag",
         links: [
-          { href: "/foretag", title: "Alla agenter", description: "Hela teamet på en sida.", icon: ICONS.grid },
           {
             href: "/agenter/bokforing",
-            title: "Bokföringsagenten",
+            title: "Kassio Finance",
             description: "Bokföring, moms, lön och bokslut. Varje vecka.",
             icon: ICONS.ledger,
           },
@@ -76,12 +77,6 @@ export const NAV_SECTIONS: NavSection[] = [
             description: "Hittar och jämför leverantörer.",
             icon: ICONS.box,
           },
-          {
-            href: "/priser#paket",
-            title: "Eget paket",
-            description: "Flera agenter, ett lägre pris.",
-            icon: ICONS.layers,
-          },
         ],
       },
       {
@@ -90,7 +85,7 @@ export const NAV_SECTIONS: NavSection[] = [
           {
             href: "/privatpersoner",
             title: "Alla tjänster",
-            description: "Vera för dig som privatperson.",
+            description: "Kassio Finance för dig som privatperson.",
             icon: ICONS.grid,
           },
           {
@@ -124,7 +119,7 @@ export const NAV_SECTIONS: NavSection[] = [
         links: [
           {
             href: "/sa-fungerar-vera",
-            title: "Så fungerar Vera",
+            title: "Så fungerar Kassio Finance",
             description: "Från första mötet till vardag.",
             icon: ICONS.page,
           },
@@ -196,7 +191,7 @@ export const NAV_SECTIONS: NavSection[] = [
           },
           {
             href: "/#kontakt",
-            title: "Få en prisuppskattning",
+            title: "Köp nu",
             description: "Ett pris för just ditt företag.",
             icon: ICONS.mail,
           },

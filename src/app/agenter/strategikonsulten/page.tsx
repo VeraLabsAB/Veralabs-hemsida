@@ -4,7 +4,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Strategikonsulten",
   description:
-    "En AI-ekonomichef som alltid har tid. Vera analyserar din försäljning, dina kostnader och marginaler och räknar på alternativen inför varje större beslut. Fast månadspris, ingen timdebitering.",
+    "En AI-ekonomichef som alltid har tid. Vera analyserar din försäljning, dina kostnader och marginaler och räknar på alternativen inför varje större beslut. Ett pris per månad, ingen timdebitering.",
 };
 
 export default function StrategikonsultenPage() {
@@ -235,7 +235,7 @@ export default function StrategikonsultenPage() {
               </div>
               <h3 className="m-0 text-[16px] font-bold tracking-[0.1em] uppercase">Lägesbild</h3>
               <p className="m-0 text-[16px] leading-[1.55] text-ink font-sans">
-                Försäljning, kostnader, marginaler och lager sammanställs. Har du Bokföringsagenten sker det av sig
+                Försäljning, kostnader, marginaler och lager sammanställs. Har du Kassio Finance sker det av sig
                 självt.
               </p>
             </div>
@@ -298,7 +298,7 @@ export default function StrategikonsultenPage() {
               className="btn btn--secondary"
               href="/sa-fungerar-vera"
             >
-              Så fungerar Vera
+              Så fungerar Kassio Finance
             </Link>
           </div>
         </div>
@@ -859,7 +859,7 @@ export default function StrategikonsultenPage() {
                     Konsult
                   </th>
                   <th className="p-4 rounded-t-xl rounded-b-none text-left text-[12px] font-bold tracking-[0.12em] uppercase border-b-2 border-b-line bg-contrast text-ink-inverse">
-                    Vera
+                    Kassio Finance
                   </th>
                 </tr>
               </thead>
@@ -945,7 +945,7 @@ export default function StrategikonsultenPage() {
                     Timarvode
                   </td>
                   <td className="px-4 py-4.5 border-b border-b-line text-[16px] leading-[1.45] align-top bg-chip font-sans font-bold text-contrast">
-                    Fast månadspris
+                    Ett pris per månad
                   </td>
                 </tr>
               </tbody>
@@ -962,7 +962,7 @@ export default function StrategikonsultenPage() {
               className="btn btn--secondary"
               href="/#kontakt"
             >
-              Få en prisuppskattning
+              Köp nu
             </Link>
           </div>
         </div>
@@ -1147,7 +1147,7 @@ export default function StrategikonsultenPage() {
         <div className="border-t border-t-line">
           <details className="faq border-b border-b-line">
             <summary className="px-1 py-5.5 gap-4 flex justify-between items-center text-[15px] font-semibold tracking-[0.08em] uppercase">
-              Behövs bokföringsagenten?
+              Behövs Kassio Finance?
               <span
                 className="faq-plus flex-none text-[24px] leading-none text-accent [transition:transform_.15s]"
                 aria-hidden="true"
@@ -1268,7 +1268,7 @@ export default function StrategikonsultenPage() {
               className="btn btn--secondary"
               href="/#kontakt"
             >
-              Få en prisuppskattning
+              Köp nu
             </Link>
           </div>
         </div>

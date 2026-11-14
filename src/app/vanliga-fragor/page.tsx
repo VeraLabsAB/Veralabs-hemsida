@@ -66,8 +66,8 @@ export default function VanligaFragorPage() {
                 </span>
               </summary>
               <p className="mx-0 mt-0 mb-5.5 text-[18px] leading-[1.6] text-ink font-sans max-w-[760px]">
-                Boka en demo. Sedan väljer vi agenter tillsammans och kopplar Vera till dina system. Uppstarten tar
-                ungefär en vecka, sedan börjar testmånaden.
+                Välj en agent och kom igång direkt, eller boka ett gratis möte om du vill ha hjälp att välja. Du svarar
+                på några frågor och kopplar dina program. Regelboken byggs av dina svar.
               </p>
             </details>
             <details className="faq border-b border-b-line">
@@ -180,7 +180,7 @@ export default function VanligaFragorPage() {
                 </span>
               </summary>
               <p className="mx-0 mt-0 mb-5.5 text-[18px] leading-[1.6] text-ink font-sans max-w-[760px]">
-                Fortnox, Bokio, Spiris och Visma eEkonomi.
+                Fortnox. Har du inget bokförings&shy;program hjälper Kassio dig att komma igång med Fortnox.
               </p>
             </details>
             <details className="faq border-b border-b-line">
@@ -277,8 +277,8 @@ export default function VanligaFragorPage() {
                 </span>
               </summary>
               <p className="mx-0 mt-0 mb-5.5 text-[18px] leading-[1.6] text-ink font-sans max-w-[760px]">
-                Demon är gratis. Testmånaden kostar en handläggningsavgift som du får tillbaka om du inte är nöjd.
-                Därefter ett pris per månad och agent. Väljer du två eller fler agenter blir totalpriset 15 % billigare.
+                Ett fast pris per månad och agent. Kassio Finance kostar 999 kr i månaden. Väljer du två eller fler
+                agenter blir totalpriset 15 % billigare. Mötet är gratis.
               </p>
             </details>
             <details className="faq border-b border-b-line">
@@ -292,7 +292,7 @@ export default function VanligaFragorPage() {
                 </span>
               </summary>
               <p className="mx-0 mt-0 mb-5.5 text-[18px] leading-[1.6] text-ink font-sans max-w-[760px]">
-                Nej. Du betalar per månad och säger upp med XXX uppsägningstid. När kontot avslutas raderas dina
+                Nej. Du betalar per månad och säger upp med 30 dagars varsel. När kontot avslutas raderas dina
                 uppgifter.
               </p>
             </details>
@@ -307,12 +307,12 @@ export default function VanligaFragorPage() {
                 </span>
               </summary>
               <p className="mx-0 mt-0 mb-5.5 text-[18px] leading-[1.6] text-ink font-sans max-w-[760px]">
-                Vi justerar agenten tills den gör som du vill. Räcker inte det får du handläggningsavgiften tillbaka.
+                Vi justerar agenten tills den gör som du vill. Avslutar du under första månaden får du pengarna tillbaka.
               </p>
             </details>
             <details className="faq border-b border-b-line">
               <summary className="px-0 py-5.5 gap-4 flex justify-between items-center text-[15px] font-bold tracking-[0.08em] uppercase">
-                Måste jag fortsätta efter testmånaden?
+                Måste jag fortsätta efter första månaden?
                 <span
                   className="faq-plus text-[24px] leading-none text-accent [transition:transform_.2s]"
                   aria-hidden="true"
@@ -321,7 +321,7 @@ export default function VanligaFragorPage() {
                 </span>
               </summary>
               <p className="mx-0 mt-0 mb-5.5 text-[18px] leading-[1.6] text-ink font-sans max-w-[760px]">
-                Nej. Vill du inte fortsätta börjar inget månadspris. Inga frågor.
+                Nej. Avslutar du under första månaden får du pengarna tillbaka. Därefter gäller 30 dagars uppsägning.
               </p>
             </details>
           </div>

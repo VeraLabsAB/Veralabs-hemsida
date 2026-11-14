@@ -132,11 +132,11 @@ export function SavingsCalculator() {
             </div>
           </div>
           <p className="mx-0 mt-6 mb-0 text-[18px] leading-[1.6] text-ink font-sans">
-            Arbete Vera kan ta över, värt ungefär <strong>{valueText}</strong> per år. Jämför med Veras månadspris på
-            XXX kr.
+            Arbete Kassio kan ta över, värt ungefär <strong>{valueText}</strong> per år. Jämför med Kassio Finances
+            månadspris på 999 kr.
           </p>
           <p className="mx-0 mt-4 mb-0 text-[13px] leading-[1.5] text-ink-muted">
-            Beräkningen antar att Vera tar över {shareText} av det återkommande arbetet: sortering, kontering och
+            Beräkningen antar att Kassio tar över {shareText} av det återkommande arbetet: sortering, kontering och
             avstämning. Granskning och godkännande ligger kvar hos dig. Uppskattningen ersätter inte en offert.
           </p>
           <div className="mt-6">

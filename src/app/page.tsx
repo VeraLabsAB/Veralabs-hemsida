@@ -1,6 +1,5 @@
 import Link from "next/link";
 import type { Metadata } from "next";
-import { AGENTER, AgentCard } from "@/components/AgentCards";
 import { DemoVideo } from "@/components/DemoVideo";
 
 export const metadata: Metadata = {
@@ -37,7 +36,7 @@ export default function HomePage() {
               <Link className="btn btn--primary theme-dark" href="/#kontakt">
                 Boka ett gratis möte
               </Link>
-              <Link className="btn btn--secondary theme-dark" href="/foretag">
+              <Link className="btn btn--secondary theme-dark" href="/#agenter">
                 Se våra agenter
               </Link>
             </div>
@@ -212,12 +211,17 @@ export default function HomePage() {
               className="gap-2 inline-flex items-center font-bold text-[13px] tracking-[0.12em] uppercase no-underline text-accent"
               href="/sa-fungerar-vera"
             >
-              Så fungerar Kassio Finance →
+              Så fungerar Kassio →
             </Link>
           </div>
         </div>
       </div>
-      <div className="mx-auto my-0 px-10 py-20 max-w-[1200px] box-border min-[900px]:min-h-dvh flex flex-col justify-center">
+      {/* Översikten över alla agenter. Menyn ("Produkter") och sidfoten ("Alla agenter") pekar hit sedan
+          /foretag togs bort 2026-11-14; den sidan upprepade de här korten. */}
+      <div
+        className="mx-auto my-0 px-10 py-20 max-w-[1200px] box-border min-[900px]:min-h-dvh flex flex-col justify-center scroll-mt-20"
+        id="agenter"
+      >
         <div className="mb-10 max-w-[720px] reveal">
           <div className="mb-5 px-3.5 py-1.5 rounded-full inline-block bg-chip text-contrast text-[13px] font-semibold tracking-[0.14em] uppercase">
             Agenter
@@ -319,14 +323,6 @@ export default function HomePage() {
               Hittar, jämför och sammanställer leverantörer efter era krav. Ni får beslutsunderlaget serverat.
             </p>
             <span className="mt-auto text-[12px] font-bold tracking-[0.12em] uppercase text-accent">Läs mer →</span>
-          </Link>
-        </div>
-        <div className="mt-8">
-          <Link
-            className="gap-2 inline-flex items-center font-bold text-[13px] tracking-[0.12em] uppercase no-underline text-accent"
-            href="/foretag"
-          >
-            Alla agenter →
           </Link>
         </div>
       </div>
@@ -470,8 +466,8 @@ export default function HomePage() {
           </div>
         </div>
       )}
-      {/* Avslutet (2026-10-31): rubrik, text, de fyra agenterna i mindre rutor (samma källa som /foretag),
-          prisraden och sedan kontaktformuläret. Alla "Boka ett gratis möte" och menyns knapp pekar hit. */}
+      {/* Avslutet: rubrik, text, prisraden och kontaktformuläret. Alla "Boka ett gratis möte" och menyns knapp
+          pekar hit. Agentkorten som låg här togs bort 2026-11-14; de står redan i #agenter ovanför. */}
       <div className="bg-surface min-[900px]:min-h-dvh box-border flex items-center scroll-mt-20" id="kontakt">
         <div className="mx-auto my-0 px-10 py-20 w-full max-w-[1200px] box-border">
           <div className="max-w-[720px] reveal">
@@ -479,19 +475,10 @@ export default function HomePage() {
               Vilket jobb vill ni lämna över först?
             </h2>
             <p className="m-0 text-[18px] leading-[1.6] text-ink font-sans">
-              Välj en agent, eller boka ett möte och få personlig rådgivning, så att ert företag får ut så mycket som
-              möjligt av Kassio.
+              Boka ett gratis möte och få råd om vilka agenter som ger ert företag mest. Fast pris per månad, inga
+              timarvoden.
             </p>
           </div>
-          <div className="mt-10 gap-4 grid grid-cols-[repeat(auto-fit,minmax(min(240px,100%),1fr))] reveal-stagger">
-            {AGENTER.map((agent) => (
-              <AgentCard key={agent.href} agent={agent} size="small" />
-            ))}
-          </div>
-          <p className="mx-0 mt-8 mb-0 text-[16px] leading-[1.6] text-ink font-sans max-w-[720px] reveal">
-            Fast pris per månad. På mötet får ni en prisuppskattning och råd om vilka agenter som ger ert företag
-            mest.
-          </p>
           <form
             className="mt-10 p-8 gap-4.5 rounded-card w-full max-w-[760px] bg-page border border-line min-w-0 box-border wrap-break-word flex flex-col shadow-[0_30px_70px_rgba(33,37,41,0.08)] reveal"
             action="mailto:hej@veralabs.se?subject=Boka%20ett%20samtal"

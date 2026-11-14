@@ -47,8 +47,8 @@ const ICONS = {
 export const NAV_SECTIONS: NavSection[] = [
   {
     label: "Produkter",
-    href: "/foretag",
-    match: ["/foretag", "/agenter", "/privatpersoner", "/privat", "/kom-igang"],
+    href: "/#agenter",
+    match: ["/agenter", "/privatpersoner", "/privat", "/kom-igang"],
     groups: [
       {
         heading: "Företag",
@@ -119,7 +119,7 @@ export const NAV_SECTIONS: NavSection[] = [
         links: [
           {
             href: "/sa-fungerar-vera",
-            title: "Så fungerar Kassio Finance",
+            title: "Så fungerar Kassio",
             description: "Från första mötet till vardag.",
             icon: ICONS.page,
           },
@@ -180,7 +180,7 @@ export const NAV_SECTIONS: NavSection[] = [
           {
             href: "/priser#sa-gar-det-till",
             title: "Så går det till",
-            description: "Demo, testmånad, månadspris.",
+            description: "Kom igång, första månaden, månadspris.",
             icon: ICONS.page,
           },
           {

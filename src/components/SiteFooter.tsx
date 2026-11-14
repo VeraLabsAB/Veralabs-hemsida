@@ -5,7 +5,7 @@ const COLUMNS = [
   {
     heading: "Produkter",
     links: [
-      { href: "/foretag", label: "Alla agenter" },
+      { href: "/#agenter", label: "Alla agenter" },
       { href: "/agenter/bokforing", label: "Kassio Finance" },
       { href: "/privatpersoner", label: "För privatpersoner" },
       { href: "/priser", label: "Priser" },
@@ -14,7 +14,7 @@ const COLUMNS = [
   {
     heading: "Kassio Finance",
     links: [
-      { href: "/sa-fungerar-vera", label: "Så fungerar Kassio Finance" },
+      { href: "/sa-fungerar-vera", label: "Så fungerar Kassio" },
       { href: "/vanliga-fragor", label: "Vanliga frågor" },
       { href: "/sakerhet", label: "Säkerhet" },
       { href: "/om-oss", label: "Om oss" },

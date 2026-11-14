@@ -264,45 +264,6 @@ export default function OmOssPage() {
           </div>
         </div>
       </div>
-      {/* Grundaren: flyttad hit från startsidan 2026-10-31. Enda ändringen är att "Läs historien" pekar
-          på #historia här på sidan i stället för på /om-oss. */}
-      <div className="mx-auto my-0 px-10 py-20 gap-12 max-w-[1200px] box-border flex flex-wrap items-center min-[900px]:min-h-dvh content-center reveal-stagger">
-        <div className="p-5 gap-2.5 rounded-card flex-[0_1_280px] min-w-0 aspect-[4/5] border-2 border-dashed border-line-soft bg-surface-muted flex flex-col items-center justify-center text-center box-border">
-          <svg width="36" height="36" viewBox="0 0 24 24" aria-hidden="true">
-            <path
-              d="M4 5h16v14H4z M4 15l4-4 4 4 3-3 5 5 M15.5 9.5h.01"
-              fill="none"
-              stroke="var(--accent)"
-              strokeWidth="1.6"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            />
-          </svg>
-          <div className="text-[12px] font-bold tracking-[0.14em] uppercase text-contrast">Porträtt av grundaren</div>
-        </div>
-        <div className="flex-[1_1_420px] min-w-0">
-          <div className="mb-5 px-3.5 py-1.5 rounded-full inline-block bg-chip text-contrast text-[13px] font-semibold tracking-[0.14em] uppercase">
-            Grundaren
-          </div>
-          <blockquote className="mx-0 mt-0 mb-5 font-display font-bold uppercase tracking-[0.01em] text-[clamp(24px,4.5vw,34px)] leading-[1.15]">
-            ”Ingen ska behöva lägga sina kvällar på pappersarbete.”
-          </blockquote>
-          <p className="m-0 text-[18px] leading-[1.6] text-ink font-sans max-w-[560px]">
-            Kassio Finance började i en tunnelbanekiosk i Stockholm, en natt när ett bokslut tog sexton timmar.
-          </p>
-          <div className="mt-4 text-[13px] font-bold tracking-[0.1em] uppercase text-contrast">
-            Hugo · Grundare, Kassio Labs AB
-          </div>
-          <div className="mt-6">
-            <a
-              className="gap-2 inline-flex items-center font-bold text-[13px] tracking-[0.12em] uppercase no-underline text-accent"
-              href="#historia"
-            >
-              Läs historien →
-            </a>
-          </div>
-        </div>
-      </div>
       <div className="bg-surface min-[900px]:min-h-dvh box-border flex items-center">
         <div className="mx-auto my-0 px-10 py-20 w-full max-w-[1200px] box-border flex flex-col items-center text-center reveal">
           <div className="mb-5 px-3.5 py-1.5 rounded-full inline-block bg-chip text-contrast text-[13px] font-semibold tracking-[0.14em] uppercase">

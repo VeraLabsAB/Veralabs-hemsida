@@ -5,7 +5,7 @@ import { SavingsCalculator } from "@/components/SavingsCalculator";
 export const metadata: Metadata = {
   title: "Priser",
   description:
-    "Priser för Kassio Finance: ett pris per månad och agent, 15 % rabatt när du väljer två eller fler, gratis demo och en testmånad du bara betalar för om du är nöjd.",
+    "Priser: ett fast pris per månad och agent, 15 % rabatt när du väljer två eller fler, och pengarna tillbaka om du avslutar första månaden.",
 };
 
 export default function PriserPage() {
@@ -27,7 +27,7 @@ export default function PriserPage() {
               </h1>
               <p className="mx-0 mt-0 mb-8 text-[18px] leading-[1.65] text-pale-1 font-sans max-w-[560px]">
                 Varje agent har ett pris per månad. Väljer du två eller fler agenter blir totalpriset 15 % billigare.
-                Demon är gratis och testmånaden betalar du bara för om du är nöjd.
+                Avslutar du under första månaden får du pengarna tillbaka.
               </p>
               {/* Fråga 11: växeln är EN glasyta med två segment; det valda segmentet tonas som en primärknapp. */}
               <div className="pf-switch glass glass--strong" role="group" aria-label="Visa priser för">
@@ -119,7 +119,7 @@ export default function PriserPage() {
                   </div>
                 </div>
                 <div className="font-display font-bold text-[26px] tracking-[0.02em] uppercase leading-[1.1]">
-                  XXX kr
+                  999 kr
                   <span className="mt-1 block font-sans text-[12px] font-semibold tracking-[0.1em] text-ink-muted">
                     Per månad och agent, exkl. moms. Allt ingår.
                   </span>
@@ -583,40 +583,39 @@ export default function PriserPage() {
               Så går det till
             </div>
             <h2 className="mx-0 mt-0 mb-4 font-display font-bold uppercase tracking-[0.01em] text-[clamp(28px,6.5vw,42px)] leading-[1.05] wrap-break-word">
-              Gratis demo. En testmånad. Sedan ett pris per månad.
+              Kom igång direkt. Ångra dig inom en månad.
             </h2>
             <p className="m-0 text-[18px] leading-[1.6] text-ink font-sans">
-              Du riskerar ingenting förrän du sett Vera jobba med din egen data.
+              Du riskerar ingenting: avslutar du under första månaden får du pengarna tillbaka.
             </p>
           </div>
           <div className="gap-6 grid grid-cols-[repeat(auto-fit,minmax(300px,1fr))] reveal-stagger">
             <div className="p-7 rounded-card bg-surface box-border">
               <div className="font-display font-bold text-[44px] text-accent leading-none">1</div>
-              <h3 className="mx-0 mt-3 mb-2.5 text-[16px] font-semibold tracking-[0.1em] uppercase">Demo</h3>
+              <h3 className="mx-0 mt-3 mb-2.5 text-[16px] font-semibold tracking-[0.1em] uppercase">Välj agent</h3>
               <p className="mx-0 mt-0 mb-2.5 text-[16px] leading-[1.55] text-ink font-sans">
-                Ett kostnadsfritt möte där vi visar Vera med exempel från din verksamhet och föreslår vilka agenter som
-                passar dig.
+                Köp den agent du behöver och kom igång direkt.
               </p>
               <p className="mx-0 mt-0 mb-2.5 text-[16px] leading-[1.55] text-ink font-sans">
-                Du styr upplägget direkt i mötet, tills det är precis vad du behöver.
+                Osäker på vad du behöver? Boka ett kostnadsfritt möte, så föreslår vi vilka agenter som passar dig.
               </p>
             </div>
             <div className="p-7 rounded-card bg-surface box-border">
               <div className="font-display font-bold text-[44px] text-accent leading-none">2</div>
-              <h3 className="mx-0 mt-3 mb-2.5 text-[16px] font-semibold tracking-[0.1em] uppercase">Testmånad</h3>
+              <h3 className="mx-0 mt-3 mb-2.5 text-[16px] font-semibold tracking-[0.1em] uppercase">Första månaden</h3>
               <p className="mx-0 mt-0 mb-2.5 text-[16px] leading-[1.55] text-ink font-sans">
-                Agenterna jobbar med din riktiga data i en månad, mot en handläggningsavgift på XXX kr.
+                Agenterna jobbar med din riktiga data från första dagen.
               </p>
               <p className="mx-0 mt-0 mb-2.5 text-[16px] leading-[1.55] text-ink font-sans">
-                Fungerar det inte som du vill justerar vi. Räcker inte det får du hela avgiften tillbaka.
+                Fungerar det inte som du vill justerar vi. Avslutar du under första månaden får du pengarna tillbaka.
               </p>
             </div>
             <div className="p-7 rounded-card bg-surface box-border">
               <div className="font-display font-bold text-[44px] text-accent leading-none">3</div>
               <h3 className="mx-0 mt-3 mb-2.5 text-[16px] font-semibold tracking-[0.1em] uppercase">Månadspris</h3>
               <p className="mx-0 mt-0 mb-2.5 text-[16px] leading-[1.55] text-ink font-sans">
-                XXX kr per agent och månad. Väljer du två eller fler agenter blir totalpriset 15 % billigare. Support
-                och uppdateringar ingår, alltid.
+                Ett fast pris per agent och månad, för Kassio Finance 999 kr. Väljer du två eller fler agenter blir
+                totalpriset 15 % billigare. Support och uppdateringar ingår, alltid. Därefter 30 dagars uppsägning.
               </p>
               <p className="mx-0 mt-0 mb-2.5 text-[16px] leading-[1.55] text-ink font-sans">
                 Räkna nedan på vad samma arbete kostar dig i dag.
@@ -680,7 +679,7 @@ export default function PriserPage() {
                 Hur säger jag upp?
               </h3>
               <p className="m-0 text-[16px] leading-[1.55] text-ink font-sans">
-                Du betalar per månad och säger upp med XXX uppsägningstid. Ingen bindningstid.
+                Du betalar per månad och säger upp med 30 dagars varsel. Ingen bindningstid. Avslutar du under första månaden får du pengarna tillbaka.
               </p>
             </div>
             <div className="p-6 rounded-card bg-surface box-border">
@@ -700,8 +699,7 @@ export default function PriserPage() {
             <div className="p-6 rounded-card bg-surface box-border">
               <h3 className="mx-0 mt-0 mb-2 text-[15px] font-bold tracking-[0.1em] uppercase">Ändras priset?</h3>
               <p className="m-0 text-[16px] leading-[1.55] text-ink font-sans">
-                Nej. Varje agent har ett pris per månad som sätts efter demon. Det ändras inte för att du får fler
-                transaktioner.
+                Nej. Varje agent har ett fast pris per månad. Det ändras inte för att du får fler transaktioner.
               </p>
             </div>
           </div>
@@ -720,11 +718,10 @@ export default function PriserPage() {
               Kontakt
             </div>
             <h2 className="mx-0 mt-0 mb-4 font-display font-bold uppercase tracking-[0.01em] text-[clamp(28px,6.5vw,42px)] leading-[1.05] wrap-break-word">
-              Köp nu
+              Osäker på vad du behöver?
             </h2>
             <p className="mx-auto mt-0 mb-8 text-[18px] leading-[1.6] text-ink font-sans max-w-[520px]">
-              Vi tar fram ett pris för just ditt företag och de agenter du behöver. Boka en demo, så har du det inom
-              en vecka.
+              Boka ett gratis möte, så går vi igenom vilka agenter som ger dig mest tid tillbaka.
             </p>
             <div className="gap-3 flex flex-wrap justify-center">
               <Link className="btn btn--primary" href="/#kontakt">

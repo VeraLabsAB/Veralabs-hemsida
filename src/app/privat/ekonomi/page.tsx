@@ -291,7 +291,7 @@ export default function EkonomiPage() {
               className="btn btn--secondary"
               href="/sa-fungerar-vera"
             >
-              Så fungerar Kassio Finance
+              Så fungerar Kassio
             </Link>
           </div>
         </div>

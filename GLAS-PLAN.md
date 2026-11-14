@@ -311,6 +311,9 @@ Gemensamt för alla uppgifter:
   - 12 och 13: ingen modal och ingen cookie-ruta i v1. **Uppgift f) utgår.**
   - 14: `/glas-test` behålls bakom `noindex` (varianterna 6a-1–6b ligger
     kvar som referens).
+    **Ändrat 2026-11-14:** sidan togs bort i städningen av dubbletter, eftersom
+    fråga 5 redan var avgjord. Återställ med
+    `git checkout 28615a0 -- src/app/glas-test/page.tsx` om varianterna behövs.
   - 15: Hugo kör `npm run build` och testskriptet; Playwright installeras
     av Hugo när g) är skrivet.
   - 17: den lösa mappen `veralabs-hemsida:public:images:` tas bort av Hugo
